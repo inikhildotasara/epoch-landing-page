@@ -1,7 +1,9 @@
+import { Reveal } from "./Reveal";
+
 export function CTA() {
   return (
     <section className="bg-navy-800">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32 text-center">
+      <Reveal className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32 text-center">
         <h2 className="font-serif text-[27px] md:text-[32px] lg:text-[44px] xl:text-[52px] font-medium text-white">
           Join the Movement Transforming Education
         </h2>
@@ -29,7 +31,7 @@ export function CTA() {
             Register Your School
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

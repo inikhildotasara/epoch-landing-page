@@ -1,4 +1,5 @@
 import { BrainIcon, AnalyticsIcon, ArrowRight } from "./icons";
+import { Reveal } from "./Reveal";
 
 const cards = [
   {
@@ -67,10 +68,10 @@ export function Initiatives() {
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32">
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {cards.map((c) => (
+          {cards.map((c, i) => (
+            <Reveal key={c.title} delay={i * 120}>
             <div
-              key={c.title}
-              className="rounded-xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg transition-shadow"
+              className="h-full rounded-xl border border-slate-200 bg-white overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-[transform,box-shadow] duration-300"
             >
               <div className="relative h-44 lg:h-52 bg-slate-100">
                 {c.img ? (
@@ -107,6 +108,7 @@ export function Initiatives() {
                 </a>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

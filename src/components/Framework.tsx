@@ -8,6 +8,7 @@ import {
   TrendUpIcon,
   GlobeIcon,
 } from "./icons";
+import { Reveal } from "./Reveal";
 
 const traditional = [
   { icon: BrainIcon, label: "Memory" },
@@ -68,7 +69,7 @@ export function Framework() {
   return (
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-6 lg:py-8">
-        <div className="rounded-2xl bg-navy px-6 py-8 md:px-10 lg:px-14 lg:py-12">
+        <Reveal className="rounded-2xl bg-navy px-6 py-8 md:px-10 lg:px-14 lg:py-12">
           <h2 className="text-center font-serif text-[24px] md:text-[27px] lg:text-[38px] xl:text-[44px] font-medium text-white">
             A New Framework for Learning
           </h2>
@@ -111,7 +112,7 @@ export function Framework() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

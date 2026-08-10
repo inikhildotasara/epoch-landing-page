@@ -6,6 +6,7 @@ import {
   AnalyticsIcon,
   GradCapIcon,
 } from "./icons";
+import { Reveal } from "./Reveal";
 
 const stats = [
   { icon: BuildingIcon, big: "500+", label: "Schools Worldwide" },
@@ -20,21 +21,21 @@ export function Impact() {
   return (
     <section className="bg-cream">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32">
-        <div className="text-center">
+        <Reveal className="text-center">
           <p className="text-[11px] lg:text-[12px] font-semibold tracking-[0.2em] text-gold-dark">
             OUR IMPACT
           </p>
           <h2 className="mt-2 font-serif text-[28px] md:text-[32px] lg:text-[44px] xl:text-[52px] font-medium text-navy">
             Research Today. Better Tomorrow.
           </h2>
-        </div>
+        </Reveal>
 
         <div className="mt-10 lg:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-5 xl:gap-7">
-          {stats.map((s) => {
+          {stats.map((s, i) => {
             const Icon = s.icon;
             return (
-              <div key={s.label} className="flex items-center gap-3 lg:gap-4">
-                <div className="h-14 w-14 lg:h-16 lg:w-16 xl:h-18 xl:w-18 shrink-0 rounded-full bg-white border border-gold/30 flex items-center justify-center shadow-sm">
+              <Reveal key={s.label} delay={i * 90} className="group flex items-center gap-3 lg:gap-4">
+                <div className="h-14 w-14 lg:h-16 lg:w-16 xl:h-18 xl:w-18 shrink-0 rounded-full bg-white border border-gold/30 flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-110">
                   <Icon className="h-7 w-7 lg:h-9 lg:w-9 xl:h-10 xl:w-10 text-gold-dark" />
                 </div>
                 <div className="text-left">
@@ -51,7 +52,7 @@ export function Impact() {
                     {s.label}
                   </div>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

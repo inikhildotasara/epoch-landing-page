@@ -1,4 +1,5 @@
 import { ArrowRight, CheckIcon } from "./icons";
+import { Reveal } from "./Reveal";
 
 const checks = [
   "Learning Patterns",
@@ -16,7 +17,7 @@ export function AdvisoryHealth() {
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-10 lg:py-14 grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
         {/* Advisory */}
-        <div className="rounded-xl border border-slate-200 bg-white p-5 lg:p-7 flex flex-col sm:flex-row gap-5 lg:gap-7">
+        <Reveal className="h-full rounded-xl border border-slate-200 bg-white p-5 lg:p-7 flex flex-col sm:flex-row gap-5 lg:gap-7">
           <img
             src="/images/professor.png"
             alt="Prof. Ajai Shukla"
@@ -51,10 +52,13 @@ export function AdvisoryHealth() {
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-        </div>
+        </Reveal>
 
         {/* Academic Health */}
-        <div className="relative rounded-xl border border-slate-200 bg-[#eef3fb] p-5 lg:p-7 overflow-hidden">
+        <Reveal
+          delay={120}
+          className="relative h-full rounded-xl border border-slate-200 bg-[#eef3fb] p-5 lg:p-7 overflow-hidden"
+        >
           <div className="relative z-10 w-full sm:max-w-[62%]">
             <h3 className="font-serif text-[22px] lg:text-[26px] xl:text-[30px] font-medium text-navy leading-snug">
               Beyond Marks. Discover Academic Health.
@@ -97,7 +101,7 @@ export function AdvisoryHealth() {
             alt="Academic health dashboard"
             className="hidden sm:block absolute -right-6 top-1/2 -translate-y-1/2 w-[42%] rounded-lg shadow-xl ring-1 ring-black/5"
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

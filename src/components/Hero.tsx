@@ -8,12 +8,13 @@ export function Hero() {
       <img
         src="/images/hero.png"
         alt="Child exploring cognitive intelligence with concept map"
-        className="hidden md:block absolute inset-y-0 right-0 h-full w-[50%] lg:w-[50%] object-contain object-top"
+        style={{ animationDelay: "120ms" }}
+        className="hero-fade hidden md:block absolute inset-y-0 right-0 h-full w-[50%] lg:w-[50%] object-contain object-top"
       />
 
       <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-42 py-8 md:py-12 lg:py-14 xl:py-16">
         {/* Left text block */}
-        <div className="md:max-w-[48%] lg:max-w-[47%]">
+        <div className="hero-anim md:max-w-[48%] lg:max-w-[47%]">
           <h1 className="font-serif text-white font-semibold leading-[1.16] text-[28px] sm:text-[36px] md:text-[35px] lg:text-[38px] xl:text-[44px]">
             Transitioning Early Learners
             <br />

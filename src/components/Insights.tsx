@@ -1,4 +1,5 @@
 import { ArrowRight } from "./icons";
+import { Reveal } from "./Reveal";
 
 const articles = [
   {
@@ -50,8 +51,8 @@ export function Insights() {
         </div>
 
         <div className="mt-8 lg:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 lg:gap-6">
-          {articles.map((a) => (
-            <div key={a.title} className="group">
+          {articles.map((a, i) => (
+            <Reveal key={a.title} delay={i * 80} className="group">
               <div className="h-28 lg:h-36 xl:h-44 rounded-lg overflow-hidden bg-slate-100">
                 <img
                   src={a.img}
@@ -69,7 +70,7 @@ export function Insights() {
                 Read More
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
