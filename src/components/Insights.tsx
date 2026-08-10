@@ -30,41 +30,41 @@ const articles = [
 export function Insights() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1200px] px-5 py-14">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-gold-dark">
+            <p className="text-[11px] lg:text-[12px] font-semibold tracking-[0.2em] text-gold-dark">
               THOUGHT LEADERSHIP
             </p>
-            <h2 className="mt-2 font-serif text-[28px] md:text-[32px] font-medium text-navy">
+            <h2 className="mt-2 font-serif text-[28px] md:text-[32px] lg:text-[44px] xl:text-[52px] font-medium text-navy">
               Insights. Research. Impact.
             </h2>
           </div>
           <a
             href="#"
-            className="hidden sm:inline-flex items-center gap-1.5 text-[13px] font-semibold text-navy hover:text-gold-dark transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 text-[13px] lg:text-[15px] font-semibold text-navy hover:text-gold-dark transition-colors"
           >
             View All Articles
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+        <div className="mt-8 lg:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 lg:gap-6">
           {articles.map((a) => (
             <div key={a.title} className="group">
-              <div className="h-28 rounded-lg overflow-hidden bg-slate-100">
+              <div className="h-28 lg:h-36 xl:h-44 rounded-lg overflow-hidden bg-slate-100">
                 <img
                   src={a.img}
                   alt={a.title}
                   className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <h3 className="mt-3 text-[12.5px] font-semibold text-navy leading-snug min-h-[48px]">
+              <h3 className="mt-3 text-[12.5px] lg:text-[14px] xl:text-[16px] font-semibold text-navy leading-snug min-h-[48px] lg:min-h-[52px]">
                 {a.title}
               </h3>
               <a
                 href="#"
-                className="mt-1 inline-flex items-center gap-1 text-[11.5px] font-semibold text-gold-dark hover:text-navy transition-colors"
+                className="mt-1 inline-flex items-center gap-1 text-[11.5px] lg:text-[13px] font-semibold text-gold-dark hover:text-navy transition-colors"
               >
                 Read More
                 <ArrowRight className="h-3.5 w-3.5" />

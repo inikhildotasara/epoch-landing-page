@@ -96,6 +96,15 @@ export const GrowthIcon = (p: IconProps) => (
   </svg>
 );
 
+export const TrendUpIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M4 20V13M9 20v-5M14 20v-9M19 20V9" />
+    <path d="M3 20h18" />
+    <path d="M14 6h5v5" />
+    <path d="M19 6l-8 8" />
+  </svg>
+);
+
 export const BuildingIcon = (p: IconProps) => (
   <svg {...base(p)}>
     <path d="M3 21h18M5 21V8l7-4 7 4v13" />
@@ -151,5 +160,11 @@ export const FacebookIcon = (p: IconProps) => (
 export const XIcon = (p: IconProps) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
     <path d="M17.5 3h3l-6.6 7.6L21.8 21h-6l-4.7-6.1L5.7 21H2.6l7-8.1L2.3 3h6.1l4.3 5.6L17.5 3Zm-1 16h1.7L7.6 4.8H5.8L16.5 19Z" />
+  </svg>
+);
+
+export const YoutubeIcon = (p: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
+    <path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.5A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12ZM9.8 15.3V8.7l6 3.3-6 3.3Z" />
   </svg>
 );

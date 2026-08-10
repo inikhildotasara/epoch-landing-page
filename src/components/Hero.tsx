@@ -1,28 +1,3 @@
-import { PlayIcon } from "./icons";
-
-const leftLabels = ["Logical Reasoning", "Mathematics", "Language", "Memory"];
-const rightLabels = [
-  "Analytical Thinking",
-  "Creativity",
-  "Problem Solving",
-  "Concept Mastery",
-];
-
-function Label({ text, side }: { text: string; side: "left" | "right" }) {
-  return (
-    <div
-      className={`flex items-center gap-2 ${
-        side === "right" ? "flex-row-reverse" : ""
-      }`}
-    >
-      <span className="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_8px_2px_rgba(56,189,248,0.6)]" />
-      <span className="text-[12px] sm:text-[13px] text-slate-200 whitespace-nowrap">
-        {text}
-      </span>
-    </div>
-  );
-}
-
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy">
@@ -33,19 +8,25 @@ export function Hero() {
             "radial-gradient(1200px 500px at 80% 40%, #163463 0%, #0b1c3f 55%, #081631 100%)",
         }}
       />
-      <div className="relative mx-auto max-w-[1200px] px-5 py-14 md:py-16 grid md:grid-cols-2 gap-10 items-center">
-        {/* Left */}
-        <div>
-          <h1 className="font-serif text-white font-semibold leading-[1.12] text-[34px] sm:text-[42px] md:text-[46px]">
-            Transitioning Early
+
+      {/* Full-height image bleeding to the right edge (desktop/tablet) */}
+      <img
+        src="/images/hero.png"
+        alt="Child exploring cognitive intelligence with concept map"
+        className="hidden md:block absolute inset-y-0 right-0 h-full w-[43%] lg:w-[44%] xl:w-[45%] object-cover object-center"
+      />
+
+      <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-42 py-8 md:py-12 lg:py-14 xl:py-16">
+        {/* Left text block */}
+        <div className="md:max-w-[56%] lg:max-w-[54%]">
+          <h1 className="font-serif text-white font-semibold leading-[1.16] text-[28px] sm:text-[36px] md:text-[35px] lg:text-[38px] xl:text-[44px]">
+            Transitioning Early Learners
             <br />
-            Learners from Rote
+            from Rote Memory to
             <br />
-            Memory to <span className="text-white">True</span>
-            <br />
-            Intelligence
+            True Intelligence
           </h1>
-          <p className="mt-6 max-w-xl text-[14px] leading-relaxed text-slate-300">
+          <p className="mt-5 xl:mt-7 max-w-xl text-[14px] lg:text-[16px] xl:text-[18px] leading-relaxed text-slate-300">
             Epoch Olympiad Foundation is an independent education research
             foundation dedicated to transforming how children&apos;s cognitive
             abilities are measured, nurtured, and benchmarked. Through
@@ -53,51 +34,44 @@ export function Hero() {
             learning frameworks, we help schools move beyond rote memory toward
             authentic intelligence.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-7 lg:mt-9 flex flex-wrap sm:flex-nowrap items-center gap-2.5 lg:gap-3.5">
             <a
               href="#"
-              className="rounded-md bg-gold px-5 py-3 text-[13px] font-semibold text-navy hover:bg-gold-dark transition-colors"
+              className="whitespace-nowrap rounded-md bg-gold px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-navy hover:bg-gold-dark transition-colors"
             >
               Explore Our Research
             </a>
             <a
               href="#"
-              className="rounded-md border border-white/25 bg-white/5 px-5 py-3 text-[13px] font-semibold text-white hover:bg-white/10 transition-colors"
+              className="whitespace-nowrap rounded-md border border-white/25 bg-white/5 px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
             >
               Academic Health Report
             </a>
             <a
               href="#"
-              className="flex items-center gap-2 px-2 py-3 text-[13px] font-semibold text-white hover:text-gold transition-colors"
+              className="flex items-center gap-2 whitespace-nowrap rounded-md border border-white/25 bg-white/5 px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
             >
-              <PlayIcon className="h-5 w-5 text-gold" />
+              <span className="flex h-5 w-5 lg:h-6 lg:w-6 items-center justify-center rounded-full bg-white">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-3 w-3 lg:h-3.5 lg:w-3.5 text-navy"
+                  fill="currentColor"
+                >
+                  <path d="M8 5l11 7-11 7z" />
+                </svg>
+              </span>
               Watch Our Vision
             </a>
           </div>
         </div>
 
-        {/* Right */}
-        <div className="relative">
-          <div className="relative rounded-xl overflow-hidden">
-            <img
-              src="/images/hero.png"
-              alt="Child exploring cognitive intelligence"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-
-          {/* Left labels */}
-          <div className="absolute left-2 top-6 flex flex-col gap-7">
-            {leftLabels.map((l) => (
-              <Label key={l} text={l} side="left" />
-            ))}
-          </div>
-          {/* Right labels */}
-          <div className="absolute right-2 top-6 flex flex-col items-end gap-7">
-            {rightLabels.map((l) => (
-              <Label key={l} text={l} side="right" />
-            ))}
-          </div>
+        {/* Mobile image (stacked, fully visible) */}
+        <div className="mt-8 md:hidden">
+          <img
+            src="/images/hero.png"
+            alt="Child exploring cognitive intelligence with concept map"
+            className="w-full h-auto rounded-xl"
+          />
         </div>
       </div>
     </section>

@@ -18,15 +18,15 @@ export function Header() {
 
   return (
     <header className="w-full bg-white border-b border-slate-100 relative z-50">
-      <div className="mx-auto max-w-[1200px] px-5 h-[74px] flex items-center justify-between">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 h-[74px] lg:h-[84px] flex items-center justify-between">
         <Logo />
 
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6 lg:gap-8">
           {navItems.map((item) => (
             <a
               key={item}
               href="#"
-              className="text-[13px] font-medium text-slate-700 hover:text-navy transition-colors whitespace-nowrap"
+              className="text-[13px] lg:text-[15px] font-medium text-slate-700 hover:text-navy transition-colors whitespace-nowrap"
             >
               {item}
             </a>
@@ -59,7 +59,7 @@ export function Header() {
 
       {open && (
         <nav className="lg:hidden absolute top-full inset-x-0 bg-white border-b border-slate-200 shadow-lg">
-          <div className="mx-auto max-w-[1200px] px-5 py-2 flex flex-col">
+          <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-2 flex flex-col">
             {navItems.map((item) => (
               <a
                 key={item}

@@ -11,7 +11,7 @@ const cards = [
   },
   {
     img: "/images/card-brainiac.png",
-    icon: <BrainIcon className="h-6 w-6 text-navy" />,
+    icon: <BrainIcon className="h-6 w-6 lg:h-7 lg:w-7 text-navy" />,
     title: "Brainiac Global",
     subtitle: "International Brain Booster Exams (Kindergarten)",
     desc: "Building cognitive foundations during the most critical years of brain development through age-appropriate assessments.",
@@ -19,7 +19,7 @@ const cards = [
   },
   {
     img: null,
-    icon: <AnalyticsIcon className="h-6 w-6 text-navy" />,
+    icon: <AnalyticsIcon className="h-6 w-6 lg:h-7 lg:w-7 text-navy" />,
     title: "MY CCbee",
     subtitle: "Performance Tracker & Booster Platform",
     desc: "AI-assisted academic analytics, progress tracking, diagnostic insights, and personalized improvement plans.",
@@ -65,14 +65,14 @@ function DashboardMock() {
 export function Initiatives() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1200px] px-5 py-14">
-        <div className="grid md:grid-cols-3 gap-6">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((c) => (
             <div
               key={c.title}
               className="rounded-xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="relative h-44 bg-slate-100">
+              <div className="relative h-44 lg:h-52 bg-slate-100">
                 {c.img ? (
                   <img
                     src={c.img}
@@ -83,24 +83,24 @@ export function Initiatives() {
                   <DashboardMock />
                 )}
                 {c.icon && (
-                  <div className="absolute top-3 right-3 h-11 w-11 rounded-full bg-cream border border-gold/40 flex items-center justify-center shadow-sm">
+                  <div className="absolute top-3 right-3 h-11 w-11 lg:h-12 lg:w-12 rounded-full bg-cream border border-gold/40 flex items-center justify-center shadow-sm">
                     {c.icon}
                   </div>
                 )}
               </div>
-              <div className="p-5">
-                <h3 className="font-serif text-[19px] font-medium text-navy">
+              <div className="p-5 lg:p-6">
+                <h3 className="font-serif text-[19px] lg:text-[23px] xl:text-[26px] font-medium text-navy">
                   {c.title}
                 </h3>
-                <p className="mt-0.5 text-[12.5px] text-slate-500">
+                <p className="mt-0.5 text-[12.5px] lg:text-[14px] xl:text-[15px] text-slate-500">
                   {c.subtitle}
                 </p>
-                <p className="mt-3 text-[13px] leading-relaxed text-slate-600">
+                <p className="mt-3 text-[13px] lg:text-[15px] xl:text-[16px] leading-relaxed xl:leading-7 text-slate-600">
                   {c.desc}
                 </p>
                 <a
                   href="#"
-                  className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-navy hover:text-gold-dark transition-colors"
+                  className="mt-4 xl:mt-5 inline-flex items-center gap-1.5 text-[13px] lg:text-[15px] xl:text-[16px] font-semibold text-navy hover:text-gold-dark transition-colors"
                 >
                   {c.cta}
                   <ArrowRight className="h-4 w-4" />

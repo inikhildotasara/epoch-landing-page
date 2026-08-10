@@ -5,9 +5,7 @@ import {
   CertificateIcon,
   BulbIcon,
   PuzzleIcon,
-  AnalyticsIcon,
-  GrowthIcon,
-  HeartPulseIcon,
+  TrendUpIcon,
   GlobeIcon,
 } from "./icons";
 
@@ -21,9 +19,9 @@ const traditional = [
 const epoch = [
   { icon: BulbIcon, label: "Thinking" },
   { icon: PuzzleIcon, label: "Understanding" },
-  { icon: AnalyticsIcon, label: "Diagnosis" },
-  { icon: GrowthIcon, label: "Improvement" },
-  { icon: HeartPulseIcon, label: "Academic\nHealth" },
+  { icon: PuzzleIcon, label: "Diagnosis" },
+  { icon: TrendUpIcon, label: "Improvement" },
+  { icon: BrainIcon, label: "Academic\nHealth" },
   { icon: BulbIcon, label: "Growth" },
   { icon: GlobeIcon, label: "Intelligence" },
 ];
@@ -32,15 +30,18 @@ function Node({
   icon: Icon,
   label,
 }: {
-  icon: (p: { className?: string }) => React.ReactElement;
+  icon: (p: { className?: string; strokeWidth?: number }) => React.ReactElement;
   label: string;
 }) {
   return (
-    <div className="flex flex-col items-center gap-2 shrink-0 w-[62px]">
-      <div className="h-10 w-10 rounded-full border border-gold/50 flex items-center justify-center">
-        <Icon className="h-[18px] w-[18px] text-gold" />
+    <div className="flex flex-col items-center gap-2 shrink-0 w-[60px] lg:w-[72px]">
+      <div className="h-12 w-12 lg:h-14 lg:w-14 rounded-full border border-gold/60 flex items-center justify-center">
+        <Icon
+          className="h-[24px] w-[24px] lg:h-[28px] lg:w-[28px] text-gold"
+          strokeWidth={1.9}
+        />
       </div>
-      <span className="text-[10px] leading-tight text-slate-200 text-center whitespace-pre-line">
+      <span className="text-[10px] lg:text-[12px] leading-tight text-slate-200 text-center whitespace-pre-line">
         {label}
       </span>
     </div>
@@ -48,14 +49,14 @@ function Node({
 }
 
 function Arrow() {
-  return <span className="text-gold/50 text-sm shrink-0 mt-[10px]">→</span>;
+  return <span className="text-gold/70 text-sm lg:text-base shrink-0 mt-[14px] lg:mt-[16px]">→</span>;
 }
 
 function LabelRule({ text, color }: { text: string; color: string }) {
   return (
     <div className="flex items-center gap-2 w-full h-5">
       <span className="h-px flex-1 border-t border-dashed border-white/20" />
-      <span className={`text-[12px] font-medium tracking-wide ${color}`}>
+      <span className={`text-[12px] lg:text-[14px] font-medium tracking-wide ${color}`}>
         {text}
       </span>
       <span className="h-px flex-1 border-t border-dashed border-white/20" />
@@ -66,17 +67,17 @@ function LabelRule({ text, color }: { text: string; color: string }) {
 export function Framework() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1200px] px-5 py-6">
-        <div className="rounded-2xl bg-navy px-6 py-8 md:px-10">
-          <h2 className="text-center font-serif text-[24px] md:text-[27px] font-medium text-white">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-6 lg:py-8">
+        <div className="rounded-2xl bg-navy px-6 py-8 md:px-10 lg:px-14 lg:py-12">
+          <h2 className="text-center font-serif text-[24px] md:text-[27px] lg:text-[38px] xl:text-[44px] font-medium text-white">
             A New Framework for Learning
           </h2>
 
-          <div className="mt-8 flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-3">
+          <div className="mt-8 lg:mt-12 flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-3">
             {/* Traditional */}
-            <div className="flex-1 flex flex-col">
+            <div className="flex-[4] flex flex-col">
               <LabelRule text="Traditional Education" color="text-slate-300" />
-              <div className="mt-5 flex flex-wrap items-start justify-center gap-y-4 gap-x-1">
+              <div className="mt-5 flex flex-wrap lg:flex-nowrap items-start justify-center gap-y-4 gap-x-1">
                 {traditional.map((t, i) => (
                   <div key={t.label} className="flex items-start gap-1">
                     <Node icon={t.icon} label={t.label} />
@@ -86,21 +87,21 @@ export function Framework() {
               </div>
             </div>
 
-            {/* VS with vertical divider, aligned to icon row */}
+            {/* VS with vertical divider, centered on the icon row */}
             <div className="flex flex-col items-center shrink-0">
               <div className="h-5" />
-              <div className="mt-5 h-10 flex items-center relative">
-                <span className="absolute left-1/2 -translate-x-1/2 h-16 w-px bg-white/15" />
-                <div className="relative h-11 w-11 rounded-full bg-gold flex items-center justify-center">
-                  <span className="text-[12px] font-bold text-navy">VS</span>
+              <div className="relative mt-5 flex h-12 lg:h-14 items-center justify-center">
+                <span className="absolute left-1/2 top-1/2 h-24 w-[2px] -translate-x-1/2 -translate-y-1/2 bg-gold/70" />
+                <div className="relative h-12 w-12 lg:h-14 lg:w-14 rounded-full bg-gold flex items-center justify-center">
+                  <span className="text-[14px] lg:text-[16px] font-bold text-navy">VS</span>
                 </div>
               </div>
             </div>
 
             {/* Epoch */}
-            <div className="flex-1 flex flex-col">
+            <div className="flex-[7] flex flex-col">
               <LabelRule text="Epoch Framework" color="text-gold" />
-              <div className="mt-5 flex flex-wrap items-start justify-center gap-y-4 gap-x-0.5">
+              <div className="mt-5 flex flex-wrap lg:flex-nowrap items-start justify-center gap-y-4 gap-x-0.5">
                 {epoch.map((e, i) => (
                   <div key={e.label} className="flex items-start gap-0.5">
                     <Node icon={e.icon} label={e.label} />

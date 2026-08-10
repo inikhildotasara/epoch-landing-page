@@ -1,30 +1,10 @@
 export function LogoMark({ className = "h-11 w-11" }: { className?: string }) {
-  const petals = [
-    { c: "#2b6cb0", r: 0 },
-    { c: "#6b46c1", r: 60 },
-    { c: "#d53f8c", r: 120 },
-    { c: "#dd6b20", r: 180 },
-    { c: "#38a169", r: 240 },
-    { c: "#319795", r: 300 },
-  ];
   return (
-    <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
-      <g transform="translate(50 50)">
-        {petals.map((p, i) => (
-          <ellipse
-            key={i}
-            cx="0"
-            cy="-24"
-            rx="12"
-            ry="24"
-            fill={p.c}
-            opacity="0.85"
-            transform={`rotate(${p.r})`}
-          />
-        ))}
-        <circle cx="0" cy="0" r="9" fill="#fff" />
-      </g>
-    </svg>
+    <img
+      src="/images/logo.png"
+      alt="Epoch Olympiad Foundation logo"
+      className={`${className} object-contain`}
+    />
   );
 }
 
