@@ -1,24 +1,19 @@
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy">
-      <div
-        className="absolute inset-0 opacity-90"
-        style={{
-          background:
-            "radial-gradient(1200px 500px at 80% 40%, #163463 0%, #0b1c3f 55%, #081631 100%)",
-        }}
-      />
-
-      {/* Full-height image bleeding to the right edge (desktop/tablet) */}
+    <section
+      className="relative overflow-hidden bg-navy"
+      style={{ backgroundColor: "#03152f" }}
+    >
+      {/* Full image anchored top-right; its dark edges blend into the background (desktop/tablet) */}
       <img
         src="/images/hero.png"
         alt="Child exploring cognitive intelligence with concept map"
-        className="hidden md:block absolute inset-y-0 right-0 h-full w-[43%] lg:w-[44%] xl:w-[45%] object-cover object-center"
+        className="hidden md:block absolute inset-y-0 right-0 h-full w-[50%] lg:w-[50%] object-contain object-top"
       />
 
       <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-42 py-8 md:py-12 lg:py-14 xl:py-16">
         {/* Left text block */}
-        <div className="md:max-w-[56%] lg:max-w-[54%]">
+        <div className="md:max-w-[48%] lg:max-w-[47%]">
           <h1 className="font-serif text-white font-semibold leading-[1.16] text-[28px] sm:text-[36px] md:text-[35px] lg:text-[38px] xl:text-[44px]">
             Transitioning Early Learners
             <br />
