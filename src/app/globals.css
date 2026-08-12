@@ -26,14 +26,19 @@
   padding-inline: clamp(3.5rem, 8.33vw, 10.5rem);
 }
 
-/* Compact-HD screens (≈1280×720): scale all content down ~30% so text/layout
-   don't feel oversized. The hero is intentionally left at full size. Content
-   below the hero keeps filling the full width (zoom preserves 100%-width). */
-@media (min-width: 1280px) and (max-width: 1365px) {
-  main > *:not(:first-child),
-  footer {
-    zoom: 0.7;
-  }
+/* Fluid display type. Each clamp runs from the mobile size at ~375px to the
+   intended full-HD size at 1920px, so 1920 is preserved exactly while every
+   resolution in between gets a proportional size instead of jumping to the
+   largest value at the xl breakpoint. Body and UI text keep their fixed,
+   readable sizes — only display headings scale. */
+@utility text-fluid-1 {
+  font-size: clamp(1.75rem, 1.355rem + 1.579vw, 3.25rem); /* 28px → 52px */
+}
+@utility text-fluid-2 {
+  font-size: clamp(1.5rem, 1.171rem + 1.316vw, 2.75rem); /* 24px → 44px */
+}
+@utility text-fluid-3 {
+  font-size: clamp(1.5rem, 1.237rem + 1.053vw, 2.5rem); /* 24px → 40px */
 }
 
 body {

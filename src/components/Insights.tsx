@@ -37,7 +37,7 @@ export function Insights() {
             <p className="text-[11px] lg:text-[12px] font-semibold tracking-[0.2em] text-gold-dark">
               THOUGHT LEADERSHIP
             </p>
-            <h2 className="mt-2 font-serif text-[28px] md:text-[32px] lg:text-[44px] xl:text-[52px] font-medium text-navy">
+            <h2 className="mt-2 font-serif text-fluid-1 font-medium text-navy">
               Insights. Research. Impact.
             </h2>
           </div>

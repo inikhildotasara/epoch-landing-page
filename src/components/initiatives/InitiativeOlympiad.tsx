@@ -43,34 +43,35 @@ export function InitiativeOlympiad() {
   return (
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-6 lg:py-8">
-        <Reveal className="rounded-2xl border border-slate-200 bg-[#f7f9fd] p-5 sm:p-7 lg:p-9">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[250px_minmax(0,1fr)_180px] lg:gap-8">
-            {/* Photo + number */}
-            <div className="relative">
+        <Reveal className="overflow-hidden rounded-2xl border border-slate-200 bg-[#f7f9fd] p-5 sm:p-7 lg:p-9">
+          {/* At 1024 three columns leave the copy too narrow, so the rail tucks in
+              under the photo as a left sidebar until there is room for it beside. */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:gap-x-7 lg:gap-y-7 xl:grid-cols-[1.5fr_3.2fr_minmax(212px,1fr)] xl:grid-rows-none xl:gap-8">
+            {/* Photo panel — bleeds into the card padding so it sits flush with the
+                card edges, and fills the whole card height from xl up */}
+            <div
+              className="relative -mx-5 -mt-5 sm:-mx-7 sm:-mt-7 lg:mx-0 lg:-ml-9 lg:-mt-9 lg:col-start-1 lg:row-start-1 xl:-mb-9"
+              style={{ backgroundColor: "#e8eefb" }}
+            >
               <span
-                className="pointer-events-none absolute -top-2 left-1 font-serif text-[54px] font-bold leading-none lg:text-[64px]"
-                style={{ color: NAVY, opacity: 0.18 }}
+                className="pointer-events-none absolute left-3 top-1 z-10 font-serif text-[54px] font-bold leading-none lg:text-[64px]"
+                style={{ color: NAVY, opacity: 0.3 }}
               >
                 02
               </span>
-              <div
-                className="mt-6 overflow-hidden rounded-2xl"
-                style={{ backgroundColor: "#e8eefb" }}
-              >
-                <img
-                  src="/images/init-olympiad.png"
-                  alt="A student writing an assessment"
-                  className="h-full w-full object-cover"
-                />
-              </div>
+              <img
+                src="/images/init-olympiad.png"
+                alt="A student writing an assessment"
+                className="h-full w-full object-cover"
+              />
             </div>
 
             {/* Main content */}
-            <div>
+            <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 xl:row-span-1">
               <h3 className="font-serif text-[26px] font-semibold text-navy lg:text-[30px]">
                 Epoch Olympiad
               </h3>
-              <p className="mt-1 text-[15px] font-semibold text-navy lg:text-[16px]">
+              <p className="mt-1 font-serif text-[15px] font-semibold text-navy lg:text-[16px]">
                 International Assessment Beyond Rote Memory
               </p>
               <p className="mt-3 text-[13px] leading-relaxed text-slate-600 lg:text-[14px]">
@@ -79,7 +80,7 @@ export function InitiativeOlympiad() {
                 application across multiple domains.
               </p>
 
-              <h4 className="mt-6 text-[15px] font-bold text-navy lg:text-[16px]">
+              <h4 className="mt-6 font-serif text-[15px] font-bold text-navy lg:text-[16px]">
                 Our International Olympiad Exams
               </h4>
 
@@ -113,11 +114,12 @@ export function InitiativeOlympiad() {
             {/* Achievers + FAQ rail */}
             <AchieversRail
               accent={NAVY}
+              className="lg:col-start-1 lg:row-start-2 lg:self-start xl:col-start-3 xl:row-start-1 xl:self-stretch xl:justify-between xl:border-l xl:border-slate-200 xl:pl-6"
               gallery={
                 <img
                   src="/images/achievers-olympiad.png"
                   alt="Students holding certificates"
-                  className="h-28 w-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               }
             />

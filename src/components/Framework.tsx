@@ -70,7 +70,7 @@ export function Framework() {
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-6 lg:py-8">
         <Reveal className="rounded-2xl bg-navy px-6 py-8 md:px-10 lg:px-14 lg:py-12">
-          <h2 className="text-center font-serif text-[24px] md:text-[27px] lg:text-[38px] xl:text-[44px] font-medium text-white">
+          <h2 className="text-center font-serif text-fluid-2 font-medium text-white">
             A New Framework for Learning
           </h2>
 

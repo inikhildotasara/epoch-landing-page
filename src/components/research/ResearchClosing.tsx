@@ -9,7 +9,7 @@ export function ResearchClosing() {
           <span className="pointer-events-none absolute -left-2 -top-6 font-serif text-[70px] leading-none text-gold/40 lg:-left-6 lg:text-[90px]">
             &ldquo;
           </span>
-          <h2 className="font-serif text-[26px] font-medium leading-snug text-white sm:text-[32px] lg:text-[40px]">
+          <h2 className="font-serif text-fluid-3 font-medium leading-snug text-white">
             We don&apos;t just ask what a child knows.
             <br />
             <span className="text-gold">We ask how the child thinks.</span>

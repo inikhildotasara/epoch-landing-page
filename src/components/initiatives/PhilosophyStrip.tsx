@@ -49,7 +49,7 @@ export function PhilosophyStrip() {
               <Reveal
                 key={it.title}
                 delay={i * 90}
-                className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white px-6 py-6 transition-shadow duration-300 hover:shadow-md"
+                className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white px-6 py-6 transition-shadow duration-300 hover:shadow-md sm:flex-col sm:items-start sm:gap-3 sm:px-5 lg:flex-row lg:items-center xl:gap-4 xl:px-6"
               >
                 <span
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
@@ -63,7 +63,7 @@ export function PhilosophyStrip() {
                 </span>
                 <div>
                   <h3
-                    className="font-serif text-[19px] font-semibold lg:text-[21px]"
+                    className="font-serif text-[19px] font-semibold whitespace-nowrap xl:text-[21px]"
                     style={{ color: it.color }}
                   >
                     {it.title}

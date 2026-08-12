@@ -46,7 +46,7 @@ export function ResearchPillars() {
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-6 pt-2 lg:pt-6">
         <Reveal className="text-center">
-          <h2 className="font-serif text-[28px] md:text-[32px] lg:text-[44px] xl:text-[52px] font-medium text-navy">
+          <h2 className="font-serif text-fluid-1 font-medium text-navy">
             Education Research &amp; Innovation
           </h2>
           <p className="mt-2 text-[14px] lg:text-[16px] xl:text-[18px] text-slate-500">

@@ -24,7 +24,7 @@ const features = [
 
 function GrowthGraphic() {
   return (
-    <div className="flex h-28 w-full items-end justify-center gap-2 rounded-xl bg-[#fdf1e5] px-4 py-3">
+    <div className="flex h-full w-full items-end justify-center gap-2 rounded-xl bg-[#fdf1e5] px-4 py-3">
       <svg viewBox="0 0 160 90" className="h-full w-full" fill="none">
         <g>
           <rect x="14" y="56" width="20" height="28" rx="3" fill="#7cbf8e" />
@@ -52,39 +52,43 @@ export function InitiativeCCBee() {
   return (
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-6 lg:py-8">
-        <Reveal className="rounded-2xl border border-slate-200 bg-[#fffaf4] p-5 sm:p-7 lg:p-9">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)_180px] lg:gap-8">
-            {/* Tablet mock + number */}
-            <div className="relative">
+        <Reveal className="overflow-hidden rounded-2xl border border-slate-200 bg-[#fffaf4] p-5 sm:p-7 lg:p-9">
+          {/* At 1024 three columns leave the copy too narrow, so the rail tucks in
+              under the tablet as a left sidebar until there is room for it beside. */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[230px_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:gap-x-7 lg:gap-y-7 xl:grid-cols-[1.5fr_3.2fr_minmax(212px,1fr)] xl:grid-rows-none xl:gap-8">
+            {/* Tinted panel — bleeds into the card padding so it sits flush with the
+                card edges, and fills the whole card height from xl up */}
+            <div
+              className="relative -mx-5 -mt-5 flex items-center justify-center p-6 pt-12 sm:-mx-7 sm:-mt-7 lg:mx-0 lg:-ml-9 lg:-mt-9 lg:col-start-1 lg:row-start-1 lg:p-7 lg:pt-14 xl:-mb-9"
+              style={{ backgroundColor: "#fbeedd" }}
+            >
               <span
-                className="pointer-events-none absolute -top-2 left-1 font-serif text-[54px] font-bold leading-none lg:text-[64px]"
-                style={{ color: ORANGE, opacity: 0.28 }}
+                className="pointer-events-none absolute left-3 top-1 font-serif text-[54px] font-bold leading-none lg:text-[64px]"
+                style={{ color: ORANGE, opacity: 0.35 }}
               >
                 03
               </span>
-              <div
-                className="mt-6 flex items-center justify-center rounded-2xl p-4"
-                style={{ backgroundColor: "#fbeedd" }}
-              >
-                <div className="w-full rounded-xl border-[5px] border-[#1b2436] bg-[#1b2436] shadow-lg">
-                  <img
-                    src="/images/card-ccbee.png"
-                    alt="MY CCBee analytics dashboard"
-                    className="w-full rounded-md object-cover"
-                  />
-                </div>
+              <div className="w-full rounded-xl border-[5px] border-[#1b2436] bg-[#1b2436] shadow-lg">
+                <img
+                  src="/images/card-ccbee.png"
+                  alt="MY CCBee analytics dashboard"
+                  className="w-full rounded-md object-cover"
+                />
               </div>
             </div>
 
             {/* Main content */}
-            <div>
+            <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 xl:row-span-1">
               <h3
                 className="font-serif text-[26px] font-semibold lg:text-[30px]"
                 style={{ color: ORANGE }}
               >
                 MY CCBee
               </h3>
-              <p className="mt-1 text-[15px] font-semibold text-navy lg:text-[16px]">
+              <p
+                className="mt-1 font-serif text-[15px] font-semibold lg:text-[16px]"
+                style={{ color: ORANGE }}
+              >
                 From Assessment Data to Continuous Improvement
               </p>
               <p className="mt-3 text-[13px] leading-relaxed text-slate-600 lg:text-[14px]">
@@ -99,19 +103,24 @@ export function InitiativeCCBee() {
                   return (
                     <div
                       key={f.title}
-                      className="rounded-xl border border-slate-200 bg-white p-4"
+                      className="flex gap-3 rounded-xl border border-slate-200 bg-white p-4"
                     >
                       <Icon
-                        className="h-7 w-7"
+                        className="h-7 w-7 shrink-0"
                         style={{ color: ORANGE }}
                         strokeWidth={1.7}
                       />
-                      <h5 className="mt-3 text-[14px] font-bold text-navy">
-                        {f.title}
-                      </h5>
-                      <p className="mt-1 text-[12px] leading-snug text-slate-500 lg:text-[12.5px]">
-                        {f.desc}
-                      </p>
+                      <div>
+                        <h5
+                          className="text-[14px] font-bold"
+                          style={{ color: ORANGE }}
+                        >
+                          {f.title}
+                        </h5>
+                        <p className="mt-1 text-[12px] leading-snug text-slate-500 lg:text-[12.5px]">
+                          {f.desc}
+                        </p>
+                      </div>
                     </div>
                   );
                 })}
@@ -127,7 +136,11 @@ export function InitiativeCCBee() {
             </div>
 
             {/* Achievers + FAQ rail */}
-            <AchieversRail accent={ORANGE} gallery={<GrowthGraphic />} />
+            <AchieversRail
+              accent={ORANGE}
+              className="lg:col-start-1 lg:row-start-2 lg:self-start xl:col-start-3 xl:row-start-1 xl:self-stretch xl:justify-between xl:border-l xl:border-slate-200 xl:pl-6"
+              gallery={<GrowthGraphic />}
+            />
           </div>
         </Reveal>
       </div>

@@ -25,12 +25,12 @@ export function Impact() {
           <p className="text-[11px] lg:text-[12px] font-semibold tracking-[0.2em] text-gold-dark">
             OUR IMPACT
           </p>
-          <h2 className="mt-2 font-serif text-[28px] md:text-[32px] lg:text-[44px] xl:text-[52px] font-medium text-navy">
+          <h2 className="mt-2 font-serif text-fluid-1 font-medium text-navy">
             Research Today. Better Tomorrow.
           </h2>
         </Reveal>
 
-        <div className="mt-10 lg:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-5 2xl:gap-7">
+        <div className="mt-10 lg:mt-14 grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-6 gap-6 lg:gap-8 2xl:gap-7">
           {stats.map((s, i) => {
             const Icon = s.icon;
             return (

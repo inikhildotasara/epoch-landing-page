@@ -3,14 +3,16 @@ import { Reveal } from "../Reveal";
 export function InitiativesHero() {
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* Desktop full-height photo bleeding to the right edge */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] lg:block">
+      {/* Desktop full-height photo bleeding to the right edge. The artwork carries
+          blended white headroom on top, so the panel can be much taller than a 3:2
+          photo without ever cropping a child out of the frame. */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] 2xl:w-[44%] lg:block">
         <img
-          src="/images/initiatives-hero.png"
+          src="/images/initiatives-hero-tall.webp"
           alt="Children learning together"
-          className="h-full w-full object-cover object-left"
+          className="h-full w-full object-cover object-bottom"
         />
-        <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-white to-transparent" />
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent" />
       </div>
 
       <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-10 sm:py-14 lg:py-20 xl:py-24">
@@ -19,7 +21,7 @@ export function InitiativesHero() {
             <p className="text-[13px] lg:text-[15px] font-semibold uppercase tracking-[0.24em] text-gold-dark">
               Our Initiatives
             </p>
-            <h1 className="mt-4 font-serif text-[28px] sm:text-[38px] lg:text-[36px] xl:text-[46px] font-medium leading-[1.14] text-navy">
+            <h1 className="mt-4 font-serif text-[28px] sm:text-[38px] lg:text-[36px] xl:text-[40px] 2xl:text-[46px] font-medium leading-[1.14] text-navy">
               Turning Educational Research
               <br className="hidden sm:block" /> into Meaningful Impact
             </h1>

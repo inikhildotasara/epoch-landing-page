@@ -4,7 +4,7 @@ export function CTA() {
   return (
     <section className="bg-navy-800">
       <Reveal className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-14 lg:py-24 xl:py-32 text-center">
-        <h2 className="font-serif text-[27px] md:text-[32px] lg:text-[44px] xl:text-[52px] font-medium text-white">
+        <h2 className="font-serif text-fluid-1 font-medium text-white">
           Join the Movement Transforming Education
         </h2>
         <p className="mx-auto mt-3 max-w-2xl lg:max-w-3xl text-[14px] lg:text-[16px] text-slate-300">

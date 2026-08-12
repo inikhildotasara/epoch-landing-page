@@ -15,16 +15,20 @@ const checks = [
 export function AdvisoryHealth() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-10 lg:py-14 grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-10 lg:py-14 grid xl:grid-cols-2 gap-6 lg:gap-8 items-stretch">
         {/* Advisory */}
         <Reveal className="h-full rounded-xl border border-slate-200 bg-white p-5 lg:p-7 flex flex-col sm:flex-row gap-5 lg:gap-7">
+          {/* Portrait frame rather than stretching to the card height, which used to
+              squeeze the headshot into a narrow strip on mid-size screens */}
           <img
             src="/images/prof Ajay.png"
             alt="Prof. Ajai Shukla"
-            className="w-full h-56 sm:h-auto sm:w-[190px] lg:w-[220px] sm:self-stretch shrink-0 rounded-lg object-cover object-top"
+            className="w-full h-56 sm:h-auto sm:aspect-[4/5] sm:w-[190px] lg:w-[210px] xl:w-[180px] 2xl:w-[220px] sm:self-start shrink-0 rounded-lg object-cover object-top"
           />
           <div className="flex flex-col">
-            <h3 className="font-serif text-[21px] lg:text-[26px] xl:text-[30px] font-medium text-navy leading-snug">
+            {/* Sizes dip at xl because the two cards go side-by-side there, so each
+                card is narrower at 1280 than it is at 1024 where it spans full width. */}
+            <h3 className="font-serif text-[21px] lg:text-[26px] xl:text-[23px] 2xl:text-[30px] font-medium text-navy leading-snug">
               Guided by Distinguished Academic Leaders
             </h3>
             <p className="mt-3 text-[16px] lg:text-[18px] font-semibold text-navy">
@@ -60,7 +64,7 @@ export function AdvisoryHealth() {
           className="relative h-full rounded-xl border border-slate-200 bg-[#eef3fb] p-5 lg:p-7 overflow-hidden"
         >
           <div className="relative z-10 w-full sm:max-w-[62%]">
-            <h3 className="font-serif text-[22px] lg:text-[26px] xl:text-[30px] font-medium text-navy leading-snug">
+            <h3 className="font-serif text-[22px] lg:text-[26px] xl:text-[24px] 2xl:text-[30px] font-medium text-navy leading-snug">
               Beyond Marks. Discover Academic Health.
             </h3>
             <p className="mt-2 text-[12.5px] lg:text-[14px] leading-relaxed text-slate-600">

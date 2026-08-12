@@ -33,17 +33,17 @@ export function Mission() {
           <SectionLabel text="Our Mission" />
         </Reveal>
 
-        <div className="mt-10 lg:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="mt-10 lg:mt-14 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10 xl:gap-12">
           {items.map((m, i) => {
             const Icon = m.icon;
             // Divider sits in the gap to the left of an item.
-            // 4-col (lg): before items 1,2,3 · 2-col (sm): before items 1,3
+            // 4-col (xl): before items 1,2,3 · 2-col (sm): before items 1,3
             const dividerClass =
               i === 0
                 ? ""
                 : i % 2 === 1
                 ? "hidden sm:block"
-                : "hidden lg:block";
+                : "hidden xl:block";
             return (
               <Reveal
                 key={m.title}
@@ -52,7 +52,7 @@ export function Mission() {
               >
                 {i > 0 && (
                   <span
-                    className={`${dividerClass} absolute inset-y-1 left-[-16px] w-px bg-slate-200 lg:left-[-24px]`}
+                    className={`${dividerClass} absolute inset-y-1 left-[-16px] w-px bg-slate-200 lg:left-[-20px] xl:left-[-24px]`}
                   />
                 )}
                 <div className="relative shrink-0">
