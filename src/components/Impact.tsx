@@ -11,7 +11,7 @@ import { Reveal } from "./Reveal";
 const stats = [
   { icon: BuildingIcon, big: "500+", label: "Schools Worldwide" },
   { icon: GlobeIcon, big: "5+", label: "Countries" },
-  { icon: DocIcon, big: "1M+", label: "Assessments Conducted" },
+  { icon: DocIcon, big: "5M+", label: "Assessments Conducted" },
   { icon: BulbIcon, big: "", label: "Research-Driven Assessments" },
   { icon: AnalyticsIcon, big: "", label: "Diagnostic Reporting" },
   { icon: GradCapIcon, big: "", label: "Future-Ready Learners" },

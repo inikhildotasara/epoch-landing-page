@@ -9,12 +9,12 @@ export function Hero() {
         src="/images/hero.png"
         alt="Child exploring cognitive intelligence with concept map"
         style={{ animationDelay: "120ms" }}
-        className="hero-fade hidden md:block absolute inset-y-0 right-0 h-full w-[50%] lg:w-[50%] object-contain object-top"
+        className="hero-fade hidden lg:block absolute bottom-0 right-0 h-full w-[50%] object-contain object-bottom"
       />
 
       <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-42 py-8 md:py-12 lg:py-14 xl:py-16">
         {/* Left text block */}
-        <div className="hero-anim md:max-w-[48%] lg:max-w-[47%]">
+        <div className="hero-anim lg:max-w-[47%]">
           <h1 className="font-serif text-white font-semibold leading-[1.16] text-[28px] sm:text-[36px] md:text-[35px] lg:text-[38px] xl:text-[44px]">
             Transitioning Early Learners
             <br />
@@ -33,19 +33,19 @@ export function Hero() {
           <div className="mt-7 lg:mt-9 flex flex-wrap sm:flex-nowrap items-center gap-2.5 lg:gap-3.5">
             <a
               href="#"
-              className="whitespace-nowrap rounded-md bg-gold px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-navy hover:bg-gold-dark transition-colors"
+              className="w-full sm:w-auto text-center whitespace-nowrap rounded-md bg-gold px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-navy hover:bg-gold-dark transition-colors"
             >
               Explore Our Research
             </a>
             <a
               href="#"
-              className="whitespace-nowrap rounded-md border border-white/25 bg-white/5 px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
+              className="w-full sm:w-auto text-center whitespace-nowrap rounded-md border border-white/25 bg-white/5 px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
             >
               Academic Health Report
             </a>
             <a
               href="#"
-              className="flex items-center gap-2 whitespace-nowrap rounded-md border border-white/25 bg-white/5 px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
+              className="flex w-full sm:w-auto items-center justify-center sm:justify-start gap-2 whitespace-nowrap rounded-md border border-white/25 bg-white/5 px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
             >
               <span className="flex h-5 w-5 lg:h-6 lg:w-6 items-center justify-center rounded-full bg-white">
                 <svg
@@ -61,12 +61,13 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Mobile image (stacked, fully visible) */}
-        <div className="mt-8 md:hidden">
+        {/* Stacked image for mobile & tablet — full-bleed so it blends into the
+            navy background and sits flush with the bottom of the section */}
+        <div className="mt-8 -mx-4 -mb-8 sm:-mx-6 md:-mx-12 md:-mb-12 lg:hidden">
           <img
             src="/images/hero.png"
             alt="Child exploring cognitive intelligence with concept map"
-            className="w-full h-auto rounded-xl"
+            className="w-full h-auto object-cover object-bottom"
           />
         </div>
       </div>
