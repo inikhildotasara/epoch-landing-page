@@ -20,7 +20,7 @@ const stats = [
 export function Impact() {
   return (
     <section className="bg-cream">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-14 lg:py-24 xl:py-32">
         <Reveal className="text-center">
           <p className="text-[11px] lg:text-[12px] font-semibold tracking-[0.2em] text-gold-dark">
             OUR IMPACT
@@ -30,24 +30,24 @@ export function Impact() {
           </h2>
         </Reveal>
 
-        <div className="mt-10 lg:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-5 xl:gap-7">
+        <div className="mt-10 lg:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-5 2xl:gap-7">
           {stats.map((s, i) => {
             const Icon = s.icon;
             return (
               <Reveal key={s.label} delay={i * 90} className="group flex items-center gap-3 lg:gap-4">
-                <div className="h-14 w-14 lg:h-16 lg:w-16 xl:h-18 xl:w-18 shrink-0 rounded-full bg-white border border-gold/30 flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="h-7 w-7 lg:h-9 lg:w-9 xl:h-10 xl:w-10 text-gold-dark" />
+                <div className="h-14 w-14 lg:h-16 lg:w-16 2xl:h-18 2xl:w-18 shrink-0 rounded-full bg-white border border-gold/30 flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-110">
+                  <Icon className="h-7 w-7 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 text-gold-dark" />
                 </div>
                 <div className="text-left">
                   {s.big && (
-                    <div className="font-serif text-[24px] lg:text-[30px] xl:text-[36px] font-medium text-navy leading-none">
+                    <div className="font-serif text-[24px] lg:text-[30px] 2xl:text-[36px] font-medium text-navy leading-none">
                       {s.big}
                     </div>
                   )}
                   <div
                     className={`${
                       s.big ? "mt-1.5" : ""
-                    } text-[12.5px] lg:text-[13.5px] xl:text-[14px] font-medium text-slate-600 leading-snug`}
+                    } text-[12.5px] lg:text-[13.5px] 2xl:text-[14px] font-medium text-slate-600 leading-snug`}
                   >
                     {s.label}
                   </div>

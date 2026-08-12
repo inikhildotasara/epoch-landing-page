@@ -44,7 +44,7 @@ const pillars = [
 export function ResearchPillars() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 pb-6 pt-2 lg:pt-6">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-6 pt-2 lg:pt-6">
         <Reveal className="text-center">
           <h2 className="font-serif text-[28px] md:text-[32px] lg:text-[44px] xl:text-[52px] font-medium text-navy">
             Education Research &amp; Innovation

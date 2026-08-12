@@ -57,7 +57,7 @@ const insights = [
 export function StudyIntegrityInsights() {
   return (
     <section className="bg-white">
-      <div className="mx-auto grid w-full grid-cols-1 gap-10 border-t border-slate-100 px-4 py-12 sm:px-6 md:px-12 lg:grid-cols-3 lg:gap-12 lg:px-28 lg:py-16 xl:px-40">
+      <div className="mx-auto grid w-full grid-cols-1 gap-10 border-t border-slate-100 px-4 py-12 sm:px-6 md:px-12 lg:grid-cols-3 lg:gap-12 lg:px-page lg:py-16">
         {/* What We Study */}
         <Reveal>
           <h3 className="text-[13px] font-semibold uppercase tracking-[0.16em] text-navy lg:text-[14px]">

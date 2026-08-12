@@ -19,6 +19,23 @@
   --foreground: #1e293b;
 }
 
+/* Fluid page gutter: scales smoothly with the viewport so the layout adapts
+   to every desktop resolution (e.g. 1366, 1440, 1536) without cramping,
+   while preserving the intended ~160px gutter on full-HD (1920) and up. */
+@utility px-page {
+  padding-inline: clamp(3.5rem, 8.33vw, 10.5rem);
+}
+
+/* Compact-HD screens (≈1280×720): scale all content down ~30% so text/layout
+   don't feel oversized. The hero is intentionally left at full size. Content
+   below the hero keeps filling the full width (zoom preserves 100%-width). */
+@media (min-width: 1280px) and (max-width: 1365px) {
+  main > *:not(:first-child),
+  footer {
+    zoom: 0.7;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

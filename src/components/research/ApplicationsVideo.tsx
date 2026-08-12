@@ -37,7 +37,7 @@ const apps: {
 export function ApplicationsVideo() {
   return (
     <section className="bg-white">
-      <div className="mx-auto grid w-full grid-cols-1 gap-6 px-4 pb-12 sm:px-6 md:px-12 lg:grid-cols-2 lg:gap-8 lg:px-28 lg:pb-16 xl:px-40">
+      <div className="mx-auto grid w-full grid-cols-1 gap-6 px-4 pb-12 sm:px-6 md:px-12 lg:grid-cols-2 lg:gap-8 lg:px-page lg:pb-16">
         {/* Applications */}
         <Reveal className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 lg:p-8">
           <h2 className="text-center text-[13px] font-semibold uppercase tracking-[0.18em] text-navy lg:text-[15px]">

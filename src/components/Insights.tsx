@@ -31,7 +31,7 @@ const articles = [
 export function Insights() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-14 lg:py-24 xl:py-32">
         <div className="flex items-end justify-between">
           <div>
             <p className="text-[11px] lg:text-[12px] font-semibold tracking-[0.2em] text-gold-dark">

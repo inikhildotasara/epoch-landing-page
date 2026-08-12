@@ -4,7 +4,7 @@ import { ArrowRight } from "../icons";
 export function ResearchClosing() {
   return (
     <section className="bg-navy" style={{ backgroundColor: "#0a1b3d" }}>
-      <div className="mx-auto w-full px-4 py-16 sm:px-6 md:px-12 lg:px-28 lg:py-20 xl:px-40">
+      <div className="mx-auto w-full px-4 py-16 sm:px-6 md:px-12 lg:px-page lg:py-20">
         <Reveal className="relative mx-auto max-w-3xl text-center">
           <span className="pointer-events-none absolute -left-2 -top-6 font-serif text-[70px] leading-none text-gold/40 lg:-left-6 lg:text-[90px]">
             &ldquo;

@@ -23,7 +23,7 @@ const steps = [
 export function JourneyBand() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 pb-4 lg:pb-8">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-4 lg:pb-8">
         <Reveal className="rounded-2xl bg-navy px-6 py-8 sm:px-8 lg:px-12 lg:py-10">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:flex xl:items-center xl:gap-3">
             {steps.map((s, i) => {

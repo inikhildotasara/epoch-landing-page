@@ -101,7 +101,7 @@ const ahrProps = {
 export function Ecosystem() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-10 lg:py-16">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-10 lg:py-16">
         <Reveal>
           <SectionLabel text="Our Ecosystem" />
         </Reveal>

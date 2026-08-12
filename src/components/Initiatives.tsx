@@ -66,7 +66,7 @@ function DashboardMock() {
 export function Initiatives() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-14 lg:py-24 xl:py-32">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-14 lg:py-24 xl:py-32">
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((c, i) => (
             <Reveal key={c.title} delay={i * 120}>

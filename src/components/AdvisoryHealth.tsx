@@ -15,7 +15,7 @@ const checks = [
 export function AdvisoryHealth() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-10 lg:py-14 grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-10 lg:py-14 grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
         {/* Advisory */}
         <Reveal className="h-full rounded-xl border border-slate-200 bg-white p-5 lg:p-7 flex flex-col sm:flex-row gap-5 lg:gap-7">
           <img

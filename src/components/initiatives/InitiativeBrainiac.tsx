@@ -37,7 +37,7 @@ const features = [
 export function InitiativeBrainiac() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-6 lg:py-8">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-6 lg:py-8">
         <Reveal className="rounded-2xl border border-slate-200 bg-[#faf8fe] p-5 sm:p-7 lg:p-9">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[230px_minmax(0,1fr)_200px] lg:gap-8 xl:grid-cols-[250px_minmax(0,1fr)_210px_180px]">
             {/* Photo + number */}

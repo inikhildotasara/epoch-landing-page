@@ -31,7 +31,7 @@ const dividerVis = [
 export function GuidingPrinciples() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-12 lg:py-20">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-12 lg:py-20">
         <Reveal>
           <div className="relative rounded-2xl border border-slate-200">
             <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-white px-5 text-[13px] font-semibold uppercase tracking-[0.22em] text-gold-dark lg:text-[15px]">

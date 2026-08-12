@@ -47,7 +47,7 @@ const domains: { icon: IconType; num: string; title: string; desc: string }[] = 
 export function ResearchDomains() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 pb-12 lg:pb-16">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-12 lg:pb-16">
         <Reveal>
           <SectionLabel text="Our Research Domains" />
         </Reveal>

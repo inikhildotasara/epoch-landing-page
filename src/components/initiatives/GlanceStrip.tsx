@@ -25,7 +25,7 @@ const cols = [
 export function GlanceStrip() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-12 lg:py-16">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-12 lg:py-16">
         <Reveal className="rounded-2xl bg-[#f8f8fb] px-6 py-10 sm:px-10 lg:px-14 lg:py-12">
           <div className="flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-gold/70 lg:w-16" />

@@ -28,7 +28,7 @@ const features: { icon: IconType; label: string }[] = [
 export function ResearchInPractice() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 pb-12 lg:pb-16">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-12 lg:pb-16">
         <Reveal className="overflow-hidden rounded-3xl bg-[#fdf6e9]">
           <div className="grid grid-cols-1 items-center gap-8 px-6 py-10 md:px-10 lg:grid-cols-[1.05fr_1fr_0.7fr] lg:gap-6 lg:px-12 lg:py-12">
             {/* Device mockup */}

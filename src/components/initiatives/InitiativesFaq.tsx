@@ -74,7 +74,7 @@ function FaqRow({ q, a }: { q: string; a: string }) {
 export function InitiativesFaq() {
   return (
     <section className="bg-navy" style={{ backgroundColor: "#0b1c3f" }}>
-      <div className="mx-auto grid w-full grid-cols-1 items-start gap-10 px-4 py-14 sm:px-6 md:px-12 lg:grid-cols-[1.7fr_1fr] lg:gap-14 lg:px-28 lg:py-16 xl:px-40">
+      <div className="mx-auto grid w-full grid-cols-1 items-start gap-10 px-4 py-14 sm:px-6 md:px-12 lg:grid-cols-[1.7fr_1fr] lg:gap-14 lg:px-page lg:py-16">
         {/* Left: FAQ accordion */}
         <Reveal>
           <div className="flex items-center gap-3">

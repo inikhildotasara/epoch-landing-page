@@ -13,7 +13,7 @@ export function InitiativesHero() {
         <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-white to-transparent" />
       </div>
 
-      <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-10 sm:py-14 lg:py-20 xl:py-24">
+      <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-10 sm:py-14 lg:py-20 xl:py-24">
         <div className="lg:max-w-[60%]">
           <Reveal className="hero-anim">
             <p className="text-[13px] lg:text-[15px] font-semibold uppercase tracking-[0.24em] text-gold-dark">

@@ -9,13 +9,13 @@ export function Hero() {
         src="/images/hero.png"
         alt="Child exploring cognitive intelligence with concept map"
         style={{ animationDelay: "120ms" }}
-        className="hero-fade hidden lg:block absolute bottom-0 right-0 h-full w-[50%] object-contain object-bottom"
+        className="hero-fade hidden lg:block absolute bottom-0 right-0 h-full w-[48%] object-contain object-bottom"
       />
 
-      <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-42 py-8 md:py-12 lg:py-14 xl:py-16">
+      <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-8 md:py-12 lg:py-14 xl:py-16">
         {/* Left text block */}
-        <div className="hero-anim lg:max-w-[47%]">
-          <h1 className="font-serif text-white font-semibold leading-[1.16] text-[28px] sm:text-[36px] md:text-[35px] lg:text-[38px] xl:text-[44px]">
+        <div className="hero-anim lg:max-w-[50%]">
+          <h1 className="font-serif text-white font-semibold leading-[1.16] text-[28px] sm:text-[36px] md:text-[35px] lg:text-[38px] 2xl:text-[44px]">
             Transitioning Early Learners
             <br />
             from Rote Memory to
@@ -30,7 +30,7 @@ export function Hero() {
             learning frameworks, we help schools move beyond rote memory toward
             authentic intelligence.
           </p>
-          <div className="mt-7 lg:mt-9 flex flex-wrap sm:flex-nowrap items-center gap-2.5 lg:gap-3.5">
+          <div className="mt-7 lg:mt-9 flex flex-wrap items-center gap-2.5 lg:gap-3.5">
             <a
               href="#"
               className="w-full sm:w-auto text-center whitespace-nowrap rounded-md bg-gold px-4 lg:px-6 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-navy hover:bg-gold-dark transition-colors"

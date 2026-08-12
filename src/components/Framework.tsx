@@ -35,7 +35,7 @@ function Node({
   label: string;
 }) {
   return (
-    <div className="flex flex-col items-center gap-2 shrink-0 w-[64px] xl:w-[66px]">
+    <div className="flex flex-col items-center gap-2 shrink-0 w-[58px] xl:w-[60px]">
       <div className="h-12 w-12 xl:h-14 xl:w-14 rounded-full border border-gold/60 flex items-center justify-center">
         <Icon
           className="h-[24px] w-[24px] xl:h-[26px] xl:w-[26px] text-gold"
@@ -68,13 +68,13 @@ function LabelRule({ text, color }: { text: string; color: string }) {
 export function Framework() {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28 xl:px-40 py-6 lg:py-8">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-6 lg:py-8">
         <Reveal className="rounded-2xl bg-navy px-6 py-8 md:px-10 lg:px-14 lg:py-12">
           <h2 className="text-center font-serif text-[24px] md:text-[27px] lg:text-[38px] xl:text-[44px] font-medium text-white">
             A New Framework for Learning
           </h2>
 
-          <div className="mt-8 lg:mt-12 flex flex-col xl:flex-row items-stretch justify-center gap-6 xl:gap-3">
+          <div className="mt-8 lg:mt-12 flex flex-col xl:flex-row items-stretch justify-center gap-6 xl:gap-2">
             {/* Traditional */}
             <div className="flex-[4] flex flex-col">
               <LabelRule text="Traditional Education" color="text-slate-300" />
