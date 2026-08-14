@@ -1,9 +1,18 @@
 import { Logo } from "./Logo";
 import { LinkedinIcon, FacebookIcon, YoutubeIcon } from "./icons";
 
-const linkColumns = [
-  ["About Foundation", "Research", "Our Initiatives", "Academic Health Report"],
-  ["Advisory Board", "Resources", "Contact"],
+const linkColumns: { label: string; href: string }[][] = [
+  [
+    { label: "About Foundation", href: "/about" },
+    { label: "Research", href: "/research" },
+    { label: "Our Initiatives", href: "/initiatives" },
+    { label: "Academic Health Report", href: "/academic-health-report" },
+  ],
+  [
+    { label: "Advisory Board", href: "/advisory-board" },
+    { label: "Resources", href: "#" },
+    { label: "Contact", href: "#" },
+  ],
 ];
 
 const socials = [LinkedinIcon, FacebookIcon, YoutubeIcon];
@@ -23,12 +32,12 @@ export function Footer() {
           {linkColumns.map((col, ci) => (
             <ul key={ci} className="space-y-2.5">
               {col.map((l) => (
-                <li key={l}>
+                <li key={l.label}>
                   <a
-                    href="#"
+                    href={l.href}
                     className="text-[13px] lg:text-[14px] text-slate-300 hover:text-white transition-colors"
                   >
-                    {l}
+                    {l.label}
                   </a>
                 </li>
               ))}
@@ -51,7 +60,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-slate-500">
-          <p>© 2024 Epoch Olympiad Foundation. All rights reserved.</p>
+          <p>© 2026 Epoch Olympiad Foundation. All rights reserved.</p>
           <div className="flex items-center gap-5">
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy

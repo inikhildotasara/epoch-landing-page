@@ -7,6 +7,7 @@ import { AdvisoryHealth } from "@/components/AdvisoryHealth";
 import { Impact } from "@/components/Impact";
 import { Insights } from "@/components/Insights";
 import { CTA } from "@/components/CTA";
+import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <Impact />
         <Insights />
         <CTA />
+        <Faq />
       </main>
       <Footer />
     </>

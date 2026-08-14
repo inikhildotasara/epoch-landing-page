@@ -35,14 +35,14 @@ function Node({
   label: string;
 }) {
   return (
-    <div className="flex flex-col items-center gap-2 shrink-0 w-[58px] xl:w-[60px]">
-      <div className="h-12 w-12 xl:h-14 xl:w-14 rounded-full border border-gold/60 flex items-center justify-center">
+    <div className="flex flex-col items-center gap-2 shrink-0 w-[58px] xl:w-[clamp(60px,4.7vw,104px)]">
+      <div className="h-12 w-12 xl:h-[clamp(56px,4.1vw,88px)] xl:w-[clamp(56px,4.1vw,88px)] rounded-full border border-gold/60 flex items-center justify-center">
         <Icon
-          className="h-[24px] w-[24px] xl:h-[26px] xl:w-[26px] text-gold"
+          className="h-[24px] w-[24px] xl:h-[clamp(26px,1.93vw,42px)] xl:w-[clamp(26px,1.93vw,42px)] text-gold"
           strokeWidth={1.9}
         />
       </div>
-      <span className="text-[10px] lg:text-[12px] leading-tight text-slate-200 text-center whitespace-pre-line">
+      <span className="text-[10px] lg:text-[12px] xl:text-[clamp(12px,0.72vw,15px)] leading-tight text-slate-200 text-center whitespace-pre-line">
         {label}
       </span>
     </div>
@@ -50,14 +50,21 @@ function Node({
 }
 
 function Arrow() {
-  return <span className="text-gold/70 text-sm lg:text-base shrink-0 mt-[14px] lg:mt-[16px]">→</span>;
+  // Matches the circle's height so the glyph stays centred on it as the nodes scale.
+  return (
+    <span className="shrink-0 flex items-center h-12 xl:h-[clamp(56px,4.1vw,88px)] text-gold/70 text-sm lg:text-base xl:text-[clamp(16px,0.95vw,20px)]">
+      →
+    </span>
+  );
 }
 
 function LabelRule({ text, color }: { text: string; color: string }) {
   return (
     <div className="flex items-center gap-2 w-full h-5">
       <span className="h-px flex-1 border-t border-dashed border-white/20" />
-      <span className={`text-[12px] lg:text-[14px] font-medium tracking-wide ${color}`}>
+      <span
+        className={`text-[12px] lg:text-[14px] xl:text-[clamp(14px,0.85vw,17px)] font-medium tracking-wide ${color}`}
+      >
         {text}
       </span>
       <span className="h-px flex-1 border-t border-dashed border-white/20" />
@@ -69,12 +76,15 @@ export function Framework() {
   return (
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-6 lg:py-8">
-        <Reveal className="rounded-2xl bg-navy px-6 py-8 md:px-10 lg:px-14 lg:py-12">
+        {/* Below xl the diagram stacks and its rows are only ~530px wide, so the
+            card is capped to stop it swimming in empty navy. From xl it goes back
+            to the page width like every other section and the nodes scale instead. */}
+        <Reveal className="mx-auto w-full max-w-[700px] rounded-2xl bg-navy px-5 py-7 md:px-8 lg:px-10 lg:py-9 xl:max-w-none xl:px-10 xl:py-11 2xl:px-14 2xl:py-14">
           <h2 className="text-center font-serif text-fluid-2 font-medium text-white">
             A New Framework for Learning
           </h2>
 
-          <div className="mt-8 lg:mt-12 flex flex-col xl:flex-row items-stretch justify-center gap-6 xl:gap-2">
+          <div className="mt-6 lg:mt-8 xl:mt-10 flex flex-col xl:flex-row items-stretch justify-center gap-6 xl:gap-2">
             {/* Traditional */}
             <div className="flex-[4] flex flex-col">
               <LabelRule text="Traditional Education" color="text-slate-300" />
@@ -91,10 +101,12 @@ export function Framework() {
             {/* VS with vertical divider, centered on the icon row */}
             <div className="flex flex-col items-center shrink-0">
               <div className="hidden h-5 xl:block" />
-              <div className="relative mt-5 flex h-12 xl:h-14 items-center justify-center">
-                <span className="absolute left-1/2 top-1/2 hidden h-24 w-[2px] -translate-x-1/2 -translate-y-1/2 bg-gold/70 xl:block" />
-                <div className="relative h-12 w-12 xl:h-14 xl:w-14 rounded-full bg-gold flex items-center justify-center">
-                  <span className="text-[14px] lg:text-[16px] font-bold text-navy">VS</span>
+              <div className="relative mt-5 flex h-12 xl:h-[clamp(56px,4.1vw,88px)] items-center justify-center">
+                <span className="absolute left-1/2 top-1/2 hidden h-24 xl:h-[clamp(96px,7.2vw,146px)] w-[2px] -translate-x-1/2 -translate-y-1/2 bg-gold/70 xl:block" />
+                <div className="relative h-12 w-12 xl:h-[clamp(56px,4.1vw,88px)] xl:w-[clamp(56px,4.1vw,88px)] rounded-full bg-gold flex items-center justify-center">
+                  <span className="text-[14px] lg:text-[16px] xl:text-[clamp(16px,1.05vw,22px)] font-bold text-navy">
+                    VS
+                  </span>
                 </div>
               </div>
             </div>

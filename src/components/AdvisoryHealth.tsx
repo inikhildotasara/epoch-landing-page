@@ -22,7 +22,7 @@ export function AdvisoryHealth() {
               squeeze the headshot into a narrow strip on mid-size screens */}
           <img
             src="/images/prof Ajay.png"
-            alt="Prof. Ajai Shukla"
+            alt="Prof. (Dr.) Ajai Shukla"
             className="w-full h-56 sm:h-auto sm:aspect-[4/5] sm:w-[190px] lg:w-[210px] xl:w-[180px] 2xl:w-[220px] sm:self-start shrink-0 rounded-lg object-cover object-top"
           />
           <div className="flex flex-col">
@@ -32,16 +32,16 @@ export function AdvisoryHealth() {
               Guided by Distinguished Academic Leaders
             </h3>
             <p className="mt-3 text-[16px] lg:text-[18px] font-semibold text-navy">
-              Prof. Ajai Shukla
+              Prof. (Dr.) Ajai Shukla
             </p>
             <p className="mt-1 text-[12px] lg:text-[13px] text-slate-500">
-              Director of Education
+              Director of Education, Epoch Olympiad Foundation
             </p>
             <p className="text-[12px] lg:text-[13px] text-slate-500">
-              Former IIT Kanpur &nbsp;•&nbsp; BITS Pilani &nbsp;•
+              Former Research Scholar @IIT Kanpur &nbsp;•&nbsp; BITS Pilani &nbsp;•
             </p>
             <p className="text-[12px] lg:text-[13px] text-slate-500">
-              University of Alberta, Canada
+              University of Alberta, Edmonton, Canada
             </p>
             <p className="mt-3 text-[12.5px] lg:text-[14px] leading-relaxed text-slate-600">
               We are building one of India&apos;s most respected academic
@@ -91,7 +91,7 @@ export function AdvisoryHealth() {
             />
 
             <a
-              href="#"
+              href="/academic-health-report"
               className="mt-6 inline-flex items-center gap-1.5 rounded-md bg-gold px-4 py-2.5 lg:px-5 lg:py-3 text-[12.5px] lg:text-[14px] font-semibold text-navy hover:bg-gold-dark transition-colors"
             >
               Explore Academic Health Report

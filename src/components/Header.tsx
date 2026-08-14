@@ -4,19 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 
-// Set to `true` at launch to expose the internal pages in the nav again.
-// While `false`, nav links don't navigate anywhere (pages stay live and are
-// still reachable by their direct URL, e.g. /about, /research, /initiatives).
-const SHOW_PAGE_LINKS = false;
-
 const navItems: { label: string; href: string }[] = [
   { label: "About Foundation", href: "/about" },
   { label: "Research", href: "/research" },
   { label: "Our Initiatives", href: "/initiatives" },
-  { label: "Advisory Board", href: "#" },
+  { label: "Advisory Board", href: "/advisory-board" },
   { label: "School Registration", href: "#" },
   { label: "Student's Login", href: "#" },
-].map((item) => ({ ...item, href: SHOW_PAGE_LINKS ? item.href : "#" }));
+];
 
 const PHONE_NUMBER = "9807714979";
 const WHATSAPP_HREF = `https://wa.me/91${PHONE_NUMBER}`;

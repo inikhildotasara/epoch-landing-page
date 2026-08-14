@@ -50,9 +50,15 @@ export function Insights() {
           </a>
         </div>
 
-        <div className="mt-8 lg:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 lg:gap-6">
+        {/* Six across only from xl. At 1024 the page gutter leaves ~850px, which
+            split six ways gave 120px cards — too narrow to read. */}
+        <div className="mt-8 lg:mt-12 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-5 lg:gap-6">
           {articles.map((a, i) => (
-            <Reveal key={a.title} delay={i * 80} className="group">
+            <Reveal
+              key={a.title}
+              delay={i * 80}
+              className="group flex h-full flex-col"
+            >
               <div className="h-28 lg:h-36 xl:h-44 rounded-lg overflow-hidden bg-slate-100">
                 <img
                   src={a.img}
@@ -60,12 +66,14 @@ export function Insights() {
                   className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <h3 className="mt-3 text-[12.5px] lg:text-[14px] xl:text-[16px] font-semibold text-navy leading-snug min-h-[48px] lg:min-h-[52px]">
+              <h3 className="mt-3 text-[12.5px] lg:text-[15px] xl:text-[16px] font-semibold text-navy leading-snug">
                 {a.title}
               </h3>
+              {/* mt-auto pins the link to the card foot so it stays level across
+                  a row whether the title runs to one line or three. */}
               <a
                 href="#"
-                className="mt-1 inline-flex items-center gap-1 text-[11.5px] lg:text-[13px] font-semibold text-gold-dark hover:text-navy transition-colors"
+                className="mt-auto w-fit pt-2 inline-flex items-center gap-1 text-[11.5px] lg:text-[13px] font-semibold text-gold-dark hover:text-navy transition-colors"
               >
                 Read More
                 <ArrowRight className="h-3.5 w-3.5" />

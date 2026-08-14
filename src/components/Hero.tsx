@@ -45,7 +45,7 @@ export function Hero() {
               Explore Our Research
             </a>
             <a
-              href="#"
+              href="/academic-health-report"
               className="inline-flex h-[46px] lg:h-[38px] xl:h-[52px] 2xl:min-w-[15rem] items-center justify-center whitespace-nowrap rounded-md border border-white/25 bg-white/5 px-3.5 lg:px-2.5 xl:px-5 2xl:px-6 text-[13px] lg:text-[11.5px] xl:text-[14px] 2xl:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
             >
               Academic Health Report

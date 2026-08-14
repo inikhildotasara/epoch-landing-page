@@ -20,7 +20,7 @@ export function ResearchClosing() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="#"
+              href="/academic-health-report"
               className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-3 text-[14px] font-semibold text-navy transition-colors hover:bg-gold-dark sm:w-auto"
             >
               Explore Academic Health Report

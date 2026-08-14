@@ -1,10 +1,9 @@
-import { BrainIcon, AnalyticsIcon, ArrowRight } from "./icons";
+import { ArrowRight } from "./icons";
 import { Reveal } from "./Reveal";
 
 const cards = [
   {
     img: "/images/card-olympiad.png",
-    icon: null,
     title: "Epoch Olympiad",
     subtitle: "International Olympiads (Classes 1–10)",
     desc: "Research-based international assessments designed to evaluate conceptual understanding, analytical reasoning, scientific thinking, and academic excellence.",
@@ -12,7 +11,6 @@ const cards = [
   },
   {
     img: "/images/card-brainiac.png",
-    icon: <BrainIcon className="h-6 w-6 lg:h-7 lg:w-7 text-navy" />,
     title: "Brainiac Global",
     subtitle: "International Brain Booster Olympiads (Kindergarten)",
     desc: "Building cognitive foundations during the most critical years of brain development through age-appropriate assessments.",
@@ -20,7 +18,6 @@ const cards = [
   },
   {
     img: "/images/card-ccbee.png",
-    icon: <AnalyticsIcon className="h-6 w-6 lg:h-7 lg:w-7 text-navy" />,
     title: "MY CCBee",
     subtitle: "Performance Tracker & Booster Platform",
     desc: "AI-assisted academic analytics, progress tracking, diagnostic insights, and personalized improvement plans.",
@@ -82,11 +79,6 @@ export function Initiatives() {
                   />
                 ) : (
                   <DashboardMock />
-                )}
-                {c.icon && (
-                  <div className="absolute top-3 right-3 h-11 w-11 lg:h-12 lg:w-12 rounded-full bg-cream border border-gold/40 flex items-center justify-center shadow-sm">
-                    {c.icon}
-                  </div>
                 )}
               </div>
               <div className="p-5 lg:p-6">

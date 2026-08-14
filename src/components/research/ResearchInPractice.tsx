@@ -63,7 +63,7 @@ export function ResearchInPractice() {
                 </p>
               </div>
               <a
-                href="#"
+                href="/academic-health-report"
                 className="mt-6 inline-flex items-center gap-2 rounded-md bg-gold px-5 py-3 text-[13px] font-semibold text-navy transition-colors hover:bg-gold-dark lg:text-[14px]"
               >
                 Explore Academic Health Report

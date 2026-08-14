@@ -35,8 +35,8 @@ export function AcademicLeadership() {
                   Epoch Olympiad Foundation
                 </p>
                 <p className="mt-2.5 text-[11.5px] text-slate-500 lg:text-[12.5px]">
-                  Former IIT Kanpur &nbsp;•&nbsp; BITS Pilani &nbsp;•&nbsp;
-                  University of Alberta, Canada
+                  Former Research Scholar @IIT Kanpur &nbsp;•&nbsp; BITS Pilani
+                  &nbsp;•&nbsp; University of Alberta, Edmonton, Canada
                 </p>
 
                 <span className="mt-4 block h-px w-full max-w-[560px] bg-slate-200 lg:mt-5" />
