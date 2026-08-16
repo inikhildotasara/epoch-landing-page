@@ -104,7 +104,7 @@ export function InitiativeOlympiad() {
               </div>
 
               <a
-                href="#"
+                href="/initiatives/epoch-olympiad"
                 className="mt-6 inline-flex items-center gap-2 rounded-md bg-navy px-5 py-2.5 text-[13px] font-semibold text-white transition-colors hover:bg-navy-600"
               >
                 Explore All Exams <ArrowRight className="h-4 w-4" />
@@ -114,6 +114,7 @@ export function InitiativeOlympiad() {
             {/* Achievers + FAQ rail */}
             <AchieversRail
               accent={NAVY}
+              faqHref="/initiatives/epoch-olympiad#faq"
               className="lg:col-start-1 lg:row-start-2 lg:self-start xl:col-start-3 xl:row-start-1 xl:self-stretch xl:justify-between xl:border-l xl:border-slate-200 xl:pl-6"
               gallery={
                 <img

@@ -31,13 +31,22 @@ const faqs = [
   },
 ];
 
-function FaqRow({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
+function FaqRow({
+  q,
+  a,
+  open,
+  onToggle,
+}: {
+  q: string;
+  a: string;
+  open: boolean;
+  onToggle: () => void;
+}) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white">
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={onToggle}
         aria-expanded={open}
         className="flex w-full items-center justify-between gap-3 px-4 py-3.5 text-left lg:px-5"
       >
@@ -72,7 +81,13 @@ function FaqRow({ q, a }: { q: string; a: string }) {
   );
 }
 
+const half = Math.ceil(faqs.length / 2);
+const columns = [faqs.slice(0, half), faqs.slice(half)];
+
 export function ReportFaq() {
+  // Single open row at a time, so the two columns never jump around together.
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className="border-t border-slate-100 bg-[#f9fafc]">
       <div className="mx-auto w-full px-4 py-12 sm:px-6 md:px-12 lg:px-page lg:py-16">
@@ -84,11 +99,25 @@ export function ReportFaq() {
           />
         </Reveal>
 
-        <div className="mx-auto mt-9 grid max-w-5xl grid-cols-1 gap-3 lg:mt-12 lg:grid-cols-2 lg:gap-4">
-          {faqs.map((f, i) => (
-            <Reveal key={f.q} delay={(i % 2) * 90}>
-              <FaqRow q={f.q} a={f.a} />
-            </Reveal>
+        {/* Two independent stacks rather than a 2-col grid: an open answer then
+            only pushes the cards under it, instead of stretching its row. */}
+        <div className="mx-auto mt-9 grid max-w-5xl grid-cols-1 items-start gap-3 lg:mt-12 lg:grid-cols-2 lg:gap-4">
+          {columns.map((col, ci) => (
+            <div key={ci} className="flex flex-col gap-3 lg:gap-4">
+              {col.map((f, ri) => {
+                const i = ci * half + ri;
+                return (
+                  <Reveal key={f.q} delay={ci * 90}>
+                    <FaqRow
+                      q={f.q}
+                      a={f.a}
+                      open={openIndex === i}
+                      onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                    />
+                  </Reveal>
+                );
+              })}
+            </div>
           ))}
         </div>
       </div>

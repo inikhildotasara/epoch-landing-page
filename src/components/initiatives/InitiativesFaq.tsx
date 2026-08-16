@@ -31,13 +31,22 @@ const faqs = [
   },
 ];
 
-function FaqRow({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
+function FaqRow({
+  q,
+  a,
+  open,
+  onToggle,
+}: {
+  q: string;
+  a: string;
+  open: boolean;
+  onToggle: () => void;
+}) {
   return (
     <div className="rounded-xl border border-white/12 bg-white/5">
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={onToggle}
         aria-expanded={open}
         className="flex w-full items-center justify-between gap-3 px-4 py-3.5 text-left"
       >
@@ -71,7 +80,13 @@ function FaqRow({ q, a }: { q: string; a: string }) {
   );
 }
 
+const half = Math.ceil(faqs.length / 2);
+const columns = [faqs.slice(0, half), faqs.slice(half)];
+
 export function InitiativesFaq() {
+  // Single open row at a time, so the two columns never jump around together.
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className="bg-navy" style={{ backgroundColor: "#0b1c3f" }}>
       <div className="mx-auto grid w-full grid-cols-1 items-start gap-10 px-4 py-14 sm:px-6 md:px-12 lg:grid-cols-[1.7fr_1fr] lg:gap-14 lg:px-page lg:py-16">
@@ -85,9 +100,24 @@ export function InitiativesFaq() {
               Frequently Asked
             </h2>
           </div>
-          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {faqs.map((f) => (
-              <FaqRow key={f.q} q={f.q} a={f.a} />
+          {/* Two independent stacks rather than a 2-col grid: an open answer then
+              only pushes the cards under it, instead of stretching its row. */}
+          <div className="mt-6 grid grid-cols-1 items-start gap-3 sm:grid-cols-2">
+            {columns.map((col, ci) => (
+              <div key={ci} className="flex flex-col gap-3">
+                {col.map((f, ri) => {
+                  const i = ci * half + ri;
+                  return (
+                    <FaqRow
+                      key={f.q}
+                      q={f.q}
+                      a={f.a}
+                      open={openIndex === i}
+                      onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                    />
+                  );
+                })}
+              </div>
             ))}
           </div>
         </Reveal>

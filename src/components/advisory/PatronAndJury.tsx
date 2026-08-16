@@ -5,18 +5,21 @@ import {
   LaurelBranch,
 } from "./decor";
 
-/* Every member photo intentionally points at the same asset — swap in the
-   individual portraits here when they are supplied. */
-const PORTRAIT = "/images/prof Ajay.png";
+/* Members fall back to this stand-in until their own portrait is supplied. */
+const PORTRAIT = "/images/advisors/prof-ajai-shukla.webp";
 
-const juryMembers = [
+type JuryMember = { name: string; photo?: string; body: string };
+
+const juryMembers: JuryMember[] = [
   {
     name: "Prof. (Dr.) Anil Kumar",
+    photo: "/images/advisors/prof-anil-kumar.webp",
     body: "Accomplished academic leader with extensive experience in higher education and academic assessment.",
   },
   {
-    name: "Prof. S. V. Rao",
-    body: "Former Professor, IIT Bombay. Expert in engineering education and curriculum development.",
+    name: "Prof. Keshav Kant",
+    photo: "/images/advisors/prof-keshav-kant.webp",
+    body: "Distinguished academic with extensive experience in teaching, evaluation and academic assessment.",
   },
   {
     name: "Dr. Meena Kapoor",
@@ -84,14 +87,14 @@ function JuryPanel() {
         </div>
 
         <div className="mt-5 grid flex-1 grid-cols-1 gap-3.5 sm:grid-cols-3 sm:gap-3 lg:mt-6 lg:gap-4">
-          {juryMembers.map(({ name, body }) => (
+          {juryMembers.map(({ name, photo, body }) => (
             <article
               key={name}
               className="flex flex-col rounded-lg border border-[#eee7d8] bg-white p-3 text-center lg:p-3.5"
             >
               <div className="aspect-square w-full overflow-hidden rounded-md bg-slate-100">
                 <img
-                  src={PORTRAIT}
+                  src={photo ?? PORTRAIT}
                   alt={name}
                   loading="lazy"
                   decoding="async"

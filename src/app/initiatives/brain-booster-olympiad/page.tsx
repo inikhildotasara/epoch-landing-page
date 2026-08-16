@@ -1,0 +1,34 @@
+import type { Metadata } from "next";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { BrainBoosterHero } from "@/components/brain-booster/BrainBoosterHero";
+import { ThinkingFlow } from "@/components/brain-booster/ThinkingFlow";
+import { QuickFacts } from "@/components/brain-booster/QuickFacts";
+import { DirectorMessage } from "@/components/brain-booster/DirectorMessage";
+import { ParticipateAwardsPrepare } from "@/components/brain-booster/ParticipateAwardsPrepare";
+import { AchieversAndFaq } from "@/components/brain-booster/AchieversAndFaq";
+import { InitiativeCTA } from "@/components/InitiativeCTA";
+
+export const metadata: Metadata = {
+  title: "International Brain Booster Olympiad | Epoch Olympiad Foundation",
+  description:
+    "A joyful, age-appropriate cognitive assessment for kindergarten and early learners. Brain Booster Olympiad looks at how young children observe, recognise patterns, connect ideas, reason and explore simple problems.",
+};
+
+export default function BrainBoosterOlympiadPage() {
+  return (
+    <>
+      <Header />
+      <main>
+        <BrainBoosterHero />
+        <ThinkingFlow />
+        <QuickFacts />
+        <DirectorMessage />
+        <ParticipateAwardsPrepare />
+        <AchieversAndFaq />
+        <InitiativeCTA />
+      </main>
+      <Footer />
+    </>
+  );
+}

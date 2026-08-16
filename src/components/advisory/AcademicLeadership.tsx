@@ -17,7 +17,7 @@ export function AcademicLeadership() {
               <div className="w-full shrink-0 sm:w-[34%] sm:max-w-[280px]">
                 <div className="aspect-square w-full overflow-hidden rounded-lg bg-slate-100 ring-1 ring-black/5">
                   <img
-                    src="/images/prof Ajay.png"
+                    src="/images/advisors/prof-ajai-shukla.webp"
                     alt="Prof. (Dr.) Ajai Shukla"
                     className="h-full w-full object-cover"
                   />

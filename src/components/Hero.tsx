@@ -1,3 +1,5 @@
+import { HeroThoughts } from "./HeroThoughts";
+
 export function Hero() {
   return (
     <section
@@ -8,12 +10,17 @@ export function Hero() {
           section navy instead of reading as a pasted-in panel. The artwork keeps wide
           empty margins on both sides: object-cover then fills the section height at
           every width and only ever crops that empty space, never the boy or brain. */}
-      <img
-        src="/images/hero-brain.webp"
-        alt="Child thinking, with a glowing neural network brain above him"
-        style={{ animationDelay: "120ms" }}
-        className="hero-fade hidden lg:block absolute bottom-0 right-0 h-full w-[44%] xl:w-[48%] 2xl:w-[46%] object-cover object-bottom"
-      />
+      {/* container-type: size gives the thought labels inside a height to anchor
+          to, so they follow the brain instead of drifting with the viewport. */}
+      <div className="hidden lg:block absolute bottom-0 right-0 h-full w-[44%] xl:w-[48%] 2xl:w-[46%] [container-type:size]">
+        <img
+          src="/images/hero-brain.webp"
+          alt="Child thinking, with a glowing neural network brain above him"
+          style={{ animationDelay: "120ms" }}
+          className="hero-fade h-full w-full object-cover object-bottom"
+        />
+        <HeroThoughts />
+      </div>
 
       <div className="relative mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-8 md:py-12 lg:py-10 xl:py-16">
         {/* Left text block */}
@@ -39,7 +46,7 @@ export function Hero() {
               to run wider than the text block so they still fit at 1024. */}
           <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-2.5 lg:gap-3 xl:gap-3.5 lg:max-w-[62%] xl:max-w-[66%] 2xl:flex 2xl:flex-wrap 2xl:items-center 2xl:max-w-none">
             <a
-              href="#"
+              href="/research"
               className="inline-flex h-[46px] lg:h-[38px] xl:h-[52px] 2xl:min-w-[15rem] items-center justify-center whitespace-nowrap rounded-md bg-gold px-3.5 lg:px-2.5 xl:px-5 2xl:px-6 text-[13px] lg:text-[11.5px] xl:text-[14px] 2xl:text-[15px] font-semibold text-navy hover:bg-gold-dark transition-colors"
             >
               Explore Our Research
@@ -71,11 +78,14 @@ export function Hero() {
         {/* Stacked image for mobile & tablet — full-bleed so it blends into the
             navy background and sits flush with the bottom of the section */}
         <div className="mt-8 -mx-4 -mb-8 sm:-mx-6 md:-mx-12 md:-mb-12 lg:hidden">
-          <img
-            src="/images/hero-brain.webp"
-            alt="Child thinking, with a glowing neural network brain above him"
-            className="w-full aspect-[16/11] object-cover object-bottom"
-          />
+          <div className="relative aspect-[16/11] w-full [container-type:size]">
+            <img
+              src="/images/hero-brain.webp"
+              alt="Child thinking, with a glowing neural network brain above him"
+              className="absolute inset-0 h-full w-full object-cover object-bottom"
+            />
+            <HeroThoughts />
+          </div>
         </div>
       </div>
     </section>

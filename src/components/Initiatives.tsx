@@ -8,6 +8,7 @@ const cards = [
     subtitle: "International Olympiads (Classes 1–10)",
     desc: "Research-based international assessments designed to evaluate conceptual understanding, analytical reasoning, scientific thinking, and academic excellence.",
     cta: "Explore",
+    href: "/initiatives/epoch-olympiad",
   },
   {
     img: "/images/card-brainiac.png",
@@ -15,6 +16,7 @@ const cards = [
     subtitle: "International Brain Booster Olympiads (Kindergarten)",
     desc: "Building cognitive foundations during the most critical years of brain development through age-appropriate assessments.",
     cta: "Learn More",
+    href: "/initiatives/brain-booster-olympiad",
   },
   {
     img: "/images/card-ccbee.png",
@@ -22,6 +24,7 @@ const cards = [
     subtitle: "Performance Tracker & Booster Platform",
     desc: "AI-assisted academic analytics, progress tracking, diagnostic insights, and personalized improvement plans.",
     cta: "Explore Platform",
+    href: "/initiatives/my-ccbee",
   },
 ];
 
@@ -67,8 +70,9 @@ export function Initiatives() {
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((c, i) => (
             <Reveal key={c.title} delay={i * 120}>
-            <div
-              className="h-full rounded-xl border border-slate-200 bg-white overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-[transform,box-shadow] duration-300"
+            <a
+              href={c.href}
+              className="group block h-full rounded-xl border border-slate-200 bg-white overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-[transform,box-shadow] duration-300"
             >
               <div className="relative h-44 lg:h-52 bg-slate-100">
                 {c.img ? (
@@ -91,15 +95,12 @@ export function Initiatives() {
                 <p className="mt-3 text-[13px] lg:text-[15px] xl:text-[16px] leading-relaxed xl:leading-7 text-slate-600">
                   {c.desc}
                 </p>
-                <a
-                  href="#"
-                  className="mt-4 xl:mt-5 inline-flex items-center gap-1.5 text-[13px] lg:text-[15px] xl:text-[16px] font-semibold text-navy hover:text-gold-dark transition-colors"
-                >
+                <span className="mt-4 xl:mt-5 inline-flex items-center gap-1.5 text-[13px] lg:text-[15px] xl:text-[16px] font-semibold text-navy transition-colors group-hover:text-gold-dark">
                   {c.cta}
                   <ArrowRight className="h-4 w-4" />
-                </a>
+                </span>
               </div>
-            </div>
+            </a>
             </Reveal>
           ))}
         </div>

@@ -352,6 +352,96 @@ export const PlayIcon = (p: IconProps) => (
   </svg>
 );
 
+export const GroupIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <circle cx="12" cy="8.4" r="2.6" />
+    <path d="M7.6 16.6a4.5 4.5 0 0 1 8.8 0" />
+    <circle cx="4.9" cy="10.8" r="1.9" />
+    <path d="M1.8 17a3.3 3.3 0 0 1 4.3-2.6" />
+    <circle cx="19.1" cy="10.8" r="1.9" />
+    <path d="M22.2 17a3.3 3.3 0 0 0-4.3-2.6" />
+  </svg>
+);
+
+export const CalendarIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <rect x="3.4" y="5.4" width="17.2" height="15.2" rx="2.2" />
+    <path d="M3.4 10h17.2M8.4 3.6v3.4M15.6 3.6v3.4" />
+    <path d="M7.4 13.4h2M11 13.4h2M14.6 13.4h2M7.4 16.8h2M11 16.8h2" />
+  </svg>
+);
+
+export const CalendarCheckIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <rect x="3.4" y="5.4" width="17.2" height="15.2" rx="2.2" />
+    <path d="M3.4 10h17.2M8.4 3.6v3.4M15.6 3.6v3.4" />
+    <path d="m8.6 15.2 2.3 2.3 4.5-4.5" />
+  </svg>
+);
+
+export const ChatIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M20.4 12.4c0 3.7-3.8 6.6-8.4 6.6a10 10 0 0 1-2.6-.3L5 20.4l1.2-3.1a6.3 6.3 0 0 1-2.6-4.9C3.6 8.7 7.4 5.8 12 5.8s8.4 2.9 8.4 6.6Z" />
+    <path d="M9 11.6h6M9 14.4h3.6" />
+  </svg>
+);
+
+export const HelpBubbleIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M20.4 12.4c0 3.7-3.8 6.6-8.4 6.6a10 10 0 0 1-2.6-.3L5 20.4l1.2-3.1a6.3 6.3 0 0 1-2.6-4.9C3.6 8.7 7.4 5.8 12 5.8s8.4 2.9 8.4 6.6Z" />
+    <path d="M10.3 10.6a1.9 1.9 0 0 1 3.7.5c0 1.2-1.8 1.4-1.8 2.6" />
+    <circle cx="12.2" cy="15.9" r="0.7" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+export const CakeIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M4.4 20.4h15.2v-4a2.4 2.4 0 0 0-2.4-2.4H6.8a2.4 2.4 0 0 0-2.4 2.4v4Z" />
+    <path d="M4.4 17.4c1.9 1.3 3.8 1.3 5.7 0 1.9 1.3 3.8 1.3 5.7 0M8.4 11.4V9.2M12 11.4V8.6M15.6 11.4V9.2" />
+    <path d="M8.4 6.6a.9.9 0 1 1 0 1.3M12 5.8a.9.9 0 1 1 0 1.4M15.6 6.6a.9.9 0 1 1 0 1.3" />
+  </svg>
+);
+
+export const GridIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <rect x="4" y="4" width="6.6" height="6.6" rx="1.6" />
+    <rect x="13.4" y="4" width="6.6" height="6.6" rx="1.6" />
+    <rect x="4" y="13.4" width="6.6" height="6.6" rx="1.6" />
+    <rect x="13.4" y="13.4" width="6.6" height="6.6" rx="1.6" />
+  </svg>
+);
+
+export const RocketIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M13.6 4.2c2.6-1.3 5.2-1.4 6.2-1.3.1 1-.1 3.6-1.4 6.2a14 14 0 0 1-4 5l-3.4 1.1L9.4 12a14 14 0 0 1 4.2-7.8Z" />
+    <circle cx="15.4" cy="8.6" r="1.5" />
+    <path d="M9.4 12 6 12.8l-.9 3.4 3.3-.7M11 15.2l.8 3.4 3.3-1v-3.3" />
+    <path d="M7.4 16.6c-1 1-1.4 3.4-1.4 3.4s2.4-.4 3.4-1.4" />
+  </svg>
+);
+
+export const FlagIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M6.6 21V3.8" />
+    <path d="M6.6 4.6h10.6l-2 3.8 2 3.8H6.6z" />
+  </svg>
+);
+
+export const PinIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M12 20.8c4.1-5 6.2-8.4 6.2-10.9a6.2 6.2 0 1 0-12.4 0c0 2.5 2.1 5.9 6.2 10.9Z" />
+    <circle cx="12" cy="9.9" r="2.2" />
+  </svg>
+);
+
+export const MedalIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <circle cx="12" cy="9.6" r="5.2" />
+    <path d="m12 7.2 1 2 2.2.3-1.6 1.5.4 2.2-2-1.1-2 1.1.4-2.2-1.6-1.5 2.2-.3z" />
+    <path d="M8.6 14.6 6.9 21l3.3-1.7L12 21l1.8-1.7L17.1 21l-1.7-6.4" />
+  </svg>
+);
+
 export const ArrowRight = (p: IconProps) => (
   <svg {...base(p)}>
     <path d="M5 12h14M13 6l6 6-6 6" />

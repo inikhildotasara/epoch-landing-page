@@ -10,6 +10,7 @@ const apps: {
   color: string;
   title: string;
   desc: string;
+  href: string;
 }[] = [
   {
     img: "/images/card-brainiac.png",
@@ -17,6 +18,7 @@ const apps: {
     color: "#16a34a",
     title: "Brainiac Global",
     desc: "Research-driven cognitive assessment for kindergarten learners, focusing on foundational thinking and learning abilities.",
+    href: "/initiatives/brain-booster-olympiad",
   },
   {
     img: "/images/card-olympiad.png",
@@ -24,6 +26,7 @@ const apps: {
     color: "#1b3566",
     title: "Epoch International Olympiads",
     desc: "Research-based assessments for Classes 1–10 designed to evaluate conceptual understanding, reasoning and academic thinking.",
+    href: "/initiatives/epoch-olympiad",
   },
   {
     img: "/images/card-ccbee.png",
@@ -31,6 +34,7 @@ const apps: {
     color: "#e8862e",
     title: "MY CCBee",
     desc: "A performance tracking and booster platform that helps convert assessment data into ongoing learner insights and improvement pathways.",
+    href: "/initiatives/my-ccbee",
   },
 ];
 
@@ -48,7 +52,11 @@ export function ApplicationsVideo() {
             {apps.map((a) => {
               const Icon = a.icon;
               return (
-                <div key={a.title} className="flex gap-4 rounded-xl bg-white p-3 shadow-[0_1px_10px_rgba(15,28,63,0.05)]">
+                <a
+                  key={a.title}
+                  href={a.href}
+                  className="flex gap-4 rounded-xl bg-white p-3 shadow-[0_1px_10px_rgba(15,28,63,0.05)] transition-shadow hover:shadow-[0_4px_16px_rgba(15,28,63,0.12)]"
+                >
                   <img
                     src={a.img}
                     alt={a.title}
@@ -65,7 +73,7 @@ export function ApplicationsVideo() {
                       {a.desc}
                     </p>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>

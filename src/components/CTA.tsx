@@ -19,7 +19,7 @@ export function CTA() {
             Partner With Us
           </a>
           <a
-            href="#"
+            href="/advisory-board"
             className="rounded-md border border-white/25 bg-white/5 px-6 lg:px-7 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
           >
             Become an Advisor

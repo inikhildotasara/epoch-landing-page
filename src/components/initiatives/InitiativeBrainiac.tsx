@@ -103,7 +103,7 @@ export function InitiativeBrainiac() {
                     patterns, spatial skills and early problem-solving abilities.
                   </p>
                   <a
-                    href="#"
+                    href="/initiatives/brain-booster-olympiad"
                     className="mt-4 inline-flex items-center gap-2 rounded-md bg-navy px-4 py-2.5 text-[13px] font-semibold text-white transition-colors hover:bg-navy-600"
                   >
                     Explore Exam Details <ArrowRight className="h-4 w-4" />
@@ -141,6 +141,8 @@ export function InitiativeBrainiac() {
             {/* Achievers + FAQ rail */}
             <AchieversRail
               accent={PURPLE}
+              galleryHref="/initiatives/brain-booster-olympiad#achievers"
+              faqHref="/initiatives/brain-booster-olympiad#faq"
               className="lg:col-start-1 lg:row-start-2 lg:self-start xl:col-start-3 xl:row-start-1 xl:self-stretch xl:justify-between xl:border-l xl:border-slate-200 xl:pl-6 2xl:col-start-4 2xl:row-start-1"
               gallery={
                 <img

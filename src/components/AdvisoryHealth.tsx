@@ -21,7 +21,7 @@ export function AdvisoryHealth() {
           {/* Portrait frame rather than stretching to the card height, which used to
               squeeze the headshot into a narrow strip on mid-size screens */}
           <img
-            src="/images/prof Ajay.png"
+            src="/images/advisors/prof-ajai-shukla.webp"
             alt="Prof. (Dr.) Ajai Shukla"
             className="w-full h-56 sm:h-auto sm:aspect-[4/5] sm:w-[190px] lg:w-[210px] xl:w-[180px] 2xl:w-[220px] sm:self-start shrink-0 rounded-lg object-cover object-top"
           />
@@ -49,7 +49,7 @@ export function AdvisoryHealth() {
               researchers.
             </p>
             <a
-              href="#"
+              href="/advisory-board"
               className="mt-auto pt-4 inline-flex w-fit items-center gap-1.5 rounded-md bg-gold px-4 py-2.5 lg:px-5 lg:py-3 text-[12.5px] lg:text-[14px] font-semibold text-navy hover:bg-gold-dark transition-colors"
             >
               View Advisory Board

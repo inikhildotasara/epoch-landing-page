@@ -8,7 +8,7 @@ export function FounderMessage() {
         <Reveal className="relative flex flex-col items-start gap-5 md:pr-8 lg:pr-10 xl:flex-row xl:items-center xl:gap-6">
           <div className="relative shrink-0">
             <img
-              src="/images/founder-deepak.png"
+              src="/images/advisors/deepak-gupto.webp"
               alt="Mr. Deepak Gupto, Founder & Managing Director"
               className="aspect-[5/6] w-[190px] rounded-2xl object-cover object-top shadow-xl sm:w-[210px] lg:w-[230px]"
             />

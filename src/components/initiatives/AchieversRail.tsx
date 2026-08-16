@@ -17,13 +17,18 @@ function FaqBadge({ color }: { color: string }) {
   );
 }
 
+/* galleryHref is left out where the initiative has no gallery section to jump to. */
 export function AchieversRail({
   accent,
   gallery,
+  galleryHref = "#",
+  faqHref,
   className = "",
 }: {
   accent: string;
   gallery: ReactNode;
+  galleryHref?: string;
+  faqHref: string;
   className?: string;
 }) {
   return (
@@ -47,7 +52,7 @@ export function AchieversRail({
           {gallery}
         </div>
         <a
-          href="#"
+          href={galleryHref}
           className="mt-3 ml-11 inline-flex items-center gap-1.5 text-[13px] font-semibold transition-opacity hover:opacity-80"
           style={{ color: accent }}
         >
@@ -65,7 +70,7 @@ export function AchieversRail({
               FAQ
             </h4>
             <a
-              href="#"
+              href={faqHref}
               className="mt-1 inline-flex items-center gap-1.5 text-[13px] font-semibold transition-opacity hover:opacity-80"
               style={{ color: accent }}
             >

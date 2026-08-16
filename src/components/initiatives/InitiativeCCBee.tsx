@@ -127,7 +127,7 @@ export function InitiativeCCBee() {
               </div>
 
               <a
-                href="#"
+                href="/initiatives/my-ccbee"
                 className="mt-6 inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: ORANGE }}
               >
@@ -138,6 +138,7 @@ export function InitiativeCCBee() {
             {/* Achievers + FAQ rail */}
             <AchieversRail
               accent={ORANGE}
+              faqHref="/initiatives/my-ccbee#faq"
               className="lg:col-start-1 lg:row-start-2 lg:self-start xl:col-start-3 xl:row-start-1 xl:self-stretch xl:justify-between xl:border-l xl:border-slate-200 xl:pl-6"
               gallery={<GrowthGraphic />}
             />

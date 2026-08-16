@@ -6,10 +6,13 @@ export function Reveal({
   children,
   className = "",
   delay = 0,
+  id,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  /* Set when the revealed block is also an anchor target. */
+  id?: string;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [shown, setShown] = useState(false);
@@ -39,6 +42,7 @@ export function Reveal({
   return (
     <div
       ref={ref}
+      id={id}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
       className={`reveal${shown ? " reveal-in" : ""} ${className}`}
     >

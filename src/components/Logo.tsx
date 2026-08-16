@@ -1,15 +1,7 @@
 import Link from "next/link";
 
-export function LogoMark({ className = "h-14 w-14" }: { className?: string }) {
-  return (
-    <img
-      src="/images/logo.png"
-      alt="Epoch Olympiad Foundation logo"
-      className={`${className} object-contain`}
-    />
-  );
-}
-
+/* The wordmark is part of the artwork, so navy backgrounds need the variant with
+   white lettering — the brand purple is unreadable there. */
 export function Logo({
   dark = false,
   className = "",
@@ -21,23 +13,13 @@ export function Logo({
     <Link
       href="/"
       aria-label="Epoch Olympiad Foundation — home"
-      className={`flex items-center gap-2.5 ${className}`}
+      className={`inline-flex shrink-0 items-center ${className}`}
     >
-      <LogoMark />
-      <div
-        className={`font-serif leading-[1.05] ${
-          dark ? "text-white" : "text-navy"
-        }`}
-      >
-        <div className="font-bold tracking-tight text-[20px]">EPOCH</div>
-        <div className="font-semibold tracking-tight text-[14px]">OLYMPIAD</div>
-        <div className="font-semibold tracking-tight text-[12.5px]">
-          FOUNDATION
-        </div>
-        <div className="font-sans text-[9px] font-semibold tracking-wide text-gold mt-0.5">
-          Research Foundation
-        </div>
-      </div>
+      <img
+        src={dark ? "/images/logo-full-dark.webp" : "/images/logo-full.webp"}
+        alt=""
+        className="h-[54px] w-auto lg:h-[64px]"
+      />
     </Link>
   );
 }

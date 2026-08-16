@@ -3,7 +3,7 @@ import { AdvisorySectionHeading, ByInvitationBadge } from "./decor";
 
 /* Every member photo intentionally points at the same asset — swap in the
    individual portraits here when they are supplied. */
-const PORTRAIT = "/images/prof Ajay.png";
+const PORTRAIT = "/images/advisors/prof-ajai-shukla.webp";
 
 const ambassadors = [
   {

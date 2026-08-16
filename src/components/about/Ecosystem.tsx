@@ -19,6 +19,7 @@ const nodes: {
   title: string;
   sub: string;
   color: string;
+  href?: string;
 }[] = [
   {
     icon: LaurelGlobeIcon,
@@ -31,18 +32,21 @@ const nodes: {
     title: "Epoch Olympiad",
     sub: "International Olympiads (Classes 1–10)",
     color: "#1b3566",
+    href: "/initiatives/epoch-olympiad",
   },
   {
     icon: BrainIcon,
     title: "Brainiac Global",
     sub: "International Brain Booster Exams (Kindergarten)",
     color: "#2f9e5b",
+    href: "/initiatives/brain-booster-olympiad",
   },
   {
     icon: BarChartArrowIcon,
     title: "MY CCBee",
     sub: "Performance Tracker & Booster Platform",
     color: ORANGE,
+    href: "/initiatives/my-ccbee",
   },
 ];
 
@@ -51,17 +55,24 @@ function Box({
   title,
   sub,
   color,
+  href,
   className = "",
 }: {
   icon: IconType;
   title: string;
   sub: string;
   color: string;
+  href?: string;
   className?: string;
 }) {
+  /* The Foundation node has no page of its own, so it stays a plain box. */
+  const Tag = href ? "a" : "div";
   return (
-    <div
-      className={`flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white px-5 py-5 shadow-[0_2px_14px_rgba(15,28,63,0.06)] lg:px-6 lg:py-6 ${className}`}
+    <Tag
+      href={href}
+      className={`flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white px-5 py-5 shadow-[0_2px_14px_rgba(15,28,63,0.06)] transition-shadow lg:px-6 lg:py-6 ${
+        href ? "hover:shadow-[0_6px_22px_rgba(15,28,63,0.13)]" : ""
+      } ${className}`}
     >
       <Icon
         className="h-11 w-11 shrink-0 lg:h-[52px] lg:w-[52px]"
@@ -76,7 +87,7 @@ function Box({
           {sub}
         </p>
       </div>
-    </div>
+    </Tag>
   );
 }
 
@@ -96,6 +107,7 @@ const ahrProps = {
   title: "Academic Health Report",
   sub: "Data-driven insights for holistic academic growth and improvement",
   color: "#1b3566",
+  href: "/academic-health-report",
 } as const;
 
 export function Ecosystem() {
