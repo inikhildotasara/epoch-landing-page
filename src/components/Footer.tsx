@@ -62,10 +62,16 @@ export function Footer() {
         <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-slate-500">
           <p>© 2026 Epoch Olympiad Foundation. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-white transition-colors">
+            <a
+              href="/privacy-policy"
+              className="hover:text-white transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a
+              href="/terms-of-use"
+              className="hover:text-white transition-colors"
+            >
               Terms of Use
             </a>
           </div>
