@@ -442,6 +442,35 @@ export const MedalIcon = (p: IconProps) => (
   </svg>
 );
 
+export const LinkIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M10.2 13.8a3.4 3.4 0 0 0 4.8 0l3-3a3.4 3.4 0 0 0-4.8-4.8l-1.2 1.2" />
+    <path d="M13.8 10.2a3.4 3.4 0 0 0-4.8 0l-3 3a3.4 3.4 0 0 0 4.8 4.8l1.2-1.2" />
+  </svg>
+);
+
+export const CoinsIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <ellipse cx="12" cy="6.4" rx="6.4" ry="2.6" />
+    <path d="M5.6 6.4v4.3c0 1.4 2.9 2.6 6.4 2.6s6.4-1.2 6.4-2.6V6.4" />
+    <path d="M5.6 10.7v4.3c0 1.4 2.9 2.6 6.4 2.6s6.4-1.2 6.4-2.6v-4.3" />
+  </svg>
+);
+
+export const CursorClickIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M9 4.5 15.5 19l1.9-4.6 4.6-1.9L9 4.5Z" />
+    <path d="M4.5 9H2.8M6.4 6.4 5.2 5.2M9 4.5V2.8" />
+  </svg>
+);
+
+export const CompassIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="m15.4 8.6-2 4.8-4.8 2 2-4.8 4.8-2Z" />
+  </svg>
+);
+
 export const ArrowRight = (p: IconProps) => (
   <svg {...base(p)}>
     <path d="M5 12h14M13 6l6 6-6 6" />

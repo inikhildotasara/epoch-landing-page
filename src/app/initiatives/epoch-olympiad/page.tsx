@@ -9,6 +9,7 @@ import { AwardsBand } from "@/components/olympiad/AwardsBand";
 import { Voices } from "@/components/olympiad/Voices";
 import { OlympiadFaq } from "@/components/olympiad/OlympiadFaq";
 import { InitiativeCTA } from "@/components/InitiativeCTA";
+import { LogoFlash } from "@/components/LogoFlash";
 
 export const metadata: Metadata = {
   title: "Epoch Olympiad | Epoch Olympiad Foundation",
@@ -19,6 +20,14 @@ export const metadata: Metadata = {
 export default function EpochOlympiadPage() {
   return (
     <>
+      <LogoFlash
+        src="/images/logo-full.webp"
+        alt="Epoch Olympiad Foundation"
+        background="#f6f8fd"
+        glow="rgba(27, 53, 102, 0.16)"
+        rule="#1b3566"
+        width="min(62vw, 360px)"
+      />
       <Header />
       <main>
         <OlympiadHero />

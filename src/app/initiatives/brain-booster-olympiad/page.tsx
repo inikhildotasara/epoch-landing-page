@@ -1,31 +1,43 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { BrainBoosterHero } from "@/components/brain-booster/BrainBoosterHero";
-import { ThinkingFlow } from "@/components/brain-booster/ThinkingFlow";
-import { QuickFacts } from "@/components/brain-booster/QuickFacts";
+import { BrainiacHero } from "@/components/brainiac/BrainiacHero";
+import { PurposeThatDrives } from "@/components/brainiac/PurposeThatDrives";
 import { DirectorMessage } from "@/components/brain-booster/DirectorMessage";
-import { ParticipateAwardsPrepare } from "@/components/brain-booster/ParticipateAwardsPrepare";
-import { AchieversAndFaq } from "@/components/brain-booster/AchieversAndFaq";
+import { BrainiacEcosystem } from "@/components/brainiac/BrainiacEcosystem";
+import { YoungThinkers } from "@/components/brainiac/YoungThinkers";
+import { BrainiacVoices } from "@/components/brainiac/BrainiacVoices";
+import { BrainiacGlance } from "@/components/brainiac/BrainiacGlance";
+import { BrainiacResources } from "@/components/brainiac/BrainiacResources";
 import { InitiativeCTA } from "@/components/InitiativeCTA";
+import { LogoFlash } from "@/components/LogoFlash";
 
 export const metadata: Metadata = {
-  title: "International Brain Booster Olympiad | Epoch Olympiad Foundation",
+  title: "Brainiac Global | Epoch Olympiad Foundation",
   description:
-    "A joyful, age-appropriate cognitive assessment for kindergarten and early learners. Brain Booster Olympiad looks at how young children observe, recognise patterns, connect ideas, reason and explore simple problems.",
+    "Brainiac Global is an early-learning initiative that builds thinking minds from the earliest years, nurturing curiosity, observation, reasoning and problem-solving through engaging experiences and brain-boosting assessment.",
 };
 
-export default function BrainBoosterOlympiadPage() {
+export default function BrainiacGlobalPage() {
   return (
     <>
+      <LogoFlash
+        src="/images/tm-brainiac.webp"
+        alt="Brainiac Global — Discovering New Einstein"
+        background="#fffaf7"
+        glow="rgba(214, 40, 57, 0.16)"
+        rule="#d62839"
+      />
       <Header />
       <main>
-        <BrainBoosterHero />
-        <ThinkingFlow />
-        <QuickFacts />
+        <BrainiacHero />
+        <PurposeThatDrives />
         <DirectorMessage />
-        <ParticipateAwardsPrepare />
-        <AchieversAndFaq />
+        <BrainiacEcosystem />
+        <YoungThinkers />
+        <BrainiacVoices />
+        <BrainiacGlance />
+        <BrainiacResources />
         <InitiativeCTA />
       </main>
       <Footer />

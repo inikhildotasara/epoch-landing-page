@@ -36,7 +36,10 @@ export function BrainBoosterHero() {
             Our Initiatives
           </Link>
           <span aria-hidden>&rsaquo;</span>
-          <Link href="/initiatives" className="transition-colors hover:text-navy">
+          <Link
+            href="/initiatives/brain-booster-olympiad"
+            className="transition-colors hover:text-navy"
+          >
             Brainiac Global
           </Link>
           <span aria-hidden>&rsaquo;</span>

@@ -10,6 +10,7 @@ import { EarlyYearsAndTrust } from "@/components/ccbee/EarlyYearsAndTrust";
 import { CCBeeVoices } from "@/components/ccbee/CCBeeVoices";
 import { CCBeeFaq } from "@/components/ccbee/CCBeeFaq";
 import { CCBeeCTA } from "@/components/ccbee/CCBeeCTA";
+import { LogoFlash } from "@/components/LogoFlash";
 
 export const metadata: Metadata = {
   title: "MY CCBee | Epoch Olympiad Foundation",
@@ -20,6 +21,14 @@ export const metadata: Metadata = {
 export default function MyCCBeePage() {
   return (
     <>
+      <LogoFlash
+        src="/images/tm-ccbee.webp"
+        alt="MY CCBee"
+        background="#fffdf4"
+        glow="rgba(245, 179, 1, 0.22)"
+        rule="#e0a300"
+        width="min(78vw, 500px)"
+      />
       <Header />
       <main>
         <CCBeeHero />

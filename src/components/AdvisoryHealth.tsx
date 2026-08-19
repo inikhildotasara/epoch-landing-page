@@ -12,6 +12,14 @@ const checks = [
   "Learning Readiness",
 ];
 
+/* The report tablet is cut out onto transparency, so the depth comes from a
+   drop-shadow that follows the device silhouette rather than a box-shadow that
+   would trace a rectangle around the rounded corners. */
+const tabletStyle = {
+  transform: "rotateY(-14deg) rotateZ(1.5deg)",
+  filter: "drop-shadow(-10px 16px 16px rgba(15, 28, 63, 0.3))",
+};
+
 export function AdvisoryHealth() {
   return (
     <section className="bg-white">
@@ -61,50 +69,66 @@ export function AdvisoryHealth() {
         {/* Academic Health */}
         <Reveal
           delay={120}
-          className="relative h-full rounded-xl border border-slate-200 bg-[#eef3fb] p-5 lg:p-7 overflow-hidden"
+          className="h-full rounded-xl border border-slate-200 bg-[#eef3fb] p-5 lg:p-7"
         >
-          <div className="relative z-10 w-full sm:max-w-[62%]">
-            <h3 className="font-serif text-[22px] lg:text-[26px] xl:text-[24px] 2xl:text-[30px] font-medium text-navy leading-snug">
-              Beyond Marks. Discover Academic Health.
-            </h3>
-            <p className="mt-2 text-[12.5px] lg:text-[14px] leading-relaxed text-slate-600">
-              Our Academic Health Report goes beyond test scores to provide a
-              360° view of a learner&apos;s cognitive and academic well-being.
-            </p>
+          {/* Two real columns rather than an absolutely placed graphic, so the
+              report preview is never clipped by the card edge. */}
+          <div className="flex h-full flex-col sm:flex-row sm:items-center sm:gap-5 lg:gap-6">
+            <div className="min-w-0 flex-1">
+              <h3 className="font-serif text-[22px] lg:text-[26px] xl:text-[24px] 2xl:text-[30px] font-medium text-navy leading-snug">
+                Beyond Marks. Discover Academic Health.
+              </h3>
+              <p className="mt-2 text-[12.5px] lg:text-[14px] leading-relaxed text-slate-600">
+                Our Academic Health Report goes beyond test scores to provide a
+                360° view of a learner&apos;s cognitive and academic well-being.
+              </p>
 
-            <div className="mt-4 lg:mt-5 grid grid-cols-2 gap-y-2.5 lg:gap-y-3 gap-x-4">
-              {checks.map((c) => (
-                <div key={c} className="flex items-center gap-2">
-                  <span className="h-4 w-4 lg:h-5 lg:w-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
-                    <CheckIcon className="h-2.5 w-2.5 lg:h-3 lg:w-3 text-white" />
-                  </span>
-                  <span className="text-[11.5px] lg:text-[13px] text-slate-600">{c}</span>
-                </div>
-              ))}
+              <div className="mt-4 lg:mt-5 grid grid-cols-2 gap-y-2.5 lg:gap-y-3 gap-x-4">
+                {checks.map((c) => (
+                  <div key={c} className="flex items-center gap-2">
+                    <span className="h-4 w-4 lg:h-5 lg:w-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
+                      <CheckIcon className="h-2.5 w-2.5 lg:h-3 lg:w-3 text-white" />
+                    </span>
+                    <span className="text-[11.5px] lg:text-[13px] text-slate-600">
+                      {c}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Report tablet (stacked on mobile) */}
+              <div className="mt-6 sm:hidden [perspective:1000px]">
+                <img
+                  src="/images/ahr-tablet.webp"
+                  alt="Academic Health Report shown on a tablet"
+                  className="mx-auto w-full max-w-[250px]"
+                  style={tabletStyle}
+                />
+              </div>
+
+              <a
+                href="/academic-health-report"
+                className="mt-6 inline-flex items-center gap-1.5 rounded-md bg-gold px-4 py-2.5 lg:px-5 lg:py-3 text-[12.5px] lg:text-[14px] font-semibold text-navy hover:bg-gold-dark transition-colors"
+              >
+                Explore Academic Health Report
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
 
-            {/* Dashboard graphic (stacked on mobile) */}
-            <img
-              src="/images/health-dashboard.png"
-              alt="Academic health dashboard"
-              className="sm:hidden mt-5 w-full rounded-lg shadow-lg ring-1 ring-black/5"
-            />
-
-            <a
-              href="/academic-health-report"
-              className="mt-6 inline-flex items-center gap-1.5 rounded-md bg-gold px-4 py-2.5 lg:px-5 lg:py-3 text-[12.5px] lg:text-[14px] font-semibold text-navy hover:bg-gold-dark transition-colors"
-            >
-              Explore Academic Health Report
-              <ArrowRight className="h-4 w-4" />
-            </a>
+            {/* Report tablet (desktop). The perspective sits on the wrapper so
+                the tilt reads as depth — the device angles out of the card toward
+                the viewer rather than looking like a flat skew. */}
+            {/* A larger share at xl, where the two cards go side by side and this
+                one is at its narrowest but tallest. */}
+            <div className="hidden sm:block w-[34%] xl:w-[42%] 2xl:w-[34%] max-w-[270px] shrink-0 self-center [perspective:1200px]">
+              <img
+                src="/images/ahr-tablet.webp"
+                alt="Academic Health Report shown on a tablet"
+                className="w-full"
+                style={tabletStyle}
+              />
+            </div>
           </div>
-
-          {/* Dashboard graphic bleeding off the right (desktop/tablet) */}
-          <img
-            src="/images/health-dashboard.png"
-            alt="Academic health dashboard"
-            className="hidden sm:block absolute -right-6 top-1/2 -translate-y-1/2 w-[42%] rounded-lg shadow-xl ring-1 ring-black/5"
-          />
         </Reveal>
       </div>
     </section>

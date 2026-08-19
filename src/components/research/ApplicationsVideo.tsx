@@ -29,7 +29,7 @@ const apps: {
     href: "/initiatives/epoch-olympiad",
   },
   {
-    img: "/images/card-ccbee.png",
+    img: "/images/ccbee-dashboard.webp",
     icon: TrendUpIcon,
     color: "#e8862e",
     title: "MY CCBee",

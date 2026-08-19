@@ -70,7 +70,7 @@ export function InitiativeCCBee() {
               </span>
               <div className="w-full rounded-xl border-[5px] border-[#1b2436] bg-[#1b2436] shadow-lg">
                 <img
-                  src="/images/card-ccbee.png"
+                  src="/images/ccbee-dashboard.webp"
                   alt="MY CCBee analytics dashboard"
                   className="w-full rounded-md object-cover"
                 />

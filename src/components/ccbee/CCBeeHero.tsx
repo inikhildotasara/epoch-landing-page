@@ -111,9 +111,9 @@ export function CCBeeHero() {
             <div className="rounded-2xl bg-[#eef3fb] p-4 sm:p-5 lg:p-4 xl:p-6">
               <div className="overflow-hidden rounded-xl border-[5px] border-[#1b2436] bg-[#1b2436] shadow-lg">
                 <img
-                  src="/images/card-ccbee.png"
-                  alt="MY CCBee dashboard showing daily performance and attendance insights"
-                  className="aspect-[16/10] w-full rounded-md object-cover object-top"
+                  src="/images/ccbee-dashboard.webp"
+                  alt="MY CCBee dashboard showing overall grade, participation and assignment progress"
+                  className="aspect-[13/10] w-full rounded-md object-cover object-top"
                 />
               </div>
               {/* Companion phone view, tucked against the dashboard from sm up.
@@ -121,7 +121,7 @@ export function CCBeeHero() {
               <div className="absolute -bottom-4 right-2 hidden w-[64px] overflow-hidden rounded-[10px] border-[4px] border-[#1b2436] bg-[#1b2436] shadow-lg sm:block lg:w-[58px] xl:w-[72px]">
                 <div className="aspect-[9/17] w-full overflow-hidden rounded-[5px]">
                   <img
-                    src="/images/card-ccbee.png"
+                    src="/images/ccbee-dashboard.webp"
                     alt=""
                     aria-hidden
                     className="w-[300%] max-w-none -translate-x-[6%] -translate-y-[3%]"

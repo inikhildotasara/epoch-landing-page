@@ -17,44 +17,19 @@ type Thought = {
   side: "left" | "right";
   y: number;
   reach: number;
-  className?: string;
 };
 
 /* Reach values follow the brain's silhouette at each label's height, so the
    dots trace its outline rather than sitting on a straight column. */
 const thoughts: Thought[] = [
   { label: "Logical Reasoning", side: "left", y: 15, reach: 15 },
-  {
-    label: "Mathematics",
-    side: "left",
-    y: 25,
-    reach: 23,
-    className: "hidden sm:flex",
-  },
+  { label: "Mathematics", side: "left", y: 25, reach: 23 },
   { label: "Language", side: "left", y: 34.5, reach: 26 },
-  {
-    label: "Memory",
-    side: "left",
-    y: 44,
-    reach: 21,
-    className: "hidden sm:flex",
-  },
+  { label: "Memory", side: "left", y: 44, reach: 21 },
   { label: "Analytical Thinking", side: "right", y: 17, reach: 12.5 },
-  {
-    label: "Creativity",
-    side: "right",
-    y: 26.5,
-    reach: 20.5,
-    className: "hidden sm:flex",
-  },
+  { label: "Creativity", side: "right", y: 26.5, reach: 20.5 },
   { label: "Problem Solving", side: "right", y: 36, reach: 21 },
-  {
-    label: "Concept Mastery",
-    side: "right",
-    y: 45,
-    reach: 15,
-    className: "hidden sm:flex",
-  },
+  { label: "Concept Mastery", side: "right", y: 45, reach: 15 },
 ];
 
 const DOT = "#8ed3ff";
@@ -87,16 +62,19 @@ export function HeroThoughts() {
         return (
           <li
             key={t.label}
-            className={`absolute flex translate-y-1/2 items-center gap-1 sm:gap-1.5 ${
+            className={`absolute flex translate-y-1/2 items-center gap-0.5 sm:gap-1.5 ${
               isLeft ? "flex-row" : "flex-row-reverse"
-            } ${t.className ?? ""}`}
+            }`}
             style={{
               bottom: span(100 - t.y),
               [isLeft ? "right" : "left"]: `calc(50% + ${span(t.reach)})`,
             }}
           >
             <span
-              className={`max-w-[76px] text-[9px] font-medium leading-tight tracking-wide text-white/85 sm:max-w-[112px] sm:text-[10.5px] lg:max-w-[72px] lg:text-[10px] xl:max-w-[124px] xl:text-[11px] 2xl:max-w-[140px] 2xl:text-[12px] ${
+              /* All eight labels share the artwork on the narrowest phones, so
+                 the type tightens below sm to keep them clear of each other and
+                 inside the viewport. */
+              className={`max-w-[62px] text-[8px] font-medium leading-tight tracking-wide text-white/85 sm:max-w-[112px] sm:text-[10.5px] lg:max-w-[72px] lg:text-[10px] xl:max-w-[124px] xl:text-[11px] 2xl:max-w-[140px] 2xl:text-[12px] ${
                 isLeft ? "text-right" : "text-left"
               }`}
               style={{ textShadow: "0 1px 6px rgba(3, 21, 47, 0.9)" }}
@@ -104,7 +82,7 @@ export function HeroThoughts() {
               {t.label}
             </span>
             <span
-              className="h-px w-3 shrink-0 sm:w-5 lg:w-3 xl:w-5 2xl:w-6"
+              className="h-px w-2 shrink-0 sm:w-5 lg:w-3 xl:w-5 2xl:w-6"
               style={{
                 backgroundImage: `linear-gradient(to ${
                   isLeft ? "right" : "left"
