@@ -102,7 +102,7 @@ export function ParticipateAwardsPrepare() {
               </ColumnHeading>
               <NumberedList steps={participateSteps} color="#0b1c3f" />
               <a
-                href="#"
+                href="/register-your-school"
                 className="mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-navy px-5 py-2.5 text-[12.5px] font-semibold text-white transition-colors hover:bg-navy-600 lg:text-[13px]"
               >
                 For Schools: Register Now <ArrowRight className="h-3.5 w-3.5" />

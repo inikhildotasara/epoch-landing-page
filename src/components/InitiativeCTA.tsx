@@ -22,7 +22,7 @@ export function InitiativeCTA() {
           </div>
 
           <a
-            href="#"
+            href="/register-your-school"
             className="inline-flex shrink-0 items-center gap-2 rounded-md bg-gold px-6 py-3 text-[13px] font-semibold text-navy transition-colors hover:bg-gold-dark lg:text-[14px]"
           >
             Register Your School <ArrowRight className="h-4 w-4" />

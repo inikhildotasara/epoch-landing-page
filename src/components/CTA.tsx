@@ -13,7 +13,7 @@ export function CTA() {
         </p>
         <div className="mt-7 lg:mt-9 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="#"
+            href="/register-your-school"
             className="rounded-md bg-gold px-6 lg:px-7 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-navy hover:bg-gold-dark transition-colors"
           >
             Partner With Us
@@ -25,7 +25,7 @@ export function CTA() {
             Become an Advisor
           </a>
           <a
-            href="#"
+            href="/register-your-school"
             className="rounded-md border border-white/25 bg-white/5 px-6 lg:px-7 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-white hover:bg-white/10 transition-colors"
           >
             Register Your School

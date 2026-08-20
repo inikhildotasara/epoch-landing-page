@@ -471,6 +471,47 @@ export const CompassIcon = (p: IconProps) => (
   </svg>
 );
 
+export const ClipboardListIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <rect x="5" y="4.5" width="14" height="16.5" rx="2" />
+    <rect x="9" y="2.6" width="6" height="3.2" rx="1.2" />
+    <path d="M8.8 10.4h6.4M8.8 13.8h6.4M8.8 17.2h3.6" />
+  </svg>
+);
+
+export const MailIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <rect x="3" y="5.4" width="18" height="13.2" rx="2" />
+    <path d="m3.9 6.7 8.1 6 8.1-6" />
+  </svg>
+);
+
+export const VideoIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <rect x="3" y="6.8" width="12.2" height="10.4" rx="2" />
+    <path d="M15.2 10.6 20.8 7.6v8.8l-5.6-3z" />
+  </svg>
+);
+
+export const PhoneIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.12.9.34 1.8.64 2.6a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.15a2 2 0 0 1 2.1-.45c.85.3 1.7.52 2.6.64a2 2 0 0 1 1.7 2Z" />
+  </svg>
+);
+
+export const PhoneRingIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M14.4 21a1.9 1.9 0 0 0 1.9-1.9v-2a1.9 1.9 0 0 0-1.6-1.9 10 10 0 0 1-1.9-.5 1.9 1.9 0 0 0-1.9.5l-.8.8a14 14 0 0 1-4.2-4.2l.8-.8a1.9 1.9 0 0 0 .5-1.9 10 10 0 0 1-.5-1.9A1.9 1.9 0 0 0 4.9 5.4H2.8A1.9 1.9 0 0 0 .9 7.4 15.6 15.6 0 0 0 14.4 21Z" />
+    <path d="M16.4 3.2a6.6 6.6 0 0 1 4.4 4.4M15.7 6.9a3.1 3.1 0 0 1 2 2" />
+  </svg>
+);
+
+export const ChevronDownIcon = (p: IconProps) => (
+  <svg {...base(p)} strokeWidth={2}>
+    <path d="m6 9.5 6 6 6-6" />
+  </svg>
+);
+
 export const ArrowRight = (p: IconProps) => (
   <svg {...base(p)}>
     <path d="M5 12h14M13 6l6 6-6 6" />
@@ -480,6 +521,12 @@ export const ArrowRight = (p: IconProps) => (
 export const CheckIcon = (p: IconProps) => (
   <svg {...base(p)} strokeWidth={2.4}>
     <path d="M4 12l5 5 11-11" />
+  </svg>
+);
+
+export const WhatsAppIcon = (p: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
+    <path d="M17.5 6.4A7.6 7.6 0 0 0 12.05 4.2 7.66 7.66 0 0 0 5.4 15.7L4.2 20l4.4-1.15a7.6 7.6 0 0 0 3.44.87h.01a7.66 7.66 0 0 0 5.45-13.32ZM12.06 18.3h-.01a6.35 6.35 0 0 1-3.24-.89l-.23-.14-2.4.63.64-2.34-.15-.24a6.36 6.36 0 1 1 5.4 2.98Zm3.5-4.76c-.19-.1-1.13-.56-1.31-.62-.18-.06-.3-.1-.43.1-.13.19-.5.61-.61.74-.11.13-.22.14-.41.05a5.2 5.2 0 0 1-1.54-.95 5.77 5.77 0 0 1-1.06-1.32c-.11-.19-.01-.29.08-.39.09-.09.19-.22.29-.34.1-.12.13-.2.19-.33.06-.13.03-.25-.02-.34-.05-.1-.43-1.04-.59-1.42-.15-.37-.31-.32-.43-.33h-.36c-.13 0-.34.05-.51.24-.18.19-.67.66-.67 1.6 0 .95.68 1.86.78 1.99.1.13 1.35 2.06 3.28 2.89.46.2.81.32 1.09.4.46.15.87.13 1.2.08.37-.06 1.13-.46 1.29-.91.16-.45.16-.83.11-.91-.05-.08-.17-.13-.36-.23Z" />
   </svg>
 );
 
