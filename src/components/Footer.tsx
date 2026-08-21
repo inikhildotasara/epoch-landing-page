@@ -10,7 +10,8 @@ const linkColumns: { label: string; href: string }[][] = [
   ],
   [
     { label: "Advisory Board", href: "/advisory-board" },
-    { label: "Resources", href: "#" },
+    { label: "Articles & Research", href: "/articles" },
+    { label: "Partner With Us", href: "/partner-with-us" },
     { label: "Contact", href: "#" },
   ],
 ];

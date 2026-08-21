@@ -112,6 +112,38 @@ export const BuildingIcon = (p: IconProps) => (
   </svg>
 );
 
+export const HandshakeIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M2.5 12.5 6 9l3.3 1.2L12 8.6l2.7 1.6L18 9l3.5 3.5" />
+    <path d="M6 9V7.2l3.4-1.4L12 7l2.6-1.2L18 7.2V9" />
+    <path d="m9.4 13.2 2 1.9a1.4 1.4 0 0 0 2-2l-1.9-1.8" />
+    <path d="M2.5 12.5 6 16l3 2.4 3-2.2 3 2.2 3-2.4 3.5-3.5" />
+  </svg>
+);
+
+export const HandHeartIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M12 9.6 10.8 8.4a2 2 0 0 0-2.8 2.8L12 15l4-3.8a2 2 0 0 0-2.8-2.8L12 9.6Z" />
+    <path d="M3 14.5v6M3 15.5h4l4.5 2.8a2 2 0 0 0 2.2 0L21 14" />
+  </svg>
+);
+
+export const BriefcaseIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <rect x="3" y="7.5" width="18" height="12" rx="2" />
+    <path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5" />
+    <path d="M3 12.5h18M11 12.5h2" />
+  </svg>
+);
+
+export const MegaphoneIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M4 10.5 17 6v10L4 13.5a1.6 1.6 0 0 1 0-3Z" />
+    <path d="M17 8.5a2.5 2.5 0 0 1 0 5" />
+    <path d="M7.5 13v5a1.6 1.6 0 0 0 3 .5l.6-4" />
+  </svg>
+);
+
 export const DocIcon = (p: IconProps) => (
   <svg {...base(p)}>
     <path d="M6 3h8l4 4v14H6z" />

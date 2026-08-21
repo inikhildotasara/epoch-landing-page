@@ -2,10 +2,12 @@ import type {
   InputHTMLAttributes,
   ReactNode,
   SelectHTMLAttributes,
+  SVGProps,
   TextareaHTMLAttributes,
 } from "react";
 import { CheckIcon, ChevronDownIcon } from "../icons";
-import type { IconType } from "./data";
+
+type IconType = (p: SVGProps<SVGSVGElement>) => React.ReactElement;
 
 /* Every control shares one silhouette so a row of inputs and selects lines up
    even though the browser renders them differently. */
@@ -88,6 +90,46 @@ export function FormSection({
       )}
 
       <div className="mt-5 lg:mt-6">{children}</div>
+    </section>
+  );
+}
+
+/**
+ * A numbered step used where the form runs in a narrow column and the ruled
+ * heading above would wrap awkwardly.
+ */
+export function StepHeading({
+  num,
+  title,
+  hint,
+  children,
+}: {
+  num: number;
+  title: string;
+  hint?: string;
+  children: ReactNode;
+}) {
+  return (
+    <section>
+      <div className="flex items-start gap-2.5">
+        <span
+          className="mt-px flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-navy text-[11.5px] font-bold text-white"
+          aria-hidden
+        >
+          {num}
+        </span>
+        <div className="min-w-0">
+          <h3 className="text-[13px] font-semibold leading-snug text-navy lg:text-[13.5px]">
+            {title}
+          </h3>
+          {hint && (
+            <p className="mt-0.5 text-[11.5px] text-slate-500 lg:text-[12px]">
+              {hint}
+            </p>
+          )}
+        </div>
+      </div>
+      <div className="mt-3.5">{children}</div>
     </section>
   );
 }
@@ -252,6 +294,50 @@ export function CheckRow({
   );
 }
 
+/** The single-choice counterpart of CheckRow. */
+export function RadioRow({
+  id,
+  name,
+  checked,
+  onChange,
+  children,
+}: {
+  id: string;
+  name: string;
+  checked: boolean;
+  onChange: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <label
+      htmlFor={id}
+      className="group flex cursor-pointer items-start gap-2.5 text-[12.5px] leading-snug text-navy lg:text-[13px]"
+    >
+      <input
+        id={id}
+        name={name}
+        type="radio"
+        checked={checked}
+        onChange={onChange}
+        className="peer sr-only"
+      />
+      <span
+        className="mt-[1px] flex h-[17px] w-[17px] shrink-0 items-center justify-center rounded-full border border-slate-300 bg-white transition-colors peer-checked:border-navy peer-focus-visible:ring-2 peer-focus-visible:ring-gold/60 peer-focus-visible:ring-offset-1"
+        aria-hidden
+      >
+        <span
+          className={`h-[7px] w-[7px] rounded-full transition-colors ${
+            checked ? "bg-navy" : "bg-transparent"
+          }`}
+        />
+      </span>
+      <span className="pt-px transition-colors group-hover:text-navy-600">
+        {children}
+      </span>
+    </label>
+  );
+}
+
 /**
  * A time slot reads as a plain bordered tile, the way the printed layout shows
  * it — the selected state is carried by the tile itself rather than by a radio
@@ -298,6 +384,56 @@ export function RadioBox({
           <CheckIcon className="h-2 w-2" />
         </span>
       )}
+    </label>
+  );
+}
+
+/** Option tile with an icon, used for short single- or multi-select rows. */
+export function ChoiceTile({
+  id,
+  name,
+  type,
+  checked,
+  onChange,
+  icon: Icon,
+  children,
+}: {
+  id: string;
+  name?: string;
+  type: "radio" | "checkbox";
+  checked: boolean;
+  onChange: () => void;
+  icon?: IconType;
+  children: ReactNode;
+}) {
+  return (
+    <label
+      htmlFor={id}
+      className={`flex cursor-pointer flex-col items-center gap-1.5 rounded-lg border px-2 py-2.5 text-center transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-gold/60 ${
+        checked
+          ? "border-navy bg-navy text-white"
+          : "border-slate-200 bg-white text-navy hover:border-slate-300"
+      }`}
+    >
+      <input
+        id={id}
+        name={name}
+        type={type}
+        checked={checked}
+        onChange={onChange}
+        className="sr-only"
+      />
+      {Icon && (
+        <Icon
+          className={`h-[18px] w-[18px] shrink-0 ${
+            checked ? "text-gold" : "text-navy-600"
+          }`}
+          aria-hidden
+        />
+      )}
+      <span className="text-[11.5px] font-medium leading-tight lg:text-[12px]">
+        {children}
+      </span>
     </label>
   );
 }

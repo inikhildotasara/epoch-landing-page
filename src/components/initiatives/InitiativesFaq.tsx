@@ -3,31 +3,66 @@
 import { useState } from "react";
 import { Reveal } from "../Reveal";
 import { GradCapIcon } from "../icons";
+import { FaqAnswer, type FaqItem } from "../faq/FaqAnswer";
 
-const faqs = [
+const faqs: FaqItem[] = [
   {
-    q: "How do these initiatives work together?",
-    a: "Brainiac Global, Epoch Olympiad and MY CCBee form one connected journey—from early thinking to assessment to continuous growth.",
+    q: "How do Brainiac Global, Epoch Olympiad and MY CCBee work together?",
+    a: [
+      "Brainiac Global, Epoch Olympiad and MY CCBee are three initiatives built on one research philosophy.",
+      "Brainiac Global focuses on building thinking foundations in the early years.",
+      "Epoch Olympiad provides research-driven international assessments for school learners.",
+      "MY CCBee helps schools track performance, understand learning patterns and support continuous improvement.",
+      "Together, they create a journey from thinking → assessment → insight → improvement.",
+    ],
   },
   {
-    q: "Who can participate in these assessments?",
-    a: "Learners from kindergarten through school, with age-appropriate assessments designed for each stage of development.",
+    q: "Which initiative is right for my child or school?",
+    a: [
+      "It depends on the learner's stage and the school's objective.",
+      [
+        "Brainiac Global — for kindergarten and early-years learners, with a focus on foundational thinking and learning readiness.",
+        "Epoch Olympiad — for school learners seeking international assessments across different academic and thinking domains.",
+        "MY CCBee — for schools and educators who want to track performance, identify learning gaps and support continuous improvement.",
+      ],
+    ],
   },
   {
-    q: "What makes these assessments different?",
-    a: "We measure understanding and reasoning rather than rote memory, translating results into meaningful, actionable insights.",
+    q: "Are all three initiatives assessment programmes?",
+    a: [
+      "No. Each initiative has a different role.",
+      "Brainiac Global combines early-years cognitive development with age-appropriate assessment.",
+      "Epoch Olympiad offers international assessments and future-focused learning initiatives like IFLY (International Finance & Digital Literacy Olympiad for Young Leaders) and IHOST (International Holistic Olympiad for Smart Thinkers).",
+      "MY CCBee is a performance tracking and booster platform that helps schools turn assessment information into actionable insights.",
+    ],
   },
   {
-    q: "What is the Academic Health Report?",
-    a: "A diagnostic report that goes beyond marks to reveal how a learner thinks, where they excel and where they can grow.",
+    q: "What makes Epoch's assessments different from conventional assessments?",
+    a: [
+      "Our assessments are designed to look beyond rote memorisation and explore areas such as conceptual understanding, reasoning, problem-solving, analytical thinking and knowledge application.",
+      "The aim is not simply to produce a score or rank, but to generate meaningful information about how a learner understands and applies knowledge.",
+    ],
   },
   {
-    q: "How are results evaluated and benchmarked?",
-    a: "Responses are analysed against research-driven frameworks and international benchmarks for a fair, comprehensive view.",
+    q: "What is an Academic Health Report?",
+    a: [
+      "An Academic Health Report goes beyond marks to provide a clearer picture of a learner's strengths, areas for growth, thinking abilities and learning patterns.",
+      "It converts assessment results into parent-friendly insights so that students, parents and educators can better understand where the learner is today and what the results reveal about their development.",
+    ],
+  },
+  {
+    q: "How are assessment results evaluated and benchmarked?",
+    a: [
+      "Assessment responses are analysed using research-informed frameworks and appropriate benchmarks to provide a structured view of learner performance.",
+      "The results are interpreted across relevant areas of understanding and thinking rather than relying only on a single overall score.",
+    ],
   },
   {
     q: "How does MY CCBee help schools?",
-    a: "It converts assessment data into dashboards, progress tracking and booster resources for continuous improvement.",
+    a: [
+      "MY CCBee helps schools move from simply collecting assessment data to understanding and acting on it.",
+      "It enables schools and educators to monitor performance, identify strengths and learning gaps, observe patterns and access insights and booster resources that support continuous improvement.",
+    ],
   },
 ];
 
@@ -38,7 +73,7 @@ function FaqRow({
   onToggle,
 }: {
   q: string;
-  a: string;
+  a: FaqItem["a"];
   open: boolean;
   onToggle: () => void;
 }) {
@@ -72,9 +107,11 @@ function FaqRow({
           open ? "grid-rows-[1fr] pb-3.5" : "grid-rows-[0fr]"
         }`}
       >
-        <p className="min-h-0 overflow-hidden text-[12.5px] leading-relaxed text-slate-300">
-          {a}
-        </p>
+        <FaqAnswer
+          blocks={a}
+          textClass="text-[12.5px] leading-relaxed text-slate-300"
+          dotClass="bg-gold"
+        />
       </div>
     </div>
   );

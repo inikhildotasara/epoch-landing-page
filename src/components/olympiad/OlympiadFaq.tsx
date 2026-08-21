@@ -3,47 +3,103 @@
 import { useState } from "react";
 import { Reveal } from "../Reveal";
 import { SectionHeading } from "./SectionHeading";
+import { FaqAnswer, type FaqItem } from "../faq/FaqAnswer";
 
-const faqs = [
+const faqs: FaqItem[] = [
   {
-    q: "Who can participate in Epoch Olympiad?",
-    a: "Students of Classes 1 to 10 can participate through their school. Schools register with the Foundation and then enrol their students for the selected Olympiads or learning platforms.",
+    q: "What is Epoch Olympiad?",
+    a: [
+      "Epoch Olympiad is an educational initiative of Epoch Olympiad Foundation offering international assessments and future-focused learning initiatives for students from kindergarten to Class 10.",
+      "Its ecosystem combines subject-based assessment with broader learning experiences designed to encourage conceptual understanding, reasoning, application, holistic thinking and future readiness.",
+    ],
   },
   {
-    q: "Is IGKO also conducted in two levels?",
-    a: "No. IGKO is a single-level International Olympiad, so there is no separate Mains examination for it.",
+    q: "What assessments are offered under Epoch Olympiad?",
+    a: [
+      "Epoch Olympiad currently offers four subject-based assessments:",
+      [
+        "IMO — International Mathematics Olympiad",
+        "ITST — International Test of Science and Technology",
+        "IAO — International Aptitude Olympiad",
+        "IGKO — International General Knowledge Olympiad",
+      ],
+      "Each assessment focuses on a different area of learning and development.",
+      "Detailed syllabus, pattern and preparation information is available in our Genie App.",
+    ],
+  },
+  {
+    q: "Are IHOST and IFLY also examinations?",
+    a: [
+      "No.",
+      "IHOST — International Holistic Olympiad for Smart Thinkers is a learning platform built around the “Balanced Diet for the Brain” approach, bringing together Mathematics, Science, Aptitude and General Knowledge.",
+      "IFLY — International Finance & Digital Literacy Olympiad for Young Leaders is a future-focused learning initiative designed to develop awareness of finance and digital literacy.",
+      "Both initiatives extend Epoch Olympiad beyond conventional examination-based learning.",
+    ],
+  },
+  {
+    q: "Who can participate in Epoch Olympiad?",
+    a: [
+      "Epoch Olympiad is designed for students across the school years, with age- and class-appropriate programmes.",
+      "The current ecosystem serves learners from Class 1 to 10, while eligibility may vary by individual assessment or learning initiative.",
+      "For each assessment, the specific eligibility information is provided with its programme details.",
+    ],
+  },
+  {
+    q: "What is the criteria for Mains in Epoch Olympiad?",
+    a: [
+      "For assessments that have a Pre and Mains structure, the top 10% of participating students in the Pre examination are selected for the Mains (Advance Level), according to the applicable assessment criteria.",
+      "IGKO is a single-level examination and therefore does not follow the Pre–Mains structure.",
+      "Detailed examination patterns and marking schemes are available in our Genie App.",
+    ],
+  },
+  {
+    q: "How are Epoch Olympiad assessments different from conventional exams?",
+    a: [
+      "Epoch Olympiad assessments are designed to look beyond simple recall and explore areas such as conceptual understanding, reasoning, application, problem-solving and subject-specific thinking.",
+      "The objective is not only to determine how many questions a student can answer correctly, but to create meaningful insight into how the student understands and applies knowledge.",
+    ],
+  },
+  {
+    q: "How can students prepare for Epoch Olympiad?",
+    a: [
+      "Students can prepare using the workbooks, syllabus, sample papers, previous-year papers, marking schemes and other preparatory resources provided in our Genie App.",
+      "The Genie App is planned to bring these resources together so students can access important preparation and assessment information in one place.",
+      "Preparation should focus on understanding concepts, practising application and developing thinking skills, rather than relying only on memorisation.",
+    ],
+  },
+  {
+    q: "What awards, scholarships and recognition are available?",
+    a: [
+      "Epoch Olympiad provides opportunities for recognition at Pre and Mains levels, wherever the assessment has both levels.",
+      "Recognition may be awarded at multiple levels, including:",
+      ["International", "National", "Zone", "School", "Class"],
+      "Scholarships and specific award criteria may vary by programme and published guidelines.",
+      "Detailed information about awards, scholarships, eligibility, marking schemes and recognition are available through the Genie App and relevant programme information.",
+    ],
   },
   {
     q: "What is the difference between Pre Exam and Mains?",
-    a: "The Pre Exam assesses conceptual understanding and reasoning for every participant. The Mains (Advance Level) is an advanced round for the top 10% of participants in IMO, ITST and IAO.",
+    a: [
+      "The Pre Exam assesses conceptual understanding and reasoning for every participant. The Mains (Advance Level) is an advanced round for the top 10% of participants in IMO, ITST and IAO.",
+    ],
   },
   {
     q: "Can a student participate in more than one Olympiad?",
-    a: "Yes. A student may appear for any combination of Olympiads they are eligible for, and can also join the IHOST and IFLY learning platforms.",
-  },
-  {
-    q: "How are students selected for Mains (Advance Level)?",
-    a: "Selection is purely performance based. The top 10% of participating students in the Pre Exam qualify for the Mains in IMO, ITST and IAO.",
-  },
-  {
-    q: "Where are the exams conducted?",
-    a: "All examinations are conducted offline at the student's own school on the scheduled date, so there is no separate exam centre to travel to.",
+    a: [
+      "Yes. A student may appear for any combination of Olympiads they are eligible for, and can also join the IHOST and IFLY learning platforms.",
+    ],
   },
   {
     q: "Is there any negative marking in Epoch exams?",
-    a: "No. There is no negative marking in any Epoch Olympiad, at either the Pre or the Mains level.",
+    a: [
+      "No. There is no negative marking in any Epoch Olympiad, at either the Pre or the Mains level.",
+    ],
   },
   {
-    q: "How can I prepare for the Olympiads and learning platforms?",
-    a: "Detailed syllabus, marking scheme, sample papers, previous year papers and level-wise resources are available in the Genie App along with the official school workbooks.",
-  },
-  {
-    q: "How many questions will be asked?",
-    a: "Classes 1 to 4 answer 30 objective questions and Classes 5 to 10 answer 35, in 60 minutes. IGKO has 35 questions across all classes.",
-  },
-  {
-    q: "Where can I check the results and detailed information?",
-    a: "Results and the Academic Health Report are published in the Genie App, where schools and parents can review performance in detail.",
+    q: "Where can I check the results and detailed performance report?",
+    a: [
+      "Results and the Academic Health Report are published in the Genie App, where schools and parents can review performance in detail.",
+    ],
   },
 ];
 
@@ -54,7 +110,7 @@ function FaqRow({
   onToggle,
 }: {
   q: string;
-  a: string;
+  a: FaqItem["a"];
   open: boolean;
   onToggle: () => void;
 }) {
@@ -90,9 +146,10 @@ function FaqRow({
           open ? "grid-rows-[1fr] pb-3" : "grid-rows-[0fr]"
         }`}
       >
-        <p className="min-h-0 overflow-hidden text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]">
-          {a}
-        </p>
+        <FaqAnswer
+          blocks={a}
+          textClass="text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]"
+        />
       </div>
     </div>
   );

@@ -3,39 +3,89 @@
 import { useState } from "react";
 import { Reveal } from "../Reveal";
 import { SectionHeading } from "../olympiad/SectionHeading";
+import { FaqAnswer, type FaqItem } from "../faq/FaqAnswer";
 
-const faqs = [
+const faqs: FaqItem[] = [
+  {
+    q: "What is MY CCBee?",
+    a: [
+      "MY CCBee is a Performance Tracker & Booster Platform for Playgroup to Class 2 that connects parents, teachers and schools through one platform.",
+      "It helps schools capture everyday activities and performance, build a continuous picture of each child's progress, identify areas requiring attention and take timely action.",
+    ],
+  },
   {
     q: "Who can use MY CCBee?",
-    a: "Schools from Playgroup to Class 2 can use MY CCBee, along with their teachers and the parents of every enrolled child.",
+    a: [
+      "MY CCBee is designed for schools from Playgroup to Class 2, along with their teachers, school leadership and the parents of enrolled children.",
+      "Each user gets a view designed around their role in the child's learning journey.",
+    ],
   },
   {
-    q: "Can schools track activities?",
-    a: "Yes. Daily activities, participation, attendance, homework, events and school-wide programmes are all recorded and visible in one place.",
+    q: "What can schools track through MY CCBee?",
+    a: [
+      "Schools can track a wide range of everyday information, including:",
+      [
+        "Student performance & achievements",
+        "Attendance",
+        "Homework",
+        "School activities",
+        "Teacher performance",
+        "Communication",
+        "Leave & appointments",
+        "Complaints & queries",
+        "Events and engagement",
+      ],
+      "The platform brings this information together so schools can develop a clearer picture of daily performance and school activities.",
+    ],
   },
   {
-    q: "Who can access the platform?",
-    a: "Parents, teachers and school leadership each get their own view. Everyone sees the same child's journey from the perspective relevant to them.",
+    q: "How does MY CCBee help schools understand performance?",
+    a: [
+      "MY CCBee follows a simple cycle: Capture → Track → Understand → Act.",
+      "It helps schools record everyday information, monitor performance over time, identify patterns and areas requiring attention, and use those insights to take timely action.",
+    ],
   },
   {
-    q: "Does MY CCBee support communication?",
-    a: "Yes. Notices, reminders, homework updates, leave requests, appointments and queries move between school and parents inside the platform.",
+    q: "What can parents see on MY CCBee?",
+    a: [
+      "Parents can see their child's daily performance and achievements, homework, school updates and progress insights.",
+      "They can also stay connected with teachers and receive relevant school communication through the platform.",
+    ],
   },
   {
-    q: "What can parents see?",
-    a: "Parents see their child's daily performance and achievements, homework and school updates, and clear insights into how progress is building over time.",
+    q: "Who can access MY CCBee?",
+    a: [
+      "MY CCBee provides role-based views for parents, teachers and school leadership.",
+      "Parents can follow their child's journey, teachers can record activities and monitor progress, and school leadership can view wider performance, activities and operational insights.",
+    ],
   },
   {
-    q: "Is MY CCBee only a reporting platform?",
-    a: "No. Alongside tracking, MY CCBee includes gamified tools and engaging activities that motivate young learners to practise and improve every day.",
+    q: "Does MY CCBee support communication between school and parents?",
+    a: [
+      "Yes. MY CCBee brings important school-parent communication into one platform, including notices, reminders, homework updates, leave requests, appointments, complaints and queries.",
+      "This helps reduce scattered communication and keeps relevant information connected to the child's school journey.",
+    ],
   },
   {
-    q: "Can schools track teacher performance?",
-    a: "Yes. School leadership can monitor teacher activity, productivity and classroom outcomes to support them where it matters most.",
+    q: "Is MY CCBee only a reporting or tracking platform?",
+    a: [
+      "No. MY CCBee combines performance tracking with insights and performance-boosting tools.",
+      "Its gamified tools and engaging activities are designed to encourage young learners to participate, practise and improve regularly.",
+    ],
   },
   {
-    q: "How can our school see the platform?",
-    a: "Request a demo and our team will walk your school through the parent, teacher and leadership views, and help you plan the rollout.",
+    q: "Can MY CCBee help schools monitor teacher performance?",
+    a: [
+      "Yes. School leadership can monitor teacher activity, productivity and classroom outcomes through the platform.",
+      "This can help school leaders understand execution, identify areas requiring support and make more informed decisions.",
+    ],
+  },
+  {
+    q: "How can our school see MY CCBee in action?",
+    a: [
+      "Schools can Request a Demo to explore the platform and understand the parent, teacher and school leadership views.",
+      "Our team can demonstrate how MY CCBee can fit into the school's existing processes and help plan its implementation.",
+    ],
   },
 ];
 
@@ -46,7 +96,7 @@ function FaqRow({
   onToggle,
 }: {
   q: string;
-  a: string;
+  a: FaqItem["a"];
   open: boolean;
   onToggle: () => void;
 }) {
@@ -81,9 +131,10 @@ function FaqRow({
           open ? "grid-rows-[1fr] pb-3" : "grid-rows-[0fr]"
         }`}
       >
-        <p className="min-h-0 overflow-hidden text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]">
-          {a}
-        </p>
+        <FaqAnswer
+          blocks={a}
+          textClass="text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]"
+        />
       </div>
     </div>
   );

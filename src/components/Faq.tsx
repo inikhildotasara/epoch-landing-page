@@ -2,31 +2,86 @@
 
 import { useState } from "react";
 import { Reveal } from "./Reveal";
+import { FaqAnswer, type FaqItem } from "./faq/FaqAnswer";
 
-const faqs = [
+const faqs: FaqItem[] = [
   {
     q: "What is Epoch Olympiad Foundation?",
-    a: "An independent education research foundation working on how children's cognitive abilities are measured, nurtured and benchmarked. Our research feeds directly into the assessments, analytics and reports we build for schools.",
+    a: [
+      "Epoch Olympiad Foundation is an independent education research foundation focused on understanding how children think, learn and develop.",
+      "Our research explores cognitive abilities, conceptual understanding, reasoning, problem-solving, learning patterns and academic development. This research informs the assessments, diagnostic frameworks, Academic Health Reports and learning initiatives developed through our ecosystem.",
+    ],
   },
   {
-    q: "Who can participate in Epoch assessments?",
-    a: "Learners from kindergarten through Class 10. Brainiac Global covers the early years, while the Epoch Olympiads run across Classes 1 to 10, with each stage assessed in an age-appropriate way.",
+    q: "What does Epoch Olympiad Foundation research?",
+    a: [
+      "We research how children's learning goes beyond memorising information. Our work focuses on areas such as cognitive intelligence, reasoning, conceptual understanding, problem-solving, knowledge application, learning readiness and academic development.",
+      "The purpose is to understand not only what a child knows, but how the child thinks and applies what they know.",
+    ],
   },
   {
-    q: "How is this different from a regular olympiad?",
-    a: "A conventional olympiad ends at a rank. Ours is designed to reveal how a learner thinks—conceptual understanding, reasoning and application—and every participant receives a diagnostic report rather than only a score.",
+    q: "How is Epoch Olympiad Foundation different from a conventional Olympiad organisation?",
+    a: [
+      "A conventional Olympiad may primarily focus on competition, scores and rankings. Epoch Olympiad Foundation takes a broader research-driven approach.",
+      "Our framework aims to use assessment as a way to understand learning, identify strengths and growth areas, and generate meaningful insights for students, parents and schools.",
+      "Assessment is not the destination; understanding the learner is.",
+    ],
   },
   {
-    q: "What is the Academic Health Report?",
-    a: "A 360° view of a learner's academic well-being. It looks beyond marks at concept mastery, problem-solving, thinking abilities and growth areas, and benchmarks them internationally.",
+    q: "What is the relationship between Epoch Olympiad Foundation and its initiatives?",
+    a: [
+      "Epoch Olympiad Foundation is the research foundation. Its research and frameworks are translated into practical educational initiatives.",
+      "These currently include:",
+      [
+        "Brainiac Global — early-years cognitive development and assessment",
+        "Epoch Olympiad — international assessments and future-focused learning platforms",
+        "MY CCBee — performance tracking, diagnostic insights and continuous improvement",
+      ],
+      "Together, they represent one connected approach: research → assessment → insight → improvement.",
+    ],
   },
   {
-    q: "How can a school partner with the Foundation?",
-    a: "Schools can register directly with us to run the assessments on their own campus. We handle the assessment framework, evaluation and reporting, and share aggregated cohort insights with the school.",
+    q: "What is cognitive intelligence, and why does it matter in education?",
+    a: [
+      "Cognitive intelligence relates to how a learner observes, understands, reasons, connects ideas, solves problems and applies knowledge.",
+      "It matters because academic marks alone may not reveal the complete picture of how a child thinks and learns.",
+      "Our research therefore looks beyond recall and considers the thinking abilities that support deeper learning and future readiness.",
+    ],
   },
   {
-    q: "Are the assessments aligned to our curriculum?",
-    a: "Yes. Our curriculum mapping work keeps the assessments consistent with what learners are taught, so the results reflect genuine understanding of their syllabus rather than unfamiliar material.",
+    q: "What is an Academic Health Report?",
+    a: [
+      "An Academic Health Report is a diagnostic view of a learner's academic and cognitive development.",
+      "Instead of presenting only marks or ranks, it helps reveal areas such as conceptual understanding, reasoning, problem-solving, thinking abilities, strengths and growth areas.",
+      "It is designed to turn assessment results into information that parents and educators can understand and use.",
+    ],
+  },
+  {
+    q: "Who benefits from the Foundation's research?",
+    a: [
+      "The Foundation's work is designed to create value for the wider education ecosystem:",
+      [
+        "Students — understand their strengths and areas for growth.",
+        "Parents — gain clearer insights into how their child learns.",
+        "Schools and educators — receive meaningful information to support learning and improvement.",
+        "Researchers and academic leaders — contribute perspectives that help advance educational assessment and practice.",
+      ],
+    ],
+  },
+  {
+    q: "How can a school, educator, researcher or organisation work with Epoch Olympiad Foundation?",
+    a: [
+      "There are multiple ways to engage with the Foundation, depending on the nature of the organisation and its objectives.",
+      "Schools can participate in our educational initiatives, while educators, academic leaders, researchers, institutions, organisations and potential partners may explore opportunities for academic collaboration, research, innovation, outreach and educational development.",
+      "Explore:",
+      {
+        links: [
+          { label: "Register Your School", href: "/register-your-school" },
+          { label: "Become an Advisor", href: "/advisory-board" },
+          { label: "Partner With Us", href: "/partner-with-us" },
+        ],
+      },
+    ],
   },
 ];
 
@@ -37,7 +92,7 @@ function FaqRow({
   onToggle,
 }: {
   q: string;
-  a: string;
+  a: FaqItem["a"];
   open: boolean;
   onToggle: () => void;
 }) {
@@ -73,9 +128,10 @@ function FaqRow({
           open ? "grid-rows-[1fr] pb-4" : "grid-rows-[0fr]"
         }`}
       >
-        <p className="min-h-0 overflow-hidden text-[12.5px] leading-relaxed text-slate-600 lg:text-[13.5px] xl:text-[14.5px]">
-          {a}
-        </p>
+        <FaqAnswer
+          blocks={a}
+          textClass="text-[12.5px] leading-relaxed text-slate-600 lg:text-[13.5px] xl:text-[14.5px]"
+        />
       </div>
     </div>
   );

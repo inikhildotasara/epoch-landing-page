@@ -2,39 +2,85 @@
 
 import { useState } from "react";
 import { DocIcon } from "../icons";
+import { FaqAnswer, type FaqItem } from "../faq/FaqAnswer";
 
-const faqs = [
+const faqs: FaqItem[] = [
   {
-    q: "Who can participate in the International Brain Booster Olympiad?",
-    a: "Kindergarten and eligible early learners, registered through their school as per the annual notification.",
+    q: "What is the International Brain Booster Olympiad?",
+    a: [
+      "The International Brain Booster Olympiad is a joyful, age-appropriate cognitive assessment for kindergarten and eligible early learners.",
+      "It explores how children observe, recognise patterns, connect ideas, reason and approach simple problems.",
+      "The assessment is designed to understand thinking and learning readiness—not simply how much information a child can remember.",
+    ],
   },
   {
-    q: "What skills does Brain Booster Olympiad assess?",
-    a: "Observation, pattern recognition, connecting ideas, simple reasoning and early problem-solving—the thinking abilities that come before subject knowledge.",
+    q: "What skills does the Brain Booster Olympiad assess?",
+    a: [
+      "The assessment focuses on foundational thinking abilities such as:",
+      [
+        "Observation",
+        "Pattern Recognition",
+        "Connecting Ideas",
+        "Reasoning",
+        "Early Problem-Solving",
+      ],
+      "These are important foundations that develop before and alongside formal academic learning.",
+    ],
   },
   {
-    q: "Is Brain Booster based on a school textbook syllabus?",
-    a: "No. It is not tied to any textbook. Questions use colours, shapes and everyday objects that young children already recognise.",
+    q: "Is the Brain Booster Olympiad based on a school textbook syllabus?",
+    a: [
+      "No. The assessment is not tied to a particular textbook. It uses age-appropriate situations involving colours, shapes and familiar everyday objects to understand how young children observe, recognise, connect and reason.",
+    ],
   },
   {
-    q: "Is the assessment suitable for young children?",
-    a: "Yes. It is offline, crayon-and-paper based, age-appropriate and conducted in a familiar, friendly environment at the child's own school.",
+    q: "Is the Brain Booster Olympiad suitable for young children?",
+    a: [
+      "Yes. It is designed specifically for kindergarten and eligible early learners and is conducted offline using paper and crayon colours in a familiar school environment.",
+      "The experience is designed to be child-friendly and age-appropriate rather than stressful or dependent on advanced academic preparation.",
+    ],
   },
   {
-    q: "How should my child prepare?",
-    a: "Play observation games, work through the coloured workbook, explore patterns in everyday objects and encourage why, how and what-if questions.",
+    q: "How can my child participate in International Brain Booster Olympiad?",
+    a: [
+      "The International Brain Booster Olympiad is conducted through participating schools.",
+      "The usual process is:",
+      [
+        "Register through your school.",
+        "Complete the parent consent form available at the school.",
+        "Submit the examination fee and consent form to the class teacher.",
+        "Receive the coloured workbook and access to the Genie App.",
+        "Appear for the assessment in a friendly school environment.",
+      ],
+    ],
   },
   {
-    q: "Does my child need coaching?",
-    a: "No coaching is required. The assessment measures how a child thinks, not how much a child has been drilled.",
+    q: "How should my child prepare for the Brain Booster Olympiad?",
+    a: [
+      "No intensive coaching is required. Children can prepare naturally by:",
+      [
+        "playing observation and thinking games,",
+        "using the engaging coloured workbook,",
+        "exploring patterns through colours, shapes and everyday objects,",
+        "practising sample and previous-year papers through the Genie App, and",
+        "being encouraged to ask “why?”, “how?” and “what if?” questions.",
+      ],
+      "The aim is to encourage thinking—not drilling.",
+    ],
   },
   {
-    q: "What does the child receive after the assessment?",
-    a: "An Academic Health Report with parent-friendly insights into the child's thinking abilities and learning readiness.",
+    q: "What does a child receive after the assessment?",
+    a: [
+      "The child receives Awards, Prizes, Scholarship, Surprise Gift as per their performance and an Academic Health Report with parent-friendly insights into their thinking abilities and learning readiness.",
+      "The report is designed to help parents and educators understand the child's strengths and areas that may benefit from further development, rather than looking only at marks or a rank.",
+    ],
   },
   {
-    q: "How are awards, scholarships and recognition decided?",
-    a: "On performance at international, national and school levels, with scholarships and special recognition awarded as per published criteria.",
+    q: "Does my child need coaching to participate?",
+    a: [
+      "No. The Brain Booster Olympiad is designed to understand how a child thinks, rather than how extensively the child has been coached or drilled.",
+      "Parents can support their child simply by encouraging observation, curiosity, conversation, exploration and “why/how/what-if” thinking in everyday situations. Colour workbook and sufficient study materials are already available in our Genie App.",
+    ],
   },
 ];
 
@@ -45,7 +91,7 @@ function FaqRow({
   onToggle,
 }: {
   q: string;
-  a: string;
+  a: FaqItem["a"];
   open: boolean;
   onToggle: () => void;
 }) {
@@ -81,9 +127,10 @@ function FaqRow({
           open ? "grid-rows-[1fr] pb-3" : "grid-rows-[0fr]"
         }`}
       >
-        <p className="min-h-0 overflow-hidden text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]">
-          {a}
-        </p>
+        <FaqAnswer
+          blocks={a}
+          textClass="text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]"
+        />
       </div>
     </div>
   );

@@ -1,14 +1,19 @@
+import Link from "next/link";
 import { ArrowRight } from "./icons";
 import { Reveal } from "./Reveal";
 
-const articles = [
+/* Add `slug` once the article exists in src/content/articles — the card then
+   links to /articles/<slug> instead of showing as upcoming. */
+const articles: { img: string; title: string; slug?: string }[] = [
   {
     img: "/images/article-1.png",
     title: "How Cognitive Intelligence Differs from Academic Intelligence",
+    slug: "cognitive-vs-academic-intelligence",
   },
   {
     img: "/images/article-2.png",
     title: "Why Marks Alone Cannot Measure Learning",
+    slug: "why-marks-alone-cannot-measure-learning",
   },
   {
     img: "/images/article-3.png",
@@ -41,13 +46,13 @@ export function Insights() {
               Insights. Research. Impact.
             </h2>
           </div>
-          <a
-            href="#"
+          <Link
+            href="/articles"
             className="hidden sm:inline-flex items-center gap-1.5 text-[13px] lg:text-[15px] font-semibold text-navy hover:text-gold-dark transition-colors"
           >
             View All Articles
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
 
         {/* Six across only from xl. At 1024 the page gutter leaves ~850px, which
@@ -71,13 +76,19 @@ export function Insights() {
               </h3>
               {/* mt-auto pins the link to the card foot so it stays level across
                   a row whether the title runs to one line or three. */}
-              <a
-                href="#"
-                className="mt-auto w-fit pt-2 inline-flex items-center gap-1 text-[11.5px] lg:text-[13px] font-semibold text-gold-dark hover:text-navy transition-colors"
-              >
-                Read More
-                <ArrowRight className="h-3.5 w-3.5" />
-              </a>
+              {a.slug ? (
+                <Link
+                  href={`/articles/${a.slug}`}
+                  className="mt-auto w-fit pt-2 inline-flex items-center gap-1 text-[11.5px] lg:text-[13px] font-semibold text-gold-dark hover:text-navy transition-colors"
+                >
+                  Read More
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              ) : (
+                <span className="mt-auto w-fit pt-2 text-[11.5px] lg:text-[13px] font-medium text-slate-400">
+                  Coming soon
+                </span>
+              )}
             </Reveal>
           ))}
         </div>

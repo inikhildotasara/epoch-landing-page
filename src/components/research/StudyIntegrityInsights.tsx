@@ -1,4 +1,5 @@
 import type { SVGProps } from "react";
+import Link from "next/link";
 import { Reveal } from "../Reveal";
 import {
   CheckIcon,
@@ -45,13 +46,20 @@ const commitments: { icon: IconType; title: string; desc: string }[] = [
   },
 ];
 
-const insights = [
-  "Why Marks Alone Cannot Measure Learning",
-  "Understanding Cognitive Intelligence in Early Learners",
-  "The Future of International Assessment",
-  "Why Diagnostic Assessment Matters",
-  "How Children Learn Beyond Rote Memory",
-  "Academic Health: A New Perspective on Student Performance",
+/* `slug` is filled in as each piece is published in src/content/articles. */
+const insights: { title: string; slug?: string }[] = [
+  {
+    title: "Why Marks Alone Cannot Measure Learning",
+    slug: "why-marks-alone-cannot-measure-learning",
+  },
+  {
+    title: "How Cognitive Intelligence Differs from Academic Intelligence",
+    slug: "cognitive-vs-academic-intelligence",
+  },
+  { title: "Understanding Cognitive Intelligence in Early Learners" },
+  { title: "The Future of International Assessment" },
+  { title: "Why Diagnostic Assessment Matters" },
+  { title: "Academic Health: A New Perspective on Student Performance" },
 ];
 
 export function StudyIntegrityInsights() {
@@ -117,24 +125,33 @@ export function StudyIntegrityInsights() {
           </h3>
           <ul className="mt-4 divide-y divide-slate-100">
             {insights.map((t) => (
-              <li key={t}>
-                <a
-                  href="#"
-                  className="flex items-center justify-between gap-3 py-2.5 text-[12.5px] text-navy transition-colors hover:text-gold-dark lg:text-[13px]"
-                >
-                  <span>{t}</span>
-                  <ArrowRight className="h-3.5 w-3.5 shrink-0 text-gold-dark" />
-                </a>
+              <li key={t.title}>
+                {t.slug ? (
+                  <Link
+                    href={`/articles/${t.slug}`}
+                    className="flex items-center justify-between gap-3 py-2.5 text-[12.5px] text-navy transition-colors hover:text-gold-dark lg:text-[13px]"
+                  >
+                    <span>{t.title}</span>
+                    <ArrowRight className="h-3.5 w-3.5 shrink-0 text-gold-dark" />
+                  </Link>
+                ) : (
+                  <div className="flex items-center justify-between gap-3 py-2.5 text-[12.5px] text-slate-400 lg:text-[13px]">
+                    <span>{t.title}</span>
+                    <span className="shrink-0 text-[10.5px] font-medium uppercase tracking-[0.1em]">
+                      Soon
+                    </span>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
-          <a
-            href="#"
+          <Link
+            href="/articles"
             className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-navy transition-colors hover:text-gold-dark"
           >
             View All Articles
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>

@@ -13,7 +13,7 @@ export function CTA() {
         </p>
         <div className="mt-7 lg:mt-9 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="/register-your-school"
+            href="/partner-with-us"
             className="rounded-md bg-gold px-6 lg:px-7 py-3 lg:py-3.5 text-[13px] lg:text-[15px] font-semibold text-navy hover:bg-gold-dark transition-colors"
           >
             Partner With Us

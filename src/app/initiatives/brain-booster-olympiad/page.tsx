@@ -9,6 +9,7 @@ import { YoungThinkers } from "@/components/brainiac/YoungThinkers";
 import { BrainiacVoices } from "@/components/brainiac/BrainiacVoices";
 import { BrainiacGlance } from "@/components/brainiac/BrainiacGlance";
 import { BrainiacResources } from "@/components/brainiac/BrainiacResources";
+import { BrainiacFaq } from "@/components/brainiac/BrainiacFaq";
 import { InitiativeCTA } from "@/components/InitiativeCTA";
 import { LogoFlash } from "@/components/LogoFlash";
 
@@ -38,6 +39,7 @@ export default function BrainiacGlobalPage() {
         <BrainiacVoices />
         <BrainiacGlance />
         <BrainiacResources />
+        <BrainiacFaq />
         <InitiativeCTA />
       </main>
       <Footer />

@@ -14,6 +14,8 @@ const navItems: { label: string; href: string }[] = [
   { label: "Student's Login", href: "#" },
 ];
 
+const partnerLink = { label: "Partner With Us", href: "/partner-with-us" };
+
 const PHONE_NUMBER = "9807714979";
 const WHATSAPP_HREF = `https://wa.me/91${PHONE_NUMBER}`;
 const CALL_HREF = `tel:+91${PHONE_NUMBER}`;
@@ -27,7 +29,7 @@ export function Header() {
         <Logo />
 
         <div className="flex items-center gap-3 lg:gap-4">
-          <nav className="hidden xl:flex items-center gap-5">
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-5">
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -37,6 +39,12 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href={partnerLink.href}
+              className="rounded-md bg-navy px-3.5 py-2 text-[12.5px] 2xl:text-[13.5px] font-semibold text-white hover:bg-navy-600 transition-colors whitespace-nowrap"
+            >
+              {partnerLink.label}
+            </Link>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -96,6 +104,13 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href={partnerLink.href}
+              onClick={() => setOpen(false)}
+              className="py-3 text-[14px] font-semibold text-navy border-b border-slate-100"
+            >
+              {partnerLink.label}
+            </Link>
             <div className="flex items-center gap-3 py-3">
               <a
                 href={WHATSAPP_HREF}

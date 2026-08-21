@@ -34,7 +34,7 @@ import {
   SelectInput,
   TextArea,
   TextInput,
-} from "./fields";
+} from "../form/fields";
 import { WhatWeLookFor } from "./WhatWeLookFor";
 
 type Values = {
