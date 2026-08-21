@@ -22,6 +22,16 @@ const juryMembers: JuryMember[] = [
     body: "Distinguished academic with extensive experience in teaching, evaluation and academic assessment.",
   },
   {
+    name: "Prof. (Dr.) Joydip Dhar",
+    photo: "/images/advisors/Prof. (Dr.) Jaydeep Dhar.png",
+    body: "Ph. D., IIT Kanpur. Professor, Applied Sciences Department, IITM Gwalior, M. P.",
+  },
+  {
+    name: "Prof. (Dr.) A. K. Mishra",
+    photo: "/images/advisors/Prof. (Dr.) A. K. Mishra.png",
+    body: "Ph. D., IIT Kanpur. Sr. Professor, Dept. of Mathematics, B.H.U., Varanasi (U. P.).",
+  },
+  {
     name: "Dr. Meena Kapoor",
     body: "Former National Academic Coordinator, CBSE. Specialist in school assessment and academic standards.",
   },

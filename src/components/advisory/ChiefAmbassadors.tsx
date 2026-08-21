@@ -7,25 +7,36 @@ const PORTRAIT = "/images/advisors/prof-ajai-shukla.webp";
 
 const ambassadors = [
   {
+    name: "Dr. Archana Nigam",
+    photo: "/images/advisors/Dr. Archana Nigam.png",
+    role: "Ex. Principal, DPS Kalyanpur",
+    school: "Kanpur (U. P.)",
+    body: "",
+  },
+  {
     name: "Dr. Arvind Malhotra",
+    photo: PORTRAIT,
     role: "Principal",
     school: "Sunrise International School, Bengaluru",
     body: "Passionate about innovation in learning and building future-ready schools.",
   },
   {
     name: "Ms. Kavita Sharma",
+    photo: PORTRAIT,
     role: "Director",
     school: "Greenfield World School, Pune",
     body: "Champion of holistic education and student well-being.",
   },
   {
     name: "Dr. Rajiv Menon",
+    photo: PORTRAIT,
     role: "Principal",
     school: "Oxford Global School, Hyderabad",
     body: "Focused on academic excellence and leadership development.",
   },
   {
     name: "Ms. Neha Bhatia",
+    photo: PORTRAIT,
     role: "Principal",
     school: "The Heritage School, Chandigarh",
     body: "Committed to building innovative and inclusive learning communities.",
@@ -46,13 +57,13 @@ export function ChiefAmbassadors() {
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-7 lg:gap-5 xl:grid-cols-4">
-          {ambassadors.map(({ name, role, school, body }, i) => (
+          {ambassadors.map(({ name, photo, role, school, body }, i) => (
             <Reveal key={name} delay={i * 90}>
               <article className="flex h-full gap-3.5 rounded-xl border border-[#eee7d8] bg-white p-3.5 shadow-[0_2px_14px_-10px_rgba(11,28,63,0.18)] sm:gap-4 sm:p-4 lg:p-4.5">
                 <div className="w-[34%] max-w-[140px] shrink-0">
                   <div className="aspect-square w-full overflow-hidden rounded-lg bg-slate-100">
                     <img
-                      src={PORTRAIT}
+                      src={photo}
                       alt={name}
                       loading="lazy"
                       decoding="async"
@@ -73,9 +84,11 @@ export function ChiefAmbassadors() {
                     <br />
                     {school}
                   </p>
-                  <p className="mt-2 text-[10.5px] leading-relaxed text-slate-500 sm:text-[11.5px] xl:text-[10.5px] 2xl:text-[12px]">
-                    {body}
-                  </p>
+                  {body ? (
+                    <p className="mt-2 text-[10.5px] leading-relaxed text-slate-500 sm:text-[11.5px] xl:text-[10.5px] 2xl:text-[12px]">
+                      {body}
+                    </p>
+                  ) : null}
                 </div>
               </article>
             </Reveal>
