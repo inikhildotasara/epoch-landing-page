@@ -1,26 +1,25 @@
 import { Reveal } from "../Reveal";
-import { BrainIcon, TrophyIcon, TrendUpIcon } from "../icons";
 
 const PURPLE = "#6d4aa7";
 const ORANGE = "#e8862e";
 
 const items = [
   {
-    icon: BrainIcon,
+    logo: "/images/LOGO - BRAINIAC.png",
     color: PURPLE,
     tint: "#f2ecfb",
     title: "Brainiac Global",
     sub: "Build Thinking",
   },
   {
-    icon: TrophyIcon,
+    logo: "/images/LOGO - EPOCH.png",
     color: "#0b1c3f",
     tint: "#eef2fb",
     title: "Epoch Olympiad",
     sub: "Assess Intelligence",
   },
   {
-    icon: TrendUpIcon,
+    logo: "/images/LOGO - MY CCBEE.png",
     color: ORANGE,
     tint: "#fdf1e5",
     title: "MY CCBee",
@@ -44,7 +43,6 @@ export function PhilosophyStrip() {
 
         <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3 lg:mt-10">
           {items.map((it, i) => {
-            const Icon = it.icon;
             return (
               <Reveal
                 key={it.title}
@@ -55,10 +53,10 @@ export function PhilosophyStrip() {
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
                   style={{ backgroundColor: it.tint }}
                 >
-                  <Icon
-                    className="h-7 w-7"
-                    style={{ color: it.color }}
-                    strokeWidth={1.7}
+                  <img
+                    src={it.logo}
+                    alt={`${it.title} logo`}
+                    className="h-8 w-8 object-contain"
                   />
                 </span>
                 <div>

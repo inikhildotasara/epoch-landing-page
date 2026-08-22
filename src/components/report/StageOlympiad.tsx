@@ -8,6 +8,7 @@ import {
   SearchIcon,
   ClipboardIcon,
   FlaskIcon,
+  SeedlingIcon,
 } from "../icons";
 import {
   Panel,
@@ -345,6 +346,34 @@ export function StageOlympiad() {
           />
         </Reveal>
       </div>
+
+      {/* Parent insight */}
+      <Reveal>
+        <div
+          className="flex flex-col gap-4 rounded-2xl border p-5 sm:flex-row sm:items-start sm:gap-6 lg:p-7"
+          style={{ borderColor: `${ACCENT}26`, backgroundColor: `${ACCENT}0a` }}
+        >
+          <span
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm lg:h-14 lg:w-14"
+            style={{ color: ACCENT }}
+          >
+            <SeedlingIcon className="h-6 w-6 lg:h-7 lg:w-7" strokeWidth={1.6} />
+          </span>
+          <div>
+            <h3
+              className="text-[10.5px] font-semibold uppercase tracking-[0.14em] lg:text-[11.5px]"
+              style={{ color: ACCENT }}
+            >
+              Parent insight
+            </h3>
+            <p className="mt-2 font-serif text-[15px] italic leading-relaxed text-navy lg:text-[18px]">
+              &ldquo;Your child shows strong visual-spatial thinking and problem
+              solving. Encourage explanation, real-life applications and
+              multi-step challenges to strengthen analytical thinking.&rdquo;
+            </p>
+          </div>
+        </div>
+      </Reveal>
     </StageShell>
   );
 }

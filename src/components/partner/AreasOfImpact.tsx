@@ -8,16 +8,16 @@ export function AreasOfImpact() {
       intro="There are several ways a partner can work with us — across research, assessment, early learning and learning analytics."
     >
       <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        {impactAreas.map(({ name, tagline, desc, img, imgPosition, accent, Icon }) => (
+        {impactAreas.map(({ name, logo, tagline, desc, img, imgPosition, accent, Icon }, index) => (
           <li
             key={name}
             className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white"
           >
-            <div className="relative h-28 bg-slate-100 sm:h-32 xl:h-28">
+            <div className="relative h-40 bg-slate-100 sm:h-44 xl:h-36">
               <img
                 src={img}
                 alt={name}
-                className={`h-full w-full object-cover ${imgPosition ?? ""}`}
+                className={`h-full w-full ${imgPosition ?? "object-contain bg-white"}`}
               />
               <span
                 className="absolute left-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-full text-white shadow-sm"
@@ -38,12 +38,15 @@ export function AreasOfImpact() {
             </div>
 
             <div className="flex flex-1 flex-col px-3.5 py-3">
-              <h3
-                className="text-[12.5px] font-bold leading-snug lg:text-[13px]"
-                style={{ color: accent }}
-              >
-                {name}
-              </h3>
+              <div className="flex h-14 items-center justify-start">
+                <img
+                  src={logo}
+                  alt={name}
+                  className={`max-h-full object-contain object-left ${
+                    index === 0 ? "max-w-[67%]" : "max-w-[96%]"
+                  }`}
+                />
+              </div>
               <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500 lg:text-[11.5px]">
                 {desc}
               </p>

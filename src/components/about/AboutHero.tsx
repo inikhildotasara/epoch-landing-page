@@ -72,6 +72,17 @@ export function AboutHero() {
               empowered to achieve their true intellectual potential.
             </p>
           </div>
+          <button
+            type="button"
+            className="mt-7 inline-flex items-center gap-2.5 rounded-lg border-2 border-navy/30 bg-navy px-4 py-2.5 text-[12px] font-semibold text-white shadow-[0_0_0_3px_rgba(20,41,77,0.08)] transition-colors hover:bg-navy-600 sm:px-5 sm:py-3 sm:text-[13px]"
+          >
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-navy">
+              <svg viewBox="0 0 24 24" className="ml-0.5 h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
+                <path d="M8 5l11 7-11 7z" />
+              </svg>
+            </span>
+            Watch Our Vision
+          </button>
         </Reveal>
 
         <Reveal delay={120}>

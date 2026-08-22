@@ -3,11 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AdvisoryHero } from "@/components/advisory/AdvisoryHero";
 import { AcademicLeadership } from "@/components/advisory/AcademicLeadership";
-import { CouncilContributes } from "@/components/advisory/CouncilContributes";
-import { PatronAndJury } from "@/components/advisory/PatronAndJury";
-import { ChiefAmbassadors } from "@/components/advisory/ChiefAmbassadors";
-import { IndependentPerspective } from "@/components/advisory/IndependentPerspective";
-import { AdvisoryCTA } from "@/components/advisory/AdvisoryCTA";
+import { AdvisoryCommittee } from "@/components/advisory/AdvisoryCommittee";
 
 export const metadata: Metadata = {
   title: "Advisory Board | Epoch Olympiad Foundation",
@@ -22,11 +18,7 @@ export default function AdvisoryBoardPage() {
       <main>
         <AdvisoryHero />
         <AcademicLeadership />
-        <CouncilContributes />
-        <PatronAndJury />
-        <ChiefAmbassadors />
-        <IndependentPerspective />
-        <AdvisoryCTA />
+        <AdvisoryCommittee />
       </main>
       <Footer />
     </>

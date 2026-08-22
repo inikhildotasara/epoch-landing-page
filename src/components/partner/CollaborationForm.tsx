@@ -284,7 +284,7 @@ export function CollaborationForm() {
               Initiatives you would like to explore
             </legend>
             <div className="grid gap-2.5 sm:grid-cols-2">
-              {initiativeChoices.map(({ id, desc, accent, tint, Icon }) => {
+              {initiativeChoices.map(({ id, logo, desc, accent, tint }) => {
                 const picked = v.initiatives.includes(id);
                 return (
                   <label
@@ -305,17 +305,15 @@ export function CollaborationForm() {
                         set("initiatives", toggle(v.initiatives, id))
                       }
                     />
-                    <span
-                      className="mt-px flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-md text-white"
-                      style={{ backgroundColor: accent }}
-                      aria-hidden
-                    >
-                      {/* The brand icon becomes the checkmark once the tile is
-                          picked, so one square carries both states. */}
-                      {picked ? (
-                        <CheckIcon className="h-3.5 w-3.5" />
-                      ) : (
-                        Icon && <Icon className="h-4 w-4" />
+                    <span className="relative mt-px flex h-12 w-28 shrink-0 items-center rounded-md bg-white p-1.5 ring-1 ring-slate-200" aria-hidden>
+                      <img src={logo} alt="" className="h-full w-full object-contain object-left" />
+                      {picked && (
+                        <span
+                          className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full text-white"
+                          style={{ backgroundColor: accent }}
+                        >
+                          <CheckIcon className="h-3 w-3" />
+                        </span>
                       )}
                     </span>
                     <span className="min-w-0">

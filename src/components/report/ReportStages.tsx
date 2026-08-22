@@ -1,9 +1,9 @@
 import { Reveal } from "../Reveal";
-import { ArrowRight, BrainIcon, TrophyIcon, LaurelGlobeIcon } from "../icons";
-import { SectionHead, type IconType } from "./ui";
+import { ArrowRight } from "../icons";
+import { SectionHead } from "./ui";
 
 const stages: {
-  icon: IconType;
+  logo: string;
   accent: string;
   stage: string;
   brand: string;
@@ -14,7 +14,7 @@ const stages: {
   href: string;
 }[] = [
   {
-    icon: BrainIcon,
+    logo: "/images/LOGO - BRAINIAC.png",
     accent: "#1a7a4c",
     stage: "Stage 1",
     brand: "Brainiac Global",
@@ -30,7 +30,7 @@ const stages: {
     href: "#foundation",
   },
   {
-    icon: TrophyIcon,
+    logo: "/images/LOGO - EPOCH.png",
     accent: "#1b4f9c",
     stage: "Stage 2",
     brand: "Epoch Olympiad",
@@ -46,7 +46,7 @@ const stages: {
     href: "#olympiad",
   },
   {
-    icon: LaurelGlobeIcon,
+    logo: "/images/LOGO - MY CCBEE.png",
     accent: "#8a6a12",
     stage: "Stage 3",
     brand: "Epoch Olympiad Advanced",
@@ -77,7 +77,6 @@ export function ReportStages() {
 
         <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-3 lg:mt-12 lg:gap-6">
           {stages.map((s, i) => {
-            const Icon = s.icon;
             return (
               <Reveal
                 key={s.brand}
@@ -93,10 +92,10 @@ export function ReportStages() {
                       className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full lg:h-12 lg:w-12"
                       style={{ backgroundColor: `${s.accent}14` }}
                     >
-                      <Icon
-                        className="h-6 w-6"
-                        style={{ color: s.accent }}
-                        strokeWidth={1.6}
+                      <img
+                        src={s.logo}
+                        alt={`${s.brand} logo`}
+                        className="h-8 w-8 object-contain lg:h-9 lg:w-9"
                       />
                     </span>
                     <div className="min-w-0">

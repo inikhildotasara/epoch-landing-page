@@ -6,28 +6,40 @@ import { SectionHead } from "./ui";
 
 const faqs = [
   {
-    q: "Is the Academic Health Report a rank card?",
-    a: "No. It carries no rank and no pass or fail. Scores exist only so they can be compared with cohort benchmarks, and every dimension is reported separately rather than averaged into one verdict.",
+    q: "What is an Academic Health Report?",
+    a: "An Academic Health Report is a diagnostic report designed to help parents and educators understand how a child learns—not just how many marks they scored. It brings together performance across relevant cognitive and academic dimensions, identifies strengths and growth areas, provides meaningful benchmarks where applicable, and suggests what may help the learner next.",
   },
   {
-    q: "Why are there three different editions?",
-    a: "Because the same measurement would be meaningless across the age range. Early years thinking is described qualitatively, school years introduce scored dimensions and benchmarking, and senior years add novelty and application testing.",
+    q: "How is an Academic Health Report different from a report card or rank card?",
+    a: "A traditional report card mainly communicates academic performance. The Academic Health Report goes further by examining different dimensions of learning and thinking. Depending on the learner's stage, it may show understanding, reasoning, problem-solving, application and other relevant dimensions. It is designed for insight and growth, not simply ranking.",
   },
   {
-    q: "What does the application gap mean?",
-    a: "It is the distance between what a learner knows and what they can do with it under unfamiliar conditions. A wide gap points to practice that has been rehearsal-heavy, and is closed with different work rather than more of the same.",
+    q: "Why are there three different editions of the Academic Health Report?",
+    a: "Children develop and learn differently at different ages. The Academic Health Report therefore has three age-tuned editions: Early Years, School Years and Senior Years. The framework remains connected, but the way learning and thinking are described becomes more advanced as the learner grows.",
   },
   {
-    q: "How should a parent use the growth areas?",
-    a: "As a stage, not a shortfall. Each growth area is paired with concrete actions in the report, and the recommended activities are chosen to target that exact pattern.",
+    q: "What does the Academic Health Report actually measure?",
+    a: "The dimensions depend on the learner's stage. They can include areas such as observation, pattern recognition and learning readiness in the Early Years; conceptual understanding, logical reasoning, problem-solving, visual-spatial thinking, analytical thinking and knowledge application during the School Years; and more advanced dimensions such as conceptual reasoning, scientific inquiry and multidisciplinary thinking in the Senior Years.",
   },
   {
-    q: "Who else sees the report?",
-    a: "Schools receive aggregated views for their cohort while individual reports stay with the learner and family. Nothing in the report is designed for public comparison.",
+    q: "What do the benchmarks in the report mean?",
+    a: "For editions that use scored benchmarking, a learner's performance can be read alongside relevant school, national and international cohorts. This provides context to the score instead of treating the number in isolation. The Early Years edition uses qualitative developmental descriptions rather than rank or percentile.",
   },
   {
-    q: "How often should a learner be reassessed?",
-    a: "Annually is enough to see movement without turning assessment into a routine. Because the framework is continuous, the following year's report can be read directly against this one.",
+    q: "What do “Strengths” and “Growth Areas” mean?",
+    a: "Strengths show abilities that are developing well. Growth areas identify abilities that are still developing and may benefit from further practice or experience. They are not labels of failure. The report connects these areas with practical suggestions that parents and educators can use.",
+  },
+  {
+    q: "How should parents use the Academic Health Report?",
+    a: "Use it as a guide for understanding and supporting your child's learning—not as a comparison tool. Read the strengths, growth areas and recommended next steps together. Discuss the insights with the child and, where appropriate, with the teacher so that everyday learning experiences can respond to what the report reveals.",
+  },
+  {
+    q: "How often should a child receive an Academic Health Report?",
+    a: "The current framework recommends annual reassessment as a practical interval for observing meaningful movement without turning assessment into a routine. Because the framework is continuous, a new report can be understood alongside the previous year's report to follow the learner's development over time.",
+  },
+  {
+    q: "Who can see my child's Academic Health Report?",
+    a: "Individual reports are intended for the learner and family, while schools receive aggregated views of their participating cohort. The report is designed to support learning and development rather than public comparison.",
   },
 ];
 

@@ -171,6 +171,8 @@ export const countries = [
 export type Initiative = {
   id: string;
   title: string;
+  logo?: string;
+  logos?: string[];
   summary: string[];
   bullets: string[];
   note?: string;
@@ -183,7 +185,8 @@ export const initiativeOptions: Initiative[] = [
   {
     id: "Brainiac Global",
     title: "Brainiac Global",
-    summary: ["International Brain Booster", "Exam for Kindergarten"],
+    logo: "/images/BRAINIAC LOGO.png",
+    summary: ["Building Thinking Minds", "from the Earliest Years"],
     bullets: [
       "For Kindergarten learners",
       "Fun & engaging assessment",
@@ -196,6 +199,7 @@ export const initiativeOptions: Initiative[] = [
   {
     id: "Epoch Olympiad",
     title: "Epoch Olympiad",
+    logo: "/images/epoch-olympiad-updated.png",
     summary: [
       "International Olympiads &",
       "Future-Learning Initiatives",
@@ -214,7 +218,8 @@ export const initiativeOptions: Initiative[] = [
   {
     id: "MY CCBee",
     title: "MY CCBee",
-    summary: ["Performance Tracker &", "Booster Platform"],
+    logo: "/images/MY CC BEE.png",
+    summary: ["Performance Tracking & Booster", "Platform for Schools"],
     bullets: [
       "For Playgroup to Class 2",
       "Daily activity & performance tracking",
@@ -227,6 +232,11 @@ export const initiativeOptions: Initiative[] = [
   {
     id: "All three initiatives",
     title: "I would like to understand all three initiatives",
+    logos: [
+      "/images/BRAINIAC LOGO.png",
+      "/images/epoch-olympiad-updated.png",
+      "/images/MY CC BEE.png",
+    ],
     summary: [],
     bullets: [],
     note: "Help us understand the best way to support your school.",

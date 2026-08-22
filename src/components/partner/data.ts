@@ -160,44 +160,52 @@ export const exploreAreas: { area: string; desc: string }[] = [
 
 export const impactAreas: {
   name: string;
+  logo: string;
   tagline: string;
   desc: string;
   img: string;
-  /** Crop anchor, for artwork whose subject sits away from the centre. */
+  /** Image sizing and positioning classes for each artwork. */
   imgPosition?: string;
   accent: string;
   Icon: IconType;
 }[] = [
   {
     name: "Epoch Olympiad Foundation",
+    logo: "/images/EPOCH NAME LOGO - Copy.png",
     tagline: "Research • Assessment • Cognitive Development",
     desc: "Exploring how children learn, think, reason and apply knowledge beyond rote memorisation.",
     img: "/images/research-hero.png",
+    imgPosition: "object-contain bg-[#03152f]",
     accent: "#14294d",
     Icon: MicroscopeIcon,
   },
   {
     name: "Epoch Olympiad",
+    logo: "/images/epoch-olympiad-updated.png",
     tagline: "International Assessments • Future-Ready Learning",
     desc: "International Olympiads and learning platforms designed to develop conceptual understanding, reasoning and future readiness.",
     img: "/images/card-olympiad.png",
+    imgPosition: "object-contain bg-white",
     accent: "#b0790f",
     Icon: TrophyIcon,
   },
   {
     name: "Brainiac Global",
+    logo: "/images/BRAINIAC LOGO.png",
     tagline: "Early Thinking • Curiosity • Learning Readiness",
     desc: "Nurturing foundational thinking in young learners through observation, curiosity, reasoning and age-appropriate experiences.",
     img: "/images/card-brainiac.png",
+    imgPosition: "object-contain bg-white",
     accent: "#1f9254",
     Icon: BulbIcon,
   },
   {
     name: "MY CCBee",
+    logo: "/images/MY CC BEE.png",
     tagline: "Performance Tracking • Insights • Improvement",
     desc: "Helping parents and schools understand everyday learning and performance through continuous tracking and actionable insights.",
     img: "/images/ccbee-dashboard.webp",
-    imgPosition: "object-top",
+    imgPosition: "object-contain bg-white",
     accent: "#8e2fae",
     Icon: AnalyticsIcon,
   },
@@ -250,6 +258,7 @@ export const collaborationAreas = [
 
 export const initiativeChoices: {
   id: string;
+  logo: string;
   desc?: string;
   accent?: string;
   tint?: string;
@@ -257,6 +266,7 @@ export const initiativeChoices: {
 }[] = [
   {
     id: "Epoch Olympiad Foundation",
+    logo: "/images/EPOCH NAME LOGO - Copy.png",
     desc: "Research & cognitive assessment",
     accent: "#14294d",
     tint: "#f3f6fc",
@@ -264,6 +274,7 @@ export const initiativeChoices: {
   },
   {
     id: "Epoch Olympiad",
+    logo: "/images/epoch-olympiad-updated.png",
     desc: "International Olympiads & future-ready learning platforms",
     accent: "#b0790f",
     tint: "#fffaef",
@@ -271,6 +282,7 @@ export const initiativeChoices: {
   },
   {
     id: "Brainiac Global",
+    logo: "/images/BRAINIAC LOGO.png",
     desc: "Early learning & foundational thinking",
     accent: "#1f9254",
     tint: "#f3fbf6",
@@ -278,6 +290,7 @@ export const initiativeChoices: {
   },
   {
     id: "MY CCBee",
+    logo: "/images/MY CC BEE.png",
     desc: "Performance tracking & educational analytics",
     accent: "#8e2fae",
     tint: "#fbf4fd",

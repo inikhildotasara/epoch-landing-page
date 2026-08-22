@@ -1,12 +1,5 @@
 import { Fragment } from "react";
 import type { SVGProps } from "react";
-import {
-  LaurelGlobeIcon,
-  TrophyPinIcon,
-  BrainIcon,
-  BarChartArrowIcon,
-  ClipboardIcon,
-} from "../icons";
 import { Reveal } from "../Reveal";
 import { SectionLabel } from "./SectionLabel";
 
@@ -15,34 +8,34 @@ type IconType = (p: SVGProps<SVGSVGElement>) => React.ReactElement;
 const ORANGE = "#e8862e";
 
 const nodes: {
-  icon: IconType;
+  logo: string;
   title: string;
   sub: string;
   color: string;
   href?: string;
 }[] = [
   {
-    icon: LaurelGlobeIcon,
-    title: "Epoch Olympiad Foundation",
-    sub: "Education Research Foundation",
-    color: "#c79a3b",
-  },
-  {
-    icon: TrophyPinIcon,
-    title: "Epoch Olympiad",
-    sub: "International Olympiads (Classes 1–10)",
-    color: "#1b3566",
-    href: "/initiatives/epoch-olympiad",
-  },
-  {
-    icon: BrainIcon,
+    logo: "/images/BRAINIAC LOGO.png",
     title: "Brainiac Global",
     sub: "International Brain Booster Exams (Kindergarten)",
     color: "#2f9e5b",
     href: "/initiatives/brain-booster-olympiad",
   },
   {
-    icon: BarChartArrowIcon,
+    logo: "/images/EPOCH NAME LOGO - Copy.png",
+    title: "Epoch Olympiad Foundation",
+    sub: "Education Research Foundation",
+    color: "#c79a3b",
+  },
+  {
+    logo: "/images/epoch-olympiad-updated.png",
+    title: "Epoch Olympiad",
+    sub: "International Olympiads (Classes 1–10)",
+    color: "#1b3566",
+    href: "/initiatives/epoch-olympiad",
+  },
+  {
+    logo: "/images/MY CC BEE.png",
     title: "MY CCBee",
     sub: "Performance Tracker & Booster Platform",
     color: ORANGE,
@@ -51,6 +44,7 @@ const nodes: {
 ];
 
 function Box({
+  logo,
   icon: Icon,
   title,
   sub,
@@ -58,7 +52,8 @@ function Box({
   href,
   className = "",
 }: {
-  icon: IconType;
+  logo?: string;
+  icon?: IconType;
   title: string;
   sub: string;
   color: string;
@@ -74,16 +69,23 @@ function Box({
         href ? "hover:shadow-[0_6px_22px_rgba(15,28,63,0.13)]" : ""
       } ${className}`}
     >
-      <Icon
-        className="h-11 w-11 shrink-0 lg:h-[52px] lg:w-[52px]"
-        style={{ color }}
-        strokeWidth={1.5}
-      />
+      {logo ? (
+        <img
+          src={logo}
+          alt={title}
+          className="h-14 w-[150px] shrink-0 object-contain object-left lg:h-[64px] lg:w-[155px]"
+        />
+      ) : (
+        Icon && (
+          <Icon
+            className="h-11 w-11 shrink-0 lg:h-[52px] lg:w-[52px]"
+            style={{ color }}
+            strokeWidth={1.5}
+          />
+        )
+      )}
       <div>
-        <h3 className="text-[14px] font-bold leading-snug text-navy lg:text-[16px]">
-          {title}
-        </h3>
-        <p className="mt-1 text-[11.5px] leading-snug text-slate-500 lg:text-[12.5px]">
+        <p className="text-[11.5px] leading-snug text-slate-500 lg:text-[12.5px]">
           {sub}
         </p>
       </div>
@@ -103,7 +105,7 @@ function Arrow() {
 }
 
 const ahrProps = {
-  icon: ClipboardIcon,
+  logo: "/images/ahr-brand-logo.webp",
   title: "Academic Health Report",
   sub: "Data-driven insights for holistic academic growth and improvement",
   color: "#1b3566",

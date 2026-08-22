@@ -1,37 +1,29 @@
-import type { SVGProps } from "react";
 import { Reveal } from "../Reveal";
-import { BrainIcon, TrophyIcon, TrendUpIcon } from "../icons";
-
-type IconType = (p: SVGProps<SVGSVGElement>) => React.ReactElement;
 
 const apps: {
   img: string;
-  icon: IconType;
-  color: string;
+  logo: string;
   title: string;
   desc: string;
   href: string;
 }[] = [
   {
     img: "/images/card-brainiac.png",
-    icon: BrainIcon,
-    color: "#16a34a",
+    logo: "/images/BRAINIAC LOGO.png",
     title: "Brainiac Global",
     desc: "Research-driven cognitive assessment for kindergarten learners, focusing on foundational thinking and learning abilities.",
     href: "/initiatives/brain-booster-olympiad",
   },
   {
     img: "/images/card-olympiad.png",
-    icon: TrophyIcon,
-    color: "#1b3566",
+    logo: "/images/epoch-olympiad-updated.png",
     title: "Epoch International Olympiads",
     desc: "Research-based assessments for Classes 1–10 designed to evaluate conceptual understanding, reasoning and academic thinking.",
     href: "/initiatives/epoch-olympiad",
   },
   {
     img: "/images/ccbee-dashboard.webp",
-    icon: TrendUpIcon,
-    color: "#e8862e",
+    logo: "/images/MY CC BEE.png",
     title: "MY CCBee",
     desc: "A performance tracking and booster platform that helps convert assessment data into ongoing learner insights and improvement pathways.",
     href: "/initiatives/my-ccbee",
@@ -50,7 +42,6 @@ export function ApplicationsVideo() {
 
           <div className="mt-6 space-y-5">
             {apps.map((a) => {
-              const Icon = a.icon;
               return (
                 <a
                   key={a.title}
@@ -63,11 +54,12 @@ export function ApplicationsVideo() {
                     className="h-[86px] w-[116px] shrink-0 rounded-lg object-cover"
                   />
                   <div className="min-w-0">
-                    <div className="flex items-center gap-2">
-                      <Icon className="h-5 w-5 shrink-0" style={{ color: a.color }} strokeWidth={1.7} />
-                      <h3 className="text-[14px] font-bold text-navy lg:text-[15px]">
-                        {a.title}
-                      </h3>
+                    <div className="flex items-center">
+                      <img
+                        src={a.logo}
+                        alt={a.title}
+                        className="h-8 max-w-[180px] object-contain object-left"
+                      />
                     </div>
                     <p className="mt-1.5 text-[12px] leading-snug text-slate-500 lg:text-[12.5px]">
                       {a.desc}
@@ -89,7 +81,7 @@ export function ApplicationsVideo() {
             Why We Are Rethinking Assessment
           </h2>
 
-          <a href="#" className="group relative mt-6 block overflow-hidden rounded-xl">
+          <div className="group relative mt-6 block overflow-hidden rounded-xl">
             <img
               src="/images/research-video.png"
               alt="From Rote Memory to True Intelligence"
@@ -104,7 +96,7 @@ export function ApplicationsVideo() {
                 <path d="M8 5l11 7-11 7z" />
               </svg>
             </span>
-          </a>
+          </div>
 
           <p className="mt-5 text-[13px] leading-relaxed text-slate-600 lg:text-[14px]">
             A short introduction to why Epoch Olympiad Foundation believes the
@@ -113,15 +105,15 @@ export function ApplicationsVideo() {
           </p>
 
           <div className="mt-5 flex items-center justify-between">
-            <a
-              href="#"
+            <button
+              type="button"
               className="inline-flex items-center gap-2 rounded-md bg-navy px-5 py-2.5 text-[13px] font-semibold text-white transition-colors hover:bg-navy-600 lg:text-[14px]"
             >
               Watch Our Vision
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor">
                 <path d="M8 5l11 7-11 7z" />
               </svg>
-            </a>
+            </button>
             <span className="text-[12px] font-medium text-slate-400 lg:text-[13px]">
               2:05 min
             </span>

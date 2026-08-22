@@ -35,7 +35,6 @@ import {
   TextArea,
   TextInput,
 } from "../form/fields";
-import { WhatWeLookFor } from "./WhatWeLookFor";
 
 type Values = {
   schoolName: string;
@@ -493,11 +492,25 @@ export function RegistrationForm() {
                     </span>
 
                     <span
-                      className="mx-auto flex h-12 w-12 items-center justify-center rounded-full lg:h-[54px] lg:w-[54px]"
-                      style={{ backgroundColor: option.accent }}
+                      className="mx-auto flex h-14 w-full max-w-[190px] items-center justify-center gap-1.5 rounded-lg bg-white px-2 ring-1 ring-slate-200 lg:h-[62px]"
                       aria-hidden
                     >
-                      <option.Icon className="h-7 w-7 text-white lg:h-8 lg:w-8" />
+                      {option.logos ? (
+                        option.logos.map((logo) => (
+                          <img
+                            key={logo}
+                            src={logo}
+                            alt=""
+                            className="h-full min-w-0 flex-1 object-contain"
+                          />
+                        ))
+                      ) : (
+                        <img
+                          src={option.logo}
+                          alt=""
+                          className="h-full w-full object-contain"
+                        />
+                      )}
                     </span>
 
                     <span
@@ -633,14 +646,9 @@ export function RegistrationForm() {
           </div>
         </FormSection>
 
-        {/* ------------------------------------- 4. what we look for */}
-        <FormSection num={4} title="What We Look For" align="center">
-          <WhatWeLookFor />
-        </FormSection>
-
-        {/* --------------------------------- 5. preferred way to connect */}
+        {/* --------------------------------- 4. preferred way to connect */}
         <FormSection
-          num={5}
+          num={4}
           title="Preferred Way To Connect"
           align="center"
           icon={PhoneRingIcon}

@@ -31,7 +31,7 @@ const cards: {
     href: "/initiatives/epoch-olympiad",
   },
   {
-    img: "/images/ccbee-dashboard.webp",
+    img: "/images/ccbee-dashboard_final.png",
     imgPosition: "object-top",
     title: "MY CCBee",
     tagline: "Performance Tracking & Booster Platform for Schools",

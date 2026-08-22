@@ -70,7 +70,7 @@ export function InitiativeCCBee() {
               </span>
               <div className="w-full rounded-xl border-[5px] border-[#1b2436] bg-[#1b2436] shadow-lg">
                 <img
-                  src="/images/ccbee-dashboard.webp"
+                  src="/images/ccbee-dashboard_final.png"
                   alt="MY CCBee analytics dashboard"
                   className="w-full rounded-md object-cover"
                 />
@@ -79,11 +79,12 @@ export function InitiativeCCBee() {
 
             {/* Main content */}
             <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 xl:row-span-1">
-              <h3
-                className="font-serif text-[26px] font-semibold lg:text-[30px]"
-                style={{ color: ORANGE }}
-              >
-                MY CCBee
+              <h3>
+                <img
+                  src="/images/MY CC BEE.png"
+                  alt="MY CCBee"
+                  className="h-16 w-auto max-w-[260px] object-contain object-left lg:h-[76px]"
+                />
               </h3>
               <p
                 className="mt-1 font-serif text-[15px] font-semibold lg:text-[16px]"

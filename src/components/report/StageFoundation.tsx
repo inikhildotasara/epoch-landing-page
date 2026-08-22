@@ -90,7 +90,7 @@ const opportunities = [
 ];
 
 const fields = [
-  { label: "Student Name", value: "Ria Gupta" },
+  { label: "Student Name", value: "Priya Gupta" },
   { label: "School", value: "Sunshine Kids World" },
   { label: "Class Teacher", value: "Ms. Neha Verma" },
   { label: "Principal", value: "Ms. Pooja Sharma" },
@@ -109,12 +109,12 @@ export function StageFoundation() {
       brand="Brainiac Global"
       tagline="Building Thinking Before Memorisation"
       audience="Early years"
-      heading="No ranks, no percentiles — a description of how a young child thinks"
+      heading="No Percentile, No Comparison — A description of how a young child thinks"
       paragraphs={[
         "At this age a score would mislead more than it informs. So the early years edition never produces one. It reads six developmental lenses and reports each as strong or still developing, which is exactly how thinking behaves before formal schooling settles in.",
         "The result is a report a parent can read in four minutes and act on the same evening: what the child already does well, what is still forming, and which everyday play would move it forward.",
       ]}
-      previewSrc="/images/ahr-report-foundation.webp"
+      previewSrc="/images/ahr-report-foundation-updated.png"
       previewAlt="Brainiac Global Academic Health Report showing developmental lenses, strengths, learning readiness profile and parent insight"
       fields={fields}
       footerTagline="Every child thinks differently. We help you understand how."

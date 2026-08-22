@@ -3,7 +3,7 @@ import { ArrowRight } from "../icons";
 
 const reports = [
   {
-    src: "/images/ahr-report-foundation.webp",
+    src: "/images/ahr-report-foundation-updated.png",
     alt: "Brainiac Global Academic Health Report for early years learners",
     stage: "Stage 1",
     name: "Early Years",

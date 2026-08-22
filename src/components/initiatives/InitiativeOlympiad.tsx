@@ -68,8 +68,12 @@ export function InitiativeOlympiad() {
 
             {/* Main content */}
             <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 xl:row-span-1">
-              <h3 className="font-serif text-[26px] font-semibold text-navy lg:text-[30px]">
-                Epoch Olympiad
+              <h3>
+                <img
+                  src="/images/EPOCH NAME LOGO - Copy.png"
+                  alt="Epoch Olympiad"
+                  className="h-16 w-auto max-w-[260px] object-contain object-left lg:h-[76px]"
+                />
               </h3>
               <p className="mt-1 font-serif text-[15px] font-semibold text-navy lg:text-[16px]">
                 International Assessment Beyond Rote Memory

@@ -71,11 +71,12 @@ export function InitiativeBrainiac() {
             <div className="contents lg:flex lg:flex-col lg:gap-7 lg:col-start-2 lg:row-start-1 lg:row-span-2 xl:row-span-1 2xl:contents">
               {/* Main content */}
               <div className="2xl:col-start-2 2xl:row-start-1">
-                <h3
-                  className="font-serif text-[26px] font-semibold lg:text-[30px]"
-                  style={{ color: PURPLE }}
-                >
-                  Brainiac Global
+                <h3>
+                  <img
+                    src="/images/BRAINIAC LOGO.png"
+                    alt="Brainiac Global"
+                    className="h-16 w-auto max-w-[240px] object-contain object-left lg:h-[76px]"
+                  />
                 </h3>
                 <p className="mt-1 font-serif text-[15px] font-semibold text-navy lg:text-[16px]">
                   Building Thinking Before Memorisation

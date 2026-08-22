@@ -4,7 +4,6 @@ import {
   BulbIcon,
   GlobeIcon,
   GroupIcon,
-  HandshakeIcon,
   MicroscopeIcon,
 } from "../icons";
 import type { IconType } from "./data";
@@ -99,7 +98,11 @@ export function PartnerHero() {
             <span className="absolute inset-[13%] rounded-full ring-1 ring-navy/5" />
 
             <span className="absolute left-1/2 top-1/2 flex h-[36%] w-[36%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-navy shadow-[0_16px_36px_-18px_rgba(11,28,63,0.7)]">
-              <HandshakeIcon className="h-[46%] w-[46%] text-gold" />
+              <img
+                src="/images/partner-handshake.png"
+                alt="Handshake representing partnership"
+                className="h-full w-full rounded-full object-cover"
+              />
             </span>
 
             {ring.map(({ Icon, left, top }, i) => (
@@ -129,7 +132,11 @@ export function PartnerHero() {
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white ring-1 ring-gold/30"
                 aria-hidden
               >
-                <GroupIcon className="h-[18px] w-[18px] text-navy" />
+                <img
+                  src="/images/logo.png"
+                  alt=""
+                  className="h-[22px] w-[22px] object-contain"
+                />
               </span>
               <span className="text-[11.5px] font-semibold uppercase tracking-[0.1em] text-navy-600">
                 Epoch Olympiad Foundation
