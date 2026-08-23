@@ -353,5 +353,5 @@ export const MESSAGE_LIMIT = 1200;
 export const closingStats: { big: string; label: string; Icon: IconType }[] = [
   { big: "500+", label: "Schools", Icon: BuildingIcon },
   { big: "5+", label: "Countries", Icon: GlobeIcon },
-  { big: "10L+", label: "Students Impacted", Icon: RocketIcon },
+  { big: "5M+", label: "Students Impacted", Icon: RocketIcon },
 ];
