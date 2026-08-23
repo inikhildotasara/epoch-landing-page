@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, GroupIcon } from "../icons";
@@ -87,26 +89,26 @@ function InterestStrip({
   );
 }
 
-function MemberAvatar({
+function MemberCard({
   name,
   role,
   institution,
   photo,
-  ring = "navy",
+  tone = "navy",
 }: {
   name: string;
   role: ReactNode;
   institution?: ReactNode;
   photo: string;
-  ring?: "navy" | "gold";
+  tone?: "navy" | "gold";
 }) {
   return (
-    <div className="flex w-[126px] shrink-0 snap-start flex-col items-center text-center sm:w-[148px]">
-      <div
-        className={`h-20 w-20 overflow-hidden rounded-full bg-white shadow-[0_8px_20px_-10px_rgba(11,28,63,0.4)] ring-[3px] ring-offset-2 ring-offset-white transition-transform duration-300 ease-out hover:-translate-y-1.5 sm:h-24 sm:w-24 ${
-          ring === "gold" ? "ring-gold/50" : "ring-navy/15"
-        }`}
-      >
+    <div
+      className={`flex w-[200px] shrink-0 snap-start flex-col overflow-hidden rounded-xl border bg-white sm:w-[228px] lg:w-[248px] ${
+        tone === "gold" ? "border-[#eee7d8]" : "border-[#d9dfeb]"
+      }`}
+    >
+      <div className="aspect-[4/5] w-full overflow-hidden bg-slate-100">
         <img
           src={photo}
           alt={name}
@@ -114,53 +116,61 @@ function MemberAvatar({
           className="h-full w-full object-cover object-top"
         />
       </div>
-      <h4 className="mt-3 font-serif text-[12px] font-semibold leading-snug text-navy sm:text-[12.5px]">
-        {name}
-      </h4>
-      <p className="mt-1 text-[9.5px] leading-snug text-gold-dark sm:text-[10px]">
-        {role}
-      </p>
-      {institution ? (
-        <p className="mt-0.5 text-[9px] leading-snug text-slate-500 sm:text-[9.5px]">
-          {institution}
+      <div className="px-3 py-3 text-center sm:px-3.5 sm:py-3.5">
+        <h3 className="font-serif text-[15.6px] font-semibold leading-snug text-navy sm:text-[15.5px]">
+          {name}
+        </h3>
+        <p className="mt-1.5 font-serif text-[12px] leading-snug text-gold-dark sm:text-[13px]">
+          {role}
         </p>
-      ) : null}
+        {institution ? (
+          <p className="mt-1 text-[11.5px] leading-snug text-slate-500 sm:text-[12px]">
+            {institution}
+          </p>
+        ) : null}
+      </div>
     </div>
   );
 }
 
-function PlaceholderAvatar({
+function PlaceholderCard({
   icon,
   title,
   caption,
-  ring = "navy",
+  tone = "navy",
 }: {
   icon: ReactNode;
   title: string;
   caption: string;
-  ring?: "navy" | "gold";
+  tone?: "navy" | "gold";
 }) {
   return (
-    <div className="flex w-[126px] shrink-0 snap-start flex-col items-center text-center sm:w-[148px]">
+    <div
+      className={`flex w-[200px] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-dashed bg-white/55 sm:w-[228px] lg:w-[248px] ${
+        tone === "gold" ? "border-gold/45" : "border-navy/20"
+      }`}
+    >
       <div
-        className={`flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed sm:h-24 sm:w-24 ${
-          ring === "gold"
-            ? "border-gold/50 bg-[#fff8e6] text-gold-dark"
-            : "border-navy/25 bg-[#edf3ff] text-navy"
+        className={`flex aspect-[4/5] w-full items-center justify-center border-b border-dashed ${
+          tone === "gold"
+            ? "border-gold/35 bg-[#fff8e6] text-gold-dark"
+            : "border-navy/15 bg-[#edf3ff] text-navy"
         }`}
       >
         {icon}
       </div>
-      <h4
-        className={`mt-3 font-serif text-[12px] font-semibold leading-snug sm:text-[12.5px] ${
-          ring === "gold" ? "text-gold-dark" : "text-navy"
-        }`}
-      >
-        {title}
-      </h4>
-      <p className="mt-1 text-[9px] leading-snug text-slate-500 sm:text-[9.5px]">
-        {caption}
-      </p>
+      <div className="px-3 py-3 text-center sm:px-3.5 sm:py-3.5">
+        <h4
+          className={`font-serif text-[14px] font-semibold leading-snug sm:text-[15.5px] ${
+            tone === "gold" ? "text-gold-dark" : "text-navy"
+          }`}
+        >
+          {title}
+        </h4>
+        <p className="mt-1.5 text-[10.5px] leading-snug text-slate-500 sm:text-[11px]">
+          {caption}
+        </p>
+      </div>
     </div>
   );
 }
@@ -172,23 +182,60 @@ function ScrollGallery({
   children: ReactNode;
   fadeColor: string;
 }) {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateFades = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const padLeft = parseFloat(getComputedStyle(el).paddingLeft) || 0;
+    setCanScrollLeft(el.scrollLeft > padLeft + 1);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+
+    el.scrollLeft = 0;
+    updateFades();
+    el.addEventListener("scroll", updateFades, { passive: true });
+    window.addEventListener("resize", updateFades);
+    const observer = new ResizeObserver(updateFades);
+    observer.observe(el);
+
+    return () => {
+      el.removeEventListener("scroll", updateFades);
+      window.removeEventListener("resize", updateFades);
+      observer.disconnect();
+    };
+  }, [updateFades]);
+
   return (
     <div className="relative">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 sm:w-10"
+        className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-6 transition-opacity duration-200 sm:w-10 ${
+          canScrollLeft ? "opacity-100" : "opacity-0"
+        }`}
         style={{
           backgroundImage: `linear-gradient(to right, ${fadeColor}, transparent)`,
         }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 sm:w-10"
+        className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-6 transition-opacity duration-200 sm:w-10 ${
+          canScrollRight ? "opacity-100" : "opacity-0"
+        }`}
         style={{
           backgroundImage: `linear-gradient(to left, ${fadeColor}, transparent)`,
         }}
       />
-      <div className="flex snap-x gap-4 overflow-x-auto px-7 pb-2 pt-1 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-navy/15 [&::-webkit-scrollbar-track]:bg-transparent sm:gap-5 sm:px-11">
+      <div
+        ref={scrollerRef}
+        className="flex snap-x gap-3.5 overflow-x-auto px-5 pb-2 pt-1 scroll-px-5 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-navy/15 [&::-webkit-scrollbar-track]:bg-transparent sm:gap-4 sm:px-8 sm:scroll-px-8"
+      >
         {children}
       </div>
     </div>
@@ -229,7 +276,7 @@ function CommitteeRow({
   cta,
   interest,
   watermark = "olive",
-  gallery = true,
+  layout = "scroll",
   children,
   delay,
 }: {
@@ -240,7 +287,7 @@ function CommitteeRow({
   cta: ReactNode;
   interest: ReactNode;
   watermark?: "olive" | "laurel";
-  gallery?: boolean;
+  layout?: "scroll" | "center";
   children: ReactNode;
   delay?: number;
 }) {
@@ -293,7 +340,7 @@ function CommitteeRow({
         </div>
 
         <div className="relative mt-5 lg:mt-6">
-          {gallery ? (
+          {layout === "scroll" ? (
             <ScrollGallery fadeColor={fadeColor}>{children}</ScrollGallery>
           ) : (
             <div className="px-1 pb-1">{children}</div>
@@ -326,7 +373,7 @@ export function AdvisoryCommittee() {
               subtitle="Reserved for Distinguished Institutional Leadership"
               cta="Position Open by Invitation"
               interest="Know a distinguished leader who could contribute to this vision?"
-              gallery={false}
+              layout="center"
             >
               <PatronSeat />
             </CommitteeRow>
@@ -342,20 +389,20 @@ export function AdvisoryCommittee() {
               delay={100}
             >
               {jury.map((member) => (
-                <MemberAvatar
+                <MemberCard
                   key={member.name}
                   name={member.name}
                   role={member.role}
                   institution={member.institution}
                   photo={member.photo}
-                  ring="gold"
+                  tone="gold"
                 />
               ))}
-              <PlaceholderAvatar
+              <PlaceholderCard
                 icon={<span className="text-2xl font-light leading-none">+</span>}
                 title="The Jury is Growing"
                 caption="More leaders joining soon"
-                ring="gold"
+                tone="gold"
               />
             </CommitteeRow>
 
@@ -368,13 +415,13 @@ export function AdvisoryCommittee() {
               interest="Are you a school leader passionate about meaningful education?"
               delay={200}
             >
-              <MemberAvatar
+              <MemberCard
                 name="Dr. Archana Nigam"
                 role="Ex. Principal, DPS Kalyanpur"
                 institution="Kanpur, Uttar Pradesh"
                 photo="/images/advisors/archana-nigam.png"
               />
-              <PlaceholderAvatar
+              <PlaceholderCard
                 icon={<span className="text-2xl font-light leading-none">+</span>}
                 title="The Council is Growing"
                 caption="More leaders joining soon"
