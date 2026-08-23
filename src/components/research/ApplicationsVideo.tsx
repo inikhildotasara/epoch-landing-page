@@ -16,13 +16,13 @@ const apps: {
   },
   {
     img: "/images/card-olympiad.png",
-    logo: "/images/epoch-olympiad-updated.png",
+    logo: "/images/EPOCH NAME LOGO - Copy.png",
     title: "Epoch International Olympiads",
     desc: "Research-based assessments for Classes 1–10 designed to evaluate conceptual understanding, reasoning and academic thinking.",
     href: "/initiatives/epoch-olympiad",
   },
   {
-    img: "/images/ccbee-dashboard.webp",
+    img: "/images/ccbee-dashboard_final.png",
     logo: "/images/MY CC BEE.png",
     title: "MY CCBee",
     desc: "A performance tracking and booster platform that helps convert assessment data into ongoing learner insights and improvement pathways.",

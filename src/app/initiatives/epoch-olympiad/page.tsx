@@ -21,7 +21,7 @@ export default function EpochOlympiadPage() {
   return (
     <>
       <LogoFlash
-        src="/images/logo-full.webp"
+        src="/images/EPOCH NAME LOGO - Copy.png"
         alt="Epoch Olympiad Foundation"
         background="#f6f8fd"
         glow="rgba(27, 53, 102, 0.16)"

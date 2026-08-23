@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "../icons";
 import { CouncilIcon, NoteFlourish } from "./decor";
 
@@ -49,20 +50,20 @@ export function AdvisoryCTA() {
               </div>
 
               <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap 2xl:w-[250px] 2xl:shrink-0 2xl:flex-col">
-                <a
-                  href="#"
+                <Link
+                  href="/become-an-advisor"
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-gold px-4 py-2.5 text-center text-[12px] font-semibold leading-snug text-navy transition-colors hover:bg-gold-dark sm:min-w-[210px] sm:flex-none lg:px-5 lg:py-3 lg:text-[13px] 2xl:w-full"
                 >
                   Express Interest in Joining the Advisory Council
                   <ArrowRight className="h-4 w-4 shrink-0" />
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/become-an-advisor"
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-4 py-2.5 text-center text-[12px] font-semibold leading-snug text-white transition-colors hover:bg-white/10 sm:min-w-[210px] sm:flex-none lg:px-5 lg:py-3 lg:text-[13px] 2xl:w-full"
                 >
                   View Eligibility &amp; Roles
                   <ArrowRight className="h-4 w-4 shrink-0" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

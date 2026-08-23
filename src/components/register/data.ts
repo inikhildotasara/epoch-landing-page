@@ -199,7 +199,7 @@ export const initiativeOptions: Initiative[] = [
   {
     id: "Epoch Olympiad",
     title: "Epoch Olympiad",
-    logo: "/images/epoch-olympiad-updated.png",
+    logo: "/images/EPOCH NAME LOGO - Copy.png",
     summary: [
       "International Olympiads &",
       "Future-Learning Initiatives",
@@ -234,7 +234,7 @@ export const initiativeOptions: Initiative[] = [
     title: "I would like to understand all three initiatives",
     logos: [
       "/images/BRAINIAC LOGO.png",
-      "/images/epoch-olympiad-updated.png",
+      "/images/EPOCH NAME LOGO - Copy.png",
       "/images/MY CC BEE.png",
     ],
     summary: [],

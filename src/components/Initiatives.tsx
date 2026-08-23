@@ -16,9 +16,9 @@ const cards: {
     img: "/images/card-brainiac.png",
     title: "Brainiac Global",
     tagline: "Building Thinking Minds from the Earliest Years",
-    audience: "For Kindergarten | Ages 2–5",
-    desc: "An early-learning initiative designed to nurture curiosity, observation, reasoning, problem-solving and foundational thinking through engaging experiences and brain-boosting assessment.",
-    cta: "Learn More",
+    audience: "Kindergarten | Ages 2–6",
+    desc: "An early-learning initiative that nurtures observation, curiosity, reasoning, problem-solving and foundational thinking through joyful experiences, meaningful assessment and future-focused learning.",
+    cta: "Explore Brainiac Global",
     href: "/initiatives/brain-booster-olympiad",
   },
   {
@@ -26,8 +26,8 @@ const cards: {
     title: "Epoch Olympiad",
     tagline: "International Olympiads & Future-Ready Learning Platforms",
     audience: "For Classes 1–10",
-    desc: "A research-informed learning and assessment initiative designed to strengthen conceptual understanding, analytical reasoning, critical thinking and future-ready skills through international Olympiads and engaging learning platforms.",
-    cta: "Explore",
+    desc: "A research-informed ecosystem combining international assessments and learning platforms to strengthen conceptual understanding, reasoning, critical thinking and future-ready skills.",
+    cta: "Explore Epoch Olympiad",
     href: "/initiatives/epoch-olympiad",
   },
   {

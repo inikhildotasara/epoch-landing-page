@@ -22,7 +22,7 @@ export default function MyCCBeePage() {
   return (
     <>
       <LogoFlash
-        src="/images/tm-ccbee.webp"
+        src="/images/MY CC BEE.png"
         alt="MY CCBee"
         background="#fffdf4"
         glow="rgba(245, 179, 1, 0.22)"

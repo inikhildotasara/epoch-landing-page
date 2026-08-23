@@ -12,6 +12,7 @@ import {
 } from "../icons";
 import {
   Panel,
+  AnimatedNumber,
   ScoreTile,
   MeterBar,
   BenchmarkTable,
@@ -188,7 +189,7 @@ const matrix: BenchRow[] = [
 ];
 
 const fields = [
-  { label: "Student Name", value: "Ria Gupta" },
+  { label: "Student Name", value: "Komal Chandra" },
   { label: "School", value: "Bright Minds Academy" },
   { label: "Class Teacher", value: "Ms. Anjali Singh" },
   { label: "Principal", value: "Mr. Rajat Malhotra" },
@@ -283,7 +284,7 @@ export function StageOlympiad() {
                       className="mt-1 text-[17px] font-bold leading-none tabular-nums lg:text-[20px]"
                       style={{ color: n.color }}
                     >
-                      {n.value}%
+                      <AnimatedNumber value={n.value} suffix="%" />
                     </span>
                   </div>
                 );

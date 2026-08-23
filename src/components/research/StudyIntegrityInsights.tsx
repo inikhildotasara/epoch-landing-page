@@ -46,7 +46,7 @@ const commitments: { icon: IconType; title: string; desc: string }[] = [
   },
 ];
 
-/* `slug` is filled in as each piece is published in src/content/articles. */
+/* Published articles link directly into the shared article route. */
 const insights: { title: string; slug?: string }[] = [
   {
     title: "Why Marks Alone Cannot Measure Learning",
@@ -56,10 +56,22 @@ const insights: { title: string; slug?: string }[] = [
     title: "How Cognitive Intelligence Differs from Academic Intelligence",
     slug: "cognitive-vs-academic-intelligence",
   },
-  { title: "Understanding Cognitive Intelligence in Early Learners" },
-  { title: "The Future of International Assessment" },
-  { title: "Why Diagnostic Assessment Matters" },
-  { title: "Academic Health: A New Perspective on Student Performance" },
+  {
+    title: "The Future of International Assessments",
+    slug: "the-future-of-international-assessments",
+  },
+  {
+    title: "Importance of the Academic Health Report",
+    slug: "importance-of-academic-health-report",
+  },
+  {
+    title: "How Kindergarten Cognitive Assessment Works",
+    slug: "how-kindergarten-cognitive-assessment-works",
+  },
+  {
+    title: "What Is Critical Thinking?",
+    slug: "what-is-critical-thinking",
+  },
 ];
 
 export function StudyIntegrityInsights() {

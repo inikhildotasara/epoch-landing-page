@@ -1,6 +1,7 @@
 import type { Article, ArticleSummary, Block } from "./types";
 import { cognitiveVsAcademic } from "./cognitive-vs-academic-intelligence";
 import { marksCannotMeasureLearning } from "./why-marks-alone-cannot-measure-learning";
+import { newArticles } from "./new-articles";
 
 /**
  * Every published article. Adding one is the whole job: write the content file,
@@ -10,6 +11,7 @@ import { marksCannotMeasureLearning } from "./why-marks-alone-cannot-measure-lea
 export const articles: Article[] = [
   cognitiveVsAcademic,
   marksCannotMeasureLearning,
+  ...newArticles,
 ];
 
 /** Section anchors and table-of-contents links are derived, never hand-written. */

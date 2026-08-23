@@ -23,7 +23,7 @@ export default function BrainiacGlobalPage() {
   return (
     <>
       <LogoFlash
-        src="/images/tm-brainiac.webp"
+        src="/images/BRAINIAC LOGO.png"
         alt="Brainiac Global — Discovering New Einstein"
         background="#fffaf7"
         glow="rgba(214, 40, 57, 0.16)"

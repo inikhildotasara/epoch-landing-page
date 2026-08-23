@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AdvisoryHero } from "@/components/advisory/AdvisoryHero";
 import { AcademicLeadership } from "@/components/advisory/AcademicLeadership";
+import { JuryMembers } from "@/components/advisory/JuryMembers";
 import { AdvisoryCommittee } from "@/components/advisory/AdvisoryCommittee";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function AdvisoryBoardPage() {
       <main>
         <AdvisoryHero />
         <AcademicLeadership />
+        <JuryMembers />
         <AdvisoryCommittee />
       </main>
       <Footer />

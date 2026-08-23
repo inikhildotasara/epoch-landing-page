@@ -1,6 +1,8 @@
 import type { ReactNode, SVGProps } from "react";
-import { BrainIcon, StarIcon } from "../icons";
+import { BrainIcon } from "../icons";
 import { Reveal } from "../Reveal";
+import { AnimatedDonut, AnimatedMeter, AnimatedNumber, AnimatedStars } from "./AnimatedPrimitives";
+export { AnimatedNumber } from "./AnimatedPrimitives";
 
 export type IconType = (p: SVGProps<SVGSVGElement>) => React.ReactElement;
 
@@ -133,55 +135,7 @@ export function ScoreDonut({
   color: string;
   suffix?: string;
 }) {
-  const radius = 30;
-  const circumference = 2 * Math.PI * radius;
-  const filled = (Math.min(value, 100) / 100) * circumference;
-
-  return (
-    <div className="flex flex-col items-center text-center">
-      <svg
-        viewBox="0 0 72 72"
-        className="h-[58px] w-[58px] shrink-0 sm:h-[64px] sm:w-[64px] lg:h-[70px] lg:w-[70px]"
-        role="img"
-        aria-label={`${label}: ${value}${suffix}`}
-      >
-        <circle
-          cx="36"
-          cy="36"
-          r={radius}
-          fill="none"
-          stroke="#eef1f6"
-          strokeWidth="7"
-        />
-        <circle
-          cx="36"
-          cy="36"
-          r={radius}
-          fill="none"
-          stroke={color}
-          strokeWidth="7"
-          strokeLinecap="round"
-          strokeDasharray={`${filled} ${circumference - filled}`}
-          transform="rotate(-90 36 36)"
-        />
-        <text
-          x="36"
-          y="37"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fontSize="21"
-          fontWeight="600"
-          fill="#0b1c3f"
-        >
-          {value}
-          {suffix}
-        </text>
-      </svg>
-      <span className="mt-2 text-[10.5px] font-medium leading-tight text-slate-600 lg:text-[11.5px]">
-        {label}
-      </span>
-    </div>
-  );
+  return <AnimatedDonut value={value} label={label} color={color} suffix={suffix} />;
 }
 
 export function MeterBar({
@@ -195,29 +149,7 @@ export function MeterBar({
   color: string;
   caption?: string;
 }) {
-  return (
-    <div>
-      <div className="flex items-baseline justify-between gap-3">
-        <span className="text-[11.5px] font-medium text-slate-700 lg:text-[12.5px]">
-          {label}
-        </span>
-        <span className="text-[12px] font-bold tabular-nums text-navy lg:text-[13px]">
-          {value}%
-        </span>
-      </div>
-      <div className="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-slate-100 lg:h-2.5">
-        <div
-          className="h-full rounded-full"
-          style={{ width: `${value}%`, backgroundColor: color }}
-        />
-      </div>
-      {caption && (
-        <p className="mt-1 text-[10.5px] text-slate-400 lg:text-[11px]">
-          {caption}
-        </p>
-      )}
-    </div>
-  );
+  return <AnimatedMeter label={label} value={value} color={color} caption={caption} />;
 }
 
 export function StarRating({
@@ -229,23 +161,7 @@ export function StarRating({
   max?: number;
   color: string;
 }) {
-  return (
-    <span
-      className="flex shrink-0 gap-0.5"
-      role="img"
-      aria-label={`${value} out of ${max}`}
-    >
-      {Array.from({ length: max }).map((_, i) => (
-        <StarIcon
-          key={i}
-          className="h-3.5 w-3.5 lg:h-4 lg:w-4"
-          fill={i < value ? color : "#e8ecf2"}
-          stroke="none"
-          style={{ color: i < value ? color : "#e8ecf2" }}
-        />
-      ))}
-    </span>
-  );
+  return <AnimatedStars value={value} max={max} color={color} />;
 }
 
 /** A score tile: big number + label, tinted with the dimension's own colour. */
@@ -279,7 +195,7 @@ export function ScoreTile({
         className="text-[22px] font-bold leading-none tabular-nums lg:text-[26px]"
         style={{ color }}
       >
-        {value}
+        <AnimatedNumber value={value} />
       </span>
     </div>
   );
@@ -356,16 +272,16 @@ export function BenchmarkTable({
                   className="px-2 py-3 text-center text-[14px] font-bold tabular-nums lg:text-[15.5px]"
                   style={{ color: accent }}
                 >
-                  {r.score}
+                  <AnimatedNumber value={r.score} />
                 </td>
                 <td className="px-2 py-3 text-center text-[12px] tabular-nums text-slate-500 lg:text-[13px]">
-                  {r.school}
+                  <AnimatedNumber value={r.school} />
                 </td>
                 <td className="px-2 py-3 text-center text-[12px] tabular-nums text-slate-500 lg:text-[13px]">
-                  {r.national}
+                  <AnimatedNumber value={r.national} />
                 </td>
                 <td className="px-2 py-3 text-center text-[12px] tabular-nums text-slate-500 lg:text-[13px]">
-                  {r.international}
+                  <AnimatedNumber value={r.international} />
                 </td>
                 <td className="px-2 py-3 text-center">
                   <StatusPill status={r.status} />
@@ -396,7 +312,7 @@ export function BenchmarkTable({
                 className="shrink-0 text-[24px] font-bold leading-none tabular-nums"
                 style={{ color: accent }}
               >
-                {r.score}
+                <AnimatedNumber value={r.score} />
               </span>
             </div>
             <div className="mt-3 grid grid-cols-3 divide-x divide-slate-200 rounded-lg bg-slate-50 py-2 text-center">
@@ -410,7 +326,7 @@ export function BenchmarkTable({
                     {l}
                   </p>
                   <p className="text-[13px] font-semibold tabular-nums text-slate-600">
-                    {v}
+                  <AnimatedNumber value={v as number} />
                   </p>
                 </div>
               ))}
@@ -532,7 +448,7 @@ export function ReportSheet({
     >
       <div className="flex items-center justify-between gap-3 border-b-2 border-slate-100 pb-3 lg:pb-4">
         <img
-          src="/images/ahr-brand-logo.webp"
+          src="/images/epoch-research-foundation.png"
           alt="Epoch Olympiad Foundation"
           className="h-7 w-auto shrink-0 sm:h-9 lg:h-11"
         />

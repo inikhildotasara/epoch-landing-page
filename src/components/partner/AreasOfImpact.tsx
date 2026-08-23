@@ -17,7 +17,7 @@ export function AreasOfImpact() {
               <img
                 src={img}
                 alt={name}
-                className={`h-full w-full ${imgPosition ?? "object-contain bg-white"}`}
+                className={`h-full w-full ${imgPosition ?? "object-cover object-center"}`}
               />
               <span
                 className="absolute left-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-full text-white shadow-sm"

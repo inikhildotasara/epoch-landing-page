@@ -18,18 +18,22 @@ const articles: { img: string; title: string; slug?: string }[] = [
   {
     img: "/images/article-3.png",
     title: "The Future of International Assessments",
+    slug: "the-future-of-international-assessments",
   },
   {
     img: "/images/article-4.png",
     title: "Balanced Diet for the Brain",
+    slug: "balanced-diet-for-the-brain",
   },
   {
     img: "/images/article-5.png",
-    title: "Academic Health Report Explained",
+    title: "Importance of the Academic Health Report",
+    slug: "importance-of-academic-health-report",
   },
   {
     img: "/images/article-6.png",
     title: "How Kindergarten Cognitive Assessment Works",
+    slug: "how-kindergarten-cognitive-assessment-works",
   },
 ];
 

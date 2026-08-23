@@ -2,6 +2,7 @@ import { Reveal } from "../Reveal";
 import { SeedlingIcon } from "../icons";
 import {
   Panel,
+  AnimatedNumber,
   ScoreDonut,
   MeterBar,
   BenchmarkTable,
@@ -89,8 +90,8 @@ const insights: BenchRow[] = [
 ];
 
 const fields = [
-  { label: "Student Name", value: "Ria Gupta" },
-  { label: "School", value: "Bright Future School" },
+  { label: "Student Name", value: "Nikhil Advani" },
+  { label: "School", value: "Kendriya Vidyalaya, Kota" },
   { label: "Class Teacher", value: "Mr. Saurabh Mehta" },
   { label: "Principal", value: "Dr. Meera Khanna" },
   { label: "Exam Name", value: "International Olympiad Assessment" },
@@ -164,7 +165,7 @@ export function StageAdvanced() {
                   Application gap
                 </p>
                 <p className="mt-1 font-serif text-[26px] font-medium leading-none text-navy lg:text-[30px]">
-                  15{" "}
+                  <AnimatedNumber value={15} />{" "}
                   <span className="text-[13px] font-sans font-semibold uppercase tracking-[0.1em] text-slate-500 lg:text-[14px]">
                     points
                   </span>

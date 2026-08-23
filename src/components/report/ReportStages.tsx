@@ -46,7 +46,7 @@ const stages: {
     href: "#olympiad",
   },
   {
-    logo: "/images/LOGO - MY CCBEE.png",
+    logo: "/images/LOGO - EPOCH.png",
     accent: "#8a6a12",
     stage: "Stage 3",
     brand: "Epoch Olympiad Advanced",

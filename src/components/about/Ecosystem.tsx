@@ -15,6 +15,12 @@ const nodes: {
   href?: string;
 }[] = [
   {
+    logo: "/images/epoch-research-foundation.png",
+    title: "Epoch Olympiad Foundation",
+    sub: "Education Research Foundation",
+    color: "#c79a3b",
+  },
+  {
     logo: "/images/BRAINIAC LOGO.png",
     title: "Brainiac Global",
     sub: "International Brain Booster Exams (Kindergarten)",
@@ -23,12 +29,6 @@ const nodes: {
   },
   {
     logo: "/images/EPOCH NAME LOGO - Copy.png",
-    title: "Epoch Olympiad Foundation",
-    sub: "Education Research Foundation",
-    color: "#c79a3b",
-  },
-  {
-    logo: "/images/epoch-olympiad-updated.png",
     title: "Epoch Olympiad",
     sub: "International Olympiads (Classes 1–10)",
     color: "#1b3566",
@@ -50,6 +50,7 @@ function Box({
   sub,
   color,
   href,
+  imageClassName,
   className = "",
 }: {
   logo?: string;
@@ -58,6 +59,7 @@ function Box({
   sub: string;
   color: string;
   href?: string;
+  imageClassName?: string;
   className?: string;
 }) {
   /* The Foundation node has no page of its own, so it stays a plain box. */
@@ -65,7 +67,7 @@ function Box({
   return (
     <Tag
       href={href}
-      className={`flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white px-5 py-5 shadow-[0_2px_14px_rgba(15,28,63,0.06)] transition-shadow lg:px-6 lg:py-6 ${
+      className={`flex min-w-0 items-center gap-5 rounded-2xl border border-slate-200/80 bg-white px-5 py-5 shadow-[0_2px_14px_rgba(15,28,63,0.06)] transition-shadow lg:px-6 lg:py-6 xl:gap-3 xl:px-3 xl:py-3 ${
         href ? "hover:shadow-[0_6px_22px_rgba(15,28,63,0.13)]" : ""
       } ${className}`}
     >
@@ -73,7 +75,10 @@ function Box({
         <img
           src={logo}
           alt={title}
-          className="h-14 w-[150px] shrink-0 object-contain object-left lg:h-[64px] lg:w-[155px]"
+          className={
+            imageClassName ??
+            "h-20 w-[190px] shrink-0 object-contain object-left lg:h-[84px] lg:w-[210px] xl:h-16 xl:w-[clamp(90px,12vw,180px)]"
+          }
         />
       ) : (
         Icon && (
@@ -84,8 +89,8 @@ function Box({
           />
         )
       )}
-      <div>
-        <p className="text-[11.5px] leading-snug text-slate-500 lg:text-[12.5px]">
+      <div className="min-w-0">
+        <p className="break-words text-[14px] font-semibold leading-snug text-slate-600 lg:text-[15px]">
           {sub}
         </p>
       </div>
@@ -105,7 +110,9 @@ function Arrow() {
 }
 
 const ahrProps = {
-  logo: "/images/ahr-brand-logo.webp",
+  logo: "/images/ahr-tablet.webp",
+  imageClassName:
+    "h-28 w-[92px] shrink-0 object-contain object-center lg:h-[132px] lg:w-[108px]",
   title: "Academic Health Report",
   sub: "Data-driven insights for holistic academic growth and improvement",
   color: "#1b3566",
@@ -140,7 +147,7 @@ export function Ecosystem() {
               style={{ borderColor: `${ORANGE}80` }}
             />
             <div className="-mt-[52px] w-[52%]">
-              <Box {...ahrProps} className="h-[104px]" />
+              <Box {...ahrProps} className="h-[150px]" />
             </div>
           </div>
 

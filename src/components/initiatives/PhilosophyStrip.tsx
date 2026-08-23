@@ -5,7 +5,7 @@ const ORANGE = "#e8862e";
 
 const items = [
   {
-    logo: "/images/LOGO - BRAINIAC.png",
+    logo: "/images/brainic.png",
     color: PURPLE,
     tint: "#f2ecfb",
     title: "Brainiac Global",

@@ -77,7 +77,7 @@ const faqs: FaqItem[] = [
       {
         links: [
           { label: "Register Your School", href: "/register-your-school" },
-          { label: "Become an Advisor", href: "/advisory-board" },
+          { label: "Become an Advisor", href: "/become-an-advisor" },
           { label: "Partner With Us", href: "/partner-with-us" },
         ],
       },

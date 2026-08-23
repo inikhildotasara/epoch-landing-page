@@ -90,7 +90,7 @@ const opportunities = [
 ];
 
 const fields = [
-  { label: "Student Name", value: "Priya Gupta" },
+  { label: "Student Name", value: "Kush Gupta" },
   { label: "School", value: "Sunshine Kids World" },
   { label: "Class Teacher", value: "Ms. Neha Verma" },
   { label: "Principal", value: "Ms. Pooja Sharma" },
