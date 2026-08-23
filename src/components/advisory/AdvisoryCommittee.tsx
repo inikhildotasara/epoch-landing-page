@@ -195,6 +195,32 @@ function ScrollGallery({
   );
 }
 
+function PatronSeat() {
+  return (
+    <div className="flex items-center justify-center gap-4 sm:gap-8">
+      <LaurelBranch className="hidden h-32 w-auto shrink-0 -scale-x-100 text-gold/45 sm:block" />
+      <div className="flex max-w-[200px] flex-col items-center text-center sm:max-w-[220px]">
+        <div className="relative h-[148px] w-[148px] overflow-hidden rounded-full bg-white shadow-[0_12px_28px_-12px_rgba(11,28,63,0.45)] ring-[3px] ring-gold/55 ring-offset-2 ring-offset-white sm:h-[176px] sm:w-[176px]">
+          <Image
+            src="/images/patron-in-chief.png"
+            alt="Patron-in-Chief reserved seat"
+            fill
+            sizes="176px"
+            className="object-contain p-1.5 sm:p-2"
+          />
+        </div>
+        <h4 className="mt-3.5 font-serif text-[13px] font-semibold leading-snug text-navy sm:text-[14px]">
+          Awaiting Appointment
+        </h4>
+        <p className="mt-1 text-[10px] leading-snug text-slate-500 sm:text-[10.5px]">
+          Position open by invitation
+        </p>
+      </div>
+      <LaurelBranch className="hidden h-32 w-auto shrink-0 text-gold/45 sm:block" />
+    </div>
+  );
+}
+
 function CommitteeRow({
   number,
   tone,
@@ -203,6 +229,7 @@ function CommitteeRow({
   cta,
   interest,
   watermark = "olive",
+  gallery = true,
   children,
   delay,
 }: {
@@ -213,6 +240,7 @@ function CommitteeRow({
   cta: ReactNode;
   interest: ReactNode;
   watermark?: "olive" | "laurel";
+  gallery?: boolean;
   children: ReactNode;
   delay?: number;
 }) {
@@ -254,12 +282,9 @@ function CommitteeRow({
               <h3 className="font-serif text-[16.5px] font-semibold uppercase leading-tight tracking-tight text-navy sm:text-[18.5px]">
                 {title}
               </h3>
-              <div className="mt-1.5 flex items-center gap-2">
-                <span className="h-px w-6 shrink-0 bg-gold" />
-                <p className="font-serif text-[11.5px] leading-snug text-gold-dark sm:text-[12.5px]">
-                  {subtitle}
-                </p>
-              </div>
+              <p className="mt-1.5 font-serif text-[11.5px] leading-snug text-gold-dark sm:text-[12.5px]">
+                {subtitle}
+              </p>
             </div>
           </div>
           <div className="sm:shrink-0 sm:pt-1">
@@ -268,7 +293,11 @@ function CommitteeRow({
         </div>
 
         <div className="relative mt-5 lg:mt-6">
-          <ScrollGallery fadeColor={fadeColor}>{children}</ScrollGallery>
+          {gallery ? (
+            <ScrollGallery fadeColor={fadeColor}>{children}</ScrollGallery>
+          ) : (
+            <div className="px-1 pb-1">{children}</div>
+          )}
         </div>
       </article>
       <InterestStrip tone={tone}>{interest}</InterestStrip>
@@ -297,19 +326,9 @@ export function AdvisoryCommittee() {
               subtitle="Reserved for Distinguished Institutional Leadership"
               cta="Position Open by Invitation"
               interest="Know a distinguished leader who could contribute to this vision?"
+              gallery={false}
             >
-              <PlaceholderAvatar
-                icon={
-                  <img
-                    src="/images/patron-in-chief.png"
-                    alt=""
-                    aria-hidden="true"
-                    className="h-10 w-12 object-contain"
-                  />
-                }
-                title="Awaiting Appointment"
-                caption="Position open by invitation"
-              />
+              <PatronSeat />
             </CommitteeRow>
 
             <CommitteeRow
