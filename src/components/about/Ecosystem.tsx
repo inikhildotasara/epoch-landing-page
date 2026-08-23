@@ -15,7 +15,7 @@ const nodes: {
   href?: string;
 }[] = [
   {
-    logo: "/images/epoch-research-foundation.png",
+    logo: "/images/EPOCH research final.png",
     title: "Epoch Olympiad Foundation",
     sub: "Education Research Foundation",
     color: "#c79a3b",
@@ -23,21 +23,21 @@ const nodes: {
   {
     logo: "/images/BRAINIAC LOGO.png",
     title: "Brainiac Global",
-    sub: "International Brain Booster Exams (Kindergarten)",
+    sub: "Building Thinking Minds from the Earliest Years",
     color: "#2f9e5b",
     href: "/initiatives/brain-booster-olympiad",
   },
   {
     logo: "/images/EPOCH NAME LOGO - Copy.png",
     title: "Epoch Olympiad",
-    sub: "International Olympiads (Classes 1–10)",
+    sub: "International Olympiads & Future-Ready Learning Platforms",
     color: "#1b3566",
     href: "/initiatives/epoch-olympiad",
   },
   {
     logo: "/images/MY CC BEE.png",
     title: "MY CCBee",
-    sub: "Performance Tracker & Booster Platform",
+    sub: "Performance Tracking & Booster Platform for Schools",
     color: ORANGE,
     href: "/initiatives/my-ccbee",
   },

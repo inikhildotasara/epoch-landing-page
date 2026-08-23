@@ -491,34 +491,38 @@ export function RegistrationForm() {
                       <CheckIcon className="h-2.5 w-2.5" />
                     </span>
 
-                    <span
-                      className="mx-auto flex h-14 w-full max-w-[190px] items-center justify-center gap-1.5 rounded-lg bg-white px-2 ring-1 ring-slate-200 lg:h-[62px]"
-                      aria-hidden
-                    >
-                      {option.logos ? (
-                        option.logos.map((logo) => (
+                    {option.id !== "All three initiatives" && (
+                      <span
+                        className="mx-auto flex h-16 w-full max-w-[190px] items-center justify-center gap-2"
+                        aria-hidden
+                      >
+                        {option.logos ? (
+                          option.logos.map((logo) => (
+                            <img
+                              key={logo}
+                              src={logo}
+                              alt=""
+                              className="h-14 min-w-0 flex-1 object-contain"
+                            />
+                          ))
+                        ) : (
                           <img
-                            key={logo}
-                            src={logo}
+                            src={option.logo}
                             alt=""
-                            className="h-full min-w-0 flex-1 object-contain"
+                            className="h-14 w-full object-contain"
                           />
-                        ))
-                      ) : (
-                        <img
-                          src={option.logo}
-                          alt=""
-                          className="h-full w-full object-contain"
-                        />
-                      )}
-                    </span>
+                        )}
+                      </span>
+                    )}
 
-                    <span
-                      className="mt-3 text-[13.5px] font-bold uppercase leading-tight tracking-[0.01em] lg:text-[14.5px]"
-                      style={{ color: option.accent }}
-                    >
-                      {option.title}
-                    </span>
+                    {option.id === "All three initiatives" && (
+                      <span
+                        className="mt-3 text-[13.5px] font-bold uppercase leading-tight tracking-[0.01em] lg:text-[14.5px]"
+                        style={{ color: option.accent }}
+                      >
+                        {option.title}
+                      </span>
+                    )}
 
                     {option.summary.length > 0 && (
                       <span className="mt-2 text-[11.5px] font-semibold leading-snug text-navy lg:text-[12.5px]">

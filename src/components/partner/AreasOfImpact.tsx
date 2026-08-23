@@ -1,6 +1,17 @@
 import { impactAreas } from "./data";
 import { Panel } from "./Panel";
 
+/* Each partner logo comes as its own brand asset with a different shape and
+   amount of built-in padding, so a single "max-h-full" rule makes some look
+   oversized and others tiny. These per-logo caps even out the visual weight
+   so all four sit at roughly the same size. */
+const LOGO_SIZE: Record<number, string> = {
+  0: "max-h-full max-w-[74%]",
+  1: "max-h-[58%] max-w-[80%]",
+  2: "max-h-full max-w-[88%]",
+  3: "max-h-full max-w-[88%]",
+};
+
 export function AreasOfImpact() {
   return (
     <Panel
@@ -38,13 +49,11 @@ export function AreasOfImpact() {
             </div>
 
             <div className="flex flex-1 flex-col px-3.5 py-3">
-              <div className="flex h-14 items-center justify-start">
+              <div className="flex h-14 items-center justify-center">
                 <img
                   src={logo}
                   alt={name}
-                  className={`max-h-full object-contain object-left ${
-                    index === 0 ? "max-w-[67%]" : "max-w-[96%]"
-                  }`}
+                  className={`object-contain ${LOGO_SIZE[index] ?? "max-h-full max-w-[85%]"}`}
                 />
               </div>
               <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500 lg:text-[11.5px]">

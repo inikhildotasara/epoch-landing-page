@@ -92,11 +92,11 @@ const insights: BenchRow[] = [
 const fields = [
   { label: "Student Name", value: "Nikhil Advani" },
   { label: "School", value: "Kendriya Vidyalaya, Kota" },
-  { label: "Class Teacher", value: "Mr. Saurabh Mehta" },
-  { label: "Principal", value: "Dr. Meera Khanna" },
-  { label: "Exam Name", value: "International Olympiad Assessment" },
-  { label: "Date", value: "15 May 2025" },
-  { label: "Report ID", value: "EO25051578" },
+  { label: "Class Teacher", value: "Mrs. Archana Gupta" },
+  { label: "Principal", value: "Dr. Dinesh Bhardwaj" },
+  { label: "Exam Name", value: "International Science Olympiad" },
+  { label: "Date", value: "18 November 2025" },
+  { label: "Report ID", value: "EO21409" },
 ];
 
 export function StageAdvanced() {
@@ -118,6 +118,7 @@ export function StageAdvanced() {
       previewAlt="Advanced Academic Health Report showing the seven-dimension cognitive profile, knowledge versus application gap, thinking under challenge and detailed cognitive insights"
       fields={fields}
       mascotSrc="/images/ahr-mascot-advanced.webp"
+      logoSrc="/images/EPOCH NAME LOGO - Copy.png"
       footerTagline="Understand. Apply. Excel."
     >
       {/* Cognitive profile */}
@@ -269,9 +270,13 @@ export function StageAdvanced() {
               Parent insight
             </h3>
             <p className="mt-2 font-serif text-[15px] italic leading-relaxed text-navy lg:text-[18px]">
-              &ldquo;Your child applies knowledge confidently, especially in
-              familiar settings. Encourage open-ended problems, research and
-              discussion to build flexible thinking under challenge.&rdquo;
+              &ldquo;Nikhil demonstrates excellent abilities in knowledge
+              application and logical reasoning. His performance indicates a
+              strong potential for advanced problem solving. Focusing on
+              improving scientific inquiry and multidisciplinary thinking will
+              help him tackle complex and unfamiliar challenges more
+              confidently. Encourage exploration, curiosity, and participation
+              in science activities to support his continued growth.&rdquo;
             </p>
           </div>
         </div>

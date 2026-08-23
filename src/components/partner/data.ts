@@ -171,7 +171,7 @@ export const impactAreas: {
 }[] = [
   {
     name: "Epoch Olympiad Foundation",
-    logo: "/images/epoch-research-foundation.png",
+    logo: "/images/EPOCH research final.png",
     tagline: "Research • Assessment • Cognitive Development",
     desc: "Exploring how children learn, think, reason and apply knowledge beyond rote memorisation.",
     img: "/images/article-1.png",
@@ -191,7 +191,7 @@ export const impactAreas: {
   },
   {
     name: "Brainiac Global",
-    logo: "/images/BRAINIAC LOGO.png",
+    logo: "/images/impact-logos/brainiac-mark.png",
     tagline: "Early Thinking • Curiosity • Learning Readiness",
     desc: "Nurturing foundational thinking in young learners through observation, curiosity, reasoning and age-appropriate experiences.",
     img: "/images/card-brainiac.png",
@@ -201,7 +201,7 @@ export const impactAreas: {
   },
   {
     name: "MY CCBee",
-    logo: "/images/MY CC BEE.png",
+    logo: "/images/impact-logos/ccbee-mark.png",
     tagline: "Performance Tracking • Insights • Improvement",
     desc: "Helping parents and schools understand everyday learning and performance through continuous tracking and actionable insights.",
     img: "/images/ccbee-dashboard_final.png",
@@ -266,7 +266,7 @@ export const initiativeChoices: {
 }[] = [
   {
     id: "Epoch Olympiad Foundation",
-    logo: "/images/epoch-research-foundation.png",
+    logo: "/images/EPOCH research final.png",
     desc: "Research & cognitive assessment",
     accent: "#14294d",
     tint: "#f3f6fc",

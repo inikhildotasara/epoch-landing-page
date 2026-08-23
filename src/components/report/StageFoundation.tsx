@@ -93,10 +93,10 @@ const fields = [
   { label: "Student Name", value: "Kush Gupta" },
   { label: "School", value: "Sunshine Kids World" },
   { label: "Class Teacher", value: "Ms. Neha Verma" },
-  { label: "Principal", value: "Ms. Pooja Sharma" },
-  { label: "Exam Name", value: "Brain Booster Assessment" },
-  { label: "Date", value: "15 May 2025" },
-  { label: "Report ID", value: "BG25051578" },
+  { label: "Principal", value: "Mrs. Neha Chabra" },
+  { label: "Exam Name", value: "International Brain Booster Olympiad" },
+  { label: "Date", value: "17 November 2025" },
+  { label: "Report ID", value: "IBO25052" },
 ];
 
 export function StageFoundation() {
@@ -117,6 +117,7 @@ export function StageFoundation() {
       previewSrc="/images/ahr-report-foundation-updated.png"
       previewAlt="Brainiac Global Academic Health Report showing developmental lenses, strengths, learning readiness profile and parent insight"
       fields={fields}
+      logoSrc="/images/BRAINIAC LOGO.png"
       footerTagline="Every child thinks differently. We help you understand how."
     >
       {/* Developmental lenses */}

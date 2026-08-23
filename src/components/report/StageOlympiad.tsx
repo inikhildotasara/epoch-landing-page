@@ -129,7 +129,7 @@ const nutrition: {
     icon: GemIcon,
   },
   {
-    subject: "General Knowledge",
+    subject: "G.K.",
     nutrient: "Vitamins",
     value: 75,
     color: "#4a9b3f",
@@ -190,12 +190,12 @@ const matrix: BenchRow[] = [
 
 const fields = [
   { label: "Student Name", value: "Komal Chandra" },
-  { label: "School", value: "Bright Minds Academy" },
-  { label: "Class Teacher", value: "Ms. Anjali Singh" },
-  { label: "Principal", value: "Mr. Rajat Malhotra" },
-  { label: "Exam Name", value: "International Olympiad Assessment" },
-  { label: "Date", value: "15 May 2025" },
-  { label: "Report ID", value: "EO25051578" },
+  { label: "School", value: "DPS World School" },
+  { label: "Class Teacher", value: "Ms. Vartika Bhalla" },
+  { label: "Principal", value: "Dr. Shikha Nigam" },
+  { label: "Exam Name", value: "International Aptitude Olympiad" },
+  { label: "Date", value: "11 November 2025" },
+  { label: "Report ID", value: "EO10403" },
 ];
 
 export function StageOlympiad() {
@@ -217,6 +217,7 @@ export function StageOlympiad() {
       previewAlt="Epoch Olympiad Academic Health Report showing the cognitive snapshot, understanding versus recall bars, academic nutrition and the academic health matrix"
       fields={fields}
       mascotSrc="/images/ahr-mascot-olympiad.webp"
+      logoSrc="/images/EPOCH NAME LOGO - Copy.png"
       footerTagline="Beyond marks, we reveal potential."
     >
       {/* Snapshot */}
@@ -337,9 +338,9 @@ export function StageOlympiad() {
           <InsightList
             title="What will help"
             items={[
-              "Practice higher-order thinking questions",
+              "Practice higher order thinking questions",
               "Solve real-life based problems",
-              "Read, explore and ask 'why' more often",
+              "Read, explore and ask “why” more",
             ]}
             accent={ACCENT}
             marker="star"
@@ -368,9 +369,14 @@ export function StageOlympiad() {
               Parent insight
             </h3>
             <p className="mt-2 font-serif text-[15px] italic leading-relaxed text-navy lg:text-[18px]">
-              &ldquo;Your child shows strong visual-spatial thinking and problem
-              solving. Encourage explanation, real-life applications and
-              multi-step challenges to strengthen analytical thinking.&rdquo;
+              &ldquo;Komal is a bright and curious learner with excellent
+              visual-spatial strengths and strong problem-solving abilities. The
+              report shows his conceptual understanding and application skills
+              are well developed. With a focused effort on analytical thinking
+              and multi-step reasoning, he can achieve even higher levels of
+              academic excellence. Encourage regular practice, real-life
+              exploration, and asking questions to nurture his natural
+              potential.&rdquo;
             </p>
           </div>
         </div>

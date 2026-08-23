@@ -434,11 +434,13 @@ export function ReportSheet({
   accent,
   tagline,
   footerTagline,
+  logoSrc = "/images/EPOCH research final.png",
   children,
 }: {
   accent: string;
   tagline: string;
   footerTagline: string;
+  logoSrc?: string;
   children: ReactNode;
 }) {
   return (
@@ -448,8 +450,8 @@ export function ReportSheet({
     >
       <div className="flex items-center justify-between gap-3 border-b-2 border-slate-100 pb-3 lg:pb-4">
         <img
-          src="/images/epoch-research-foundation.png"
-          alt="Epoch Olympiad Foundation"
+          src={logoSrc}
+          alt="Report brand logo"
           className="h-7 w-auto shrink-0 sm:h-9 lg:h-11"
         />
         <div className="min-w-0 text-right">
@@ -537,6 +539,7 @@ export function StageShell({
   previewAlt,
   fields,
   mascotSrc,
+  logoSrc,
   footerTagline,
   children,
 }: {
@@ -553,6 +556,7 @@ export function StageShell({
   previewAlt: string;
   fields: { label: string; value: string }[];
   mascotSrc?: string;
+  logoSrc?: string;
   footerTagline: string;
   children: ReactNode;
 }) {
@@ -624,6 +628,7 @@ export function StageShell({
             accent={accent}
             tagline={tagline}
             footerTagline={footerTagline}
+            logoSrc={logoSrc}
           >
             <StudentCard
               fields={fields}

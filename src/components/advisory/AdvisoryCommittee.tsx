@@ -1,13 +1,36 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, GroupIcon, TrophyPinIcon } from "../icons";
+import { ArrowRight, GroupIcon } from "../icons";
 import { Reveal } from "../Reveal";
+import { AdvisorySectionHeading, LaurelBranch, OliveSprig } from "./decor";
 
-const portraits = {
-  meena: "/images/advisors/Dr. Archana Nigam.png",
-  arvind: "/images/advisors/prof-anil-kumar.webp",
-  kavita: "/images/advisors/Prof. (Dr.) Leena Rani.png",
-};
+const jury = [
+  {
+    name: "Prof. (Dr.) Anil Kumar",
+    role: "Retd. Professor, Dept. of Chemical Engineering",
+    institution: "IIT Kanpur, Uttar Pradesh",
+    photo: "/images/advisors/prof-anil-kumar.webp",
+  },
+  {
+    name: "Prof. (Dr.) Keshav Kant",
+    role: "Retd. Professor, Dept. of Mechanical Engineering",
+    institution: "IIT Kanpur, Uttar Pradesh",
+    photo: "/images/advisors/prof-keshav-kant.webp",
+  },
+  {
+    name: "Prof. (Dr.) Joydip Dhar",
+    role: "Ph. D. (IIT Kanpur), Professor, Applied Sciences",
+    institution: "IITM Gwalior, M. P.",
+    photo: "/images/advisors/Prof. (Dr.) Jaydeep Dhar.png",
+  },
+  {
+    name: "Prof. (Dr.) A. K. Mishra",
+    role: "Ph. D. (IIT Kanpur), Sr. Professor, Dept. of Mathematics",
+    institution: "B.H.U., Varanasi, U. P.",
+    photo: "/images/advisors/Prof. (Dr.) A. K. Mishra.png",
+  },
+];
 
 function ActionLink({
   children,
@@ -21,7 +44,7 @@ function ActionLink({
   return (
     <Link
       href={href}
-      className={`mt-auto inline-flex w-full items-center justify-center gap-1.5 rounded-md px-3.5 py-2.5 text-center text-[11px] font-semibold leading-tight transition-colors sm:text-[11.5px] ${
+      className={`inline-flex w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-[11px] font-semibold leading-tight shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:w-auto sm:text-[11.5px] ${
         tone === "gold"
           ? "bg-gold text-navy hover:bg-gold-dark"
           : "bg-navy text-white hover:bg-navy-700"
@@ -43,18 +66,20 @@ function InterestStrip({
   return (
     <Link
       href="/become-an-advisor"
-      className="mt-3 flex items-center gap-2.5 rounded-lg border border-[#eee7d8] bg-white px-3 py-3 transition-colors hover:bg-[#fffaf0] sm:px-3.5"
+      className="group mt-2.5 flex items-center gap-3 rounded-xl border border-[#eee7d8] bg-white px-3.5 py-3 transition-colors hover:bg-[#fffaf0] sm:px-4"
     >
-      <GroupIcon
-        className={`h-7 w-7 shrink-0 ${
-          tone === "gold" ? "text-gold-dark" : "text-navy"
+      <span
+        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+          tone === "gold" ? "bg-[#fff5d9] text-gold-dark" : "bg-[#edf3ff] text-navy"
         }`}
-      />
+      >
+        <GroupIcon className="h-4.5 w-4.5" />
+      </span>
       <p className="min-w-0 flex-1 text-[11px] leading-snug text-slate-600">
         {children}
       </p>
       <ArrowRight
-        className={`h-4 w-4 shrink-0 ${
+        className={`h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5 ${
           tone === "gold" ? "text-gold-dark" : "text-navy"
         }`}
       />
@@ -62,168 +87,191 @@ function InterestStrip({
   );
 }
 
-function PatronAwardIcon() {
+function MemberAvatar({
+  name,
+  role,
+  institution,
+  photo,
+  ring = "navy",
+}: {
+  name: string;
+  role: ReactNode;
+  institution?: ReactNode;
+  photo: string;
+  ring?: "navy" | "gold";
+}) {
   return (
-    <div className="relative h-[7rem] w-[8.5rem]">
-      <img
-        src="/images/patron-laurel-wreath.png"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-contain mix-blend-multiply"
-      />
-      <svg
-        aria-hidden="true"
-        className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-full text-navy"
-        viewBox="0 0 24 24"
-        fill="currentColor"
+    <div className="flex w-[126px] shrink-0 snap-start flex-col items-center text-center sm:w-[148px]">
+      <div
+        className={`h-20 w-20 overflow-hidden rounded-full bg-white shadow-[0_8px_20px_-10px_rgba(11,28,63,0.4)] ring-[3px] ring-offset-2 ring-offset-white transition-transform duration-300 ease-out hover:-translate-y-1.5 sm:h-24 sm:w-24 ${
+          ring === "gold" ? "ring-gold/50" : "ring-navy/15"
+        }`}
       >
-        <path d="M12 2.5 10.7 5 8 5.6l2 1.9-.5 2.7L12 8.9l2.5 1.3-.5-2.7 2-1.9-2.7-.6L12 2.5Z" fill="#d99b19" />
-        <circle cx="12" cy="13" r="3.2" />
-        <path d="M5.5 22c.5-4.4 2.7-6.4 6.5-6.4s6 2 6.5 6.4h-13Z" />
-      </svg>
+        <img
+          src={photo}
+          alt={name}
+          loading="lazy"
+          className="h-full w-full object-cover object-top"
+        />
+      </div>
+      <h4 className="mt-3 font-serif text-[12px] font-semibold leading-snug text-navy sm:text-[12.5px]">
+        {name}
+      </h4>
+      <p className="mt-1 text-[9.5px] leading-snug text-gold-dark sm:text-[10px]">
+        {role}
+      </p>
+      {institution ? (
+        <p className="mt-0.5 text-[9px] leading-snug text-slate-500 sm:text-[9.5px]">
+          {institution}
+        </p>
+      ) : null}
     </div>
   );
 }
 
-function PatronColumn() {
+function PlaceholderAvatar({
+  icon,
+  title,
+  caption,
+  ring = "navy",
+}: {
+  icon: ReactNode;
+  title: string;
+  caption: string;
+  ring?: "navy" | "gold";
+}) {
   return (
-    <Reveal className="flex h-full flex-col">
-      <article className="relative flex h-full flex-col rounded-xl border border-[#d9dfeb] bg-[#f8faff] p-4.5 pt-8 text-center sm:p-6 sm:pt-9">
-        <span className="absolute left-1/2 top-0 flex h-7 w-9 -translate-x-1/2 -translate-y-px items-center justify-center rounded-b bg-navy font-serif text-[12px] text-white">
-          01
-        </span>
-        <div className="mx-auto flex h-[7rem] -translate-y-2 items-center justify-center">
-          <PatronAwardIcon />
-        </div>
-        <h3 className="mt-2 font-serif text-[16px] font-semibold uppercase leading-tight text-navy sm:text-[17px]">
-          Patron-in-Chief
-        </h3>
-        <span className="mx-auto mt-2 h-px w-12 bg-gold" />
-        <p className="mt-3 font-serif text-[15px] font-medium leading-snug text-navy sm:text-[16px]">
-          Reserved for
-          <br />
-          Distinguished Institutional
-          <br />
-          Leadership
-        </p>
-        <p className="mt-4 text-[12px] leading-relaxed text-slate-600 sm:text-[12.5px]">
-          This position is reserved for an eminent institutional leader whose
-          experience and stature can provide exceptional guidance to the
-          Foundation&apos;s long-term educational vision and national or
-          international academic impact.
-        </p>
-        <div className="mt-auto pt-5">
-          <ActionLink tone="gold">Position Open by Invitation</ActionLink>
-        </div>
-      </article>
-      <InterestStrip>
-        Know a distinguished leader who could contribute to this vision?
-      </InterestStrip>
-    </Reveal>
+    <div className="flex w-[126px] shrink-0 snap-start flex-col items-center text-center sm:w-[148px]">
+      <div
+        className={`flex h-20 w-20 items-center justify-center rounded-full border-2 border-dashed sm:h-24 sm:w-24 ${
+          ring === "gold"
+            ? "border-gold/50 bg-[#fff8e6] text-gold-dark"
+            : "border-navy/25 bg-[#edf3ff] text-navy"
+        }`}
+      >
+        {icon}
+      </div>
+      <h4
+        className={`mt-3 font-serif text-[12px] font-semibold leading-snug sm:text-[12.5px] ${
+          ring === "gold" ? "text-gold-dark" : "text-navy"
+        }`}
+      >
+        {title}
+      </h4>
+      <p className="mt-1 text-[9px] leading-snug text-slate-500 sm:text-[9.5px]">
+        {caption}
+      </p>
+    </div>
   );
 }
 
-function JuryColumn() {
+function ScrollGallery({
+  children,
+  fadeColor,
+}: {
+  children: ReactNode;
+  fadeColor: string;
+}) {
   return (
-    <Reveal delay={100} className="flex h-full flex-col">
-      <article className="relative flex h-full flex-col rounded-xl border border-[#eee7d8] bg-[#fffdf8] p-4.5 pt-8 sm:p-6 sm:pt-9">
-        <span className="absolute left-1/2 top-0 flex h-7 w-9 -translate-x-1/2 -translate-y-px items-center justify-center rounded-b bg-gold font-serif text-[12px] text-navy">
-          02
-        </span>
-        <h3 className="mt-2 text-center font-serif text-[16px] font-semibold uppercase leading-tight text-navy sm:text-[17px]">
-          Honorary Jury Members
-        </h3>
-        <p className="mt-2 text-center font-serif text-[13px] text-gold-dark">
-          Distinguished Academic &amp;
-          <br />
-          Assessment Leadership
-        </p>
-        <div className="mt-4 divide-y divide-[#eee7d8]">
-          {[
-            ["Meena Kapoor", "Former Professor & Head, Department of Education", portraits.meena],
-            ["Arvind Malhotra", "Former Dean (Academics), Expert in Educational Research & Analytics", portraits.arvind],
-          ].map(([name, role, photo]) => (
-            <div key={name} className="flex gap-2.5 py-2 first:pt-0 last:pb-1">
-              <img
-                src={photo}
-                alt={`Prof. (Dr.) ${name}`}
-                loading="lazy"
-                className="h-16 w-16 shrink-0 rounded-md bg-white object-contain"
-              />
-              <div className="text-left">
-                <h4 className="font-serif text-[12px] font-semibold text-navy">
-                  Prof. (Dr.) {name}
-                </h4>
-                <p className="mt-1 text-[10.5px] leading-snug text-slate-600">{role}</p>
+    <div className="relative">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 sm:w-10"
+        style={{
+          backgroundImage: `linear-gradient(to right, ${fadeColor}, transparent)`,
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 sm:w-10"
+        style={{
+          backgroundImage: `linear-gradient(to left, ${fadeColor}, transparent)`,
+        }}
+      />
+      <div className="flex snap-x gap-4 overflow-x-auto px-7 pb-2 pt-1 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-navy/15 [&::-webkit-scrollbar-track]:bg-transparent sm:gap-5 sm:px-11">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function CommitteeRow({
+  number,
+  tone,
+  title,
+  subtitle,
+  cta,
+  interest,
+  watermark = "olive",
+  children,
+  delay,
+}: {
+  number: string;
+  tone: "navy" | "gold";
+  title: ReactNode;
+  subtitle: ReactNode;
+  cta: ReactNode;
+  interest: ReactNode;
+  watermark?: "olive" | "laurel";
+  children: ReactNode;
+  delay?: number;
+}) {
+  const fadeColor = tone === "gold" ? "#fffdf8" : "#f8faff";
+
+  return (
+    <Reveal delay={delay} className="flex flex-col">
+      <article
+        className={`relative overflow-hidden rounded-2xl border p-4.5 shadow-[0_14px_34px_-22px_rgba(11,28,63,0.35)] sm:p-6 lg:p-7 ${
+          tone === "gold"
+            ? "border-[#eee7d8] bg-[#fffdf8]"
+            : "border-[#d9dfeb] bg-[#f8faff]"
+        }`}
+      >
+        {watermark === "laurel" ? (
+          <LaurelBranch
+            className={`pointer-events-none absolute -right-6 top-1/2 hidden h-[150%] w-auto -translate-y-1/2 lg:block ${
+              tone === "gold" ? "text-gold/15" : "text-navy/10"
+            }`}
+          />
+        ) : (
+          <OliveSprig
+            className={`pointer-events-none absolute -right-4 top-1/2 hidden h-[145%] w-auto -translate-y-1/2 lg:block ${
+              tone === "gold" ? "text-gold/15" : "text-navy/10"
+            }`}
+          />
+        )}
+
+        <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+          <div className="flex items-start gap-3.5">
+            <span
+              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-serif text-[13.5px] font-semibold sm:h-11 sm:w-11 sm:text-[14.5px] ${
+                tone === "gold" ? "bg-gold text-navy" : "bg-navy text-white"
+              }`}
+            >
+              {number}
+            </span>
+            <div>
+              <h3 className="font-serif text-[16.5px] font-semibold uppercase leading-tight tracking-tight text-navy sm:text-[18.5px]">
+                {title}
+              </h3>
+              <div className="mt-1.5 flex items-center gap-2">
+                <span className="h-px w-6 shrink-0 bg-gold" />
+                <p className="font-serif text-[11.5px] leading-snug text-gold-dark sm:text-[12.5px]">
+                  {subtitle}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
-        <div className="mt-auto rounded-lg bg-[#fff5d9] px-3 py-2.5 text-center">
-          <p className="font-serif text-[12px] font-semibold text-gold-dark">The Jury is Growing</p>
-          <p className="mt-1 text-[10.5px] leading-snug text-slate-600">
-            Additional distinguished academic leaders will be invited as the
-            Foundation expands its academic council.
-          </p>
-        </div>
-        <div className="pt-3">
-          <ActionLink tone="gold">Become an Honorary Jury Member</ActionLink>
-        </div>
-      </article>
-      <InterestStrip tone="gold">
-        Interested in contributing your expertise to academic excellence?
-      </InterestStrip>
-    </Reveal>
-  );
-}
-
-function AmbassadorColumn() {
-  return (
-    <Reveal delay={180} className="flex h-full flex-col">
-      <article className="relative flex h-full flex-col rounded-xl border border-[#d9dfeb] bg-[#f8faff] p-4.5 pt-8 text-center sm:p-6 sm:pt-9">
-        <span className="absolute left-1/2 top-0 flex h-7 w-9 -translate-x-1/2 -translate-y-px items-center justify-center rounded-b bg-navy font-serif text-[12px] text-white">
-          03
-        </span>
-        <h3 className="mt-2 text-center font-serif text-[16px] font-semibold uppercase leading-tight text-navy sm:text-[17px]">
-          Chief Academic
-          <br />
-          Ambassadors
-        </h3>
-        <p className="mt-2 text-center font-serif text-[13px] text-gold-dark">
-          Distinguished School Leadership
-        </p>
-        <div className="mt-4 flex gap-3 border-b border-[#dfe4ed] pb-3">
-          <img
-            src={portraits.kavita}
-            alt="Dr. Kavita Sharma"
-            loading="lazy"
-            className="h-16 w-16 shrink-0 rounded-md bg-white object-contain"
-          />
-          <div className="text-left">
-            <h4 className="font-serif text-[12px] font-semibold text-navy">Dr. Kavita Sharma</h4>
-            <p className="mt-1 text-[10.5px] leading-snug text-slate-600">
-              Principal
-              <br />
-              Delhi Public School
-              <br />
-              Ghaziabad
-            </p>
+          </div>
+          <div className="sm:shrink-0 sm:pt-1">
+            <ActionLink tone={tone === "gold" ? "gold" : "navy"}>{cta}</ActionLink>
           </div>
         </div>
-        <div className="mt-auto rounded-lg bg-[#edf3ff] px-3 py-2.5 text-center">
-          <p className="font-serif text-[12px] font-semibold text-navy">The Council is Growing</p>
-          <p className="mt-1 text-[10.5px] leading-snug text-slate-600">
-            We are inviting a select group of renowned school leaders who share
-            our commitment to advancing thinking, application and future readiness.
-          </p>
-        </div>
-        <div className="pt-3">
-          <ActionLink>Become a Chief Academic Ambassador</ActionLink>
+
+        <div className="relative mt-5 lg:mt-6">
+          <ScrollGallery fadeColor={fadeColor}>{children}</ScrollGallery>
         </div>
       </article>
-      <InterestStrip>
-        Are you a school leader passionate about meaningful education?
-      </InterestStrip>
+      <InterestStrip tone={tone}>{interest}</InterestStrip>
     </Reveal>
   );
 }
@@ -233,19 +281,86 @@ export function AdvisoryCommittee() {
     <>
       <section className="bg-cream">
         <div className="mx-auto w-full px-4 py-6 sm:px-6 md:px-12 lg:px-page lg:py-8">
+          <AdvisorySectionHeading label="Our Advisory Committee" />
           <div className="text-center">
-            <h2 className="font-serif text-[20px] font-medium leading-tight text-navy sm:text-[22px] lg:text-[25px]">
-              Our Advisory Committee
-            </h2>
             <p className="mx-auto mt-1 max-w-[58ch] text-[10.5px] leading-relaxed text-slate-600 sm:text-[11.5px]">
               Independent voices helping strengthen assessment, academic integrity
               <br className="hidden sm:block" /> and the future of cognitive education.
             </p>
           </div>
-          <div className="mt-5 grid items-stretch gap-3.5 sm:grid-cols-3 lg:mt-6 lg:gap-4">
-            <PatronColumn />
-            <JuryColumn />
-            <AmbassadorColumn />
+
+          <div className="mt-5 flex flex-col gap-4 lg:mt-7 lg:gap-5">
+            <CommitteeRow
+              number="01"
+              tone="navy"
+              title="Patron-in-Chief"
+              subtitle="Reserved for Distinguished Institutional Leadership"
+              cta="Position Open by Invitation"
+              interest="Know a distinguished leader who could contribute to this vision?"
+            >
+              <PlaceholderAvatar
+                icon={
+                  <img
+                    src="/images/patron-in-chief.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="h-10 w-12 object-contain"
+                  />
+                }
+                title="Awaiting Appointment"
+                caption="Position open by invitation"
+              />
+            </CommitteeRow>
+
+            <CommitteeRow
+              number="02"
+              tone="gold"
+              watermark="laurel"
+              title="Honorary Jury Members"
+              subtitle="Distinguished Academic & Assessment Leadership"
+              cta="Become an Honorary Jury Member"
+              interest="Interested in contributing your expertise to academic excellence?"
+              delay={100}
+            >
+              {jury.map((member) => (
+                <MemberAvatar
+                  key={member.name}
+                  name={member.name}
+                  role={member.role}
+                  institution={member.institution}
+                  photo={member.photo}
+                  ring="gold"
+                />
+              ))}
+              <PlaceholderAvatar
+                icon={<span className="text-2xl font-light leading-none">+</span>}
+                title="The Jury is Growing"
+                caption="More leaders joining soon"
+                ring="gold"
+              />
+            </CommitteeRow>
+
+            <CommitteeRow
+              number="03"
+              tone="navy"
+              title="Chief Academic Ambassadors"
+              subtitle="For School Leaders Shaping the Future"
+              cta="Become a Chief Academic Ambassador"
+              interest="Are you a school leader passionate about meaningful education?"
+              delay={200}
+            >
+              <MemberAvatar
+                name="Dr. Archana Nigam"
+                role="Ex. Principal, DPS Kalyanpur"
+                institution="Kanpur, Uttar Pradesh"
+                photo="/images/advisors/archana-nigam.png"
+              />
+              <PlaceholderAvatar
+                icon={<span className="text-2xl font-light leading-none">+</span>}
+                title="The Council is Growing"
+                caption="More leaders joining soon"
+              />
+            </CommitteeRow>
           </div>
         </div>
       </section>
@@ -253,7 +368,14 @@ export function AdvisoryCommittee() {
       <section className="bg-navy text-white">
         <div className="mx-auto flex w-full flex-col gap-4 px-4 py-5 sm:px-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-page lg:py-6">
           <div className="flex items-center gap-3">
-            {/* <TrophyPinIcon className="h-10 w-10 shrink-0 text-gold sm:h-12 sm:w-12" /> */}
+            <Image
+              src="/images/advisory-emblem.png"
+              alt=""
+              aria-hidden="true"
+              width={548}
+              height={456}
+              className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12"
+            />
             <div>
               <h2 className="font-serif text-[16px] font-medium sm:text-[18px]">
                 Built on Expertise. Growing with Purpose.

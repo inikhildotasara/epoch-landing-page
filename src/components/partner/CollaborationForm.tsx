@@ -283,14 +283,14 @@ export function CollaborationForm() {
             <legend className="sr-only">
               Initiatives you would like to explore
             </legend>
-            <div className="grid gap-2.5 sm:grid-cols-2">
-              {initiativeChoices.map(({ id, logo, desc, accent, tint }) => {
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+              {initiativeChoices.map(({ id, logo, accent, tint }) => {
                 const picked = v.initiatives.includes(id);
                 return (
                   <label
                     key={id}
                     htmlFor={`initiative-${slug(id)}`}
-                    className="flex cursor-pointer items-start gap-2.5 rounded-xl border p-3 transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-gold/60"
+                    className="relative flex aspect-[3/4] cursor-pointer flex-col items-center justify-center rounded-xl border p-3 transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-gold/60"
                     style={{
                       borderColor: picked ? accent : "#e2e8f0",
                       backgroundColor: picked ? tint : "#ffffff",
@@ -305,30 +305,20 @@ export function CollaborationForm() {
                         set("initiatives", toggle(v.initiatives, id))
                       }
                     />
-                    <span className="relative mt-px flex h-12 w-28 shrink-0 items-center rounded-md bg-white p-1.5 ring-1 ring-slate-200" aria-hidden>
-                      <img src={logo} alt="" className="h-full w-full object-contain object-left" />
-                      {picked && (
-                        <span
-                          className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full text-white"
-                          style={{ backgroundColor: accent }}
-                        >
-                          <CheckIcon className="h-3 w-3" />
-                        </span>
-                      )}
-                    </span>
-                    <span className="min-w-0">
+                    <img
+                      src={logo}
+                      alt={id}
+                      className="h-full w-full object-contain"
+                    />
+                    {picked && (
                       <span
-                        className="block text-[12px] font-bold leading-snug lg:text-[12.5px]"
-                        style={{ color: accent }}
+                        className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full text-white"
+                        style={{ backgroundColor: accent }}
+                        aria-hidden
                       >
-                        {id}
+                        <CheckIcon className="h-3 w-3" />
                       </span>
-                      {desc && (
-                        <span className="mt-0.5 block text-[11px] leading-snug text-slate-500 lg:text-[11.5px]">
-                          {desc}
-                        </span>
-                      )}
-                    </span>
+                    )}
                   </label>
                 );
               })}

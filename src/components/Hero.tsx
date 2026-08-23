@@ -46,9 +46,9 @@ export function Hero() {
             </p>
             <button
               type="button"
-              className="mt-6 inline-flex items-center gap-2.5 rounded-lg border-2 border-violet-200/60 bg-navy/70 px-4 py-2.5 text-[12px] font-semibold text-white shadow-[0_0_0_3px_rgba(196,181,253,0.12)] transition-colors hover:border-violet-200 hover:bg-navy/90 sm:px-5 sm:py-3 sm:text-[13px]"
+              className="mt-6 inline-flex items-center gap-3 rounded-full bg-gold py-1.5 pl-1.5 pr-5 text-[12px] font-semibold text-navy transition-colors hover:bg-gold-dark sm:text-[13px]"
             >
-              <span className="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-white text-navy">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-navy text-gold">
                 <svg viewBox="0 0 24 24" className="ml-0.5 h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
                   <path d="M8 5l11 7-11 7z" />
                 </svg>

@@ -35,7 +35,7 @@ const stages: {
     stage: "Stage 2",
     brand: "Epoch Olympiad",
     tagline: "From Exploration to Structured Thinking",
-    who: "Primary & middle school",
+    who: "Primary & middle school learners",
     focus:
       "Separates what a learner remembers from what they actually understand, then benchmarks both against school, national and global cohorts.",
     measures: [
@@ -111,13 +111,11 @@ export function ReportStages() {
                     </div>
                   </div>
 
-                  {/* `lh` minimums keep the three cards' bullet lists on the
-                      same baseline when a title or tagline wraps. */}
-                  <h3 className="mt-4 font-serif text-[19px] font-medium text-navy md:min-h-[2lh] lg:text-[22px]">
+                  <h3 className="mt-4 font-serif text-[19px] font-medium text-navy lg:text-[22px]">
                     {s.brand}
                   </h3>
                   <p
-                    className="mt-1 font-serif text-[13px] italic md:min-h-[2lh] lg:text-[14px]"
+                    className="mt-0 font-serif text-[13px] italic md:min-h-[2lh] lg:text-[14px]"
                     style={{ color: s.accent }}
                   >
                     {s.tagline}
