@@ -285,7 +285,7 @@ function CommitteeRow({
   title: ReactNode;
   subtitle: ReactNode;
   cta: ReactNode;
-  interest: ReactNode;
+  interest?: ReactNode;
   watermark?: "olive" | "laurel";
   layout?: "scroll" | "center";
   children: ReactNode;
@@ -347,7 +347,7 @@ function CommitteeRow({
           )}
         </div>
       </article>
-      <InterestStrip tone={tone}>{interest}</InterestStrip>
+      {interest ? <InterestStrip tone={tone}>{interest}</InterestStrip> : null}
     </Reveal>
   );
 }
@@ -372,7 +372,6 @@ export function AdvisoryCommittee() {
               title="Patron-in-Chief"
               subtitle="Reserved for Distinguished Institutional Leadership"
               cta="Position Open by Invitation"
-              interest="Know a distinguished leader who could contribute to this vision?"
               layout="center"
             >
               <PatronSeat />
@@ -384,8 +383,8 @@ export function AdvisoryCommittee() {
               watermark="laurel"
               title="Honorary Jury Members"
               subtitle="Distinguished Academic & Assessment Leadership"
-              cta="Become an Honorary Jury Member"
-              interest="Interested in contributing your expertise to academic excellence?"
+              cta="Express interest"
+              interest="If you meet the eligibility criteria and would like to contribute your academic expertise, please submit your expression of interest."
               delay={100}
             >
               {jury.map((member) => (

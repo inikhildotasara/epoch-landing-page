@@ -418,6 +418,14 @@ export const ChatIcon = (p: IconProps) => (
   </svg>
 );
 
+export const InfoIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <circle cx="12" cy="12" r="8.4" />
+    <path d="M12 11v5" />
+    <circle cx="12" cy="8.2" r="0.75" fill="currentColor" stroke="none" />
+  </svg>
+);
+
 export const HelpBubbleIcon = (p: IconProps) => (
   <svg {...base(p)}>
     <path d="M20.4 12.4c0 3.7-3.8 6.6-8.4 6.6a10 10 0 0 1-2.6-.3L5 20.4l1.2-3.1a6.3 6.3 0 0 1-2.6-4.9C3.6 8.7 7.4 5.8 12 5.8s8.4 2.9 8.4 6.6Z" />

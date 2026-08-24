@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ExpressionOfInterestForm } from "@/components/advisory/ExpressionOfInterestForm";
 import { JoinCouncilHero } from "@/components/advisory/JoinCouncilHero";
 import { JoinCouncilRoles } from "@/components/advisory/JoinCouncilRoles";
 import { JoinCouncilSelection } from "@/components/advisory/JoinCouncilSelection";
@@ -18,6 +19,7 @@ export default function BecomeAnAdvisorPage() {
       <main>
         <JoinCouncilHero />
         <JoinCouncilRoles />
+        <ExpressionOfInterestForm />
         <JoinCouncilSelection />
       </main>
       <Footer />

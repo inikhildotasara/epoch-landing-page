@@ -1,6 +1,5 @@
 import type { ReactNode, SVGProps } from "react";
 import {
-  ArrowRight,
   ClockIcon,
   CompassIcon,
   CrownIcon,
@@ -180,9 +179,6 @@ function RoleCardArticle({ role, delay }: { role: RoleCard; delay: number }) {
   const iconCircleStyles = isGold
     ? "bg-gold text-navy"
     : "bg-navy text-gold";
-  const buttonStyles = isGold
-    ? "bg-gold text-navy hover:bg-gold-dark"
-    : "bg-navy text-white hover:bg-navy-700";
   const dotColor = isGold ? "bg-gold-dark" : "bg-gold-dark";
 
   return (
@@ -277,18 +273,6 @@ function RoleCardArticle({ role, delay }: { role: RoleCard; delay: number }) {
           <p className="mt-2 text-[11.5px] leading-relaxed text-slate-600 sm:text-[12px]">
             {role.timeCommitment}
           </p>
-        </div>
-
-        <div className="mt-auto pt-5">
-          <a
-            href={`mailto:info@epocholympiad.co.in?subject=${encodeURIComponent(
-              `Advisory Council \u2013 Express Interest (${role.title})`
-            )}`}
-            className={`inline-flex w-full items-center justify-center gap-1.5 rounded-md px-3.5 py-2.5 text-center text-[12px] font-semibold leading-tight transition-colors ${buttonStyles}`}
-          >
-            Express Interest
-            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
-          </a>
         </div>
       </article>
     </Reveal>
