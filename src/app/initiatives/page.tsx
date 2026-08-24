@@ -4,10 +4,7 @@ import { Footer } from "@/components/Footer";
 import { InitiativesHero } from "@/components/initiatives/InitiativesHero";
 import { JourneyBand } from "@/components/initiatives/JourneyBand";
 import { PhilosophyStrip } from "@/components/initiatives/PhilosophyStrip";
-import { InitiativeBrainiac } from "@/components/initiatives/InitiativeBrainiac";
-import { InitiativeOlympiad } from "@/components/initiatives/InitiativeOlympiad";
-import { InitiativeCCBee } from "@/components/initiatives/InitiativeCCBee";
-import { GlanceStrip } from "@/components/initiatives/GlanceStrip";
+import { EcosystemStrip } from "@/components/initiatives/EcosystemStrip";
 import { InitiativesFaq } from "@/components/initiatives/InitiativesFaq";
 
 export const metadata: Metadata = {
@@ -24,10 +21,7 @@ export default function InitiativesPage() {
         <InitiativesHero />
         <JourneyBand />
         <PhilosophyStrip />
-        <InitiativeBrainiac />
-        <InitiativeOlympiad />
-        <InitiativeCCBee />
-        <GlanceStrip />
+        <EcosystemStrip />
         <InitiativesFaq />
       </main>
       <Footer />
