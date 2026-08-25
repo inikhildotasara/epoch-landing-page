@@ -112,7 +112,7 @@ export const newArticles: Article[] = [
     "A simple guide for parents—from what a child remembers to what a child can do with learning.",
     "Assessment",
     "2026-08-19",
-    "/images/article-2.png",
+    "/images/article-7.jpg",
     ["competency", "assessment", "application"],
     [
       { kind: "lead", text: "A child may remember a formula, definition or fact and still struggle to use it in a new situation. Competency-based assessment focuses on whether a child can understand, apply, reason, connect ideas and solve problems—not simply reproduce information." },
@@ -132,7 +132,7 @@ export const newArticles: Article[] = [
     "Critical thinking is not about knowing more answers. It is about learning to think carefully before accepting an answer.",
     "Thinking Skills",
     "2026-08-18",
-    "/images/article-1.png",
+    "/images/article-8.jpg",
     ["critical thinking", "parents", "thinking skills"],
     [
       { kind: "lead", text: "When children develop critical thinking, they learn to observe, question, compare, connect information, look for reasons and make thoughtful decisions instead of simply choosing the first answer that appears obvious." },
@@ -153,7 +153,7 @@ export const newArticles: Article[] = [
     "A learning gap is not failure. It is an area where a child may need more support, practice or a different way of learning.",
     "Learning Support",
     "2026-08-17",
-    "/images/article-6.png",
+    "/images/article-9.jpg",
     ["learning gaps", "early support", "parents"],
     [
       { kind: "lead", text: "A child may be getting good marks and still have a learning gap. A child may remember a mathematical formula but struggle to use it in a new situation, or read fluently but find it difficult to explain what they understood. The earlier gaps are noticed, the easier it is to support the child." },
@@ -173,7 +173,7 @@ export const newArticles: Article[] = [
     "A simple guide for parents.",
     "Parent Guide",
     "2026-08-16",
-    "/images/article-2.png",
+    "/images/article-10.jpg",
     ["understanding", "memorisation", "parent guide"],
     [
       { kind: "lead", text: "A child can remember an answer without truly understanding the idea behind it. They may score well on familiar questions but become confused when the question changes. This does not mean the child is weak—it raises an important question: is your child learning to remember, or learning to understand?" },
@@ -192,7 +192,7 @@ export const newArticles: Article[] = [
     "Good marks can open doors. The future will ask children to do much more than remember information.",
     "Future Readiness",
     "2026-08-15",
-    "/images/article-3.png",
+    "/images/article-11.jpg",
     ["future skills", "parents", "holistic learning"],
     [
       { kind: "lead", text: "Children will need to think, question, solve problems, adapt to change, communicate ideas and make thoughtful decisions. This does not make academic learning less important. It means children need to learn how to use what they know." },
@@ -210,7 +210,7 @@ export const newArticles: Article[] = [
     "A simple guide for parents.",
     "Early Learning",
     "2026-08-14",
-    "/images/article-6.png",
+    "/images/article-12.jpg",
     ["early childhood", "Brainiac Global", "thinking skills"],
     [
       { kind: "lead", text: "Before children solve equations, write essays or prepare for examinations, they are already learning how to observe, question, connect and make sense of the world. The early years are not just preparation for school; they are the foundation for how a child learns." },
@@ -230,7 +230,7 @@ export const newArticles: Article[] = [
     "A simple guide for parents.",
     "Olympiad Learning",
     "2026-08-13",
-    "/images/article-4.png",
+    "/images/article-13.jpg",
     ["Olympiad", "competition", "learning insight"],
     [
       { kind: "lead", text: "Rankings, medals and certificates are exciting parts of an Olympiad journey. But an Olympiad can offer something more valuable: an opportunity to discover how a child thinks, understands and applies what they have learned. Competition can motivate children, but learning should be the bigger purpose." },
@@ -252,7 +252,7 @@ export const newArticles: Article[] = [
     "The right choice begins with understanding what your child needs to learn, practise or discover.",
     "Parent Guide",
     "2026-08-12",
-    "/images/article-3.png",
+    "/images/article-14.jpg",
     ["Olympiad", "parent guide", "learning"],
     [
       { kind: "lead", text: "Parents can choose from Olympiads covering Mathematics, Science, General Knowledge, Aptitude and more. The answer should not depend only on popularity, prizes or participation. A good choice begins with understanding what your child needs right now." },
@@ -272,7 +272,7 @@ export const newArticles: Article[] = [
     "A simple guide for parents.",
     "Holistic Learning",
     "2026-08-11",
-    "/images/article-5.png",
+    "/images/article-15.jpg",
     ["holistic education", "academic scores", "parent guide"],
     [
       { kind: "lead", text: "Good marks matter: they show that a child has learned and performed well in a particular assessment. But a child's potential is bigger than a number. Education should help children think, question, reason, solve problems, communicate, adapt, make decisions and keep learning." },

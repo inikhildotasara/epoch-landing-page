@@ -82,7 +82,7 @@ export function ArticleHero({
           <img
             src={article.image}
             alt={article.title}
-            className="aspect-[16/9] w-full object-cover sm:aspect-[2/1] lg:aspect-[2.6/1]"
+            className="aspect-[3/2] w-full object-cover"
           />
         </div>
       </div>
