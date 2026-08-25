@@ -12,16 +12,16 @@ const steps = [
     title: "Brainiac Global",
     role: "Build Thinking",
     audience: "Kindergarten | Ages 2–6",
-    desc: "Builds early thinking foundations through age-appropriate cognitive assessment.",
+    desc: "Builds the foundations of curiosity, observation, reasoning and problem-solving through engaging early-learning experiences.",
   },
   {
     logo: "/images/LOGO - EPOCH.png",
     color: NAVY,
     tint: "#eef2fb",
     title: "Epoch Olympiad",
-    role: "Assess Intelligence",
+    role: "Measure Understanding",
     audience: "Classes 1–10",
-    desc: "Extends that thinking into subject understanding, reasoning and future-ready international assessments.",
+    desc: "Builds on those foundations through subject learning, reasoning, knowledge application and future-ready thinking.",
   },
   {
     logo: "/images/LOGO - MY CCBEE.png",
@@ -30,7 +30,7 @@ const steps = [
     title: "MY CCBee",
     role: "Enable Growth",
     audience: "For Schools",
-    desc: "Helps schools turn performance data into insight and continuous improvement.",
+    desc: "Helps schools understand children's progress and turn meaningful insights into better learning and continuous improvement.",
   },
 ];
 
@@ -130,8 +130,7 @@ export function EcosystemStrip() {
             <span className="h-px w-10 bg-gold/70 lg:w-16" />
           </div>
           <p className="mx-auto mt-3 max-w-2xl text-center text-[13.5px] leading-relaxed text-slate-500 lg:text-[14.5px]">
-            Three initiatives, one journey — from early thinking to
-            assessment, insight and growth.
+            Each initiative serves a different stage of the learning journey — from building early thinking to developing deeper understanding and enabling continuous growth.
           </p>
 
           {/* Phone: one column so the path is always 1 ↓ 2 ↓ 3 */}
