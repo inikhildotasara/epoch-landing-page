@@ -133,7 +133,7 @@ export function PartnerHero() {
                 aria-hidden
               >
                 <img
-                  src="/images/EPOCH research final.png"
+                  src="/images/LOGO - EPOCH.png"
                   alt=""
                   className="h-[22px] w-[22px] object-contain"
                 />
