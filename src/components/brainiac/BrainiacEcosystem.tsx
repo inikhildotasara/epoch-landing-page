@@ -8,9 +8,7 @@ import {
   CheckIcon,
   ChildFaceIcon,
   FlaskIcon,
-  PuzzleIcon,
   SproutIcon,
-  TrendUpIcon,
   TrophyIcon,
 } from "../icons";
 
@@ -46,7 +44,7 @@ const outcomes = [
 
 const platforms: {
   code: string;
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  logo: string;
   color: string;
   name: string;
   tagline: string;
@@ -55,7 +53,7 @@ const platforms: {
 }[] = [
   {
     code: "IHOST",
-    icon: PuzzleIcon,
+    logo: "/images/exam-icons/IHOST.png",
     color: TEAL,
     name: "International Holistic Olympiad for Smart Thinkers",
     tagline: "Think • Explore • Discover • Excel",
@@ -64,7 +62,7 @@ const platforms: {
   },
   {
     code: "IFLY",
-    icon: TrendUpIcon,
+    logo: "/images/exam-icons/IFLY.png",
     color: ORANGE,
     name: "International Finance & Digital Literacy Olympiad for Young Leaders",
     tagline: "Understanding Money & Digital World.",
@@ -252,20 +250,17 @@ export function BrainiacEcosystem() {
             />
 
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-6 lg:gap-5">
-              {platforms.map((p) => {
-                const Icon = p.icon;
-                return (
+              {platforms.map((p) => (
                   <article
                     key={p.code}
                     className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 lg:p-6"
                   >
                     <div className="flex items-start justify-between gap-3">
-                      <span
-                        className="flex h-11 w-11 items-center justify-center rounded-full text-white"
-                        style={{ backgroundColor: p.color }}
-                      >
-                        <Icon className="h-5 w-5" strokeWidth={1.6} />
-                      </span>
+                      <img
+                        src={p.logo}
+                        alt={`${p.code} logo`}
+                        className="h-20 w-20 shrink-0 object-contain"
+                      />
                       <span
                         className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white"
                         style={{ backgroundColor: p.color }}
@@ -300,8 +295,7 @@ export function BrainiacEcosystem() {
                       </a>
                     </div>
                   </article>
-                );
-              })}
+              ))}
             </div>
           </Reveal>
         </div>
