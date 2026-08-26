@@ -31,7 +31,7 @@ export default function InternationalBrainBoosterOlympiadPage() {
         <BrainBoosterHero />
         <ThinkingFlow />
         <QuickFacts />
-        <DirectorMessage />
+        {/* <DirectorMessage /> */}
         <ParticipateAwardsPrepare />
         <AchieversAndFaq />
         <InitiativeCTA />

@@ -21,12 +21,20 @@ export function InitiativeCTA() {
             </div>
           </div>
 
-          <a
-            href="/register-your-school"
-            className="inline-flex shrink-0 items-center gap-2 rounded-md bg-gold px-6 py-3 text-[13px] font-semibold text-navy transition-colors hover:bg-gold-dark lg:text-[14px]"
-          >
-            Register Your School <ArrowRight className="h-4 w-4" />
-          </a>
+          <div className="flex shrink-0 flex-wrap items-center justify-center gap-3">
+            <a
+              href="tel:+919807714979"
+              className="inline-flex items-center gap-2 rounded-md border border-white/25 bg-white/5 px-6 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-white/10 lg:text-[14px]"
+            >
+              Contact Us
+            </a>
+            <a
+              href="/register-your-school"
+              className="inline-flex items-center gap-2 rounded-md bg-gold px-6 py-3 text-[13px] font-semibold text-navy transition-colors hover:bg-gold-dark lg:text-[14px]"
+            >
+              Register Your School <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

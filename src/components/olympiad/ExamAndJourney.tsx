@@ -176,12 +176,7 @@ function JourneyPanel() {
         <div className="mt-4 grid grid-cols-4 gap-2">
           {olympiads.map((p) => (
             <div key={p.code} className="flex flex-col items-center gap-1.5">
-              <ProgramBadge
-                program={p}
-                className="h-10 w-10"
-                iconClassName="h-5 w-5"
-                glyphClassName="text-[13px]"
-              />
+              <ProgramBadge program={p} className="h-14 w-14" />
               <span className="text-[11.5px] font-semibold text-navy lg:text-[12px]">
                 {p.code}
               </span>
@@ -234,11 +229,7 @@ function JourneyPanel() {
         <div className="mt-4 grid grid-cols-4 gap-2">
           {platforms.map((p) => (
             <div key={p.code} className="flex flex-col items-center gap-1.5">
-              <ProgramBadge
-                program={p}
-                className="h-10 w-10"
-                iconClassName="h-5 w-5"
-              />
+              <ProgramBadge program={p} className="h-14 w-14" />
               <span className="text-[11.5px] font-semibold text-navy lg:text-[12px]">
                 {p.code}
               </span>

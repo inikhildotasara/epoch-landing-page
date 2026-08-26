@@ -37,8 +37,8 @@ export default function BrainiacGlobalPage() {
         <BrainiacEcosystem />
         <YoungThinkers />
         <BrainiacVoices />
-        <BrainiacGlance />
-        <BrainiacResources />
+        {/* <BrainiacGlance /> */}
+        {/* <BrainiacResources /> */}
         <BrainiacFaq />
         <InitiativeCTA />
       </main>
