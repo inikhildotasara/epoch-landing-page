@@ -564,6 +564,26 @@ export const CheckIcon = (p: IconProps) => (
   </svg>
 );
 
+export const GearIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 3.4v2.1M12 18.5v2.1M3.4 12h2.1M18.5 12h2.1M5.8 5.8l1.5 1.5M16.7 16.7l1.5 1.5M5.8 18.2l1.5-1.5M16.7 7.3l1.5-1.5" />
+    <circle cx="12" cy="12" r="7.4" />
+  </svg>
+);
+
+export const ChevronLeftIcon = (p: IconProps) => (
+  <svg {...base(p)} strokeWidth={2}>
+    <path d="m15 6-6 6 6 6" />
+  </svg>
+);
+
+export const ChevronRightIcon = (p: IconProps) => (
+  <svg {...base(p)} strokeWidth={2}>
+    <path d="m9 6 6 6-6 6" />
+  </svg>
+);
+
 export const ClockIcon = (p: IconProps) => (
   <svg {...base(p)}>
     <path d="M10 2.6h4" />

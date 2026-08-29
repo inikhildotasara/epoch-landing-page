@@ -1,40 +1,34 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { BrainBoosterHero } from "@/components/brain-booster/BrainBoosterHero";
-import { ThinkingFlow } from "@/components/brain-booster/ThinkingFlow";
-import { QuickFacts } from "@/components/brain-booster/QuickFacts";
-import { DirectorMessage } from "@/components/brain-booster/DirectorMessage";
-import { ParticipateAwardsPrepare } from "@/components/brain-booster/ParticipateAwardsPrepare";
-import { AchieversAndFaq } from "@/components/brain-booster/AchieversAndFaq";
-import { InitiativeCTA } from "@/components/InitiativeCTA";
-import { LogoFlash } from "@/components/LogoFlash";
+import { EnquiryHub } from "@/components/enquiry/EnquiryHub";
 
 export const metadata: Metadata = {
-  title: "International Brain Booster Olympiad | Epoch Olympiad Foundation",
+  title: "Assessments & Learning Platforms | Epoch Olympiad Foundation",
   description:
-    "A joyful, age-appropriate cognitive assessment for kindergarten and early learners. Brain Booster Olympiad looks at how young children observe, recognise patterns, connect ideas, reason and explore simple problems.",
+    "Explore Epoch assessments and learning platforms in one place. Brain Booster, IMO, ITST, IAO and IGKO help you understand a child's abilities. IHOST and IFLY build future-ready skills.",
 };
+
+function EnquiryFallback() {
+  return (
+    <div className="min-h-[60vh] bg-[#f7f4ee]" aria-hidden>
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-16">
+        <div className="h-10 w-2/3 max-w-xl rounded bg-navy/10" />
+        <div className="mt-4 h-4 w-1/2 max-w-md rounded bg-navy/5" />
+      </div>
+    </div>
+  );
+}
 
 export default function InternationalBrainBoosterOlympiadPage() {
   return (
     <>
-      <LogoFlash
-        src="/images/BRAINIAC LOGO.png"
-        alt="Brainiac Global — Discovering New Einstein"
-        background="#fffaf7"
-        glow="rgba(214, 40, 57, 0.16)"
-        rule="#d62839"
-      />
       <Header />
       <main>
-        <BrainBoosterHero />
-        <ThinkingFlow />
-        <QuickFacts />
-        {/* <DirectorMessage /> */}
-        <ParticipateAwardsPrepare />
-        <AchieversAndFaq />
-        <InitiativeCTA />
+        <Suspense fallback={<EnquiryFallback />}>
+          <EnquiryHub />
+        </Suspense>
       </main>
       <Footer />
     </>
