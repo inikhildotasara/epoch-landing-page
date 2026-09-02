@@ -32,7 +32,7 @@ const faqs: FaqItem[] = [
     a: [
       "No.",
       "IHOST — International Holistic Olympiad for Smart Thinkers is a learning platform built around the “Balanced Diet for the Brain” approach, bringing together Mathematics, Science, Aptitude and General Knowledge.",
-      "IFLY — International Finance & Digital Literacy Olympiad for Young Leaders is a future-focused learning initiative designed to develop awareness of finance and digital literacy.",
+      "IFLY — International Future Literacy for Young Leaders is a future-focused learning initiative designed to develop awareness of finance and digital literacy.",
       "Both initiatives extend Epoch Olympiad beyond conventional examination-based learning.",
     ],
   },

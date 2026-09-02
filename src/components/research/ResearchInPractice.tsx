@@ -20,7 +20,7 @@ const features: { icon: IconType; label: string }[] = [
   { icon: BulbIcon, label: "Concept Mastery" },
   { icon: TrendUpIcon, label: "Growth Areas" },
   { icon: PuzzleIcon, label: "Logical Reasoning" },
-  { icon: LaurelGlobeIcon, label: "International Benchmark" },
+  { icon: LaurelGlobeIcon, label: "Performance Benchmarks" },
   { icon: TargetIcon, label: "Problem-Solving Skills" },
   { icon: ClipboardIcon, label: "Learning Readiness" },
 ];

@@ -36,7 +36,7 @@ const pillars = [
   },
   {
     icon: ChipIcon,
-    title: "AI-Powered Learning Analytics",
+    title: "Intelligent Learning Analytics",
     desc: "Leveraging technology to accelerate learning outcomes.",
   },
 ];

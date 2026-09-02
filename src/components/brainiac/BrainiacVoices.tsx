@@ -1,6 +1,7 @@
 import { Reveal } from "../Reveal";
 import { SectionHeading } from "./SectionHeading";
 import { ArrowRight, PlayIcon, UserIcon, YoutubeIcon } from "../icons";
+import { siteBrands } from "@/content/site";
 
 const principals = [
   {
@@ -130,7 +131,9 @@ export function BrainiacVoices() {
               </div>
 
               <a
-                href="#"
+                href={siteBrands.brainiac.youtubeHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mx-auto mt-6 flex w-fit items-center gap-2 text-[12.5px] font-semibold text-navy transition-colors hover:text-gold-dark lg:text-[13px]"
               >
                 Watch More on YouTube{" "}

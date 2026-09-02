@@ -2,26 +2,29 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
+import { brandFromPathname, siteBrands } from "@/content/site";
 
 const navItems: { label: string; href: string }[] = [
   { label: "About Foundation", href: "/about" },
   { label: "Research", href: "/research" },
   { label: "Our Initiatives", href: "/initiatives" },
-  { label: "Advisory Board", href: "/advisory-board" },
+  { label: "Advisory Council", href: "/advisory-board" },
   { label: "School Registration", href: "/register-your-school" },
-  { label: "Student's Login", href: "#" },
 ];
 
 const partnerLink = { label: "Partner With Us", href: "/partner-with-us" };
 
-const PHONE_NUMBER = "9807714979";
-const WHATSAPP_HREF = `https://wa.me/91${PHONE_NUMBER}`;
-const CALL_HREF = `tel:+91${PHONE_NUMBER}`;
-
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const brand = siteBrands[brandFromPathname(pathname)];
+  const studentLogin = {
+    label: "Student's Login",
+    href: brand.genieAppHref,
+  };
 
   return (
     <header className="w-full bg-white border-b border-slate-100 relative z-50">
@@ -39,6 +42,14 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href={studentLogin.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[12.5px] 2xl:text-[13.5px] font-medium text-slate-700 hover:text-navy transition-colors whitespace-nowrap"
+            >
+              {studentLogin.label}
+            </a>
             <Link
               href={partnerLink.href}
               className="rounded-md bg-navy px-3.5 py-2 text-[12.5px] 2xl:text-[13.5px] font-semibold text-white hover:bg-navy-600 transition-colors whitespace-nowrap"
@@ -49,17 +60,17 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             <a
-              href={WHATSAPP_HREF}
+              href={brand.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Chat with us on WhatsApp"
+              aria-label={`Chat with us on WhatsApp at ${brand.phoneDisplay}`}
               className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366]/10 text-[#1faa52] transition-colors hover:bg-[#25D366] hover:text-white"
             >
               <WhatsAppIcon className="h-[32px] w-[32px]" aria-hidden />
             </a>
             <a
-              href={CALL_HREF}
-              aria-label="Call us"
+              href={brand.callHref}
+              aria-label={`Call us at ${brand.phoneDisplay}`}
               className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-navy/10 text-navy transition-colors hover:bg-navy hover:text-white"
             >
               <PhoneIcon className="h-[22px] w-[22px]" strokeWidth={1.8} aria-hidden />
@@ -99,11 +110,20 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-[14px] font-medium text-slate-700 hover:text-navy border-b border-slate-100 last:border-0"
+                className="py-3 text-[14px] font-medium text-slate-700 hover:text-navy border-b border-slate-100"
               >
                 {item.label}
               </Link>
             ))}
+            <a
+              href={studentLogin.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="py-3 text-[14px] font-medium text-slate-700 hover:text-navy border-b border-slate-100"
+            >
+              {studentLogin.label}
+            </a>
             <Link
               href={partnerLink.href}
               onClick={() => setOpen(false)}
@@ -113,7 +133,7 @@ export function Header() {
             </Link>
             <div className="flex items-center gap-3 py-3">
               <a
-                href={WHATSAPP_HREF}
+                href={brand.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
@@ -123,7 +143,7 @@ export function Header() {
                 WhatsApp
               </a>
               <a
-                href={CALL_HREF}
+                href={brand.callHref}
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center gap-2 rounded-full bg-navy/10 px-4 py-2 text-[14px] font-medium text-navy"
               >

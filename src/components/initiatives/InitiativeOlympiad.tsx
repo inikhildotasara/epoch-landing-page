@@ -13,7 +13,7 @@ const exams: { code: string; name: string; icon: ReactNode }[] = [
   },
   {
     code: "ITST",
-    name: "International Talent Search Test",
+    name: "International Test of Science & Technology",
     icon: <FlaskIcon className="h-7 w-7 text-navy" strokeWidth={1.6} />,
   },
   {

@@ -27,8 +27,8 @@ const reports = [
 
 const facts = [
   { value: "3", label: "Age-tuned report editions" },
-  { value: "20+", label: "Cognitive & academic dimensions" },
-  { value: "4", label: "Benchmark layers per dimension" },
+  { value: "19+", label: "Cognitive & academic dimensions" },
+  { value: "3", label: "Benchmark layers per dimension" },
   { value: "1", label: "Continuous learning story" },
 ];
 

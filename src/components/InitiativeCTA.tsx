@@ -1,8 +1,10 @@
 import { Reveal } from "./Reveal";
 import { ArrowRight, BulbIcon } from "./icons";
+import { siteBrands, type SiteBrand } from "@/content/site";
 
 /* Closing band shared by the initiative detail pages. */
-export function InitiativeCTA() {
+export function InitiativeCTA({ brand = "epoch" }: { brand?: SiteBrand }) {
+  const { callHref } = siteBrands[brand];
   return (
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-12 lg:pb-16">
@@ -23,7 +25,7 @@ export function InitiativeCTA() {
 
           <div className="flex shrink-0 flex-wrap items-center justify-center gap-3">
             <a
-              href="tel:+919807714979"
+              href={callHref}
               className="inline-flex items-center gap-2 rounded-md border border-white/25 bg-white/5 px-6 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-white/10 lg:text-[14px]"
             >
               Contact Us

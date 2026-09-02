@@ -37,7 +37,7 @@ const stages: {
     tagline: "From Exploration to Structured Thinking",
     who: "Primary & middle school learners",
     focus:
-      "Separates what a learner remembers from what they actually understand, then benchmarks both against school, national and global cohorts.",
+      "Separates what a learner remembers from what they actually understand, then benchmarks both against school, national and international cohorts.",
     measures: [
       "Six scored dimensions",
       "Understanding vs recall split",

@@ -16,7 +16,7 @@ const items = [
   {
     icon: TrendUpIcon,
     title: "Diagnosis",
-    desc: "Provide Academic Health Reports that deliver deep insights and identify growth opportunities.",
+    desc: "Provide Academic Health Reports that turn assessment data into meaningful insights and identify areas for growth.",
   },
   {
     icon: NetworkIcon,

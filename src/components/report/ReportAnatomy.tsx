@@ -29,7 +29,7 @@ const blocks: { icon: IconType; title: string; desc: string }[] = [
   },
   {
     icon: ScaleIcon,
-    title: "Four-layer benchmarking",
+    title: "Three-layer benchmarking",
     desc: "Each dimension read against school, national and international cohorts alongside the learner's own score.",
   },
   {

@@ -255,7 +255,7 @@ export function BenchmarkTable({
               <HeadCell top="Your" bottom="score" className="w-[13%]" />
               <HeadCell top="Benchmark" bottom="School" />
               <HeadCell top="Benchmark" bottom="National" />
-              <HeadCell top="Benchmark" bottom="Global" />
+              <HeadCell top="Benchmark" bottom="International" />
               <HeadCell top="Status" className="w-[16%]" />
             </tr>
           </thead>
@@ -319,7 +319,7 @@ export function BenchmarkTable({
               {[
                 ["School", r.school],
                 ["National", r.national],
-                ["Global", r.international],
+                ["International", r.international],
               ].map(([l, v]) => (
                 <div key={l as string}>
                   <p className="text-[9.5px] uppercase tracking-[0.08em] text-slate-400">

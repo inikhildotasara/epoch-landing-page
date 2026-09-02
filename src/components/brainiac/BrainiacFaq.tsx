@@ -16,7 +16,7 @@ const faqs: FaqItem[] = [
   {
     q: "What does Brainiac Global offer young learners?",
     a: [
-      "Brainiac Global brings together assessment and future-focused learning initiatives like IFLY (International Finance & Digital Literacy Olympiad for Young Leaders) and IHOST (International Holistic Olympiad for Smart Thinkers) for kindergarten learners.",
+      "Brainiac Global brings together assessment and future-focused learning initiatives like IFLY (International Future Literacy for Young Leaders) and IHOST (International Holistic Olympiad for Smart Thinkers) for kindergarten learners.",
       "Its ecosystem is designed to help children:",
       [
         "build foundational thinking abilities,",

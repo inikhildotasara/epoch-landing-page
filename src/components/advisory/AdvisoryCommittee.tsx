@@ -10,26 +10,26 @@ import { AdvisorySectionHeading, LaurelBranch, OliveSprig } from "./decor";
 const jury = [
   {
     name: "Prof. (Dr.) Anil Kumar",
-    role: "Retd. Professor, Dept. of Chemical Engineering",
+    role: "Professor (Retired), Dept. of Chemical Engineering",
     institution: "IIT Kanpur, Uttar Pradesh",
     photo: "/images/advisors/prof-anil-kumar.webp",
   },
   {
     name: "Prof. (Dr.) Keshav Kant",
-    role: "Retd. Professor, Dept. of Mechanical Engineering",
+    role: "Professor (Retired), Dept. of Mechanical Engineering",
     institution: "IIT Kanpur, Uttar Pradesh",
     photo: "/images/advisors/prof-keshav-kant.webp",
   },
   {
     name: "Prof. (Dr.) Joydip Dhar",
-    role: "Ph. D. (IIT Kanpur), Professor, Applied Sciences",
-    institution: "IITM Gwalior, M. P.",
+    role: "Ph.D. (IIT Kanpur), Professor, Applied Sciences",
+    institution: "IITM Gwalior, Madhya Pradesh",
     photo: "/images/advisors/Prof. (Dr.) Jaydeep Dhar.png",
   },
   {
     name: "Prof. (Dr.) A. K. Mishra",
-    role: "Ph. D. (IIT Kanpur), Sr. Professor, Dept. of Mathematics",
-    institution: "B.H.U., Varanasi, U. P.",
+    role: "Ph.D. (IIT Kanpur), Sr. Professor, Dept. of Mathematics",
+    institution: "B.H.U., Varanasi, Uttar Pradesh",
     photo: "/images/advisors/Prof. (Dr.) A. K. Mishra.png",
   },
 ];
@@ -141,7 +141,7 @@ function PlaceholderCard({
 }: {
   icon: ReactNode;
   title: string;
-  caption: string;
+  caption?: string;
   tone?: "navy" | "gold";
 }) {
   return (
@@ -159,7 +159,10 @@ function PlaceholderCard({
       >
         {icon}
       </div>
-      <div className="px-3 py-3 text-center sm:px-3.5 sm:py-3.5">
+      {/* Centred rather than top-aligned: the card stretches to the height of
+          the member cards beside it, so a caption-less title would otherwise
+          leave a block of empty space below it. */}
+      <div className="flex flex-1 flex-col justify-center px-3 py-3 text-center sm:px-3.5 sm:py-3.5">
         <h4
           className={`font-serif text-[14px] font-semibold leading-snug sm:text-[15.5px] ${
             tone === "gold" ? "text-gold-dark" : "text-navy"
@@ -167,9 +170,11 @@ function PlaceholderCard({
         >
           {title}
         </h4>
-        <p className="mt-1.5 text-[10.5px] leading-snug text-slate-500 sm:text-[11px]">
-          {caption}
-        </p>
+        {caption ? (
+          <p className="mt-1.5 text-[10.5px] leading-snug text-slate-500 sm:text-[11px]">
+            {caption}
+          </p>
+        ) : null}
       </div>
     </div>
   );
@@ -357,7 +362,7 @@ export function AdvisoryCommittee() {
     <>
       <section className="bg-cream">
         <div className="mx-auto w-full px-4 py-6 sm:px-6 md:px-12 lg:px-page lg:py-8">
-          <AdvisorySectionHeading label="Our Advisory Committee" />
+          <AdvisorySectionHeading label="Our Advisory Council" />
           <div className="text-center">
             <p className="mx-auto mt-1 max-w-[58ch] text-[10.5px] leading-relaxed text-slate-600 sm:text-[11.5px]">
               Independent voices helping strengthen assessment, academic integrity
@@ -371,7 +376,7 @@ export function AdvisoryCommittee() {
               tone="navy"
               title="Patron-in-Chief"
               subtitle="Reserved for Distinguished Institutional Leadership"
-              cta="Position Open by Invitation"
+              cta="Express Interest"
               layout="center"
             >
               <PatronSeat />
@@ -383,7 +388,7 @@ export function AdvisoryCommittee() {
               watermark="laurel"
               title="Honorary Jury Members"
               subtitle="Distinguished Academic & Assessment Leadership"
-              cta="Express interest"
+              cta="Express Interest"
               interest="If you meet the eligibility criteria and would like to contribute your academic expertise, please submit your expression of interest."
               delay={100}
             >
@@ -399,8 +404,7 @@ export function AdvisoryCommittee() {
               ))}
               <PlaceholderCard
                 icon={<span className="text-2xl font-light leading-none">+</span>}
-                title="The Jury is Growing"
-                caption="More leaders joining soon"
+                title="The Council is Growing"
                 tone="gold"
               />
             </CommitteeRow>
@@ -409,21 +413,20 @@ export function AdvisoryCommittee() {
               number="03"
               tone="navy"
               title="Chief Academic Ambassadors"
-              subtitle="For School Leaders Shaping the Future"
+              subtitle="For Distinguished Education Advocates & Influential Leaders"
               cta="Become a Chief Academic Ambassador"
               interest="Are you a school leader passionate about meaningful education?"
               delay={200}
             >
               <MemberCard
                 name="Dr. Archana Nigam"
-                role="Ex. Principal, DPS Kalyanpur"
+                role="Former Principal, DPS Kalyanpur"
                 institution="Kanpur, Uttar Pradesh"
                 photo="/images/advisors/archana-nigam.png"
               />
               <PlaceholderCard
                 icon={<span className="text-2xl font-light leading-none">+</span>}
                 title="The Council is Growing"
-                caption="More leaders joining soon"
               />
             </CommitteeRow>
           </div>
@@ -446,7 +449,7 @@ export function AdvisoryCommittee() {
                 Built on Expertise. Growing with Purpose.
               </h2>
               <p className="mt-1 max-w-[70ch] text-[10px] leading-relaxed text-slate-300 sm:text-[11px]">
-                Epoch Olympiad Foundation is building its Advisory Committee
+                Epoch Olympiad Foundation is building its Advisory Council
                 selectively, inviting distinguished academic and school leaders
                 whose experience can meaningfully contribute to the quality,
                 integrity and future direction of our work.

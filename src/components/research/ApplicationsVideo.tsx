@@ -11,21 +11,21 @@ const apps: {
     img: "/images/card-brainiac.png",
     logo: "/images/BRAINIAC LOGO.png",
     title: "Brainiac Global",
-    desc: "Research-driven cognitive assessment for kindergarten learners, focusing on foundational thinking and learning abilities.",
+    desc: "Building foundational thinking and learning in the early years through engaging learning experiences and age-appropriate cognitive assessment.",
     href: "/initiatives/brain-booster-olympiad",
   },
   {
     img: "/images/card-olympiad.png",
     logo: "/images/EPOCH NAME LOGO - Copy.png",
     title: "Epoch International Olympiads",
-    desc: "Research-based assessments for Classes 1–10 designed to evaluate conceptual understanding, reasoning and academic thinking.",
+    desc: "Extending thinking through international assessments and future-focused learning platforms for school-age learners.",
     href: "/initiatives/epoch-olympiad",
   },
   {
     img: "/images/ccbee-dashboard_final.png",
     logo: "/images/MY CC BEE.png",
     title: "MY CCBee",
-    desc: "A performance tracking and booster platform that helps convert assessment data into ongoing learner insights and improvement pathways.",
+    desc: "Helping schools turn learner performance data into meaningful insights and continuous improvement.",
     href: "/initiatives/my-ccbee",
   },
 ];
@@ -71,7 +71,7 @@ export function ApplicationsVideo() {
           </div>
 
           <p className="mt-6 text-center font-serif text-[15px] font-medium text-navy lg:text-[17px]">
-            One research philosophy. Three applications. One learner journey.
+            One research philosophy. Three applications. A connected learning ecosystem.
           </p>
         </Reveal>
 

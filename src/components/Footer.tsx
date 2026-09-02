@@ -1,5 +1,9 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { LinkedinIcon, FacebookIcon, YoutubeIcon } from "./icons";
+import { brandFromPathname, siteBrands } from "@/content/site";
 
 const linkColumns: { label: string; href: string }[][] = [
   [
@@ -9,16 +13,21 @@ const linkColumns: { label: string; href: string }[][] = [
     { label: "Academic Health Report", href: "/academic-health-report" },
   ],
   [
-    { label: "Advisory Board", href: "/advisory-board" },
+    { label: "Advisory Council", href: "/advisory-board" },
     { label: "Articles & Research", href: "/articles" },
     { label: "Partner With Us", href: "/partner-with-us" },
-    { label: "Contact", href: "#" },
   ],
 ];
 
-const socials = [LinkedinIcon, FacebookIcon, YoutubeIcon];
-
 export function Footer() {
+  const pathname = usePathname() ?? "/";
+  const brand = siteBrands[brandFromPathname(pathname)];
+  const socials = [
+    { Icon: LinkedinIcon, href: "#", label: "LinkedIn" },
+    { Icon: FacebookIcon, href: brand.facebookHref, label: "Facebook" },
+    { Icon: YoutubeIcon, href: brand.youtubeHref, label: "YouTube" },
+  ];
+
   return (
     <footer className="bg-navy text-slate-300">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page py-12 lg:py-16 flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
@@ -42,15 +51,29 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              {ci === 1 && (
+                <li>
+                  <a
+                    href={brand.callHref}
+                    className="text-[13px] lg:text-[14px] text-slate-300 hover:text-white transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
+              )}
             </ul>
           ))}
         </div>
 
         <div className="flex items-center gap-3">
-          {socials.map((Icon, i) => (
+          {socials.map(({ Icon, href, label }) => (
             <a
-              key={i}
-              href="#"
+              key={label}
+              href={href}
+              {...(href.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              aria-label={label}
               className="h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
             >
               <Icon className="h-4 w-4 text-white" />

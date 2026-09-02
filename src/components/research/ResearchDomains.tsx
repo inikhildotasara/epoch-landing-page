@@ -15,7 +15,7 @@ const domains: { icon: IconType; num: string; title: string; desc: string }[] = 
   {
     icon: BrainIcon,
     num: "01",
-    title: "Cognitive Intelligence",
+    title: "Cognitive Abilities",
     desc: "Understanding the cognitive abilities that influence how children process information, reason, connect concepts and solve unfamiliar problems.",
   },
   {
@@ -40,7 +40,7 @@ const domains: { icon: IconType; num: string; title: string; desc: string }[] = 
     icon: ChipIcon,
     num: "05",
     title: "Educational Technology",
-    desc: "Using data, analytics and intelligent technology to transform assessment results into actionable insights for all stakeholders.",
+    desc: "Using data, analytics and technology to transform assessment results into actionable insights for educators, parents and schools.",
   },
 ];
 

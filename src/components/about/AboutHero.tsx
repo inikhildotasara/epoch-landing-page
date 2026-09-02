@@ -51,14 +51,16 @@ export function AboutHero() {
           <h1 className="mt-4 font-serif text-[28px] font-medium leading-[1.18] text-navy sm:text-[34px] lg:text-[38px] xl:text-[42px]">
             Building a future where
             <br className="hidden sm:block" /> every child is measured by
-            <br className="hidden sm:block" /> intelligence, not just memory.
+            <br className="hidden sm:block" /> intelligence, not just memory
+            &amp; marks.
           </h1>
           <span className="mt-5 block h-[3px] w-14 rounded-full bg-gold" />
           <div className="mt-5 space-y-3.5 text-[13.5px] leading-relaxed text-slate-600 lg:mt-6 lg:text-[15px]">
             <p>
               Epoch Olympiad Foundation is an independent education research
-              foundation dedicated to transforming the way children&apos;s
-              cognitive abilities are understood, assessed, and nurtured.
+              foundation working to transform how children&apos;s thinking,
+              learning and cognitive development are understood, assessed and
+              nurtured.
             </p>
             <p>
               We believe that true education goes far beyond memorization—it

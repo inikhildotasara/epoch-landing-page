@@ -33,7 +33,7 @@ const nodes: {
   {
     icon: AnalyticsIcon,
     title: "Analyse",
-    desc: "We capture and analyze meaningful data",
+    desc: "We capture and analyse meaningful data",
     pos: "top-[45%] left-[90%]",
   },
   {

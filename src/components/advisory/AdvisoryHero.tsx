@@ -1,13 +1,32 @@
-import { BuildingIcon, BulbIcon, GradCapIcon } from "../icons";
+import { BuildingIcon, EyeIcon, OpenBookIcon, ShieldIcon } from "../icons";
 import { FountainPen, LaurelBranch } from "./decor";
 
-const badges = [
-  { label: "Academic Leadership", Icon: GradCapIcon },
-  { label: "Institutional Wisdom", Icon: BuildingIcon },
-  { label: "Educational Vision", Icon: BulbIcon },
+/* The crest on the right and the bullet list on the left read the same four
+   pillars off this one source, so the two can never drift apart. */
+const pillars = [
+  {
+    label: "Knowledge",
+    note: "Subject depth drawn from India's leading institutions",
+    Icon: OpenBookIcon,
+  },
+  {
+    label: "Experience",
+    note: "Decades of teaching, research and institutional leadership",
+    Icon: BuildingIcon,
+  },
+  {
+    label: "Integrity",
+    note: "Independent oversight of assessment and evaluation",
+    Icon: ShieldIcon,
+  },
+  {
+    label: "Vision",
+    note: "A future-focused view of learning and cognitive growth",
+    Icon: EyeIcon,
+  },
 ];
 
-const creed = ["Knowledge", "Experience", "Integrity", "Vision"];
+const creed = pillars.map((pillar) => pillar.label);
 
 /* The book/laurel/pen crest is laid out in percentages inside a fixed-ratio
    box and its type is sized in container-query units, so the whole crest
@@ -89,7 +108,7 @@ export function AdvisoryHero() {
       <div className="relative mx-auto grid w-full items-center gap-8 px-4 py-9 sm:gap-10 sm:px-6 md:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:gap-8 lg:px-page lg:py-11 xl:gap-12 xl:py-14 2xl:py-16">
         <div className="hero-anim">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold sm:text-[12px] lg:text-[13px]">
-            Advisory Board
+            Advisory Council
           </p>
 
           <h1 className="mt-3 font-serif text-fluid-1 font-medium leading-[1.18] text-white lg:mt-4">
@@ -112,20 +131,20 @@ export function AdvisoryHero() {
             integrity and cognitive development.
           </p>
 
-          {/* The rules between the three badges only appear from xl up, which is
-              the first width where all three fit on a single line. */}
-          <ul className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-3 lg:mt-8 xl:gap-x-6">
-            {badges.map(({ label, Icon }, i) => (
-              <li
-                key={label}
-                className={`flex items-center gap-2.5 ${
-                  i > 0 ? "xl:border-l xl:border-white/20 xl:pl-6" : ""
-                }`}
-              >
-                <Icon className="h-[22px] w-[22px] shrink-0 text-gold lg:h-6 lg:w-6" />
-                <span className="text-[12px] text-slate-100 lg:text-[13px]">
-                  {label}
-                </span>
+          {/* Two columns from sm up: four pillars on one line would leave the
+              notes too narrow to read at any width this column reaches. */}
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-4 lg:mt-8">
+            {pillars.map(({ label, note, Icon }) => (
+              <li key={label} className="flex items-start gap-2.5">
+                <Icon className="mt-px h-[22px] w-[22px] shrink-0 text-gold lg:h-6 lg:w-6" />
+                <div className="min-w-0">
+                  <p className="text-[12.5px] font-semibold text-white lg:text-[13.5px]">
+                    {label}
+                  </p>
+                  <p className="mt-0.5 text-[11.5px] leading-snug text-slate-300/90 lg:text-[12.5px]">
+                    {note}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>

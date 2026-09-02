@@ -1,9 +1,6 @@
 import { Fragment } from "react";
-import type { SVGProps } from "react";
 import { Reveal } from "../Reveal";
 import { SectionLabel } from "./SectionLabel";
-
-type IconType = (p: SVGProps<SVGSVGElement>) => React.ReactElement;
 
 const ORANGE = "#e8862e";
 
@@ -11,55 +8,44 @@ const nodes: {
   logo: string;
   title: string;
   sub: string;
-  color: string;
   href?: string;
 }[] = [
   {
     logo: "/images/EPOCH research final.png",
     title: "Epoch Olympiad Foundation",
     sub: "Education Research Foundation",
-    color: "#c79a3b",
   },
   {
     logo: "/images/BRAINIAC LOGO.png",
     title: "Brainiac Global",
     sub: "Building Thinking Minds from the Earliest Years",
-    color: "#2f9e5b",
     href: "/initiatives/brain-booster-olympiad",
   },
   {
     logo: "/images/EPOCH NAME LOGO - Copy.png",
     title: "Epoch Olympiad",
     sub: "International Olympiads & Future-Ready Learning Platforms",
-    color: "#1b3566",
     href: "/initiatives/epoch-olympiad",
   },
   {
     logo: "/images/MY CC BEE.png",
     title: "MY CCBee",
     sub: "Performance Tracking & Booster Platform for Schools",
-    color: ORANGE,
     href: "/initiatives/my-ccbee",
   },
 ];
 
 function Box({
   logo,
-  icon: Icon,
   title,
   sub,
-  color,
   href,
-  imageClassName,
   className = "",
 }: {
-  logo?: string;
-  icon?: IconType;
+  logo: string;
   title: string;
   sub: string;
-  color: string;
   href?: string;
-  imageClassName?: string;
   className?: string;
 }) {
   /* The Foundation node has no page of its own, so it stays a plain box. */
@@ -71,24 +57,11 @@ function Box({
         href ? "hover:shadow-[0_6px_22px_rgba(15,28,63,0.13)]" : ""
       } ${className}`}
     >
-      {logo ? (
-        <img
-          src={logo}
-          alt={title}
-          className={
-            imageClassName ??
-            "h-20 w-[190px] shrink-0 object-contain object-left lg:h-[84px] lg:w-[210px] xl:h-16 xl:w-[clamp(90px,12vw,180px)]"
-          }
-        />
-      ) : (
-        Icon && (
-          <Icon
-            className="h-11 w-11 shrink-0 lg:h-[52px] lg:w-[52px]"
-            style={{ color }}
-            strokeWidth={1.5}
-          />
-        )
-      )}
+      <img
+        src={logo}
+        alt={title}
+        className="h-20 w-[190px] shrink-0 object-contain object-left lg:h-[84px] lg:w-[210px] xl:h-16 xl:w-[clamp(90px,12vw,180px)]"
+      />
       <div className="min-w-0">
         <p className="break-words text-[14px] font-semibold leading-snug text-slate-600 lg:text-[15px]">
           {sub}
@@ -109,16 +82,6 @@ function Arrow() {
   );
 }
 
-const ahrProps = {
-  logo: "/images/ahr-tablet.webp",
-  imageClassName:
-    "h-28 w-[92px] shrink-0 object-contain object-center lg:h-[132px] lg:w-[108px]",
-  title: "Academic Health Report",
-  sub: "Data-driven insights for holistic academic growth and improvement",
-  color: "#1b3566",
-  href: "/academic-health-report",
-} as const;
-
 export function Ecosystem() {
   return (
     <section className="bg-white">
@@ -138,26 +101,6 @@ export function Ecosystem() {
                 {i < nodes.length - 1 && <Arrow />}
               </Fragment>
             ))}
-          </div>
-
-          {/* Desktop (xl): legs drop from the outer boxes (Foundation & MY CCBee) into the report */}
-          <div className="hidden flex-col items-center xl:flex">
-            <div
-              className="h-24 w-[80%] rounded-b-[16px] border-x-2 border-b-2"
-              style={{ borderColor: `${ORANGE}80` }}
-            />
-            <div className="-mt-[52px] w-[52%]">
-              <Box {...ahrProps} className="h-[150px]" />
-            </div>
-          </div>
-
-          {/* Below xl: simple stacked connector */}
-          <div className="mt-3 flex flex-col items-center xl:hidden">
-            <span
-              className="h-6 w-[2px]"
-              style={{ backgroundColor: `${ORANGE}80` }}
-            />
-            <Box {...ahrProps} className="w-full sm:w-[80%]" />
           </div>
         </Reveal>
       </div>

@@ -142,7 +142,7 @@ export const enquiryPrograms: EnquiryProgram[] = [
     shortName: "Brain Booster",
     name: "International Brain Booster Olympiad",
     tag: "Cognitive Assessment",
-    audience: "For Kindergarten / Ages 3–6 yrs",
+    audience: "For Kindergarten (Ages 2–6 years)",
     color: "#0b1c3f",
     logo: "/images/exam-icons/BRAIN BOOSTER.png",
     bannerImage: "/images/init-brainiac.png",
@@ -150,8 +150,8 @@ export const enquiryPrograms: EnquiryProgram[] = [
     summary:
       "A joyful and engaging cognitive assessment for Kindergarten children to understand how they observe, think, reason and solve.",
     glance: [
-      { icon: "child", label: "For", value: "Kindergarten / Ages 3–6 yrs" },
-      { icon: "mode", label: "Mode", value: "Offline" },
+      { icon: "child", label: "For", value: "Kindergarten (Ages 2–6 years)" },
+      { icon: "mode", label: "Mode", value: "Offline (Paper & Crayon)" },
       { icon: "book", label: "Medium", value: "English" },
       { icon: "clock", label: "Duration", value: "60 Minutes" },
       { icon: "help", label: "Questions", value: "20 Picture Based" },
@@ -277,15 +277,15 @@ export const enquiryPrograms: EnquiryProgram[] = [
     group: "assess",
     code: "ITST",
     shortName: "ITST",
-    name: "International Talent Search Test",
+    name: "International Test of Science & Technology",
     tag: "Academic Assessment",
     audience: "For Classes 1–10",
     color: "#1e9245",
     logo: "/images/exam-icons/ITST.png",
     bannerImage: "/images/init-olympiad.png",
-    bannerAlt: "A student working through a talent-search assessment",
+    bannerAlt: "A student working through a science and technology assessment",
     summary:
-      "An aptitude-focused assessment that explores analytical thinking, reasoning and the ability to approach unfamiliar problems.",
+      "An international science and technology assessment that explores analytical thinking, reasoning and the ability to approach unfamiliar problems.",
     glance: [
       { icon: "child", label: "For", value: "Classes 1–10" },
       { icon: "mode", label: "Mode", value: "Offline" },
@@ -296,7 +296,7 @@ export const enquiryPrograms: EnquiryProgram[] = [
       { icon: "levels", label: "Level", value: "Pre + Mains" },
     ],
     whatIsIt:
-      "ITST is an international talent-search assessment for Classes 1–10. It looks at how students analyse information and think through new situations.",
+      "ITST is an international science and technology assessment for Classes 1–10. It looks at how students analyse information and think through new situations.",
     whyItMatters:
       "It helps identify analytical and reasoning strengths that sit beneath subject marks, so support can be more precise.",
     assesses: [
@@ -459,7 +459,7 @@ export const enquiryPrograms: EnquiryProgram[] = [
     group: "learn",
     code: "IFLY",
     shortName: "IFLY",
-    name: "International Finance & Digital Literacy Olympiad for Young Leaders",
+    name: "International Future Literacy for Young Leaders",
     tag: "Learning Platform",
     audience: "Coming soon",
     color: "#e8a013",

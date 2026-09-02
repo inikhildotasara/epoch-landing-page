@@ -7,6 +7,7 @@ import {
   OpenBookIcon,
 } from "../icons";
 import type { EnquiryProgram } from "@/content/enquiry/programs";
+import { brandForProgram, siteBrands } from "@/content/site";
 
 const resources = [
   { icon: OpenBookIcon, label: "Engaging Workbooks" },
@@ -16,12 +17,14 @@ const resources = [
 ];
 
 export function PrepareAndFaq({ program }: { program: EnquiryProgram }) {
+  const brand = siteBrands[brandForProgram(program.id)];
+
   return (
     <div className="grid grid-cols-1 gap-4 xl:grid-cols-[minmax(0,1.7fr)_minmax(260px,0.85fr)] xl:items-stretch">
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[#f4f0e6]">
         <div className="grid grid-cols-1 items-start md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)]">
           <img
-            src="/images/brain-booster/hero-learners.jpg"
+            src="/images/brain-booster/brainiac-hero.jpg"
             alt="Young learners preparing with workbooks"
             className="block h-auto w-full object-contain object-center"
           />
@@ -33,10 +36,12 @@ export function PrepareAndFaq({ program }: { program: EnquiryProgram }) {
               {program.prepare}
             </p>
             <a
-              href="#"
+              href={brand.genieAppHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-md bg-navy px-4 py-2.5 text-[12px] font-semibold text-white transition-colors hover:bg-navy-600 lg:text-[12.5px]"
             >
-              Explore Genie App <ArrowRight className="h-3.5 w-3.5" />
+              {brand.genieAppLabel} <ArrowRight className="h-3.5 w-3.5" />
             </a>
             <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {resources.map((r) => {

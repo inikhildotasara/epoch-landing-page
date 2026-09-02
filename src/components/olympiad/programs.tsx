@@ -20,7 +20,7 @@ export const olympiads: Program[] = [
     code: "ITST",
     color: "#1e9245",
     logo: "/images/exam-icons/ITST.png",
-    name: ["International", "Talent Search Test"],
+    name: ["International Test of", "Science & Technology"],
     copy: "Explore aptitude, analytical thinking, reasoning and the ability to approach unfamiliar problems.",
   },
   {
@@ -55,7 +55,10 @@ export const platforms: Program[] = [
     titleColor: "#0b1c3f",
     logo: "/images/exam-icons/IFLY.png",
     name: ["International Future", "Literacy for Young Leaders"],
-    strap: ["Understand Finance.", "Navigate Digital.", "Lead the Future."],
+    strap: [
+      "IFLY — International Finance & Digital Literacy Olympiad for Young Leaders",
+      "Understanding Money & Digital Safety",
+    ],
     copy: "A future-literacy learning platform that helps young learners understand finance, navigate digital and develop leadership for tomorrow.",
   },
 ];

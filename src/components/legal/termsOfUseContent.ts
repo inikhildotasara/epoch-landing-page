@@ -51,7 +51,7 @@ export const termsSections: LegalSection[] = [
           "International Aptitude Olympiad (IAO)",
           "International General Knowledge Olympiad (IGKO)",
           "International Holistic Olympiad for Smart Thinkers (IHOST)",
-          "International Finance & Digital Literacy Olympiad for Young Leaders (IFLY)",
+          "International Future Literacy for Young Leaders (IFLY)",
         ],
       },
       {

@@ -60,7 +60,7 @@ export function AdvisoryHealth() {
               href="/advisory-board"
               className="mt-auto pt-4 inline-flex w-fit items-center gap-1.5 rounded-md bg-gold px-4 py-2.5 lg:px-5 lg:py-3 text-[12.5px] lg:text-[14px] font-semibold text-navy hover:bg-gold-dark transition-colors"
             >
-              View Advisory Board
+              View Advisory Council
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>

@@ -25,7 +25,7 @@ function ProgramButton({
       className="group flex w-[88px] flex-col items-center sm:w-[96px]"
     >
       <span
-        className={`flex h-[72px] w-[72px] items-center justify-center rounded-full bg-white transition-shadow sm:h-[80px] sm:w-[80px] ${
+        className={`h-[72px] w-[72px] overflow-hidden rounded-full transition-shadow sm:h-[80px] sm:w-[80px] ${
           selected
             ? "ring-[3px] ring-offset-2"
             : "ring-1 ring-slate-200 group-hover:ring-slate-300"
@@ -35,7 +35,7 @@ function ProgramButton({
         <img
           src={program.logo}
           alt=""
-          className="h-[58px] w-[58px] object-contain sm:h-[64px] sm:w-[64px]"
+          className="h-full w-full scale-[1.16] object-cover"
         />
       </span>
       <span className="mt-2 text-center text-[11.5px] font-semibold leading-snug text-navy lg:text-[12.5px]">

@@ -86,7 +86,7 @@ export function EarlyYearsAndTrust() {
               </span>
               <div>
                 <h2 className="font-serif text-[18px] font-semibold text-navy lg:text-[20px]">
-                  Trusted by 500+ Schools
+                  Trusted by 300+ Schools
                 </h2>
                 <p className="mt-2 max-w-xl text-[13px] leading-relaxed text-slate-600 lg:text-[13.5px]">
                   Built by an experienced education team committed to helping

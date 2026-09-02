@@ -14,9 +14,8 @@ export function VisionBand() {
               Our Vision
             </p>
             <p className="mt-2 font-serif text-[19px] md:text-[22px] lg:text-[26px] leading-snug text-white">
-              To transition early learners from rote memory to true intelligence
-              through research, cognitive assessment, and educational
-              innovation.
+              To help learners move from rote memory to deeper thinking through
+              research, meaningful assessment and educational innovation.
             </p>
           </div>
         </Reveal>

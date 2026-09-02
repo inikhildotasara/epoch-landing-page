@@ -32,7 +32,7 @@ const faqs: FaqItem[] = [
     a: [
       "No. Each initiative has a different role.",
       "Brainiac Global combines early-years cognitive development with age-appropriate assessment.",
-      "Epoch Olympiad offers international assessments and future-focused learning initiatives like IFLY (International Finance & Digital Literacy Olympiad for Young Leaders) and IHOST (International Holistic Olympiad for Smart Thinkers).",
+      "Epoch Olympiad offers international assessments and future-focused learning initiatives like IFLY (International Future Literacy for Young Leaders) and IHOST (International Holistic Olympiad for Smart Thinkers).",
       "MY CCBee is a performance tracking and booster platform that helps schools turn assessment information into actionable insights.",
     ],
   },

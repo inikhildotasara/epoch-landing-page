@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "How often should a child receive an Academic Health Report?",
-    a: "The current framework recommends annual reassessment as a practical interval for observing meaningful movement without turning assessment into a routine. Because the framework is continuous, a new report can be understood alongside the previous year's report to follow the learner's development over time.",
+    a: "Each report provides a current-year view of the learner's strengths, growth areas and learning profile.",
   },
   {
     q: "Who can see my child's Academic Health Report?",

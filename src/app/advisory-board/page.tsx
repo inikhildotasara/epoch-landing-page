@@ -6,7 +6,7 @@ import { AcademicLeadership } from "@/components/advisory/AcademicLeadership";
 import { AdvisoryCommittee } from "@/components/advisory/AdvisoryCommittee";
 
 export const metadata: Metadata = {
-  title: "Advisory Board | Epoch Olympiad Foundation",
+  title: "Advisory Council | Epoch Olympiad Foundation",
   description:
     "The Epoch Olympiad Foundation Advisory Council brings together eminent educators, academic leaders and school leaders who strengthen educational assessment, academic integrity and cognitive development.",
 };
