@@ -35,8 +35,8 @@ export function LogoFlash({
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ) {
-      setPhase("done");
-      return;
+      const reducedMotion = setTimeout(() => setPhase("done"), 0);
+      return () => clearTimeout(reducedMotion);
     }
     const toOut = setTimeout(() => setPhase("out"), HOLD_MS);
     const toDone = setTimeout(() => setPhase("done"), HOLD_MS + FADE_MS);

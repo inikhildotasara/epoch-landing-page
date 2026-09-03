@@ -11,6 +11,8 @@ import {
 } from "../form/fields";
 import { Reveal } from "../Reveal";
 import { involvementOptions, MESSAGE_LIMIT, roleOptions } from "./interestData";
+import { MailPreview } from "../form/MailPreview";
+import { formMailtoHref, openFormMailto } from "@/lib/mailto";
 
 type Values = {
   role: string;
@@ -81,11 +83,28 @@ function validate(v: Values): Errors {
   return e;
 }
 
+function mailFor(v: Values) {
+  return {
+    subject: "Advisor Expression of Interest",
+    fields: [
+      { label: "Role", value: v.role },
+      { label: "Full Name", value: v.fullName },
+      { label: "Designation", value: v.designation },
+      { label: "Organisation / Institution", value: v.organisation },
+      { label: "City / Country", value: v.location },
+      { label: "Email", value: v.email },
+      { label: "Mobile / WhatsApp", value: v.phone },
+      { label: "Background", value: v.background },
+      { label: "Motivation", value: v.motivation },
+      { label: "Expected Involvement", value: v.involvement },
+      { label: "Confirmation", value: v.consent },
+    ],
+  };
+}
+
 export function ExpressionOfInterestForm() {
   const [v, setV] = useState<Values>(empty);
   const [errors, setErrors] = useState<Errors>({});
-  const [sending, setSending] = useState(false);
-  const [failure, setFailure] = useState<string | null>(null);
   const [done, setDone] = useState<Values | null>(null);
 
   const set = <K extends keyof Values>(key: K, value: Values[K]) => {
@@ -95,11 +114,10 @@ export function ExpressionOfInterestForm() {
     setErrors((prev) => (prev[key] ? { ...prev, [key]: undefined } : prev));
   };
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const found = validate(v);
     setErrors(found);
-    setFailure(null);
 
     const first = errorOrder.find((k) => found[k]);
     if (first) {
@@ -114,27 +132,13 @@ export function ExpressionOfInterestForm() {
       return;
     }
 
-    setSending(true);
-    try {
-      const res = await fetch("/api/advisor-interest", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(v),
-      });
-      if (!res.ok) throw new Error(String(res.status));
-      setDone(v);
-      requestAnimationFrame(() =>
-        document
-          .getElementById("expression-of-interest")
-          ?.scrollIntoView({ behavior: "smooth", block: "center" })
-      );
-    } catch {
-      setFailure(
-        "We could not send your expression of interest just now. Please try again, or write to us and we will take it from there."
-      );
-    } finally {
-      setSending(false);
-    }
+    openFormMailto(mailFor(v));
+    setDone(v);
+    requestAnimationFrame(() =>
+      document
+        .getElementById("expression-of-interest")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" })
+    );
   }
 
   const invalidCount = Object.values(errors).filter(Boolean).length;
@@ -397,10 +401,9 @@ export function ExpressionOfInterestForm() {
               <div className="border-t border-slate-100 bg-[#f7faff] px-4 py-6 sm:px-6 lg:px-8">
                 <button
                   type="submit"
-                  disabled={sending}
-                  className="inline-flex w-full items-center justify-center gap-2.5 rounded-md bg-navy px-6 py-3.5 text-center text-[12.5px] font-bold uppercase tracking-[0.05em] text-white transition-colors hover:bg-navy-700 disabled:cursor-not-allowed disabled:opacity-70 lg:text-[13.5px]"
+                  className="inline-flex w-full items-center justify-center gap-2.5 rounded-md bg-navy px-6 py-3.5 text-center text-[12.5px] font-bold uppercase tracking-[0.05em] text-white transition-colors hover:bg-navy-700 lg:text-[13.5px]"
                 >
-                  {sending ? "Submitting…" : "Submit Expression of Interest"}
+                  Submit Expression of Interest
                   <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
                 </button>
 
@@ -419,11 +422,6 @@ export function ExpressionOfInterestForm() {
                       Please complete the {invalidCount} highlighted{" "}
                       {invalidCount === 1 ? "field" : "fields"} above and
                       submit again.
-                    </p>
-                  )}
-                  {failure && (
-                    <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-[12px] font-medium text-red-700 ring-1 ring-red-200">
-                      {failure}
                     </p>
                   )}
                 </div>
@@ -453,20 +451,22 @@ function Submitted({
       </span>
 
       <h2 className="mt-5 font-serif text-[21px] font-medium text-navy lg:text-[26px]">
-        Thank you — your interest is with us
+        Your email is ready to send
       </h2>
       <p className="mx-auto mt-3 max-w-[56ch] text-[12.5px] leading-relaxed text-slate-600 lg:text-[13.5px]">
-        We have your note, {values.fullName.trim() || "there"}. Our team will
-        review your Expression of Interest for the {values.role || "role you selected"}{" "}
-        and get in touch with you.
+        Thank you, {values.fullName.trim() || "there"}. Please send the message
+        that just opened — it already has your Expression of Interest for the{" "}
+        {values.role || "role you selected"}.
       </p>
+
+      <MailPreview fields={mailFor(values).fields} />
 
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
-          href="/about"
+          href={formMailtoHref(mailFor(values))}
           className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-5 py-3 text-[12.5px] font-semibold text-navy transition-colors hover:bg-gold-dark sm:w-auto lg:text-[13.5px]"
         >
-          Learn more about the Foundation
+          Open email again
           <ArrowRight className="h-4 w-4" aria-hidden />
         </a>
         <button

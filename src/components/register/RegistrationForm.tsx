@@ -35,6 +35,8 @@ import {
   TextArea,
   TextInput,
 } from "../form/fields";
+import { MailPreview } from "../form/MailPreview";
+import { formMailtoHref, openFormMailto } from "@/lib/mailto";
 
 type Values = {
   schoolName: string;
@@ -144,11 +146,38 @@ const slug = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
+function mailFor(v: Values) {
+  return {
+    subject: "School Registration",
+    fields: [
+      { label: "School Name", value: v.schoolName },
+      { label: "City", value: v.city },
+      { label: "State", value: v.state },
+      { label: "Country", value: v.country },
+      { label: "School Website", value: v.website },
+      { label: "Name", value: v.contactName },
+      { label: "Designation", value: v.designation },
+      { label: "Email", value: v.email },
+      { label: "Contact Number", value: v.phone },
+      { label: "School Affiliation", value: v.affiliation },
+      { label: "Board", value: v.board },
+      { label: "Approx. Student Strength", value: v.strength },
+      { label: "Classes From", value: v.classFrom },
+      { label: "Classes To", value: v.classTo },
+      { label: "Initiatives", value: v.initiatives },
+      { label: "Requirements", value: v.requirements },
+      { label: "Other Requirement", value: v.otherRequirement },
+      { label: "Message", value: v.message },
+      { label: "Preferred Way To Connect", value: v.connectModes },
+      { label: "Preferred Time To Connect", value: v.connectTime },
+      { label: "Consent to updates", value: v.consent },
+    ],
+  };
+}
+
 export function RegistrationForm() {
   const [v, setV] = useState<Values>(empty);
   const [errors, setErrors] = useState<Errors>({});
-  const [sending, setSending] = useState(false);
-  const [failure, setFailure] = useState<string | null>(null);
   const [done, setDone] = useState<Values | null>(null);
 
   const set = <K extends keyof Values>(key: K, value: Values[K]) => {
@@ -158,11 +187,10 @@ export function RegistrationForm() {
     setErrors((prev) => (prev[key] ? { ...prev, [key]: undefined } : prev));
   };
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const found = validate(v);
     setErrors(found);
-    setFailure(null);
 
     const first = errorOrder.find((k) => found[k]);
     if (first) {
@@ -173,23 +201,9 @@ export function RegistrationForm() {
       return;
     }
 
-    setSending(true);
-    try {
-      const res = await fetch("/api/school-registration", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(v),
-      });
-      if (!res.ok) throw new Error(String(res.status));
-      setDone(v);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch {
-      setFailure(
-        "We could not send your registration just now. Please try again, or reach us on WhatsApp and we will take it from there."
-      );
-    } finally {
-      setSending(false);
-    }
+    openFormMailto(mailFor(v));
+    setDone(v);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   if (done)
@@ -757,10 +771,9 @@ export function RegistrationForm() {
           <div className="shrink-0 lg:text-right">
             <button
               type="submit"
-              disabled={sending}
-              className="inline-flex w-full items-center justify-center gap-2.5 rounded-md bg-gold px-6 py-3.5 text-[13px] font-bold uppercase tracking-[0.06em] text-navy transition-colors hover:bg-gold-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto lg:px-8 lg:text-[14px]"
+              className="inline-flex w-full items-center justify-center gap-2.5 rounded-md bg-gold px-6 py-3.5 text-[13px] font-bold uppercase tracking-[0.06em] text-navy transition-colors hover:bg-gold-dark sm:w-auto lg:px-8 lg:text-[14px]"
             >
-              {sending ? "Submitting…" : "Submit Registration"}
+              Submit Registration
               <ArrowRight className="h-4 w-4" aria-hidden />
             </button>
             <p className="mt-2.5 text-[11.5px] text-slate-400">
@@ -775,11 +788,6 @@ export function RegistrationForm() {
             <p className="mt-4 rounded-lg bg-red-500/10 px-4 py-3 text-[12px] font-medium text-red-200 lg:text-[12.5px]">
               Please complete the {invalidCount} highlighted{" "}
               {invalidCount === 1 ? "field" : "fields"} above and submit again.
-            </p>
-          )}
-          {failure && (
-            <p className="mt-4 rounded-lg bg-red-500/10 px-4 py-3 text-[12px] font-medium text-red-200 lg:text-[12.5px]">
-              {failure}
             </p>
           )}
         </div>
@@ -805,12 +813,13 @@ function Submitted({
       </span>
 
       <h2 className="mt-5 font-serif text-[22px] font-medium text-navy lg:text-[30px]">
-        Registration received
+        Your email is ready to send
       </h2>
       <p className="mx-auto mt-3 max-w-[58ch] text-[13px] leading-relaxed text-slate-600 lg:text-[14.5px]">
-        Thank you, {values.contactName.trim() || "team"} — we have your details
-        for {values.schoolName.trim() || "your school"}. Our team will review
-        them and get in touch
+        Thank you, {values.contactName.trim() || "team"}. Please send the
+        message that just opened — it already has the details for{" "}
+        {values.schoolName.trim() || "your school"}. Our team will get in touch
+        after we receive it
         {values.connectTime ? ` in the ${values.connectTime.toLowerCase()}` : ""}
         {values.connectModes.length
           ? ` over ${values.connectModes.join(" or ")}`
@@ -818,25 +827,14 @@ function Submitted({
         .
       </p>
 
-      {values.initiatives.length > 0 && (
-        <ul className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2">
-          {values.initiatives.map((i) => (
-            <li
-              key={i}
-              className="rounded-full bg-[#eef3fb] px-3.5 py-1.5 text-[11.5px] font-semibold text-navy lg:text-[12.5px]"
-            >
-              {i}
-            </li>
-          ))}
-        </ul>
-      )}
+      <MailPreview fields={mailFor(values).fields} />
 
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
-          href="/academic-health-report"
+          href={formMailtoHref(mailFor(values))}
           className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-5 py-3 text-[13px] font-semibold text-navy transition-colors hover:bg-gold-dark sm:w-auto lg:text-[14px]"
         >
-          Explore the Academic Health Report
+          Open email again
           <ArrowRight className="h-4 w-4" aria-hidden />
         </a>
         <button

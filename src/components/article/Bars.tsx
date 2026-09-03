@@ -15,8 +15,8 @@ export function Bars({ block }: { block: BarsBlock }) {
     const el = ref.current;
     if (!el) return;
     if (typeof IntersectionObserver === "undefined") {
-      setGrown(true);
-      return;
+      const fallback = setTimeout(() => setGrown(true), 0);
+      return () => clearTimeout(fallback);
     }
     const io = new IntersectionObserver(
       (entries) => {

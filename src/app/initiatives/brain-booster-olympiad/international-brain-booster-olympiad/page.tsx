@@ -19,7 +19,8 @@ export default async function InternationalBrainBoosterOlympiadPage({
   searchParams: Promise<{ exam?: string }>;
 }) {
   const { exam } = await searchParams;
-  const initialId = isProgramId(exam ?? null) ? exam : DEFAULT_PROGRAM_ID;
+  const requestedId = exam ?? null;
+  const initialId = isProgramId(requestedId) ? requestedId : DEFAULT_PROGRAM_ID;
 
   return (
     <>

@@ -23,6 +23,8 @@ import {
   scales,
   timeframes,
 } from "./data";
+import { MailPreview } from "../form/MailPreview";
+import { formMailtoHref, openFormMailto } from "@/lib/mailto";
 
 type Values = {
   name: string;
@@ -101,11 +103,30 @@ const slug = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
+function mailFor(v: Values) {
+  return {
+    subject: "Partnership Enquiry",
+    fields: [
+      { label: "Name / Organisation", value: v.name },
+      { label: "Designation / Role", value: v.designation },
+      { label: "Organisation Type", value: v.orgType },
+      { label: "Areas to Explore", value: v.areas },
+      { label: "Initiatives", value: v.initiatives },
+      { label: "How They Would Like to Contribute", value: v.contributions },
+      { label: "Proposed Collaboration", value: v.message },
+      { label: "Scale of Collaboration", value: v.scale },
+      { label: "Preferred Timeframe", value: v.timeframe },
+      { label: "Preferred Way to Connect", value: v.connectMode },
+      { label: "Contact Number", value: v.phone },
+      { label: "Email", value: v.email },
+      { label: "Organisation Website", value: v.website },
+    ],
+  };
+}
+
 export function CollaborationForm() {
   const [v, setV] = useState<Values>(empty);
   const [errors, setErrors] = useState<Errors>({});
-  const [sending, setSending] = useState(false);
-  const [failure, setFailure] = useState<string | null>(null);
   const [done, setDone] = useState<Values | null>(null);
 
   const set = <K extends keyof Values>(key: K, value: Values[K]) => {
@@ -115,11 +136,10 @@ export function CollaborationForm() {
     setErrors((prev) => (prev[key] ? { ...prev, [key]: undefined } : prev));
   };
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const found = validate(v);
     setErrors(found);
-    setFailure(null);
 
     const first = errorOrder.find((k) => found[k]);
     if (first) {
@@ -134,29 +154,15 @@ export function CollaborationForm() {
       return;
     }
 
-    setSending(true);
-    try {
-      const res = await fetch("/api/partnership-enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(v),
-      });
-      if (!res.ok) throw new Error(String(res.status));
-      setDone(v);
-      /* The confirmation is much shorter than the form it replaces, so bring it
-         back into view rather than leaving the visitor below the page. */
-      requestAnimationFrame(() =>
-        document
-          .getElementById("collaborate")
-          ?.scrollIntoView({ behavior: "smooth", block: "center" })
-      );
-    } catch {
-      setFailure(
-        "We could not send your proposal just now. Please try again, or write to us and we will take it from there."
-      );
-    } finally {
-      setSending(false);
-    }
+    openFormMailto(mailFor(v));
+    setDone(v);
+    /* The confirmation is much shorter than the form it replaces, so bring it
+       back into view rather than leaving the visitor below the page. */
+    requestAnimationFrame(() =>
+      document
+        .getElementById("collaborate")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" })
+    );
   }
 
   if (done)
@@ -519,10 +525,9 @@ export function CollaborationForm() {
       <div className="border-t border-slate-100 bg-[#f7faff] px-4 py-6 sm:px-6 lg:px-7">
         <button
           type="submit"
-          disabled={sending}
-          className="inline-flex w-full items-center justify-center gap-2.5 rounded-md bg-gold px-6 py-3.5 text-center text-[12.5px] font-bold uppercase tracking-[0.05em] text-navy transition-colors hover:bg-gold-dark disabled:cursor-not-allowed disabled:opacity-70 lg:text-[13.5px]"
+          className="inline-flex w-full items-center justify-center gap-2.5 rounded-md bg-gold px-6 py-3.5 text-center text-[12.5px] font-bold uppercase tracking-[0.05em] text-navy transition-colors hover:bg-gold-dark lg:text-[13.5px]"
         >
-          {sending ? "Sending…" : "Let's Build the Future of Learning Together"}
+          Let&apos;s Build the Future of Learning Together
           <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
         </button>
 
@@ -542,11 +547,6 @@ export function CollaborationForm() {
             <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-[12px] font-medium text-red-700 ring-1 ring-red-200">
               Please complete the {invalidCount} highlighted{" "}
               {invalidCount === 1 ? "field" : "fields"} above and submit again.
-            </p>
-          )}
-          {failure && (
-            <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-[12px] font-medium text-red-700 ring-1 ring-red-200">
-              {failure}
             </p>
           )}
         </div>
@@ -575,33 +575,23 @@ function Submitted({
       </span>
 
       <h2 className="mt-5 font-serif text-[21px] font-medium text-navy lg:text-[26px]">
-        Thank you — your proposal is with us
+        Your email is ready to send
       </h2>
       <p className="mx-auto mt-3 max-w-[52ch] text-[12.5px] leading-relaxed text-slate-600 lg:text-[13.5px]">
-        We have your note, {values.name.trim() || "team"}. Our team will review
-        it for a potential collaboration and get in touch
+        Thank you, {values.name.trim() || "team"}. Please send the message that
+        just opened — it already has your proposal. Our team will get in touch
+        after we receive it
         {values.connectMode ? ` over ${values.connectMode.toLowerCase()}` : ""}.
       </p>
 
-      {values.areas.length > 0 && (
-        <ul className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-2">
-          {values.areas.map((a) => (
-            <li
-              key={a}
-              className="rounded-full bg-[#eef3fb] px-3.5 py-1.5 text-[11.5px] font-semibold text-navy lg:text-[12px]"
-            >
-              {a}
-            </li>
-          ))}
-        </ul>
-      )}
+      <MailPreview fields={mailFor(values).fields} />
 
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
-          href="/about"
+          href={formMailtoHref(mailFor(values))}
           className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-5 py-3 text-[12.5px] font-semibold text-navy transition-colors hover:bg-gold-dark sm:w-auto lg:text-[13.5px]"
         >
-          Learn more about the Foundation
+          Open email again
           <ArrowRight className="h-4 w-4" aria-hidden />
         </a>
         <button
