@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "../Reveal";
-import { ArrowRight, PlayIcon } from "../icons";
+import { ArrowRight } from "../icons";
 
 const leaders = [
   {
@@ -55,19 +55,24 @@ const leaders = [
 
 const videos = [
   {
-    duration: "01:32",
-    name: "Dr. Asha Sharma",
-    role: "Principal, Lotus Valley International School",
+    videoId: "9WNqSLIQuvQ",
+    name: "School Leader Testimonial 1",
   },
   {
-    duration: "02:16",
-    name: "Mr. Rakesh Verma",
-    role: "Principal, Modern Public School",
+    videoId: "rUkNueAIPqM",
+    name: "School Leader Testimonial 2",
   },
   {
-    duration: "01:41",
-    name: "Mrs. Poonam Arora",
-    role: "Principal, Kundlas International",
+    videoId: "uc9e4izYBXA",
+    name: "School Leader Testimonial 3",
+  },
+  {
+    videoId: "WGJ0W9wrLEw",
+    name: "School Leader Testimonial 4",
+  },
+  {
+    videoId: "KIhHJC8n2rc",
+    name: "School Leader Testimonial 5",
   },
 ];
 
@@ -124,28 +129,22 @@ export function Voices() {
               Hear It From Our Schools
             </p>
 
-            <div className="mx-auto mt-3 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="mx-auto mt-3 grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
               {videos.map((v) => (
                 <div key={v.name} className="flex h-full flex-col">
-                  <a
-                    href="#faq"
-                    aria-label={`Play video testimonial by ${v.name}`}
-                    className="group relative block overflow-hidden rounded-xl"
-                  >
-                    <span className="block aspect-[4/3] w-full bg-gradient-to-br from-navy via-navy-600 to-navy-800" />
-                    <span className="absolute left-1/2 top-1/2 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-md transition-transform duration-300 group-hover:scale-110">
-                      <PlayIcon className="h-4 w-4 text-navy" />
-                    </span>
-                    <span className="absolute bottom-2 left-2 rounded bg-navy/85 px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                      {v.duration}
-                    </span>
-                  </a>
+                  <div className="overflow-hidden rounded-xl bg-navy">
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${v.videoId}`}
+                      title={v.name}
+                      className="aspect-video w-full"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
                   <h3 className="mt-2.5 text-[12.5px] font-bold text-navy lg:text-[13px]">
                     {v.name}
                   </h3>
-                  <p className="mt-0.5 text-[11px] leading-snug text-slate-500 lg:text-[11.5px]">
-                    {v.role}
-                  </p>
                 </div>
               ))}
             </div>

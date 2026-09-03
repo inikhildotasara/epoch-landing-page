@@ -2,7 +2,7 @@ import type { EnquiryProgram } from "@/content/enquiry/programs";
 
 export function ProgramBanner({ program }: { program: EnquiryProgram }) {
   return (
-    <div className="grid grid-cols-1 gap-5 rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-center lg:gap-7 lg:p-6">
+    <div className="grid grid-cols-1 gap-5 rounded-2xl border border-slate-200 bg-[#f7f9fd] p-4 sm:p-5 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-center lg:gap-7 lg:p-6">
       <img
         src={program.bannerImage}
         alt={program.bannerAlt}
