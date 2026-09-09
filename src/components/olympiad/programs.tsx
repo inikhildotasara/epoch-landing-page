@@ -54,7 +54,10 @@ export const platforms: Program[] = [
     color: "#e8a013",
     titleColor: "#e8a013",
     logo: "/images/exam-icons/IFLY.png",
-    name: ["International Finance & Digital Literacy Olympiad for Young Leaders"],
+    name: [
+      "International Finance & Digital Literacy",
+      "Olympiad for Young Leaders",
+    ],
     strap: [
       "Understanding Money & Digital Safety",
     ],

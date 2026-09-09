@@ -57,7 +57,7 @@ export function CCBeeHero() {
             </p>
             <p className="mt-4 max-w-xl text-[13px] leading-relaxed text-slate-600 lg:text-[14px]">
               MY CCBee connects parents, teachers and schools on one smart
-              platform to track a child's daily activities and performance, so the right action can happen at the right time.
+              platform to track a child&apos;s daily activities and performance, so the right action can happen at the right time.
             </p>
 
             <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-3 lg:gap-x-3 xl:gap-x-6">
