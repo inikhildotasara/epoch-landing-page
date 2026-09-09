@@ -32,7 +32,7 @@ export function EnquiryHero() {
         <div className="mt-6 grid items-center gap-8 lg:mt-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] lg:gap-10">
           <div>
             <h1 className="font-serif font-semibold leading-[1.08] text-navy">
-              <span className="block text-[36px] sm:text-[48px] lg:text-[46px] xl:text-[54px] 2xl:text-[60px]">
+              <span className="block text-[24px] sm:text-[32px] lg:text-[30px] xl:text-[36px] 2xl:text-[40px]">
                 Explore Our
               </span>
               <span className="mt-1 block text-[24px] sm:text-[32px] lg:text-[30px] xl:text-[36px] 2xl:text-[40px]">

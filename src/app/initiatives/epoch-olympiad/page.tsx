@@ -7,6 +7,7 @@ import { ExamAndJourney } from "@/components/olympiad/ExamAndJourney";
 import { HowToParticipate } from "@/components/olympiad/HowToParticipate";
 import { AwardsBand } from "@/components/olympiad/AwardsBand";
 import { Voices } from "@/components/olympiad/Voices";
+import { Toppers } from "@/components/olympiad/Toppers";
 import { OlympiadFaq } from "@/components/olympiad/OlympiadFaq";
 import { InitiativeCTA } from "@/components/InitiativeCTA";
 import { LogoFlash } from "@/components/LogoFlash";
@@ -33,9 +34,10 @@ export default function EpochOlympiadPage() {
         <OlympiadHero />
         <Ecosystem />
         <ExamAndJourney />
-        <HowToParticipate />
-        <AwardsBand />
+        {/* <HowToParticipate /> */}
+        {/* <AwardsBand /> */}
         <Voices />
+        <Toppers />
         <OlympiadFaq />
         <InitiativeCTA />
       </main>

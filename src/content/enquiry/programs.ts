@@ -459,7 +459,7 @@ export const enquiryPrograms: EnquiryProgram[] = [
     group: "learn",
     code: "IFLY",
     shortName: "IFLY",
-    name: "International Future Literacy for Young Leaders",
+    name: "International Finance & Digital Literacy Olympiad for Young Leaders",
     tag: "Learning Platform",
     audience: "Coming soon",
     color: "#e8a013",

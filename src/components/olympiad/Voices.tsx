@@ -101,7 +101,7 @@ export function Voices() {
                     width={320}
                     height={320}
                     sizes="(min-width: 1024px) 112px, 96px"
-                    className="h-24 w-24 shrink-0 rounded-xl object-cover ring-1 ring-slate-200 lg:h-28 lg:w-28"
+                    className="h-24 w-24 shrink-0 rounded-full object-cover ring-1 ring-slate-200 lg:h-28 lg:w-28"
                   />
                   <div className="min-w-0">
                     <h3 className="text-[12.5px] font-bold leading-snug text-navy lg:text-[13px]">

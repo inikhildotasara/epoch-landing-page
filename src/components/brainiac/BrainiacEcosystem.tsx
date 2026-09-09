@@ -30,7 +30,7 @@ const examBadges: Badge[] = [
   { icon: SproutIcon, color: "#16a34a", label: ["Age", "Appropriate"] },
   { icon: ChildFaceIcon, color: "#e0407f", label: ["Child", "Friendly"] },
   { icon: BulbIcon, color: "#e8a013", label: ["Insight", "Oriented"] },
-  { icon: TrophyIcon, color: "#0f9c9a", label: ["Awards, Prizes", "& Scholarship"] },
+  { icon: TrophyIcon, color: "#0f9c9a", label: ["Awards, Prizes", "& Scholarships"] },
 ];
 
 const outcomes = [
@@ -64,7 +64,7 @@ const platforms: {
     code: "IFLY",
     logo: "/images/exam-icons/IFLY.png",
     color: ORANGE,
-    name: "International Future Literacy for Young Leaders",
+    name: "International Finance & Digital Literacy Olympiad for Young Leaders",
     tagline: "Understanding Money & Digital Safety",
     copy: "A future-focused learning platform that helps children understand money, make responsible choices and navigate the digital world with awareness, confidence and safety.",
     button: "Explore IFLY",

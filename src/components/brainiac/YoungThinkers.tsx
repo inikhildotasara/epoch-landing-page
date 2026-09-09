@@ -1,37 +1,41 @@
 import { Reveal } from "../Reveal";
 import { SectionHeading } from "./SectionHeading";
-import { ArrowRight, TrophyIcon } from "../icons";
+import { TrophyIcon } from "../icons";
 
 const achievers = [
   {
-    img: "/images/brain-booster/achiever-1.jpg",
-    name: "Aarav Mehta",
-    grade: "Class KG 2",
-    school: ["Spring Dale School", "Lucknow"],
+    img: "/images/brain-booster/1. Pratishtaha Saini, Brainiac Einstein Award, Cosmos, Seth Anandram Jaipuria School, Kanpur.jpeg",
+    name: "Pratishtaha Saini",
+    grade: "Brainiac Einstein Award",
+    school: ["Class – Cosmos (UKG)", "Seth Anandram Jaipuria School, Kanpur"],
   },
+
   {
-    img: "/images/brain-booster/achiever-2.jpg",
-    name: "Ananya Singh",
-    grade: "Class KG 1",
-    school: ["Delhi Public School", "Gurugram"],
+    img: "/images/brain-booster/2. Aayansh Singh, National Topper, Peony, Delhi Public School Kalyanpur.jpeg",
+    name: "Aayansh Singh",
+    grade: "National Topper",
+    school: ["Class – Peony (PG)", "Delhi Public School Kalyanpur"],
   },
+
   {
-    img: "/images/brain-booster/achiever-3.jpg",
-    name: "Vivaan Rao",
-    grade: "Class KG 2",
-    school: ["Podar Intl. School", "Mumbai"],
+    img: "/images/brain-booster/3. Maryam Fatima, National Topper, Tulip, Allen Kids Swaroop Nagar.jpeg",
+    name: "Maryam Fatima",
+    grade: "National Topper",
+    school: ["Class – Tulip (LKG)", "Allen Kids Swaroop Nagar"],
   },
+
   {
-    img: "/images/brain-booster/achiever-4.jpg",
-    name: "Myra Patel",
-    grade: "Class KG 1",
-    school: ["Ryan International School", "Bengaluru"],
+    img: "/images/brain-booster/4. Rudraksh Verma, International Topper, Peony, Pt. Deen Dayal Upadhyay S.D. Vidyalaya, Kanpur.jpeg",
+    name: "Rudraksh Verma",
+    grade: "International Topper",
+    school: ["Class – Peony (PG)", "Pt. Deen Dayal Upadhyay S.D. Vidyalaya, Kanpur"],
   },
+
   {
-    img: "/images/achievers-brainiac.png",
-    name: "Ishaan Verma",
-    grade: "Class KG 2",
-    school: ["EuroKids Pre School", "Indore"],
+    img: "/images/brain-booster/5. Kiara Agarwal, Brainiac Einstein Award, Cosmos, Seth Anandram Jaipuria School, Kanpur.jpeg",
+    name: "Kiara Agarwal",
+    grade: "Brainiac Einstein Award",
+    school: ["Class – Cosmos (UKG)", "Seth Anandram Jaipuria School, Kanpur"],
   },
 ];
 
@@ -48,9 +52,13 @@ export function YoungThinkers() {
           {/* The celebration panel only moves beside the portraits from xl, so the
               five achievers keep a readable width at every size below that. */}
           <div className="mt-7 grid grid-cols-1 gap-6 lg:mt-8 xl:grid-cols-[minmax(0,1fr)_232px] xl:gap-7">
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-3">
+            <div className="flex gap-4 overflow-x-auto overflow-y-hidden pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:gap-3">
               {achievers.map((a, i) => (
-                <Reveal key={a.name} delay={i * 60} className="text-center">
+                <Reveal
+                  key={a.name}
+                  delay={i * 60}
+                  className="min-w-[calc((100%-1rem)/2)] flex-none text-center sm:min-w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3rem)/5)] lg:min-w-0"
+                >
                   <img
                     src={a.img}
                     alt={a.name}
@@ -82,12 +90,6 @@ export function YoungThinkers() {
               <p className="font-serif text-[14px] font-semibold leading-snug text-navy lg:text-[15px]">
                 Celebrating Curious Minds Across the Globe!
               </p>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 rounded-md border border-navy px-4 py-2 text-[12px] font-semibold text-navy transition-colors hover:bg-navy hover:text-white lg:text-[12.5px]"
-              >
-                View All Achievers <ArrowRight className="h-3.5 w-3.5" />
-              </a>
             </Reveal>
           </div>
         </Reveal>

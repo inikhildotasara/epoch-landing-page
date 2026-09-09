@@ -16,7 +16,7 @@ const faqs: FaqItem[] = [
   {
     q: "What does Brainiac Global offer young learners?",
     a: [
-      "Brainiac Global brings together assessment and future-focused learning initiatives like IFLY (International Future Literacy for Young Leaders) and IHOST (International Holistic Olympiad for Smart Thinkers) for kindergarten learners.",
+      "Brainiac Global brings together assessment and future-focused learning initiatives like IFLY (International Finance & Digital Literacy Olympiad for Young Leaders) and IHOST (International Holistic Olympiad for Smart Thinkers) for kindergarten learners.",
       "Its ecosystem is designed to help children:",
       [
         "build foundational thinking abilities,",
@@ -105,7 +105,7 @@ const faqs: FaqItem[] = [
   {
     q: "What does a child receive after the assessment?",
     a: [
-      "The child receives Awards, Prizes, Scholarship, Surprise Gift as per their performance and an Academic Health Report with parent-friendly insights into their thinking abilities and learning readiness.",
+      "The child receives Awards, Prizes, Scholarships, Surprise Gifts as per their performance and an Academic Health Report with parent-friendly insights into their thinking abilities and learning readiness.",
       "The report is designed to help parents and educators understand the child's strengths and areas that may benefit from further development, rather than looking only at marks or a rank.",
     ],
   },
@@ -118,7 +118,7 @@ const faqs: FaqItem[] = [
         "Scholarships for eligible high-performing learners according to published criteria, and",
         "Special Recognition for notable achievements and exceptional performance.",
         "Trophies and Medals at International/National/Zonal/Class level.",
-        "Surprise Gifts for every participant.",
+        "Surprise Gifts, where applicable.",
       ],
     ],
   },

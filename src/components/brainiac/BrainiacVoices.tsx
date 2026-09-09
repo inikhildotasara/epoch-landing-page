@@ -1,146 +1,165 @@
+import Image from "next/image";
 import { Reveal } from "../Reveal";
-import { SectionHeading } from "./SectionHeading";
-import { ArrowRight, PlayIcon, UserIcon, YoutubeIcon } from "../icons";
+import { ArrowRight, YoutubeIcon } from "../icons";
 import { siteBrands } from "@/content/site";
 
 const principals = [
   {
+    heading: "Unlocking Hidden Potential",
     quote:
-      "Brainiac Global is a wonderful initiative that strengthens the thinking abilities of young learners in a joyful way.",
-    name: "Mr. Rakesh Sharma",
+      "It’s the first time, we conducted Brainiac Brain Booster Olympiad in my school. Their Hand picked-picture based questions were very unique, interesting and innovative. Our teachers and parents really liked it.",
+    name: "Mr. D. N. Rao",
     role: "Principal",
-    school: "Spring Dale School, Lucknow",
+    school: "Indian School, Al Wadi Al Kabir, Oman",
+    photo: "/images/brainiac-principals/Mr. D. N. Rao.png",
   },
   {
+    heading: "Full Marks to Brainiac Team",
     quote:
-      "The assessments are child-friendly and the insights help us support each child better in early learning.",
-    name: "Ms. Neha Verma",
+      "Witnessing our students excel & showcase their talents on an international stage fills me with immense pride. I highly commend the organizers for providing such an enriching experience.",
+    name: "Mrs. Monika Datt",
     role: "Principal",
-    school: "Excelsior Kids, Indore",
+    school: "Delhi Public School, Abu Road Rajasthan",
+    photo: "/images/brainiac-principals/Mrs. Monika Datt.jpeg",
   },
   {
+    heading: "First Ever Cognitive Based Assessment",
     quote:
-      "A unique and much needed cognitive assessment for kindergarten students. Highly recommended!",
-    name: "Mr. Anil Mehta",
+      "Excellent platform for kindergarten to get into the International Level Competitions. My Children are very much motivated now.",
+    name: "Mr. Rajan Sethi",
     role: "Principal",
-    school: "Bright Future School, Jaipur",
+    school: "Delhi Public School, Abu Road Rajasthan",
+    photo: "/images/brainiac-principals/Mr. Rajan Sethi.jpeg",
+  },
+  {
+    heading: "Enhancing I.Q. of Kids",
+    quote:
+      "The questions of Brainiac are very interesting and really helpful for brain development of kids. I really appreciate the hard work of entire Brainiac team.",
+    name: "Mrs. Mary Litty",
+    role: "Vice Principal",
+    school: "United Indian School, Kuwait",
+    photo: "/images/brainiac-principals/Mrs. Marry Litty.png",
+  },
+  {
+    heading: "Innovative & Unique",
+    quote:
+      "As an educator, I recommend Brainiac Brain Booster exam to other schools. It not only boosts the confidence of children but also develop problem solving skills in a fun and engaging way.",
+    name: "Mrs. Madhushree Bhaumik",
+    role: "Vice Principal",
+    school: "Seth Anandram Jaipuria School, Kanpur",
+    photo: "/images/brainiac-principals/Madhushree Bhowmik.png",
+  },
+  {
+    heading: "Fantastic Experience",
+    quote:
+      "Participating in the Brainiac International Brain Booster exam was a fantastic experience for our children. It instilled a sense of competition and achievement at a young age.",
+    name: "Ms. Vrinda Bhattar",
+    role: "Principal",
+    school: "Kidzee Pre School, Bhatapara",
+    photo: "/images/brainiac-principals/Ms. Vrinda Bhattar.jpeg",
   },
 ];
 
 const videos = [
-  { duration: "0:40", school: ["Delhi Public School,", "Gurugram"] },
-  { duration: "0:40", school: ["Podar International", "School, Mumbai"] },
-  { duration: "1:10", school: ["Ryan International", "School, Bengaluru"] },
+  {
+    title: "Parents Testimonials 1",
+    videoId: "rfGLPHyvOTw",
+  },
+  {
+    title: "Parents Testimonials 2",
+    videoId: "8r-rGZEGmeE",
+  },
+  {
+    title: "School Leader Testimonials 1",
+    videoId: "sEFpIqD12B4",
+  },
 ];
-
-function ColumnLabel({ children }: { children: string }) {
-  return (
-    <h3 className="text-[11.5px] font-bold uppercase tracking-[0.06em] text-navy lg:text-[12px]">
-      {children}
-    </h3>
-  );
-}
 
 export function BrainiacVoices() {
   return (
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-10 lg:pb-14">
-        <Reveal className="rounded-2xl border border-slate-200 bg-white px-5 py-7 sm:px-8 lg:px-10 lg:py-9">
-          <SectionHeading>Voices That Inspire Us</SectionHeading>
+        <Reveal className="rounded-2xl border border-[#e0759f]/70 px-5 py-6 lg:px-7 lg:py-7">
+          <h2 className="text-center font-serif text-[17px] font-semibold text-navy lg:text-[19px]">
+            Voices That Inspire Us
+          </h2>
+          <p className="mt-3 text-center text-[12px] font-semibold text-navy lg:text-[12.5px]">
+            What School Leaders Say
+          </p>
 
-          {/* The halves only split at 2xl: three quote cards beside three video
-              thumbnails leaves the quotes too narrow to read on mid-size
-              desktops. The testimonial half also takes the extra width. */}
-          <div className="mt-7 grid grid-cols-1 gap-8 lg:mt-8 2xl:grid-cols-[1.45fr_1fr] 2xl:gap-8">
-            <div className="flex flex-col">
-              <ColumnLabel>Principal Testimonials</ColumnLabel>
-
-              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {principals.map((p, i) => (
-                  <Reveal
-                    key={p.name}
-                    delay={i * 70}
-                    className="flex h-full flex-col"
-                  >
-                    <div className="flex gap-2.5">
-                      <span className="flex h-12 w-10 shrink-0 items-center justify-center rounded-lg bg-[#eef2fb]">
-                        <UserIcon
-                          className="h-5 w-5 text-navy"
-                          strokeWidth={1.6}
-                        />
-                      </span>
-                      <p className="text-[11.5px] leading-snug text-slate-600 lg:text-[12px]">
-                        &ldquo;{p.quote}&rdquo;
-                      </p>
-                    </div>
-                    <div className="mt-3">
-                      <h4 className="text-[12px] font-bold text-navy lg:text-[12.5px]">
-                        {p.name}
-                      </h4>
-                      <p className="mt-0.5 text-[11px] leading-snug text-slate-500 lg:text-[11.5px]">
-                        {p.role}
-                        <br />
-                        {p.school}
-                      </p>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-
-              <a
-                href="#"
-                className="mx-auto mt-6 flex w-fit items-center gap-2 text-[12.5px] font-semibold text-navy transition-colors hover:text-gold-dark lg:text-[13px]"
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {principals.map((p) => (
+              <div
+                key={p.name}
+                className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-4"
               >
-                View More Testimonials{" "}
-                <ArrowRight className="h-3.5 w-3.5 text-gold-dark" />
-              </a>
-            </div>
-
-            <div className="flex flex-col border-t border-slate-200 pt-7 2xl:border-l 2xl:border-t-0 2xl:pl-8 2xl:pt-0">
-              <ColumnLabel>Video Testimonials</ColumnLabel>
-
-              {/* Capped while the column runs full width, so the thumbnails do
-                  not blow up to twice their intended size. */}
-              <div className="mt-4 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3 2xl:max-w-none">
-                {videos.map((v, i) => (
-                  <Reveal
-                    key={v.school.join(" ")}
-                    delay={i * 70}
-                    className="flex h-full flex-col"
-                  >
-                    <a
-                      href="#"
-                      aria-label={`Play video testimonial from ${v.school.join(" ")}`}
-                      className="group relative block overflow-hidden rounded-xl"
-                    >
-                      <span className="block aspect-[4/3] w-full bg-gradient-to-br from-navy via-navy-600 to-navy-800" />
-                      <span className="absolute bottom-2 left-2 flex h-7 w-7 items-center justify-center rounded-md bg-[#6d4aa7] transition-transform duration-300 group-hover:scale-110">
-                        <PlayIcon className="h-3.5 w-3.5 text-white" />
-                      </span>
-                      <span className="absolute bottom-2 right-2 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                        {v.duration}
-                      </span>
-                    </a>
-                    <p className="mt-2.5 text-center text-[11px] leading-snug text-navy lg:text-[11.5px]">
-                      {v.school[0]}
+                <div className="flex items-center gap-3.5">
+                  <Image
+                    src={p.photo}
+                    alt={p.name}
+                    width={320}
+                    height={320}
+                    sizes="(min-width: 1024px) 112px, 96px"
+                    className="h-24 w-24 shrink-0 rounded-full object-cover ring-1 ring-slate-200 lg:h-28 lg:w-28"
+                  />
+                  <div className="min-w-0">
+                    <h3 className="text-[12.5px] font-bold leading-snug text-navy lg:text-[13px]">
+                      {p.name}
+                    </h3>
+                    <p className="mt-0.5 text-[11px] leading-snug text-slate-500 lg:text-[11.5px]">
+                      {p.role}
                       <br />
-                      {v.school[1]}
+                      {p.school}
                     </p>
-                  </Reveal>
-                ))}
+                  </div>
+                </div>
+                <h4 className="mt-3 text-[12px] font-bold text-navy lg:text-[12.5px]">
+                  {p.heading}
+                </h4>
+                <p className="mt-1 text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]">
+                  &ldquo;{p.quote}&rdquo;
+                </p>
               </div>
+            ))}
+          </div>
 
-              <a
-                href={siteBrands.brainiac.youtubeHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mx-auto mt-6 flex w-fit items-center gap-2 text-[12.5px] font-semibold text-navy transition-colors hover:text-gold-dark lg:text-[13px]"
-              >
-                Watch More on YouTube{" "}
-                <ArrowRight className="h-3.5 w-3.5 text-gold-dark" />
-                <YoutubeIcon className="h-4 w-4 text-[#ff0000]" />
-              </a>
+          <div className="mt-8 border-t border-slate-200 pt-7">
+            <h2 className="text-center font-serif text-[17px] font-semibold text-navy lg:text-[19px]">
+              Video Testimonials
+            </h2>
+            <p className="mt-3 text-center text-[12px] font-semibold text-navy lg:text-[12.5px]">
+              Hear It From Our Schools
+            </p>
+
+            <div className="mx-auto mt-3 grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              {videos.map((v) => (
+                <div key={v.title} className="flex h-full flex-col">
+                  <div className="overflow-hidden rounded-xl bg-navy">
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${v.videoId}`}
+                      title={v.title}
+                      className="aspect-video w-full"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <h3 className="mt-2.5 text-[12.5px] font-bold text-navy lg:text-[13px]">
+                    {v.title}
+                  </h3>
+                </div>
+              ))}
             </div>
+
+            <a
+              href={siteBrands.brainiac.youtubeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-auto mt-5 flex w-fit items-center gap-2 rounded-md bg-navy px-5 py-2.5 text-[12.5px] font-semibold text-white transition-colors hover:bg-navy-600 lg:text-[13px]"
+            >
+              Watch More Videos <ArrowRight className="h-3.5 w-3.5" />
+              <YoutubeIcon className="h-4 w-4 text-[#ff0000]" />
+            </a>
           </div>
         </Reveal>
       </div>

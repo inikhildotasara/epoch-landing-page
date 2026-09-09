@@ -17,6 +17,8 @@ function ProgramButton({
   selected: boolean;
   onSelect: (id: ProgramId) => void;
 }) {
+  const isWideLogo = program.id === "ihost" || program.id === "ifly";
+
   return (
     <button
       type="button"
@@ -35,7 +37,9 @@ function ProgramButton({
         <img
           src={program.logo}
           alt=""
-          className="h-full w-full scale-[1.16] object-cover"
+          className={`h-full w-full ${
+            isWideLogo ? "object-contain" : "scale-[1.16] object-cover"
+          }`}
         />
       </span>
       <span className="mt-2 text-center text-[11.5px] font-semibold leading-snug text-navy lg:text-[12.5px]">

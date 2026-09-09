@@ -9,8 +9,6 @@ import {
   TrendUpIcon,
 } from "../icons";
 
-const CCBEE_BLUE = "#1a5fb4";
-
 const badges = [
   { icon: CalendarIcon, label: "Daily Tracking" },
   { icon: BulbIcon, label: "Smart Insights" },
@@ -39,35 +37,27 @@ export function CCBeeHero() {
 
         <div className="mt-6 grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_42%] lg:gap-6 xl:grid-cols-[minmax(0,1fr)_46%] xl:gap-10">
           <Reveal className="hero-anim">
-            <h1 className="flex items-center gap-2 font-serif text-[30px] font-semibold leading-[1.05] text-navy sm:text-[40px] lg:text-[38px] xl:text-[44px] 2xl:text-[48px]">
-              <span>
-                MY <span style={{ color: CCBEE_BLUE }}>CCBee</span>
-              </span>
-              {/* Bee mark from the MY CCBee lockup; multiply blends its white
-                  backdrop into the page */}
+            <h1>
               <img
-                src="/images/ccbee-bee.png"
-                alt=""
-                aria-hidden
-                className="h-8 w-8 shrink-0 mix-blend-multiply sm:h-10 sm:w-10 xl:h-12 xl:w-12"
+                src="/images/MY CC BEE.png"
+                alt="MY CCBee"
+                className="h-auto w-[min(100%,420px)] object-contain object-left"
               />
             </h1>
             <p
-              className="mt-3 text-[14px] font-semibold leading-snug lg:text-[14.5px] xl:text-[15px]"
-              style={{ color: CCBEE_BLUE }}
+              className="mt-3 text-[14px] font-semibold leading-snug text-black lg:text-[14.5px] xl:text-[15px]"
             >
               Performance Tracker &amp; Booster Platform
               <br className="hidden sm:block" /> for Playgroup to Class 2
             </p>
-            <p className="mt-4 font-serif text-[24px] font-semibold leading-[1.12] text-navy sm:text-[30px] lg:text-[28px] xl:text-[34px]">
+            <p className="mt-4 font-serif text-[24px] font-semibold leading-[1.12] text-[#1a5fb4] sm:text-[30px] lg:text-[28px] xl:text-[34px]">
               See. Understand. Act.
               <br />
               &mdash; Every Day.
             </p>
             <p className="mt-4 max-w-xl text-[13px] leading-relaxed text-slate-600 lg:text-[14px]">
               MY CCBee connects parents, teachers and schools on one smart
-              platform to track every activity and performance of a child on
-              daily basis, so the right action can happen at the right time.
+              platform to track a child's daily activities and performance, so the right action can happen at the right time.
             </p>
 
             <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-3 lg:gap-x-3 xl:gap-x-6">

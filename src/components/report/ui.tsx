@@ -514,7 +514,7 @@ export function ReportPreview({
         />
       </a>
       <figcaption className="mt-3 text-center text-[11px] text-slate-400 lg:text-[11.5px]">
-        Open the full report page
+        {/* Open the full report page */}
       </figcaption>
     </figure>
   );

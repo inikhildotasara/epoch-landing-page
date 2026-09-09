@@ -80,7 +80,7 @@ export function AdvisoryHealth() {
               </h3>
               <p className="mt-2 text-[12.5px] lg:text-[14px] leading-relaxed text-slate-600">
                 Our Academic Health Report goes beyond test scores to provide a
-                360° view of a learner&apos;s cognitive and academic well-being.
+                multidimensional view view of a learner&apos;s cognitive and academic well-being.
               </p>
 
               <div className="mt-4 lg:mt-5 grid grid-cols-2 gap-y-2.5 lg:gap-y-3 gap-x-4">

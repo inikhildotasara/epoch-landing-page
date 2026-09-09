@@ -18,7 +18,7 @@ const rows: { label: string; values: [string, string, string, string] }[] = [
   { label: "Exam Mode", values: ["Offline", "Offline", "Offline", "Offline"] },
   {
     label: "Medium",
-    values: ["As prescribed", "As prescribed", "As prescribed", "As prescribed"],
+    values: ["English", "English", "English", "English"],
   },
   {
     label: "Pattern",
@@ -35,7 +35,7 @@ const rows: { label: string; values: [string, string, string, string] }[] = [
       "30 (Classes 1–4)\n35 (Classes 5–10)",
       "30 (Classes 1–4)\n35 (Classes 5–10)",
       "30 (Classes 1–4)\n35 (Classes 5–10)",
-      "35 (Classes 1–4)\n35 (Classes 5–10)",
+      "30 (Classes 1–4)\n35 (Classes 5–10)",
     ],
   },
   {
@@ -246,7 +246,7 @@ export function ExamAndJourney() {
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-10 lg:pb-14">
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-2 xl:gap-5">
-          <ExamTable />
+          {/* <ExamTable /> */}
           <JourneyPanel />
         </div>
       </div>
