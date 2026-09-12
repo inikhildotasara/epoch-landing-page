@@ -78,13 +78,13 @@ export function Ecosystem() {
                   <p className="mt-3 text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]">
                     {p.copy}
                   </p>
-                  <a
-                    href="#faq"
+                  <Link
+                    href={`${EXAM_HREF}?exam=${p.code.toLowerCase()}`}
                     className="mt-5 inline-flex w-fit items-center gap-2 rounded-md border px-4 py-2 text-[12px] font-semibold transition-colors hover:bg-slate-50"
                     style={{ color: p.color, borderColor: p.color }}
                   >
                     Learn More <ArrowRight className="h-3.5 w-3.5" />
-                  </a>
+                  </Link>
                 </Reveal>
               ))}
             </div>

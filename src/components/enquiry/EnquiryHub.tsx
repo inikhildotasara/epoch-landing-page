@@ -49,7 +49,9 @@ export function EnquiryHub({ initialId }: { initialId: ProgramId }) {
         <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-10 lg:pb-14">
           <div id="enquiry-detail" className="scroll-mt-6 space-y-4 lg:space-y-5">
             <ProgramBanner program={program} />
-            <DetailGrid program={program} />
+            {program.id !== "ihost" && program.id !== "ifly" ? (
+              <DetailGrid program={program} />
+            ) : null}
             {program.id === "ihost" ? <IHostOverview /> : null}
             {program.id === "ifly" ? <IFlyOverview /> : null}
             <CompleteDetailsCta program={program} />
