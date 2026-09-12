@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "../Reveal";
+import { siteBrands } from "@/content/site";
 import {
   ArrowRight,
   BulbIcon,
@@ -17,6 +18,8 @@ const badges = [
 ];
 
 export function CCBeeHero() {
+  const { callHref } = siteBrands.epoch;
+
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pt-4 pb-10 lg:pb-14">
@@ -80,7 +83,7 @@ export function CCBeeHero() {
 
             <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
               <a
-                href="#demo"
+                href={callHref}
                 className="inline-flex items-center gap-2 rounded-md bg-navy px-6 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-navy-600 lg:text-[14px]"
               >
                 Request For Demo <ArrowRight className="h-4 w-4" />

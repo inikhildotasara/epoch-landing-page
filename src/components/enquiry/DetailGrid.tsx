@@ -71,14 +71,22 @@ function Card({
   );
 }
 
-function CheckList({ items }: { items: string[] }) {
+function CheckList({
+  items,
+  showIcons = true,
+}: {
+  items: string[];
+  showIcons?: boolean;
+}) {
   return (
-    <ul className="space-y-1.5">
+    <ul className={showIcons ? "space-y-1.5" : "list-disc space-y-1.5 pl-4"}>
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-2">
-          <span className="mt-0.5 flex h-[15px] w-[15px] shrink-0 items-center justify-center rounded-full bg-[#16a34a]">
-            <CheckIcon className="h-[9px] w-[9px] text-white" />
-          </span>
+        <li key={item} className={showIcons ? "flex items-start gap-2" : undefined}>
+          {showIcons ? (
+            <span className="mt-0.5 flex h-[15px] w-[15px] shrink-0 items-center justify-center rounded-full bg-[#16a34a]">
+              <CheckIcon className="h-[9px] w-[9px] text-white" />
+            </span>
+          ) : null}
           <span className="text-[12px] leading-snug text-slate-600 lg:text-[12.5px]">
             {item}
           </span>
@@ -113,9 +121,21 @@ export function DetailGrid({ program }: { program: EnquiryProgram }) {
         </ul>
       </Card>
 
-      <Card index="02" title="What is it?" tone="#e8f6ee">
+      <Card
+        index="02"
+        title={
+          program.id === "itst"
+            ? "What is ITST?"
+            : program.id === "iao"
+              ? "What is IAO?"
+              : program.id === "igko"
+                ? "What is IGKO?"
+              : "What is it?"
+        }
+        tone="#e8f6ee"
+      >
         <div className="flex h-full flex-col justify-between gap-4">
-          <p className="text-[12.5px] leading-relaxed text-slate-600 lg:text-[13px]">
+          <p className="whitespace-pre-line text-[12.5px] leading-relaxed text-slate-600 lg:text-[13px]">
             {program.whatIsIt}
           </p>
           <InfoIcon className="h-10 w-10 self-end text-[#16a34a]/35" />
@@ -124,7 +144,7 @@ export function DetailGrid({ program }: { program: EnquiryProgram }) {
 
       <Card index="03" title="Why does it matter?" tone="#fbf3d9">
         <div className="flex h-full flex-col justify-between gap-4">
-          <p className="text-[12.5px] leading-relaxed text-slate-600 lg:text-[13px]">
+          <p className="whitespace-pre-line text-[12.5px] leading-relaxed text-slate-600 lg:text-[13px]">
             {program.whyItMatters}
           </p>
           <TargetIcon className="h-10 w-10 self-end text-[#d27909]/40" />
@@ -133,7 +153,7 @@ export function DetailGrid({ program }: { program: EnquiryProgram }) {
 
       <Card index="04" title="What does it assess?" tone="#efe8fb">
         <div className="flex h-full flex-col justify-between gap-4">
-          <CheckList items={program.assesses} />
+          <CheckList items={program.assesses} showIcons={false} />
           <BrainIcon className="h-10 w-10 self-end text-[#7b2fa8]/35" />
         </div>
       </Card>
@@ -168,7 +188,7 @@ export function DetailGrid({ program }: { program: EnquiryProgram }) {
         <div className="flex h-full flex-col justify-between gap-4">
           <div>
             <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-semibold text-navy lg:text-[11.5px]">
-              {["Assessment", "Result", "Academic Health Report"].map(
+              {["Assessment", "Result", "Academic Health Report", "Recognition"].map(
                 (label, i, arr) => (
                   <span key={label} className="flex items-center gap-1.5">
                     <span className="rounded-md bg-white px-2 py-1 shadow-sm">
@@ -186,6 +206,12 @@ export function DetailGrid({ program }: { program: EnquiryProgram }) {
             <p className="mt-3 text-[12px] leading-relaxed text-slate-600 lg:text-[12.5px]">
               {program.afterNote}
             </p>
+            <a
+              href="/academic-health-report"
+              className="mt-3 inline-flex text-[12px] font-semibold text-navy underline decoration-gold underline-offset-2 transition-colors hover:text-gold-dark lg:text-[12.5px]"
+            >
+              Explore the Academic Health Report →
+            </a>
           </div>
           <BarChartArrowIcon className="h-10 w-10 self-end text-[#d27909]/40" />
         </div>

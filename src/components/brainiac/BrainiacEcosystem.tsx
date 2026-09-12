@@ -46,8 +46,6 @@ const platforms: {
   code: string;
   logo: string;
   color: string;
-  name: string;
-  tagline: string;
   copy: string;
   button: string;
 }[] = [
@@ -55,8 +53,6 @@ const platforms: {
     code: "IHOST",
     logo: "/images/exam-icons/IHOST.png",
     color: TEAL,
-    name: "International Holistic Olympiad for Smart Thinkers",
-    tagline: "Think • Explore • Discover • Excel",
     copy: "A holistic learning platform that builds curiosity, reasoning and problem-solving by connecting Mathematics, Science, Language, Aptitude and General Knowledge with meaningful, engaging learning experiences.",
     button: "Explore IHOST",
   },
@@ -64,8 +60,6 @@ const platforms: {
     code: "IFLY",
     logo: "/images/exam-icons/IFLY.png",
     color: ORANGE,
-    name: "International Finance & Digital Literacy Olympiad for Young Leaders",
-    tagline: "Understanding Money & Digital Safety",
     copy: "A future-focused learning platform that helps children understand money, make responsible choices and navigate the digital world with awareness, confidence and safety.",
     button: "Explore IFLY",
   },
@@ -136,28 +130,6 @@ function BadgeRow({ badges, cols }: { badges: Badge[]; cols: string }) {
         );
       })}
     </div>
-  );
-}
-
-function PlatformWordmark({ code }: { code: string }) {
-  if (code === "IFLY") {
-    return (
-      <p className="font-serif text-[34px] font-bold leading-none tracking-tight lg:text-[38px]">
-        <span className="text-[#11a6a4]">i</span>
-        <span style={{ color: ORANGE }}>F</span>
-        <span className="text-navy">L</span>
-        <span className="text-[#11a6a4]">Y</span>
-      </p>
-    );
-  }
-
-  return (
-    <p
-      className="font-serif text-[34px] font-bold leading-none tracking-tight lg:text-[38px]"
-      style={{ color: TEAL }}
-    >
-      IHOST
-    </p>
   );
 }
 
@@ -255,32 +227,22 @@ export function BrainiacEcosystem() {
                     key={p.code}
                     className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 lg:p-6"
                   >
-                    <div className="flex items-start justify-between gap-3">
+                    <div className="relative flex h-36 items-center justify-center sm:h-40">
                       <img
                         src={p.logo}
                         alt={`${p.code} logo`}
-                        className="h-20 w-20 shrink-0 object-contain"
+                        className="h-full w-full object-contain"
                       />
-                      <span
-                        className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white"
+                      {/* <span
+                        className="absolute right-0 top-0 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white"
                         style={{ backgroundColor: p.color }}
                       >
                         Coming Soon
-                      </span>
+                      </span> */}
                     </div>
 
                     <div className="mt-4">
-                      <PlatformWordmark code={p.code} />
-                      <h4 className="mt-3 font-serif text-[15px] font-semibold leading-snug text-navy lg:text-[17px]">
-                        {p.name}
-                      </h4>
-                      <p
-                        className="mt-2 font-serif text-[13px] font-semibold leading-snug lg:text-[14px]"
-                        style={{ color: p.color }}
-                      >
-                        {p.tagline}
-                      </p>
-                      <p className="mt-3 text-[12.5px] leading-relaxed text-slate-600 lg:text-[13px]">
+                      <p className="text-[12.5px] leading-relaxed text-slate-600 lg:text-[13px]">
                         {p.copy}
                       </p>
                     </div>

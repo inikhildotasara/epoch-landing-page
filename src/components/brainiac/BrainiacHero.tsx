@@ -32,10 +32,10 @@ export function BrainiacHero() {
 
         <div className="mt-6 grid items-center gap-8 lg:mt-7 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1fr)] lg:gap-9 xl:gap-12">
           <Reveal className="hero-anim">
-            <h1 className="font-serif text-[30px] font-semibold leading-[1.08] text-navy sm:text-[40px] lg:text-[32px] xl:text-[40px] 2xl:text-[46px]">
+            <h1 className="font-serif text-[18px] font-semibold leading-[1.08] text-navy sm:text-[24px] lg:text-[19px] xl:text-[24px] 2xl:text-[27px]">
               BRAINIAC GLOBAL
             </h1>
-            <p className="mt-3 font-serif text-[19px] font-semibold leading-snug text-gold-dark sm:text-[22px] lg:text-[19px] xl:text-[23px] 2xl:text-[26px]">
+            <p className="mt-3 font-serif text-[23px] font-semibold leading-snug text-gold-dark sm:text-[26px] lg:text-[23px] xl:text-[28px] 2xl:text-[31px]">
               Building Thinking Minds
               <br />
               from the Earliest Years

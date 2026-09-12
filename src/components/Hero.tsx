@@ -1,4 +1,5 @@
 import { HeroThoughts } from "./HeroThoughts";
+import { siteBrands } from "@/content/site";
 
 export function Hero() {
   return (
@@ -44,8 +45,10 @@ export function Hero() {
               learning frameworks, we help schools move beyond rote memory toward
               authentic intelligence.
             </p>
-            <button
-              type="button"
+            <a
+              href={siteBrands.epoch.youtubeHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-3 rounded-full bg-gold py-1.5 pl-1.5 pr-5 text-[12px] font-semibold text-navy transition-colors hover:bg-gold-dark sm:text-[13px]"
             >
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-navy text-gold">
@@ -54,7 +57,7 @@ export function Hero() {
                 </svg>
               </span>
               Watch Our Vision
-            </button>
+            </a>
           </div>
         </div>
 

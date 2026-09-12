@@ -16,8 +16,41 @@ const resources = [
   { icon: GradCapIcon, label: "Learning Resources" },
 ];
 
+const itstResources = [
+  { icon: OpenBookIcon, label: "Understand Concepts" },
+  { icon: EditIcon, label: "Observe & Question" },
+  { icon: DocIcon, label: "Apply Knowledge" },
+  { icon: GradCapIcon, label: "Practise with Genie App" },
+];
+
+const iaoResources = [
+  { icon: OpenBookIcon, label: "Reason", detail: "Ask why a relationship or conclusion makes sense." },
+  { icon: EditIcon, label: "Practise", detail: "Solve different types of unfamiliar problems." },
+  {
+    icon: DocIcon,
+    label: "Reflect",
+    detail: "Understand why an answer is correct—not just which option is correct.",
+  },
+  { icon: GradCapIcon, label: "Practise with Genie App", detail: "Access sample papers and preparation resources." },
+];
+
+const igkoResources = [
+  { icon: OpenBookIcon, label: "Read & Explore", detail: "Explore age-appropriate books, magazines, news and knowledge resources." },
+  { icon: EditIcon, label: "Observe", detail: "Pay attention to the world around you and everyday events." },
+  { icon: DocIcon, label: "Connect", detail: "Try to understand how different areas of knowledge are related." },
+  { icon: GradCapIcon, label: "Practise with Genie App", detail: "Access sample papers and preparation resources." },
+];
+
 export function PrepareAndFaq({ program }: { program: EnquiryProgram }) {
   const brand = siteBrands[brandForProgram(program.id)];
+  const prepareResources =
+    program.id === "itst"
+      ? itstResources
+      : program.id === "iao"
+        ? iaoResources
+        : program.id === "igko"
+          ? igkoResources
+        : resources;
 
   return (
     <div className="grid grid-cols-1 gap-4 xl:grid-cols-[minmax(0,1.7fr)_minmax(260px,0.85fr)] xl:items-stretch">
@@ -41,10 +74,10 @@ export function PrepareAndFaq({ program }: { program: EnquiryProgram }) {
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-md bg-navy px-4 py-2.5 text-[12px] font-semibold text-white transition-colors hover:bg-navy-600 lg:text-[12.5px]"
             >
-              {brand.genieAppLabel} <ArrowRight className="h-3.5 w-3.5" />
+              Open Genie App <ArrowRight className="h-3.5 w-3.5" />
             </a>
             <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {resources.map((r) => {
+              {prepareResources.map((r) => {
                 const Icon = r.icon;
                 return (
                   <div key={r.label} className="flex flex-col items-center text-center">
@@ -54,6 +87,11 @@ export function PrepareAndFaq({ program }: { program: EnquiryProgram }) {
                     <p className="mt-2 text-[11px] font-semibold leading-snug text-navy lg:text-[11.5px]">
                       {r.label}
                     </p>
+                    {"detail" in r ? (
+                      <p className="mt-1 text-[10px] font-normal leading-snug text-slate-600">
+                        {String(r.detail)}
+                      </p>
+                    ) : null}
                   </div>
                 );
               })}

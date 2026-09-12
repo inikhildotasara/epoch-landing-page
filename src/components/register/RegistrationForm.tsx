@@ -109,7 +109,8 @@ function validate(v: Values): Errors {
   const e: Errors = {};
   if (!v.schoolName.trim()) e.schoolName = "Please enter your school name.";
   if (!v.city.trim()) e.city = "Please enter your city or town.";
-  if (!v.state) e.state = "Please select a state.";
+  if (v.country === "India" && !v.state)
+    e.state = "Please select a state.";
   if (!v.country) e.country = "Please select a country.";
   if (!v.contactName.trim()) e.contactName = "Please enter your name.";
   if (!v.designation) e.designation = "Please select your designation.";
@@ -265,16 +266,18 @@ export function RegistrationForm() {
                   invalid={!!errors.city}
                   onChange={(e) => set("city", e.target.value)}
                 />
-                <SelectInput
-                  id="state"
-                  name="state"
-                  aria-label="State"
-                  placeholder="State"
-                  options={indianStates}
-                  value={v.state}
-                  invalid={!!errors.state}
-                  onChange={(e) => set("state", e.target.value)}
-                />
+                {v.country === "India" && (
+                  <SelectInput
+                    id="state"
+                    name="state"
+                    aria-label="State"
+                    placeholder="State"
+                    options={indianStates}
+                    value={v.state}
+                    invalid={!!errors.state}
+                    onChange={(e) => set("state", e.target.value)}
+                  />
+                )}
                 <SelectInput
                   id="country"
                   name="country"
@@ -283,7 +286,19 @@ export function RegistrationForm() {
                   options={countries}
                   value={v.country}
                   invalid={!!errors.country}
-                  onChange={(e) => set("country", e.target.value)}
+                  onChange={(e) => {
+                    const country = e.target.value;
+                    setV((prev) => ({
+                      ...prev,
+                      country,
+                      state: country === "India" ? prev.state : "",
+                    }));
+                    setErrors((prev) => ({
+                      ...prev,
+                      country: undefined,
+                      state: undefined,
+                    }));
+                  }}
                 />
               </div>
             </Field>

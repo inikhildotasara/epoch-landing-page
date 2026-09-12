@@ -58,7 +58,11 @@ export function ApplicationsVideo() {
                       <img
                         src={a.logo}
                         alt={a.title}
-                        className="h-8 max-w-[180px] object-contain object-left"
+                        className={`${
+                          a.title === "MY CCBee" || a.title === "Brainiac Global"
+                            ? "h-[78px]"
+                            : "h-8"
+                        } max-w-[180px] object-contain object-left`}
                       />
                     </div>
                     <p className="mt-1.5 text-[12px] leading-snug text-slate-500 lg:text-[12.5px]">

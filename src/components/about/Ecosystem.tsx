@@ -63,7 +63,7 @@ function Box({
         className="h-20 w-[190px] shrink-0 object-contain object-left lg:h-[84px] lg:w-[210px] xl:h-16 xl:w-[clamp(90px,12vw,180px)]"
       />
       <div className="min-w-0">
-        <p className="break-words text-[14px] font-semibold leading-snug text-slate-600 lg:text-[15px]">
+        <p className="break-words text-[8.75px] font-semibold leading-snug text-slate-600 lg:text-[10px]">
           {sub}
         </p>
       </div>

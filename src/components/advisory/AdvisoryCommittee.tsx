@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, GroupIcon } from "../icons";
+import { ArrowRight, ChevronDownIcon, GroupIcon } from "../icons";
 import { Reveal } from "../Reveal";
 import { AdvisorySectionHeading, LaurelBranch, OliveSprig } from "./decor";
 
@@ -247,28 +247,154 @@ function ScrollGallery({
   );
 }
 
+const patronBio = [
+  {
+    title: "Academic Leadership & Global Recognition",
+    items: [
+      {
+        label: "Institutional Leadership",
+        body: "Former Vice-Chancellor of Jiwaji University, Gwalior, and Former Chairman of the UGC-NAAC Peer Teams, playing a critical role in shaping higher education quality standards in India.",
+      },
+      {
+        label: "Global Footprint",
+        body: "Served as a Visiting Scientist at the University of Cambridge (UK) and has been an invited expert speaker across nations including Germany, China, Singapore, and the UK.",
+      },
+    ],
+  },
+  {
+    title: "Scientific Innovation & Research Legacy",
+    items: [
+      {
+        label: "Mathematical Innovation",
+        body: (
+          <>
+            Globally recognized for introducing the{" "}
+            <em className="italic">I</em>-function, a highly generalized
+            hypergeometric function of one variable, contributing significantly
+            to advanced mathematics.
+          </>
+        ),
+      },
+      {
+        label: "Multidisciplinary Expertise",
+        body: "Extensive research contributions bridging Mathematics and Engineering, specifically within the field of Mathematical Biosciences.",
+      },
+      {
+        label: "Academic Mentorship",
+        body: "Guided 38 Ph.D. and 25 M.Phil. scholars, with over 120 research papers and 15 books published in national and international journals.",
+      },
+    ],
+  },
+  {
+    title: "Prestigious Honours",
+    accent: true,
+    items: [
+      {
+        body: "Recipient of the Best Research Paper presentation by the President of India (ISTAM).",
+      },
+      {
+        body: "Honoured with the Lifetime Achievement Award by the Vijnana Parishad of India (VPI).",
+      },
+    ],
+  },
+] as const;
+
 function PatronSeat() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="flex items-center justify-center gap-4 sm:gap-8">
-      <LaurelBranch className="hidden h-32 w-auto shrink-0 -scale-x-100 text-gold/45 sm:block" />
-      <div className="flex max-w-[200px] flex-col items-center text-center sm:max-w-[220px]">
-        <div className="relative h-[148px] w-[148px] overflow-hidden rounded-full bg-white shadow-[0_12px_28px_-12px_rgba(11,28,63,0.45)] ring-[3px] ring-gold/55 ring-offset-2 ring-offset-white sm:h-[176px] sm:w-[176px]">
+    <div className="flex w-full flex-col items-center">
+      <div className="flex items-center justify-center gap-4 sm:gap-8">
+        <LaurelBranch className="hidden h-56 w-auto shrink-0 -scale-x-100 text-gold/45 sm:block lg:h-72" />
+        <div className="relative aspect-[4/5] w-[188px] overflow-hidden rounded-xl bg-slate-100 shadow-[0_12px_28px_-12px_rgba(11,28,63,0.45)] sm:w-[228px] lg:w-[268px]">
           <Image
-            src="/images/patron-in-chief.png"
-            alt="Patron-in-Chief reserved seat"
+            src="/images/advisors/prof-v-p-saxena.jpg"
+            alt="Prof. (Dr.) V. P. Saxena, Patron-in-Chief"
             fill
-            sizes="176px"
-            className="object-contain p-1.5 sm:p-2"
+            sizes="268px"
+            className="object-cover object-top"
           />
         </div>
-        <h4 className="mt-3.5 font-serif text-[13px] font-semibold leading-snug text-navy sm:text-[14px]">
-          Awaiting Appointment
-        </h4>
-        <p className="mt-1 text-[10px] leading-snug text-slate-500 sm:text-[10.5px]">
-          Position open by invitation
-        </p>
+        <LaurelBranch className="hidden h-56 w-auto shrink-0 text-gold/45 sm:block lg:h-72" />
       </div>
-      <LaurelBranch className="hidden h-32 w-auto shrink-0 text-gold/45 sm:block" />
+
+      <div className="mt-3.5 max-w-[34rem] text-center">
+        <h4 className="font-serif text-[16px] font-semibold leading-snug text-navy sm:text-[18px]">
+          Prof. (Dr.) V. P. Saxena
+        </h4>
+        <p className="mt-1.5 font-serif text-[12px] leading-snug text-gold-dark sm:text-[13px]">
+          Former Vice-Chancellor, Jiwaji University, Gwalior
+        </p>
+        <p className="mt-0.5 font-serif text-[12px] leading-snug text-gold-dark sm:text-[13px]">
+          Former Visiting Scientist, University of Cambridge, UK
+        </p>
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls="patron-expanded-bio"
+          onClick={() => setOpen((value) => !value)}
+          className="mt-3 inline-flex items-center gap-1 text-[11.5px] font-semibold text-navy transition-colors hover:text-gold-dark sm:text-[12px]"
+        >
+          {open ? "View less" : "View more"}
+          <ChevronDownIcon
+            className={`h-3.5 w-3.5 transition-transform duration-300 ${
+              open ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+      </div>
+
+      <div
+        id="patron-expanded-bio"
+        className={`grid w-full transition-[grid-template-rows] duration-300 ease-out ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="mx-auto mt-5 grid w-full max-w-5xl gap-3 border-t border-[#e6edf7] pt-5 sm:gap-3.5 md:grid-cols-3">
+            {patronBio.map((section) => (
+              <article
+                key={section.title}
+                className={`rounded-xl border px-4 py-3.5 sm:px-4.5 sm:py-4 ${
+                  "accent" in section && section.accent
+                    ? "border-[#eee7d8] bg-[#fffdf8]"
+                    : "border-[#e6edf7] bg-white"
+                }`}
+              >
+                <span
+                  className={`mb-2.5 block h-0.5 w-8 ${
+                    "accent" in section && section.accent
+                      ? "bg-gold"
+                      : "bg-navy/70"
+                  }`}
+                />
+                <h5 className="font-serif text-[13.5px] font-semibold leading-snug text-navy sm:text-[14.5px]">
+                  {section.title}
+                </h5>
+                <ul className="mt-2.5 space-y-2.5">
+                  {section.items.map((item) => (
+                    <li
+                      key={"label" in item ? item.label : String(item.body)}
+                      className="text-[11.5px] leading-relaxed text-slate-600 sm:text-[12px]"
+                    >
+                      {"label" in item ? (
+                        <>
+                          <span className="font-semibold text-gold-dark">
+                            {item.label}:
+                          </span>{" "}
+                          {item.body}
+                        </>
+                      ) : (
+                        item.body
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -289,7 +415,7 @@ function CommitteeRow({
   tone: "navy" | "gold";
   title: ReactNode;
   subtitle: ReactNode;
-  cta: ReactNode;
+  cta?: ReactNode;
   interest?: ReactNode;
   watermark?: "olive" | "laurel";
   layout?: "scroll" | "center";
@@ -339,9 +465,13 @@ function CommitteeRow({
               </p>
             </div>
           </div>
-          <div className="sm:shrink-0 sm:pt-1">
-            <ActionLink tone={tone === "gold" ? "gold" : "navy"}>{cta}</ActionLink>
-          </div>
+          {cta ? (
+            <div className="sm:shrink-0 sm:pt-1">
+              <ActionLink tone={tone === "gold" ? "gold" : "navy"}>
+                {cta}
+              </ActionLink>
+            </div>
+          ) : null}
         </div>
 
         <div className="relative mt-5 lg:mt-6">
@@ -375,8 +505,7 @@ export function AdvisoryCommittee() {
               number="01"
               tone="navy"
               title="Patron-in-Chief"
-              subtitle="Reserved for Distinguished Institutional Leadership"
-              cta="Express Interest"
+              subtitle="Distinguished Institutional Leadership"
               layout="center"
             >
               <PatronSeat />
@@ -418,6 +547,12 @@ export function AdvisoryCommittee() {
               interest="Are you a school leader passionate about meaningful education?"
               delay={200}
             >
+              <MemberCard
+                name="Prof. (Dr.) Deepa Sinha"
+                role="Professor & Dean, Department of Mathematics"
+                institution="South Asian University, New Delhi (A University by SAARC Nations)"
+                photo="/images/advisors/prof-deepa-sinha.jpg"
+              />
               <MemberCard
                 name="Dr. Archana Nigam"
                 role="Former Principal, DPS Kalyanpur"

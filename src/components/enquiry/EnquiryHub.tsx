@@ -17,6 +17,8 @@ import { PrepareAndFaq } from "./PrepareAndFaq";
 import { EnquiryFaq } from "./EnquiryFaq";
 import { OtherInitiatives } from "./OtherInitiatives";
 import { EnquiryCTA } from "./EnquiryCTA";
+import { IHostOverview } from "./IHostOverview";
+import { IFlyOverview } from "./IFlyOverview";
 
 export function EnquiryHub({ initialId }: { initialId: ProgramId }) {
   const pathname = usePathname();
@@ -48,6 +50,8 @@ export function EnquiryHub({ initialId }: { initialId: ProgramId }) {
           <div id="enquiry-detail" className="scroll-mt-6 space-y-4 lg:space-y-5">
             <ProgramBanner program={program} />
             <DetailGrid program={program} />
+            {program.id === "ihost" ? <IHostOverview /> : null}
+            {program.id === "ifly" ? <IFlyOverview /> : null}
             <CompleteDetailsCta program={program} />
             <PrepareAndFaq program={program} />
             <EnquiryFaq key={program.id} program={program} />

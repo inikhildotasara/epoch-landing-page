@@ -1,4 +1,5 @@
 import { Reveal } from "../Reveal";
+import { siteBrands } from "@/content/site";
 import {
   AnalyticsIcon,
   ArrowRight,
@@ -16,6 +17,8 @@ const highlights = [
 ];
 
 export function CCBeeCTA() {
+  const { callHref } = siteBrands.epoch;
+
   return (
     <section id="demo" className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-12 lg:pb-16">
@@ -53,7 +56,7 @@ export function CCBeeCTA() {
 
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <a
-              href="#"
+              href={callHref}
               className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-3 text-[13px] font-semibold text-navy transition-colors hover:bg-gold-dark sm:w-auto lg:text-[14px]"
             >
               Request For Demo <ArrowRight className="h-4 w-4" />

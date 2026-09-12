@@ -18,7 +18,7 @@ export const siteBrands: Record<SiteBrand, BrandLinks> = {
     callHref: "tel:+919807714979",
     whatsappHref: "https://wa.me/919807714979",
     genieAppHref: "https://www.epocholympiad.co.in/epoch/",
-    genieAppLabel: "Epoch Genie App",
+    genieAppLabel: "Open Genie App",
     facebookHref: "https://www.facebook.com/epochindia",
     youtubeHref: "https://www.youtube.com/@epocholympiad",
   },

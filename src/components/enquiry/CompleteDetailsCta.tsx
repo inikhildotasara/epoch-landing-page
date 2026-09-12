@@ -11,8 +11,9 @@ export function CompleteDetailsCta({ program }: { program: EnquiryProgram }) {
         Need Complete Details?
       </p>
       <p className="mx-auto mt-2 max-w-xl text-[13px] leading-relaxed text-slate-600 lg:text-[14px]">
-        Open the {brand.genieAppLabel} for syllabus, sample papers, workbooks and
-        results for {program.shortName}.
+        {/* Open the {brand.genieAppLabel} for syllabus, sample papers, workbooks and
+        results for {program.shortName}. */}
+        Access the Genie App for the complete syllabus, sample papers, preparation resources, previous-year papers and other academic materials.
       </p>
       <a
         href={brand.genieAppHref}

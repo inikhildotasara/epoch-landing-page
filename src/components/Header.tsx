@@ -21,10 +21,10 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname() ?? "/";
   const brand = siteBrands[brandFromPathname(pathname)];
-  const studentLogin = {
-    label: "Student's Login",
-    href: brand.genieAppHref,
-  };
+  const loginItems = [
+    { label: "Brainiac Login", href: siteBrands.brainiac.genieAppHref },
+    { label: "Epoch Login", href: siteBrands.epoch.genieAppHref },
+  ];
 
   return (
     <header className="w-full bg-white border-b border-slate-100 relative z-50">
@@ -42,14 +42,17 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={studentLogin.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[12.5px] 2xl:text-[13.5px] font-medium text-slate-700 hover:text-navy transition-colors whitespace-nowrap"
-            >
-              {studentLogin.label}
-            </a>
+            {loginItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[12.5px] 2xl:text-[13.5px] font-medium text-slate-700 hover:text-navy transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
             <Link
               href={partnerLink.href}
               className="rounded-md bg-navy px-3.5 py-2 text-[12.5px] 2xl:text-[13.5px] font-semibold text-white hover:bg-navy-600 transition-colors whitespace-nowrap"
@@ -115,15 +118,18 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={studentLogin.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className="py-3 text-[14px] font-medium text-slate-700 hover:text-navy border-b border-slate-100"
-            >
-              {studentLogin.label}
-            </a>
+            {loginItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="py-3 text-[14px] font-medium text-slate-700 hover:text-navy border-b border-slate-100"
+              >
+                {item.label}
+              </a>
+            ))}
             <Link
               href={partnerLink.href}
               onClick={() => setOpen(false)}

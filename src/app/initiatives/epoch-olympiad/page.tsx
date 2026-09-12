@@ -31,7 +31,7 @@ export default function EpochOlympiadPage() {
       <main>
         <OlympiadHero />
         <Ecosystem />
-        <ExamAndJourney />
+        {/* <ExamAndJourney /> */}
         <Voices />
         <Toppers />
         <OlympiadFaq />

@@ -49,7 +49,7 @@ export const newArticles: Article[] = [
     "Balanced Diet for the Brain",
     "Why children need more than one kind of learning.",
     "Holistic Learning",
-    "2026-08-22",
+    "2026-08-15",
     "/images/article-4.png",
     ["IHOST", "holistic learning", "thinking skills"],
     [
@@ -70,7 +70,7 @@ export const newArticles: Article[] = [
     "How Kindergarten Cognitive Assessment Works",
     "Understanding how a young child thinks—not just what they know.",
     "Early Learning",
-    "2026-08-21",
+    "2026-08-07",
     "/images/article-6.png",
     ["kindergarten", "cognitive assessment", "Brainiac Global"],
     [
@@ -92,7 +92,7 @@ export const newArticles: Article[] = [
     "Importance of the Academic Health Report",
     "Beyond marks. Understand how a child learns.",
     "Academic Health",
-    "2026-08-20",
+    "2026-07-30",
     "/images/article-5.png",
     ["academic health", "assessment", "learning insight"],
     [
@@ -111,7 +111,7 @@ export const newArticles: Article[] = [
     "What Is Competency-Based Assessment?",
     "A simple guide for parents—from what a child remembers to what a child can do with learning.",
     "Assessment",
-    "2026-08-19",
+    "2026-07-22",
     "/images/article-7.jpg",
     ["competency", "assessment", "application"],
     [
@@ -131,7 +131,7 @@ export const newArticles: Article[] = [
     "What Is Critical Thinking? How Children Learn to Think Beyond the Obvious",
     "Critical thinking is not about knowing more answers. It is about learning to think carefully before accepting an answer.",
     "Thinking Skills",
-    "2026-08-18",
+    "2026-07-14",
     "/images/article-8.jpg",
     ["critical thinking", "parents", "thinking skills"],
     [
@@ -152,7 +152,7 @@ export const newArticles: Article[] = [
     "How to Identify Learning Gaps Before They Become Learning Problems",
     "A learning gap is not failure. It is an area where a child may need more support, practice or a different way of learning.",
     "Learning Support",
-    "2026-08-17",
+    "2026-07-06",
     "/images/article-9.jpg",
     ["learning gaps", "early support", "parents"],
     [
@@ -172,7 +172,7 @@ export const newArticles: Article[] = [
     "Does Your Child Understand or Just Memorise? 5 Simple Signs",
     "A simple guide for parents.",
     "Parent Guide",
-    "2026-08-16",
+    "2026-06-28",
     "/images/article-10.jpg",
     ["understanding", "memorisation", "parent guide"],
     [
@@ -191,7 +191,7 @@ export const newArticles: Article[] = [
     "Beyond Marks: 7 Skills Children Need for the Future",
     "Good marks can open doors. The future will ask children to do much more than remember information.",
     "Future Readiness",
-    "2026-08-15",
+    "2026-06-20",
     "/images/article-11.jpg",
     ["future skills", "parents", "holistic learning"],
     [
@@ -209,7 +209,7 @@ export const newArticles: Article[] = [
     "Why Early Childhood Is the Right Time to Build Thinking Skills",
     "A simple guide for parents.",
     "Early Learning",
-    "2026-08-14",
+    "2026-06-12",
     "/images/article-12.jpg",
     ["early childhood", "Brainiac Global", "thinking skills"],
     [
@@ -229,7 +229,7 @@ export const newArticles: Article[] = [
     "Why Olympiad Exams Should Be More Than Competition",
     "A simple guide for parents.",
     "Olympiad Learning",
-    "2026-08-13",
+    "2026-06-04",
     "/images/article-13.jpg",
     ["Olympiad", "competition", "learning insight"],
     [
@@ -251,7 +251,7 @@ export const newArticles: Article[] = [
     "How to Choose the Right Olympiad for Your Child",
     "The right choice begins with understanding what your child needs to learn, practise or discover.",
     "Parent Guide",
-    "2026-08-12",
+    "2026-05-27",
     "/images/article-14.jpg",
     ["Olympiad", "parent guide", "learning"],
     [
@@ -271,7 +271,7 @@ export const newArticles: Article[] = [
     "Holistic Education: Why Children Need More Than Academic Scores",
     "A simple guide for parents.",
     "Holistic Learning",
-    "2026-08-11",
+    "2026-05-19",
     "/images/article-15.jpg",
     ["holistic education", "academic scores", "parent guide"],
     [

@@ -19,7 +19,7 @@ const principals = [
       "Witnessing our students excel & showcase their talents on an international stage fills me with immense pride. I highly commend the organizers for providing such an enriching experience.",
     name: "Mrs. Monika Datt",
     role: "Principal",
-    school: "Delhi Public School, Abu Road Rajasthan",
+    school: "GD Goenka Public School, Lucknow",
     photo: "/images/brainiac-principals/Mrs. Monika Datt.jpeg",
   },
   {
