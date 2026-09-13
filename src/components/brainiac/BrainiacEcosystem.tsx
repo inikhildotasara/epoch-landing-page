@@ -248,13 +248,13 @@ export function BrainiacEcosystem() {
                     </div>
 
                     <div className="mt-6 lg:mt-auto lg:pt-6">
-                      <a
-                        href="#faq"
+                      <Link
+                        href={`${EXAM_HREF}?exam=${p.code.toLowerCase()}`}
                         className="inline-flex w-fit items-center gap-2 rounded-md px-5 py-2.5 text-[12.5px] font-semibold text-white transition-opacity hover:opacity-90 lg:text-[13px]"
                         style={{ backgroundColor: p.color }}
                       >
                         {p.button} <ArrowRight className="h-3.5 w-3.5" />
-                      </a>
+                      </Link>
                     </div>
                   </article>
               ))}

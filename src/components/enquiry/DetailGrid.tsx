@@ -130,6 +130,8 @@ export function DetailGrid({ program }: { program: EnquiryProgram }) {
               ? "What is IAO?"
               : program.id === "igko"
                 ? "What is IGKO?"
+              : program.id === "imo"
+                ? "What is IMO?"
               : "What is it?"
         }
         tone="#e8f6ee"

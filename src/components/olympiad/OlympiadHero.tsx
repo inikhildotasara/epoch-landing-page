@@ -44,11 +44,11 @@ export function OlympiadHero() {
             <h1 className="font-serif text-[30px] font-semibold leading-[1.08] text-navy sm:text-[40px] lg:text-[38px] xl:text-[44px] 2xl:text-[48px]">
               EPOCH OLYMPIAD
             </h1>
-            <p className="mt-3 font-serif text-[16px] font-semibold leading-snug text-navy lg:text-[17px] xl:text-[19px]">
+            {/* <p className="mt-3 font-serif text-[16px] font-semibold leading-snug text-navy lg:text-[17px] xl:text-[19px]">
               International Olympiads &amp;
               <br className="hidden sm:block" /> Future-Ready Learning Platforms
               for Classes 1–10
-            </p>
+            </p> */}
             <p className="mt-3 text-[13px] font-semibold text-gold-dark lg:text-[14px]">
               Assessing Knowledge. Developing Thinking. Preparing for the Future.
             </p>

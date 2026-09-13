@@ -12,8 +12,6 @@ import { EnquiryHero } from "./EnquiryHero";
 import { ProgramSelector } from "./ProgramSelector";
 import { ProgramBanner } from "./ProgramBanner";
 import { DetailGrid } from "./DetailGrid";
-import { CompleteDetailsCta } from "./CompleteDetailsCta";
-import { PrepareAndFaq } from "./PrepareAndFaq";
 import { EnquiryFaq } from "./EnquiryFaq";
 import { OtherInitiatives } from "./OtherInitiatives";
 import { EnquiryCTA } from "./EnquiryCTA";
@@ -54,8 +52,7 @@ export function EnquiryHub({ initialId }: { initialId: ProgramId }) {
             ) : null}
             {program.id === "ihost" ? <IHostOverview /> : null}
             {program.id === "ifly" ? <IFlyOverview /> : null}
-            <CompleteDetailsCta program={program} />
-            <PrepareAndFaq program={program} />
+
             <EnquiryFaq key={program.id} program={program} />
           </div>
         </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight } from "../icons";
 import { Reveal } from "../Reveal";
 
@@ -6,31 +7,36 @@ const learningPillars = [
     title: "Mathematics",
     detail: "Builds logical thinking",
     color: "#2aa9d6",
-    symbol: "＋",
+    symbol: undefined,
+    image: "/images/ihost/mathematics.png",
   },
   {
     title: "Science",
     detail: "Encourages curiosity",
     color: "#42b58d",
-    symbol: "⚗",
+    symbol: undefined,
+    image: "/images/ihost/science.png",
   },
   {
     title: "Aptitude",
     detail: "Strengthens reasoning",
     color: "#f39a35",
-    symbol: "⚙",
+    symbol: undefined,
+    image: "/images/ihost/aptitude.png",
   },
   {
     title: "General Knowledge",
     detail: "Expands world awareness",
     color: "#8854b5",
-    symbol: "◎",
+    symbol: undefined,
+    image: "/images/ihost/general-knowledge.png",
   },
   {
     title: "Language",
     detail: "Builds communication",
     color: "#e84f88",
-    symbol: "☏",
+    symbol: undefined,
+    image: "/images/ihost/language.png",
   },
 ];
 
@@ -57,9 +63,9 @@ export function IHostOverview() {
       <div className="mx-auto w-full space-y-14 py-12 lg:py-16">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0f9c9a]">
+            {/* <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0f9c9a]">
               IHOST · International Holistic Olympiad for Smart Thinkers
-            </p>
+            </p> */}
             <h2 className="mt-3 font-serif text-[26px] font-semibold text-navy lg:text-[34px]">
               A Balanced Diet for the Brain
             </h2>
@@ -77,12 +83,22 @@ export function IHostOverview() {
               delay={index * 70}
               className="rounded-2xl border border-white bg-white px-3 py-5 text-center shadow-sm"
             >
-              <span
-                className="mx-auto flex h-14 w-14 items-center justify-center rounded-full text-[28px] font-light text-white"
-                style={{ backgroundColor: pillar.color }}
-              >
-                {pillar.symbol}
-              </span>
+              {pillar.image ? (
+                <Image
+                  src={pillar.image}
+                  alt={`${pillar.title} icon`}
+                  width={64}
+                  height={64}
+                  className="mx-auto h-14 w-14 rounded-full object-contain"
+                />
+              ) : (
+                <span
+                  className="mx-auto flex h-14 w-14 items-center justify-center rounded-full text-[28px] font-light text-white"
+                  style={{ backgroundColor: pillar.color }}
+                >
+                  {pillar.symbol}
+                </span>
+              )}
               <h3 className="mt-3 font-serif text-[16px] font-semibold text-navy">
                 {pillar.title}
               </h3>

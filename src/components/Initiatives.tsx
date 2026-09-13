@@ -35,6 +35,7 @@ const cards: {
     imgPosition: "object-top",
     title: "MY CCBee",
     tagline: "Performance Tracking & Booster Platform for Schools",
+    audience: "For Playgroup to Class 2",
     desc: "A performance tracking and booster platform that connects daily school activities with meaningful student insights, helping parents and schools monitor progress, identify growth areas and take timely action.",
     cta: "Explore Platform",
     href: "/initiatives/my-ccbee",

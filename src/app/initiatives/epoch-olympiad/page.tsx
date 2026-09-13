@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OlympiadHero } from "@/components/olympiad/OlympiadHero";
+import { OlympiadPurpose } from "@/components/olympiad/OlympiadPurpose";
 import { Ecosystem } from "@/components/olympiad/Ecosystem";
-import { ExamAndJourney } from "@/components/olympiad/ExamAndJourney";
 import { Voices } from "@/components/olympiad/Voices";
 import { Toppers } from "@/components/olympiad/Toppers";
 import { OlympiadFaq } from "@/components/olympiad/OlympiadFaq";
@@ -30,6 +30,7 @@ export default function EpochOlympiadPage() {
       <Header />
       <main>
         <OlympiadHero />
+        <OlympiadPurpose />
         <Ecosystem />
         {/* <ExamAndJourney /> */}
         <Voices />

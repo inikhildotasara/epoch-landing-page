@@ -115,9 +115,9 @@ export function IFlyOverview() {
         <div>
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#d27909]">
+              {/* <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#d27909]">
                 IFLY · Understand Money · Navigate Digital Life
-              </p>
+              </p> */}
               <h2 className="mt-3 font-serif text-[26px] font-semibold text-navy lg:text-[34px]">
                 A Balanced Learning Journey
               </h2>

@@ -8,6 +8,7 @@ import { LeadershipAndBooster } from "@/components/ccbee/LeadershipAndBooster";
 import { ConnectedPlatform } from "@/components/ccbee/ConnectedPlatform";
 import { EarlyYearsAndTrust } from "@/components/ccbee/EarlyYearsAndTrust";
 import { CCBeeVoices } from "@/components/ccbee/CCBeeVoices";
+import { CCBeeToppers } from "@/components/ccbee/CCBeeToppers";
 import { CCBeeFaq } from "@/components/ccbee/CCBeeFaq";
 import { CCBeeCTA } from "@/components/ccbee/CCBeeCTA";
 import { LogoFlash } from "@/components/LogoFlash";
@@ -38,6 +39,7 @@ export default function MyCCBeePage() {
         <ConnectedPlatform />
         <EarlyYearsAndTrust />
         <CCBeeVoices />
+        <CCBeeToppers />
         <CCBeeFaq />
         <CCBeeCTA />
       </main>

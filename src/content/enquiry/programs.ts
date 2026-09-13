@@ -63,7 +63,9 @@ const olympiadRecognition = [
   "Zonal Level",
   "School Level",
   "Class Level",
-  "Scholarships for eligible achievers",
+  "Genius Student of The Year (Overall Champion)",
+  "Olympiad Champions (3 in Nos.)",
+  "Scholarships & surprise gifts",
 ];
 
 const olympiadAfter =
@@ -341,14 +343,7 @@ export const enquiryPrograms: EnquiryProgram[] = [
     ],
     afterNote:
       "Each child receives performance-based recognition and an Academic Health Report with parent-friendly insights into thinking abilities and learning readiness.",
-    recognition: [
-      "International Level",
-      "National Level",
-      "Zonal Level",
-      "School Level",
-      "Class Level",
-      "Scholarships & surprise gifts",
-    ],
+    recognition: olympiadRecognition,
     prepare:
       "No intensive coaching is needed. Children prepare naturally through observation games, the coloured workbook, everyday patterns, and sample papers in the Genie App.",
     faqs: [
@@ -584,7 +579,7 @@ export const enquiryPrograms: EnquiryProgram[] = [
     audience: "For Classes 1–10",
     color: "#7b2fa8",
     logo: "/images/exam-icons/IAO.png",
-    bannerImage: "/images/enquiry/iao-banner.png",
+    bannerImage: "/images/enquiry/iao-banner.jpg",
     bannerAlt: "A student working through an aptitude assessment",
     summary:
       "An international aptitude assessment designed to understand how students reason, analyse information, recognise patterns, solve problems and approach unfamiliar situations.",
@@ -808,7 +803,7 @@ export const enquiryPrograms: EnquiryProgram[] = [
     audience: "",
     color: "#0f9c9a",
     logo: "/images/exam-icons/IHOST.png",
-    bannerImage: "/images/enquiry/ihost-banner.png",
+    bannerImage: "/images/exam-icons/IHOST.png",
     bannerAlt: "Learners exploring a holistic learning platform",
     // comingSoon: true,
     summary:
@@ -850,7 +845,7 @@ export const enquiryPrograms: EnquiryProgram[] = [
     audience: "",
     color: "#e8a013",
     logo: "/images/exam-icons/IFLY.png",
-    bannerImage: "/images/enquiry/ifly-banner.png",
+    bannerImage: "/images/exam-icons/IFLY.png",
     bannerAlt: "Learners exploring finance and digital literacy",
     // comingSoon: true,
     summary:

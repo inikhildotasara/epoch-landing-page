@@ -306,12 +306,12 @@ function PatronSeat() {
     <div className="flex w-full flex-col items-center">
       <div className="flex items-center justify-center gap-4 sm:gap-8">
         <LaurelBranch className="hidden h-56 w-auto shrink-0 -scale-x-100 text-gold/45 sm:block lg:h-72" />
-        <div className="relative aspect-[4/5] w-[188px] overflow-hidden rounded-xl bg-slate-100 shadow-[0_12px_28px_-12px_rgba(11,28,63,0.45)] sm:w-[228px] lg:w-[268px]">
+        <div className="relative aspect-[4/5] w-[226px] overflow-hidden rounded-xl bg-slate-100 shadow-[0_12px_28px_-12px_rgba(11,28,63,0.45)] sm:w-[274px] lg:w-[322px]">
           <Image
             src="/images/advisors/prof-v-p-saxena.jpg"
             alt="Prof. (Dr.) V. P. Saxena, Patron-in-Chief"
             fill
-            sizes="268px"
+            sizes="322px"
             className="object-cover object-top"
           />
         </div>
