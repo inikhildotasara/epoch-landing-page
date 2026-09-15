@@ -53,7 +53,7 @@ const platforms: {
     code: "IHOST",
     logo: "/images/exam-icons/IHOST.png",
     color: TEAL,
-    copy: "A holistic learning platform that builds curiosity, reasoning and problem-solving by connecting Mathematics, Science, Language, Aptitude and General Knowledge with meaningful, engaging learning experiences.",
+    copy: "A holistic learning platform that builds curiosity, reasoning and problem-solving by integrating Mathematics, Science, Aptitude and General Knowledge, with Language included at Kindergarten level.",
     button: "Explore IHOST",
   },
   {

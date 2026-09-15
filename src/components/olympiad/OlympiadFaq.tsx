@@ -9,7 +9,7 @@ const faqs: FaqItem[] = [
   {
     q: "What is Epoch Olympiad?",
     a: [
-      "Epoch Olympiad is an educational initiative of Epoch Olympiad Foundation offering international assessments and future-focused learning initiatives for students from kindergarten to Class 10.",
+      "Epoch Olympiad is an educational initiative of Epoch Olympiad Foundation offering international assessments and future-focused learning initiatives for students from Class 1 to 10.",
       "Its ecosystem combines subject-based assessment with broader learning experiences designed to encourage conceptual understanding, reasoning, application, holistic thinking and future readiness.",
     ],
   },

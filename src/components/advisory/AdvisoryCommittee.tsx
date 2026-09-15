@@ -253,7 +253,7 @@ const patronBio = [
     items: [
       {
         label: "Institutional Leadership",
-        body: "Former Vice-Chancellor of Jiwaji University, Gwalior, and Former Chairman of the UGC-NAAC Peer Teams, playing a critical role in shaping higher education quality standards in India.",
+        body: "Former Vice-Chancellor of Jiwaji University, Gwalior, Former Chairman of the UGC-NAAC Peer Teams, President, Gwalior Academy of Mathematical Sciences, Former Director, YIT, Jaipur & SIRTS, Bhopal, Former President VPI, India, GAMS & Computer Society of India, and Former Vice President, Ramanujan Math Society, playing a critical role in shaping higher education quality standards in India.",
       },
       {
         label: "Global Footprint",
@@ -309,7 +309,7 @@ function PatronSeat() {
         <div className="relative aspect-[4/5] w-[226px] overflow-hidden rounded-xl bg-slate-100 shadow-[0_12px_28px_-12px_rgba(11,28,63,0.45)] sm:w-[274px] lg:w-[322px]">
           <Image
             src="/images/advisors/prof-v-p-saxena.jpg"
-            alt="Prof. (Dr.) V. P. Saxena, Patron-in-Chief"
+            alt="Prof. (Dr.) Vinod P. Saxena, Patron-in-Chief"
             fill
             sizes="322px"
             className="object-cover object-top"
@@ -320,13 +320,13 @@ function PatronSeat() {
 
       <div className="mt-3.5 max-w-[34rem] text-center">
         <h4 className="font-serif text-[16px] font-semibold leading-snug text-navy sm:text-[18px]">
-          Prof. (Dr.) V. P. Saxena
+          Prof. (Dr.) Vinod P. Saxena
         </h4>
         <p className="mt-1.5 font-serif text-[12px] leading-snug text-gold-dark sm:text-[13px]">
           Former Vice-Chancellor, Jiwaji University, Gwalior
         </p>
         <p className="mt-0.5 font-serif text-[12px] leading-snug text-gold-dark sm:text-[13px]">
-          Former Visiting Scientist, University of Cambridge, UK
+          Former Visiting Scientist, Cambridge University, UK
         </p>
         <button
           type="button"

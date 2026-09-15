@@ -147,7 +147,7 @@ export const cognitiveVsAcademic: Article = {
       kind: "stats",
       title: "Our framework at a glance",
       items: [
-        { value: "8", label: "Cognitive dimensions assessed" },
+        { value: "Multiple", label: "cognitive dimensions, assessed age-appropriately" },
         { value: "KG–10", label: "Stages covered, age-appropriately" },
         { value: "3", label: "Benchmark levels: school, national, global" },
       ],
@@ -191,7 +191,7 @@ export const cognitiveVsAcademic: Article = {
         },
         {
           q: "Can this be assessed at Kindergarten?",
-          a: "Yes, but not with a paper. At that stage reasoning is observed through play-based and pattern-based tasks, which is the basis of our Brainiac Global assessment for early years.",
+          a: "Yes. At Kindergarten level, assessment should be age-appropriate and child-friendly. The International Brain Booster Olympiad uses picture-based, paper-and-crayon activities designed to observe foundational thinking abilities.",
         },
         {
           q: "What does a school receive?",

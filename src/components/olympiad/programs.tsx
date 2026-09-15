@@ -21,7 +21,7 @@ export const olympiads: Program[] = [
     color: "#1e9245",
     logo: "/images/exam-icons/ITST.png",
     name: ["International Test of", "Science & Technology"],
-    copy: "Explore aptitude, analytical thinking, reasoning and the ability to approach unfamiliar problems.",
+    copy: "Develop scientific understanding, curiosity, reasoning and the ability to apply scientific knowledge to real-world situations.",
   },
   {
     code: "IAO",
@@ -47,7 +47,7 @@ export const platforms: Program[] = [
     logo: "/images/exam-icons/IHOST.png",
     name: ["International Holistic", "Olympiad for Smart Thinkers"],
     strap: ["Think • Explore • Discover • Excel"],
-    copy: "A holistic learning experience integrating Mathematics, Science, Aptitude and General Knowledge into one balanced learning journey.",
+    copy: "A holistic learning platform that builds curiosity, reasoning and problem-solving by integrating Mathematics, Science, Aptitude and General Knowledge, with Language included at Kindergarten level.",
   },
   {
     code: "IFLY",
