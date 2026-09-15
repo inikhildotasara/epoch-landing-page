@@ -1,5 +1,5 @@
 import { Reveal } from "../Reveal";
-import { siteBrands } from "@/content/site";
+import { CCBEE_HOW_IT_WORKS_HREF, siteBrands } from "@/content/site";
 import {
   AnalyticsIcon,
   ArrowRight,
@@ -62,7 +62,9 @@ export function CCBeeCTA() {
               Request For Demo <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#"
+              href={CCBEE_HOW_IT_WORKS_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto lg:text-[14px]"
             >
               Watch Product Overview

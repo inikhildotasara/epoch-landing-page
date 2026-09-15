@@ -6,6 +6,7 @@ import { JourneyBand } from "@/components/initiatives/JourneyBand";
 import { PhilosophyStrip } from "@/components/initiatives/PhilosophyStrip";
 import { EcosystemStrip } from "@/components/initiatives/EcosystemStrip";
 import { InitiativesFaq } from "@/components/initiatives/InitiativesFaq";
+import { siteBrands } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Our Initiatives | Epoch Olympiad Foundation",
@@ -24,7 +25,7 @@ export default function InitiativesPage() {
         <EcosystemStrip />
         <div className="flex flex-wrap items-center justify-center gap-3 px-4 py-10 sm:gap-4">
           <a
-            href="tel:+919807714979"
+            href={siteBrands.epoch.mailHref}
             className="rounded-md bg-navy px-6 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-navy-600"
           >
             Contact Us

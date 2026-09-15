@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "../Reveal";
-import { siteBrands } from "@/content/site";
+import { CCBEE_HOW_IT_WORKS_HREF, siteBrands } from "@/content/site";
 import {
   ArrowRight,
   BulbIcon,
@@ -89,7 +89,9 @@ export function CCBeeHero() {
                 Request For Demo <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="#demo"
+                href={CCBEE_HOW_IT_WORKS_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 text-[13px] font-semibold text-navy lg:text-[13.5px]"
               >
                 Watch How It Works

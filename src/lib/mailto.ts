@@ -1,4 +1,6 @@
-export const FORM_MAIL = "dotasaranikhilcse@gmail.com";
+import { CONTACT_EMAIL } from "@/content/site";
+
+export const FORM_MAIL = CONTACT_EMAIL;
 
 export type MailField = {
   label: string;

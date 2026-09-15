@@ -1,4 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
+import { siteBrands } from "@/content/site";
 import { Reveal } from "../Reveal";
 import {
   ArrowRight,
@@ -76,10 +77,16 @@ function NumberedList({ steps }: { steps: string[] }) {
   );
 }
 
-function GhostButton({ children }: { children: string }) {
+function GhostButton({
+  children,
+  href = "#",
+}: {
+  children: string;
+  href?: string;
+}) {
   return (
     <a
-      href="#"
+      href={href}
       className="mt-4 inline-flex w-fit items-center gap-2 self-center rounded-md border border-navy px-4 py-1.5 text-[11.5px] font-semibold text-navy transition-colors hover:bg-navy hover:text-white lg:text-[12px]"
     >
       {children} <ArrowRight className="h-3.5 w-3.5" />
@@ -163,7 +170,9 @@ export function BrainiacResources() {
                     (Redirect Contact Us)
                   </p>
                   <div className="mt-auto flex flex-col">
-                    <GhostButton>Contact Us</GhostButton>
+                    <GhostButton href={siteBrands.brainiac.mailHref}>
+                      Contact Us
+                    </GhostButton>
                   </div>
                 </div>
               </Reveal>

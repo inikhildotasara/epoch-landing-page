@@ -23,7 +23,7 @@ export function Footer() {
   const pathname = usePathname() ?? "/";
   const brand = siteBrands[brandFromPathname(pathname)];
   const socials = [
-    { Icon: LinkedinIcon, href: "#", label: "LinkedIn" },
+    { Icon: LinkedinIcon, href: brand.linkedinHref, label: "LinkedIn" },
     { Icon: FacebookIcon, href: brand.facebookHref, label: "Facebook" },
     { Icon: YoutubeIcon, href: brand.youtubeHref, label: "YouTube" },
   ];
@@ -54,7 +54,7 @@ export function Footer() {
               {ci === 1 && (
                 <li>
                   <a
-                    href={brand.callHref}
+                    href={brand.mailHref}
                     className="text-[13px] lg:text-[14px] text-slate-300 hover:text-white transition-colors"
                   >
                     Contact

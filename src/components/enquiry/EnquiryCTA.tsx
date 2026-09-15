@@ -3,7 +3,7 @@ import { Reveal } from "../Reveal";
 import { siteBrands, type SiteBrand } from "@/content/site";
 
 export function EnquiryCTA({ brand = "epoch" }: { brand?: SiteBrand }) {
-  const { callHref } = siteBrands[brand];
+  const { mailHref } = siteBrands[brand];
   return (
     <section className="bg-white">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-page pb-12 lg:pb-16">
@@ -23,7 +23,7 @@ export function EnquiryCTA({ brand = "epoch" }: { brand?: SiteBrand }) {
               Register Your School <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href={callHref}
+              href={mailHref}
               className="inline-flex items-center gap-2 rounded-md border border-white/25 bg-white/5 px-6 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-white/10 lg:text-[14px]"
             >
               Contact Us <ArrowRight className="h-4 w-4" />
